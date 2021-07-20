@@ -421,10 +421,10 @@
     obj[1] = 200;
     obj[2] = "javascript";
 
-    document.write("***09. 객체***<br>")
-    document.write(obj[0], "<br>")
-    document.write(obj[1], "<br>")
-    document.write(obj[2], "<br><br>")
+    document.write("***09. 객체***")
+    document.write(obj[0])
+    document.write(obj[1])
+    document.write(obj[2])
 }
 </code></pre>
         </div>
@@ -470,19 +470,118 @@
     </div>
 
     <hr>
-    <div id="sample8" class="sample">
-        <h2>12. 객체<span class="dot"></span></h2>
+    <div id="sample12" class="sample">
+        <h2>12. 객체 : 데이터 저장(키와 값) : 표현 방법4<span class="dot"></span></h2>
         <div class="code">
             <pre class="line-numbers"><code class="language-js">{
-    const obj = new Object();
-    obj.a = 100;
-    obj.b = 200;
-    obj.c = "javascript";
+    const obj = {
+        a: 100,
+        b: 200,
+        c: "javascript"
+    }
 
-    document.write("***10. 객체***")
-    document.write(obj.a)
-    document.write(obj.b)
-    document.write(obj.c)
+    document.write("***12. 객체***");
+    document.write(obj.a);
+    document.write(obj.b);
+    document.write(obj.c);
+}
+</code></pre>
+        </div>
+    </div>
+
+    <hr>
+
+    <div id="sample13" class="sample">
+        <h2>13. 객체 : 데이터 저장(키와 값) : 표현 방법5 : 배열 속에 객체<span class="dot"></span></h2>
+        <div class="code">
+            <pre class="line-numbers"><code class="language-js">{
+    const obj = [
+        {a: 100,b: 200},
+        {c:"javascript"}                 
+    ];
+
+
+    document.write("***13. 객체***");
+    document.write(obj[0].a);
+    document.write(obj[0].b);
+    document.write(obj[1].c);
+}
+</code></pre>
+        </div>
+    </div>
+
+    <hr>
+
+    <div id="sample14" class="sample">
+        <h2>14. 객체 : 데이터 저장(키와 값) : 표현 방법6 : 객체 속에 배열<span class="dot"></span></h2>
+        <div class="code">
+            <pre class="line-numbers"><code class="language-js">{
+    const obj = {
+        a: 100,
+        b: [200, 300],
+        c: "javascript"
+    }
+    document.write("***14. 배열***");
+    document.write(obj.a);
+    document.write(obj.b);
+    document.write(obj.b[0]);
+    document.write(obj.b[1]);
+    document.write(obj.c);
+}
+</code></pre>
+        </div>
+    </div>
+
+    <hr>
+
+    <div id="sample15" class="sample">
+        <h2>15. 객체 : 데이터 저장(키와 값) : 표현 방법7 : 객체 속에 변수<span class="dot"></span></h2>
+        <div class="code">
+            <pre class="line-numbers"><code class="language-js">{
+    const a = 100;
+    const b = 200;
+    const c = "javascript"
+
+    const obj = { a, b, c }
+        
+    document.write("***15. 객체***");
+    document.write(obj.a);
+    document.write(obj.b);
+    document.write(obj.c); 
+}
+</code></pre>
+        </div>
+    </div>
+
+    <hr>
+
+    <div id="sample16" class="sample">
+        <h2>16. 객체 : 데이터 저장(키와 값) : 표현 방법8 : 객체 속에 함수<span class="dot"></span></h2>
+        <div class="code">
+            <pre class="line-numbers"><code class="language-js">{
+    const obj = {
+        a: 100,
+        b: [200, 300],
+        c: "javascript",
+        d: function(){
+            document.write("자바스크립트가 실행되었습니다");
+        },
+        e: function(){
+            document.write(obj.c + "가 실행되었습니다.");
+        },
+        d: function(){
+            document.write(this.c + "가 실행되었습니다.");
+    }
+}
+    document.write("***16. 객체***");
+    document.write(obj.a);
+    document.write(obj.b);
+    document.write(obj.b[0]);
+    document.write(obj.b[1]);
+    document.write(obj.c);
+    obj.d();
+    obj.e();
+    obj.f(); 
 }
 </code></pre>
         </div>
