@@ -366,19 +366,20 @@
         case 100 : 
         document.write("*** 04. switch문 ***");
         document.write("조건문이 실행되었습니다.(num == 100)");
-    break;
-    case 200 : 
-        document.write("*** 04. switch문 ***");
-        document.write("조건문이 실행되었습니다.(num == 200)");
-    break;
-    case 300 : 
-        document.write("*** 04. switch문 ***");
-        document.write("조건문이 실행되었습니다.(num == 300)");
-    break;
-    default : 
-        document.write("*** 04. switch문 ***");
-        document.write("조건문이 실행되었습니다.(num == 값이 없음)");
-    break;
+        break;
+        case 200 : 
+            document.write("*** 04. switch문 ***");
+            document.write("조건문이 실행되었습니다.(num == 200)");
+        break;
+        case 300 : 
+            document.write("*** 04. switch문 ***");
+            document.write("조건문이 실행되었습니다.(num == 300)");
+        break;
+        default : 
+            document.write("*** 04. switch문 ***");
+            document.write("조건문이 실행되었습니다.(num == 값이 없음)");
+        break;
+    }   
 }
 </code></pre>
         </div>
@@ -418,11 +419,9 @@
         <div class="code">
             <pre class="line-numbers"><code class="language-js">{
     let num = 100;
-
-    document.write("*** 06. if문 생략 ***<br>");
         
-    if( num == 100 ) document.write("true<br><br>");
-    else document.write("false<br><br>");
+    if( num == 100 ) document.write("true");
+    else document.write("false");
 }
 </code></pre>
         </div>
@@ -436,8 +435,6 @@
         <h2>07. while문 <span class="dot"></span></h2>
         <div class="code">
             <pre class="line-numbers"><code class="language-js">{
-    document.write("*** 07. while문 ***<br>")
-
     let num = 1;
     while( num &lt;=10 ){
         document.write(num + ". 반복문이 실행되었습니다.<br>");
@@ -456,8 +453,6 @@
         <h2>08. do while문 <span class="dot"></span></h2>
         <div class="code">
             <pre class="line-numbers"><code class="language-js">{
-    document.write("*** 08. do while문 ***");
-
     let num = 1;
     do{
         document.write(num + ". 반목문이 실행되었습니다.");
@@ -476,8 +471,6 @@
         <h2>09. do for문 <span class="dot"></span></h2>
         <div class="code">
             <pre class="line-numbers"><code class="language-js">{
-    document.write("*** 09. for문 ***");
-
     // for(초깃값; 조건식; 증감값){
     //         //실행문
     // }
@@ -498,8 +491,6 @@
         <h2>10. 중첩 for문 <span class="dot"></span></h2>
         <div class="code">
             <pre class="line-numbers"><code class="language-js">{
-    document.write("*** 10. 중첩 for문 ***");
-
     for ( var i=1; i&lt;=5; i++){
         document.write(i + ". i 반목문(아이)이 실행되었습니다.");
         for(var j=1; j&lt;=5; j++){
@@ -520,11 +511,11 @@
             <pre class="line-numbers"><code class="language-js">{
         const num = [100, 200, 300, 400, 500];
 
-            document.write(num[0]);
-            document.write(num[1]);
-            document.write(num[2]);
-            document.write(num[3]);
-            document.write(num[4]);
+        document.write(num[0]);
+        document.write(num[1]);
+        document.write(num[2]);
+        document.write(num[3]);
+        document.write(num[4]);
 
         //for문
         for(let i=0; i&lt;num.length; i++){
