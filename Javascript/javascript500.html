@@ -771,6 +771,52 @@
 
 
     <hr>
+
+    <!--sample21 -->
+    <div id="sample21" class="sample">
+        <h2>21. 객체 : 데이터 불러오기 : 비구조화 할당<span class="dot"></span></h2>
+        <div class="code">
+            <pre class="line-numbers"><code class="language-js">{
+    const obj = {
+        a: 100,
+        b: 200,
+        c: "javascript"
+    }
+    const {a, b, c} = obj;
+
+    document.write(a);
+    document.write(b);
+    document.write(c);
+}                 
+        </code></pre>
+        </div>
+    </div>
+
+
+    <hr>
+
+    <!--sample22 -->
+    <div id="sample22" class="sample">
+        <h2>22. 객체 : 데이터 불러오기 : 비구조화 할당 : 별도 이름 저장<span class="dot"></span></h2>
+        <div class="code">
+            <pre class="line-numbers"><code class="language-js">{
+    const obj = {
+        a: 100,
+        b: 200,
+        c: "javascript"
+    }
+    const {a:name1, b:name2, c:name3} = obj;
+
+    document.write(name1);
+    document.write(name2);
+    document.write(name3);
+}                 
+        </code></pre>
+        </div>
+    </div>
+
+
+    <hr>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/prism.min.js"></script>
     <script>
@@ -1153,9 +1199,9 @@
         }
         const {a, b, c} = obj;
 
-        document.write(a, "<br>")
-        document.write(b, "<br>")
-        document.write(c, "<br><br>")
+        document.write(a, "<br>");
+        document.write(b, "<br>");
+        document.write(c, "<br><br>");
     }
 
     //sample22
@@ -1169,9 +1215,9 @@
         }
         const {a:name1, b:name2, c:name3} = obj;
 
-        document.write(name1, "<br>")
-        document.write(name2, "<br>")
-        document.write(name3, "<br><br>")
+        document.write(name1, "<br>");
+        document.write(name2, "<br>");
+        document.write(name3, "<br><br>");
     }
     </script>
 </body>
