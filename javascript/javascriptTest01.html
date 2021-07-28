@@ -112,6 +112,34 @@
                 }
             }
         }
+
+        //
+        const num = [100, 200, 300, 400, 500];
+
+        document.write(num.length, "<br>");
+        document.write(num[2], "<br><br>");
+
+        //for문을 이용해서 모든 값을 출력하세요 !!
+        for(let i=0; i<num.length; i++) {
+            document.write(num[i]);
+        }
+        {document.write("<br><br>");}
+
+        //forEach
+        num.forEach(function(el){
+            document.write(el);
+        });
+        {document.write("<br><br>");}
+
+        //for in문
+        for(let i in num){
+            document.write(num[i]);       
+        }
+        {document.write("<br><br>");}
+        //for of문
+        for(let i of num){
+            document.write(i);
+        }
     </script>
 </body>
 </html>
