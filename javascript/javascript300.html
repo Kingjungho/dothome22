@@ -879,9 +879,9 @@
 
         function func(num){
             if( num <=1 ){
-                document.write("함수가 실행되었습니다.<br>")
-            } else {
                 document.write("함수가 실행되었습니다.<br><br>")
+            } else {
+                document.write("함수가 실행되었습니다.<br>")
                 func(num-1);
             }
         }
@@ -893,10 +893,10 @@
     //첫번째 함수가 실행되고 난 뒤 두번째 함수를 다시 호출하는 함수
     //다른 함수에 매개변수로 넘겨주는 함수 
     {
-        document.write("***18. 콜백함수***<br>");
+        document.write("***17. 콜백함수***<br>");
 
         function funA(){
-            document.write("함수A가 실행되었습니다.<br>");
+            document.write("함수A가 실행되었습니다.<br><br>");
         }
         function funB(str){
             document.write("함수B가 실행되었습니다.<br>");
@@ -911,7 +911,7 @@
         document.write("***18. 콜백함수 : 반복문***<br>");
 
         function func(){
-            document.write("함수가 실행되었습니다.<br>")
+            document.write("함수가 실행되었습니다.<br><br>")
         }
         function callback(str){
             for( let i=1; i<=5; i++){
