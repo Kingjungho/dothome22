@@ -279,7 +279,6 @@
 
     <h2 class="mt20">데이터 실행 : 함수</h2>
     <ul>
-<<<<<<< HEAD
         <li><a href="sample#1">01. 선언적 함수</a></li>
         <li><a href="sample#2">02. 익명 함수</a></li>
         <li><a href="sample#3">03. 매개변수 함수</a></li>
@@ -297,31 +296,7 @@
         <li><a href="sample#15">15. 아규먼트 함수</a></li>
         <li><a href="sample#16">16. 재귀 함수</a></li>
         <li><a href="sample#17">17. 콜백 함수</a></li>
-=======
-        <li><a href="#sample01">01. 선언적 함수</a></li>
-        <li><a href="#sample02">02. 익명 함수</a></li>
-        <li><a href="#sample03">03. 매개변수 함수</a></li>
-        <li><a href="#sample04">04. 리턴값 함수</a></li>
-        <li><a href="#sample05">05. 화살표 함수 : 선언적 함수</a></li>
-        <li><a href="#sample06">06. 화살표 함수 : 익명 함수</a></li>
-        <li><a href="#sample07">07. 화살표 함수 : 리턴값 함수</a></li>
-        <li><a href="#sample08">08. 화살표 함수 : 익명함수 + 매개변수 + 리턴값</a></li>
-        <li><a href="#sample09">09. 화살표 함수 : 익명함수 + 매개변수 + 리턴값 + 괄호생략</a></li>
-        <li><a href="#sample10">10. 화살표 함수 : 익명함수 + 매개변수 + 리턴값 + 괄호생략 + 리턴생략</a></li>
-        <li><a href="#sample11">11. 재귀 함수</a></li>
-        <li><a href="#sample12">12. 콜백 함수</a></li>
-        <li><a href="#sample13">13. 내부 함수</a></li>
-        <li><a href="#sample14">14. 객체 생성자 함수</a></li>
-        <li><a href="#sample15">15. 프로토타입 함수</a></li>
-        <li><a href="#sample16">16. 화살표 함수</a></li>
-        <li><a href="#sample17">17. 아규먼트 함수</a></li>
-        <li><a href="#sample18">18. 즉시실행 함수</a></li>
-        <li><a href="#sample19">19. 파라미터 함수</a></li>
->>>>>>> 728f8824b08a06352fce6051c125b2e05408cf4b
     </ul>
-
-
-
     <hr>
     <!--sample1 -->
     <div id="sample01" class="sample">
@@ -599,7 +574,7 @@
 
     <!--sample17 -->
     <div id="sample17" class="sample">
-        <h2>17. 재귀함수 : 반복문<span class="dot"></span></h2>
+        <h2>17. 콜백함수<span class="dot"></span></h2>
         <div class="code">
             <pre class="line-numbers"><code class="language-js">{      
     function func(num){
@@ -623,6 +598,29 @@
         <h2>18. 콜백함수 : 반복문<span class="dot"></span></h2>
         <div class="code">
             <pre class="line-numbers"><code class="language-js">{      
+    function func(){
+        document.write("함수가 실행되었습니다.")
+    }
+    function callback(str){
+        for( let i=1; i<=5; i++){
+            str();
+        }
+    }
+    callback(func);
+}
+</code></pre>
+        </div>
+    </div>
+
+    <hr>
+
+    <!--sample19 -->
+    <div id="sample19" class="sample">
+        <h2>19. 콜백함수 : 동기/비동기<span class="dot"></span></h2>
+        <div class="code">
+            <pre class="line-numbers"><code class="language-js">{      
+    document.write("***19. 콜백함수 : 동기/비동기***<br>");
+
     function funA(){
         console.log("funA가 실행되었습니다.")
     }
@@ -645,7 +643,7 @@
     function funD(){
         console.log("funD가 실행되었습니다.");
     }
-    funC();
+    funC(); 
     funD();
 
 
@@ -655,24 +653,11 @@
     console.log("funE가 실행되었습니다.");
     callback();
     }, 1000);
-}
+    }
     function funF(){
     console.log("funF가 실행되었습니다.");
-}
+    }
     funE(funF);
-}
-</code></pre>
-        </div>
-    </div>
-
-    <hr>
-
-    <!--sample19 -->
-    <div id="sample19" class="sample">
-        <h2>19. 콜백함수 : 동기/비동기<span class="dot"></span></h2>
-        <div class="code">
-            <pre class="line-numbers"><code class="language-js">{      
-    19. 콜백함수 : 동기/비동기
 }
 </code></pre>
         </div>
@@ -933,7 +918,7 @@
                 str();
             }
         }
-        callback(func);
+        callback(func); 
     }
 
 

@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Reference</title>
+    <style>
+        @font-face {
+            font-family: 'GmarketSansMedium';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'GmarketSansLight';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'GmarketSansBold';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            font-family: 'GmarketSansLight';
+        }
+
+        #header {
+            padding: 3% 2% 0% 2%;
+            border-bottom: 1px solid #000;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 96%;
+            background-color: #f5f5f5;
+            /* width = margin + padding + border */
+        }
+
+        #header h1 {
+            font-family: 'GmarketSansMedium';
+        }
+
+        #header strong {
+            position: absolute;
+            right: 2%;
+            bottom: 2%;
+        }
+
+        main h2 {
+            font-family: 'GmarketSansBold';
+            font-size: 80px;
+            text-align: center;
+            padding: 15% 5% 5%;
+        }
+
+        main h2 em {
+            color: skyblue;
+            font-style: normal;
+        }
+
+        #contents {
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        .refer {
+            background-color: #fff;
+            padding: 60px;
+            border: 1px solid #000;
+            margin-bottom: 300px;
+
+        }
+
+        .refer h3 {
+            display: inline-block;
+            padding: 6px 30px;
+            margin-bottom: 40px;
+            background-color: skyblue;
+            color: #fff;
+        }
+
+        .refer table {
+            width: 100%;
+            border: 1px solid #aaa;
+            border-collapse: collapse;
+        }
+
+        .refer table th {
+            border: 1px solid #aaa;
+            padding: 15px;
+            font-weight: bold;
+            background-color: #f5f5f5;
+        }
+
+        .refer table td {
+            border: 1px solid #aaa;
+            padding: 15px;
+        }
+        .refer table tr {
+            transition: all 0.3s;
+        }
+        .refer table tr:hover {
+            background-color: #f5f5f5;
+            color: #000;
+            cursor: crosshair;
+        }
+        link {
+            list-style: none;
+        }
+        .link li a {
+            padding: 10px;
+            color:#fff;
+            text-decoration: none;
+            background: #000;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        .link li a:hover {
+            color:skyblue;
+        }
+        @media (max-width: 1220px){
+            #contents {
+                width: 98%;
+            }
+        }
+        @media (max-width: 800px){
+            #contents {
+                width: 96%;
+            }
+            #header {
+                padding: 6% 2% 2% 2%;
+            }
+            #header h1 {
+                font-size: 16px;
+            }
+            #header strong {
+                font-size: 14px;
+                bottom: 10px;
+            }
+            main h2 {
+                font-size: 30px;
+                padding: 22% 5% 5%;
+            }
+            .refer {
+                padding: 10px;
+                margin-bottom: 100px;
+            }
+            .refer h3 {
+                margin-bottom: 10px;
+                font-size: 16px;
+                padding: 6px 10px;
+            }
+            .refer table th {
+                padding: 8px;
+            }
+            .refer table td {
+                padding: 8px;
+                font-size: 14px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <header id="header">
+        <h1>라인 중학교 1학년 코딩반</h1>
+        <strong>김정호</strong>
+    </header>
+    <!-- //header -->
+
+    <main id="contents">
+        <h2>CSS <em>HTML 북</em></h2>
+        <ul class="link">
+            <li><a href="../Javascript/javascriptsample602-3.html">HTML 속성 첫 글자 검색하기</a></li>
+        </ul>
+        <section class="refer">
+            <h3>Alphabet</h3>
+            <table>
+                <colgroup>
+                    <col style="width: 30%">
+                    <col style="width: 70%">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>속성</th>
+                        <th>설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>&lt;a></td>
+                        <td>다른 페이지 이동을 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;abbr></td>
+                        <td>줄임말이나 머리글자를 표현하는데 사용합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;acronym</td>
+                        <td>줄임말이나 머리글자를 표현하는데 사용합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;address></td>
+                        <td>웹 페이지의 연락처 정보를 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;applet></td>
+                        <td>애플랫 요소를 설정합니다. 현재는 사용하지 않습니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;area></td>
+                        <td>이미지 맵의 영역을 정의합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;article></td>
+                        <td>사이트의 독립적인 컨텐츠 섹션을 설정합니다. </td>
+                    </tr>
+                    <tr>
+                        <td>&lt;aside></td>
+                        <td>주요 콘텐츠의 보조적 컨텐츠 섹션을 설정합니다.</td>
+                    </tr><tr>
+                        <td>&lt;audio></td>
+                        <td>오디오 파일을 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;b></td>
+                        <td> 다른 텍스트와 구별 할 때 설정합니다. </td>
+                    </tr>
+                    <tr>
+                        <td>&lt;base></td>
+                        <td>모든 문서의 기본이 되는 URL을 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;basefont>td>
+                        <td>문서의 기본 폰트, 사이즈, 종류를 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;bdi></td>
+                        <td>텍스트의 출력 방향 영역을 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;bdo></td>
+                        <td>텍스트의 방향을 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;big></td>
+                        <td>텍스트의 크기를 크게 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;blockquote></td>
+                        <td> 긴 문장의 인용문을 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;blink></td>
+                        <td>텍스트를 깜박이게 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;head></td>
+                        <td> 문서의 타이틀, 스크립트, 스타일, 메타 정보 등을 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;br></td>
+                        <td>텍스트 줄바꿈이 필요할 때 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;button></td>
+                        <td> 클릭 할 수 있는 버튼을 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;canvas></td>
+                        <td>비트맵 방식의 그림을 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;caption></td>
+                        <td> 표의 제목을 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;center></td>
+                        <td>텍스트를 가운데 정렬합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;cite></td>
+                        <td>저작물의 출처 표기를 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;code></td>
+                        <td>코드를 나타내는 텍스트를 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;col></td>
+                        <td> &lt;colgroup> 요소에 속하는 각 열의 속성을 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;colgroup></td>
+                        <td>표의 열을 묶는 그룹을 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;data></td>
+                        <td>주어진 요소의 데이터 값을 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;datalist></td>
+                        <td>선택 목록과 자동 완성 기능을 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;dd></td>
+                        <td>설명 목록의 항목을 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;del></td>
+                        <td>문서의 삭제된 텍스트를 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;details></td>
+                        <td>접기/펼치기 목록을 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;dfn></td>
+                        <td>용어를 정의할 때 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;dialog></td>
+                        <td>팝업 정보을 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;dir></td>
+                        <td> 파일 및 폴더의 디렉토리를 설정합니다. 현재는 사용하지 않습니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;div></td>
+                        <td>문서의 영역을 나누거나 그룹화 할 때 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;dl></td>
+                        <td>설명 목록을 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;dt></td>
+                        <td>설명 목록 항목의 제목을 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;em></td>
+                        <td>텍스트를 강조할 때 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;embed></td>
+                        <td>외부 콘텐츠를 사용할 수 있도록 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;fieldset></td>
+                        <td>폼 컨트롤 요소의 내부 영역을 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;figcaption></td>
+                        <td>&lt;figure> 요소의 설명 또는 제목을 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;figure></td>
+                        <td>인용, 도표, 사진, 코드 등의 독립적인 콘텐츠를 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;font></td>
+                        <td>폰트의 크기, 색, 종류를 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;footer></td>
+                        <td>사이트 관련 정보 및 관련 링크 콘텐츠 섹션을 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;form></td>
+                        <td>웹 서버에 정보를 제공하는 폼 컨트롤 유형을 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;frame></td>
+                        <td>다른 HTML문서가 표시 될 수 있는 특정 영역을 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;frameset></td>
+                        <td>레이아웃 구성을 위한 프레임을 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;h1>~&lt;h6></td>
+                        <td>섹션의 제목 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;head></td>
+                        <td>제목과 스크립트, 스타일 시트, 메타 정보 등을 제공합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;header></td>
+                        <td>사이트의 소개 및 메뉴 그룹을 나타내는 섹션을 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;hgroup></td>
+                        <td>제목 요소 그룹화를 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;hr></td>
+                        <td>단란 요소간의 주제별 구분을 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;html></td>
+                        <td>웹 문서의 최상위 요소 문서의 루트를 나타냅니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;i></td>
+                        <td>특별한 이유로 평범한 글자와 구분하기 위해 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;iframe></td>
+                        <td>웹 문서에 다른 문서를 포함하는데 사용합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;img></td>
+                        <td>웹 문서에 이미지를 정의합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;input></td>
+                        <td>데이터를 입력할 수 있는 폼 컨트롤을 정의합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;ins></td>
+                        <td>문서에 삽입된 텍스트를 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;kbd></td>
+                        <td>키보드 입력요소를 나타내는 텍스트를 정의합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;keygen></td>
+                        <td>보안키를 생성하고 컨트롤합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;label></td>
+                        <td>해당 &lt;input> 요소의 제목을 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;legend></td>
+                        <td>&lt;fieldset> 요소 영역의 설명을 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;li></td>
+                        <td>목록의 항목을 나타내는 태그입니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;link></td>
+                        <td>외부 파일 연결 할 때 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;main></td>
+                        <td>문서의 주요 콘텐츠를 정의합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;map></td>
+                        <td>이미지 맵을 정의합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;mark></td>
+                        <td>참조용 표시를 정의합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;marquee></td>
+                        <td>텍스트의 스크롤과 움직임을 정의합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;menu></td>
+                        <td>메뉴 리스트를 정의합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;menuitem></td>
+                        <td>메뉴 리스트 항목을 정의합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;meta></td>
+                        <td>웹 문서에 대한 정보를 제공합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;meter></td>
+                        <td>범위를 측정하는 게이지 정보를 정의합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;nav></td>
+                        <td>내부 페이지 및 외부 페이지에 대한 탐색 링크를 제공하는 페이지 섹션을 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;noframes></td>
+                        <td>프레임이 지원되지 않을 경우 대체 메세지를 표시합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;noscript></td>
+                        <td>스크립트를 지원하지 않는 브라우저를 위한 대체 태그입니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;object></td>
+                        <td>웹 문서에 포함된 멀티미디어 요소를 정의합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;ol></td>
+                        <td>순서가 있는 목록형 태그입니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;optgroup></td>
+                        <td>&lt;select> 메뉴 &lt;option> 리스트의 그룹화를 설정합니다</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;option></td>
+                        <td>&lt;select> 요소의 항목을 정의합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;output></td>
+                        <td>사용자에 컨트롤에 따라 결과값을 계산으로 보여주는 요소입니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;p></td>
+                        <td>단락을 나타냅니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;param></td>
+                        <td>&lt;object> 태그의 매개변수를 정의합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;picture></td>
+                        <td>화면 크기에 따라 이미지를 정의합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;pre></td>
+                        <td>마크업 소스를 화면 그대로 표현합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;progress></td>
+                        <td>작업의 진행 상태를 표시하는 바를 나타냅니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;q></td>
+                        <td>짧은 글을 인용할 때 사용합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;ruby></td>
+                        <td>루비 문자의 상단 주석을 정의합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;s></td>
+                        <td>텍스트에 취소선을 나타냅니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;samp></td>
+                        <td>컴퓨터 프로그램으로 출력된 결과물을 나타내는 텍스트를 표현합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;script></td>
+                        <td>실행 가능한 스크립트 코드를 포함하거나 외부 스크립트를 연결할 수 있습니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;section></td>
+                        <td>주제별 그룹의 콘텐츠 섹션을 나타낼 때 사용하며, 각 섹션에는 <h1>~<h6> 요소를 자식으로 포함시켜 식별해야 합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;select></td>
+                        <td>선택 목록을 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;small></td>
+                        <td>저작권 및 법적인 텍스트에 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>source></td>
+                        <td> &lt;picture>, &lt;audio> 요소 및 &lt;video> 요소에 소스를 지정하는데 사용합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;span></td>
+                        <td>콘텐츠 요소를 표현하기 위한 인라인 요소이며, 의미가 없는 그룹화 요소입니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;strike></td>
+                        <td> 현재 사용하지 않는 태그입니다.</td> 
+                    <tr>
+                        <td>&lt;strong></td>
+                        <td>텍스트의 중요성을 강조할 때 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;style></td>
+                        <td>웹 문서에 스타일 정보를 설정할 수 있습니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;sub></td>
+                        <td>텍스트의 아래첨자를 사용할 때 쓰입니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;detalist></td>
+                        <td>접기/펼치기 목록을 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;sup></td>
+                        <td> 텍스트의 위첨자를 사용할 때 쓰입니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;SVG>(Scalable Vector Graphics)</td>
+                        <td>벡터 방식의 2차원 그림을 그리기 위한 XML기반의 마크업 언어입니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;table></td>
+                        <td>표를 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;tbody></td>
+                        <td>표의 본문 영역을 그룹화합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;td></td>
+                        <td>표의 열(셀)을 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;template></td>
+                        <td>페이지가 로드 될 때 렌더링되지 않고 자바스크립트를 이용하여 HTML을 표현해주는 태그입니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;textarea></td>
+                        <td>여러줄의 텍스트를 편집할 수 있습니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;tfoot></td>
+                        <td>표의 푸터 영역을 그룹화합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;th></td>
+                        <td>행이나 열에 타이틀을 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;thead></td>
+                        <td>표의 헤더 영역을 그룹화합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;time></td>
+                        <td>시간의 특정 기간을 나타낼 때 사용합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;title></td>
+                        <td>브라우저의 제목 또는 탭에 표시되는 문서의 제목을 표시합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;tr></td>
+                        <td>표의 행을 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;track></td>
+                        <td> &lt;video> 태그와 &lt;audio> 태그의 자막을 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;tt></td>
+                        <td>타자모양의 텍스트를 보여주기 위한 태그입니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;u></td>
+                        <td>철자 오류가 포함된 단락을 표시하며, 빨간색 물결 밑줄 스타일로 오류를 표시합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;ul></td>
+                        <td>일반적인 글 보다는 목록 형식의 글을 사용할 때 씁니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;var></td>
+                        <td>수학적인 변수나 프로그램의 변수를 쓸 때 사용합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;video></td>
+                        <td>웹 문서에 동영상을 재생하는 미디어 플레이어입니다. </td>
+                    </tr>
+                    <tr>
+                        <td>&lt;wbr></td>
+                        <td>줄바꿈 할 위치를 정의할 때 사용합니다.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <!-- //contents -->
+</body>
+
+</html>
