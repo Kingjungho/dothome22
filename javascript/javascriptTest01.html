@@ -138,7 +138,81 @@
         {document.write("<br><br>");}
         //for of문
         for(let i of num){
-            document.write(i);
+            document.write(i, "<br><br>");
+        }
+
+        {
+            //for문을 이용해서 각 데이터를 출력하시오.
+            const arr = [100, 200, 300, 400, 500];
+            for(let i=0; i<arr.length; i++){
+                document.write(arr[i], "<br><br>");
+            }           
+        
+            //forEach문을 이용해서 각 데이터를 출력하시오!!
+            
+            arr.forEach(function(element){
+                document.write(element, "<br>");
+            });   
+            arr.forEach((element) => {
+                document.write(element, "<br>")
+            });
+            arr.forEach(element => {
+                document.write(element, "<br>")
+            });
+            arr.forEach(element => document.write(element, "<br>"));
+
+            //for of
+            for( let element of arr ) {
+                document.write(element, "<br>")
+            }
+            for ( let element of arr ) document.write(element, "<br>");
+
+            //for in
+            for( let element of arr ) document.write(element, "<br>");
+            for( let element in arr ) document.write(arr[element], "<br>");
+
+            //배열에서 300 찾은 다음 출력하시오 !!
+            const find = arr.find(function(){});
+            const find = arr.find((el) => {
+                el === 300;
+            });
+
+            const find = arr.find(el => el === 300);
+            document.write(find);
+            
+        }
+
+        {
+            //"함수가 실행되었습니다."를 function을 이용해서 출력해주세요! (선언적 함수);
+            function func(){
+                document.write("함수가 실행되었습니다.")
+            }
+            func();
+        }
+     
+            //"함수가 실행되었습니다." (익명 함수);
+            {
+                const func = function(){
+                    document.write("함수가 실행되었습니다.");
+                }
+                func();
+            }
+
+            //"함수가 실행되었습니다." (매개변수 함수);
+            {
+                function func(str) {
+                    document.write(str);
+                }
+                func("함수가 실행되었습니다.")
+            }
+
+            //"함수가 실행되었습니다." (리턴값 함수)
+            {
+                function func(){
+                const str = "함수가 실행되었습니다"
+                return str;
+            }
+            document.write(func());
         }
     </script>
 </body>
