@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML 속성 검색하기</title>
+    <title>CSS 속성 검색하기</title>
     <style>
         @font-face {
             font-family: 'GyeonggiBatang';
@@ -71,7 +71,7 @@
             color: #223547;
             font-size: 20px;
         }
-        .board .search label {
+        .board .search-result label {
             font-family: 'GyeonggiBatang';
             background-color: #BFE6FE;
             font-size: 26px;
@@ -80,7 +80,7 @@
             border-radius: 40px;
             display: none;
         }
-        .board .search input {
+        .board .search-result input {
             font-family: 'GyeonggiBatang';
             font-size: 24px;
             border: 1px solid #000;
@@ -88,11 +88,11 @@
             border-radius: 40px;
             outline: none;
         }
-        .board .list {
+        .board .search-result {
             text-align: left;
             margin-top: 40px;
         }
-        .board .list ul li {
+        .board .search-result ul li {
             font-family: 'GyeonggiBatang';
             line-height: 1.6;
             list-style: none;
@@ -101,8 +101,12 @@
             padding: 5px 10px;
             border-radius: 4px;
         }
-        .board .list ul li.hide {
+        .board .search-result ul li.hide {
             display: none;
+        }
+        button {
+            font-family: 'GyeonggiBatang';
+            padding: 10px 20px;
         }
         @media (max-width: 800px) {
             .board {
@@ -139,139 +143,21 @@
 <body>
     <div id="wrap">
         <div class="board">
-            <span>HTML 속성을 넣어주세요!!</span>
-            <h1>HTML 속성 검색하기</h1>
-            <div class="search">
-                <label for="search-box">검색하기</label>
-                <input id="search-box" type="text">
+            <span>CSS 속성을 순서대로 정리하기!!</span>
+            <h1>CSS 속성 정리</h1>
+            <div class="button-wrap">
+                <button class="asce">오름차순
+                <button class="dsce">내림차순
             </div>
-            <div class="list">
+            <div class="search-result">
                 <ul>
-                    <li data-name="&lt;a>" data-topic="에이">&lt;a></li>
-                    <li data-name="&lt;abbr>" data-topic="약자">&lt;abbr></li>
-                    <li data-name="&lt;acronym>" data-topic="아크롬">&lt;acronym></li>
-                    <li data-name="&lt;applet>" data-topic="에이플렛">&lt;applet></li>
-                    <li data-name="&lt;area>" data-topic="에리어">&lt;area></li>
-                    <li data-name="&lt;article>" data-topic="알티클">&lt;article></li>
-                    <li data-name="&lt;aside>" data-topic="어사이드">&lt;aside></li>
-                    <li data-name="&lt;audio>" data-topic="오디오">&lt;audio></li>
-                    <li data-name="&lt;b>" data-topic="비">&lt;b></li>
-                    <li data-name="&lt;base>" data-topic="베이스">&lt;base></li>
-                    <li data-name="&lt;basefont>" data-topic="베이스폰트">&lt;basefont></li>
-                    <li data-name="&lt;bdi>" data-topic="비디">&lt;bdi></li>
-                    <li data-name="&lt;bdo>" data-topic="비도">&lt;bdo></li>
-                    <li data-name="&lt;big>" data-topic="빅">&lt;big></li>
-                    <li data-name="&lt;blockquote>" data-topic="블럭퀏트">&lt;blockquote></li>
-                    <li data-name="&lt;blink>" data-topic="블링크">&lt;blink></li>
-                    <li data-name="&lt;body>" data-topic="바디">&lt;body></li>
-                    <li data-name="&lt;br>" data-topic="비알">&lt;br></li>
-                    <li data-name="&lt;button>" data-topic="버튼">&lt;button></li>
-                    <li data-name="&lt;canvas>" data-topic="캔바스">&lt;canvas></li>
-                    <li data-name="&lt;caption>" data-topic="캡션">&lt;caption></li>
-                    <li data-name="&lt;center>" data-topic="센터">&lt;center></li>
-                    <li data-name="&lt;cite>" data-topic="사이트">&lt;cite></li>
-                    <li data-name="&lt;code>" data-topic="코드">&lt;code></li>
-                    <li data-name="&lt;col>" data-topic="콜">&lt;col></li>
-                    <li data-name="&lt;colgroup>" data-topic="콜그룹">&lt;colgroup></li>
-                    <li data-name="&lt;data>" data-topic="데이터">&lt;data></li>
-                    <li data-name="&lt;datalist>" data-topic="데이터리스트">&lt;datalist></li>
-                    <li data-name="&lt;dd>" data-topic="디디">&lt;dd></li>
-                    <li data-name="&lt;del>" data-topic="델">&lt;del></li>
-                    <li data-name="&lt;details>" data-topic="디테일">&lt;details></li>
-                    <li data-name="&lt;dfn>" data-topic="디에프엔">&lt;dfn></li>
-                    <li data-name="&lt;dialog>" data-topic="다이아로그">&lt;dialog></li>
-                    <li data-name="&lt;dir>" data-topic="디얼">&lt;dir></li>
-                    <li data-name="&lt;div>" data-topic="디브">&lt;div></li>
-                    <li data-name="&lt;dl>" data-topic="디엘">&lt;dl></li>
-                    <li data-name="&lt;dt>" data-topic="디티">&lt;dt></li>
-                    <li data-name="&lt;em>" data-topic="이엠">&lt;em></li>
-                    <li data-name="&lt;embed>" data-topic="엠베드">&lt;embed></li>
-                    <li data-name="&lt;fieldset>" data-topic="필드셋">&lt;fieldset></li>
-                    <li data-name="&lt;figcaption>" data-topic="피그캡션">&lt;figcaption></li>
-                    <li data-name="&lt;figure>" data-topic="피규어">&lt;figure></li>
-                    <li data-name="&lt;font>" data-topic="폰트">&lt;font></li>
-                    <li data-name="&lt;footer>" data-topic="푸터">&lt;footer></li>
-                    <li data-name="&lt;form>" data-topic="폼">&lt;form></li>
-                    <li data-name="&lt;frame>" data-topic="프레임">&lt;frame></li>
-                    <li data-name="&lt;frameset>" data-topic="프레임셋">&lt;frameset></li>
-                    <li data-name="&lt;h1>~&lt;h6>" data-topic="제목">&lt;h1>~&lt;h6></li>
-                    <li data-name="&lt;head>" data-topic="헤드">&lt;head></li>
-                    <li data-name="&lt;header>" data-topic="헤더">&lt;header></li>
-                    <li data-name="&lt;hgroup>" data-topic="헤드그룹">&lt;hgroup></li>
-                    <li data-name="&lt;hr>" data-topic="에이치알">&lt;hr></li>
-                    <li data-name="&lt;html>" data-topic="에이치티엠엘">&lt;html></li>
-                    <li data-name="&lt;i>" data-topic="아이">&lt;i></li>
-                    <li data-name="&lt;iframe>" data-topic="아이프레임">&lt;iframe></li>
-                    <li data-name="&lt;img>" data-topic="이미지">&lt;img></li>
-                    <li data-name="&lt;input>" data-topic="인풋">&lt;input></li>
-                    <li data-name="&lt;ins>" data-topic="인스">&lt;ins></li>
-                    <li data-name="&lt;kbd>" data-topic="케이비디">&lt;kbd></li>
-                    <li data-name="&lt;keygen>" data-topic="키건">&lt;keygen></li>
-                    <li data-name="&lt;label>" data-topic="라벨">&lt;label></li>
-                    <li data-name="&lt;legend>" data-topic="레전드">&lt;legend></li>
-                    <li data-name="&lt;li>" data-topic="엘아이">&lt;li></li>
-                    <li data-name="&lt;link>" data-topic="링크">&lt;link></li>
-                    <li data-name="&lt;main>" data-topic="메인">&lt;main></li>
-                    <li data-name="&lt;map>" data-topic="맵">&lt;map></li>
-                    <li data-name="&lt;mark>" data-topic="마크">&lt;mark></li>
-                    <li data-name="&lt;marquee>" data-topic="마퀴">&lt;marquee></li>
-                    <li data-name="&lt;menu>" data-topic="메뉴">&lt;menu></li>
-                    <li data-name="&lt;menuitem>" data-topic="메뉴아이템">&lt;menuitem></li>
-                    <li data-name="&lt;meta>" data-topic="메타">&lt;meta></li>
-                    <li data-name="&lt;meter>" data-topic="미터">&lt;meter></li>
-                    <li data-name="&lt;nav>" data-topic="나브">&lt;nav></li>
-                    <li data-name="&lt;noframes>" data-topic="노프레임">&lt;noframes></li>
-                    <li data-name="&lt;noscript>" data-topic="노스크립트">&lt;noscript></li>
-                    <li data-name="&lt;object>" data-topic="오브젝트">&lt;object></li>
-                    <li data-name="&lt;ol>" data-topic="오엘">&lt;ol></li>
-                    <li data-name="&lt;optgroup>" data-topic="옵션그룹">&lt;optgroup></li>
-                    <li data-name="&lt;option>" data-topic="옵션">&lt;option></li>
-                    <li data-name="&lt;output>" data-topic="아웃풋">&lt;output></li>
-                    <li data-name="&lt;p>" data-topic="피">&lt;p></li>
-                    <li data-name="&lt;param>" data-topic="파람">&lt;param></li>
-                    <li data-name="&lt;picture>" data-topic="픽쳐">&lt;picture></li>
-                    <li data-name="&lt;pre>" data-topic="프리">&lt;pre></li>
-                    <li data-name="&lt;progress>" data-topic="프로그레스">&lt;progress></li>
-                    <li data-name="&lt;q>" data-topic="큐">&lt;q></li>
-                    <li data-name="&lt;ruby>" data-topic="루비">&lt;ruby></li>
-                    <li data-name="&lt;rt>" data-topic="알티">&lt;rt></li>
-                    <li data-name="&lt;rtc>" data-topic="알티씨">&lt;rtc></li>
-                    <li data-name="&lt;s>" data-topic="에스">&lt;s></li>
-                    <li data-name="&lt;samp>" data-topic="샘프">&lt;samp></li>
-                    <li data-name="&lt;script>" data-topic="스크립트">&lt;script></li>
-                    <li data-name="&lt;section>" data-topic="섹션">&lt;section></li>
-                    <li data-name="&lt;select>" data-topic="셀렉">&lt;select></li>
-                    <li data-name="&lt;small>" data-topic="스몰">&lt;small></li>
-                    <li data-name="&lt;source>" data-topic="소스">&lt;source></li>
-                    <li data-name="&lt;span>" data-topic="스판">&lt;span></li>
-                    <li data-name="&lt;strike>" data-topic="스트라이크">&lt;strike></li>
-                    <li data-name="&lt;strong>" data-topic="스트롱">&lt;strong></li>
-                    <li data-name="&lt;style>" data-topic="스타일">&lt;style></li>
-                    <li data-name="&lt;sub>" data-topic="서브">&lt;sub></li>
-                    <li data-name="&lt;detalist>" data-topic="데이타리스트">&lt;detalist></li>
-                    <li data-name="&lt;sup>" data-topic="서브">&lt;sup></li>
-                    <li data-name="&lt;svg>" data-topic="에스브이지">&lt;svg></li>
-                    <li data-name="&lt;table>" data-topic="테이블">&lt;table></li>
-                    <li data-name="&lt;tbody>" data-topic="테이블바디">&lt;tbody></li>
-                    <li data-name="&lt;td>" data-topic="티디">&lt;td></li>
-                    <li data-name="&lt;template>" data-topic="템플레이트">&lt;template></li>
-                    <li data-name="&lt;textarea>" data-topic="텍스트에리아">&lt;textarea></li>
-                    <li data-name="&lt;tfoot>" data-topic="테이블풋">&lt;tfoot></li>
-                    <li data-name="&lt;th>" data-topic="티에이치">&lt;th></li>
-                    <li data-name="&lt;thead>" data-topic="테이블헤드">&lt;thead></li>
-                    <li data-name="&lt;time>" data-topic="타임">&lt;time></li>
-                    <li data-name="&lt;title>" data-topic="타이틀">&lt;title></li>
-                    <li data-name="&lt;tr>" data-topic="티알">&lt;tr></li>
-                    <li data-name="&lt;track>" data-topic="트랙">&lt;track></li>
-                    <li data-name="&lt;tt>" data-topic="티티">&lt;tt></li>
-                    <li data-name="&lt;u>" data-topic="유">&lt;u></li>
-                    <li data-name="&lt;ul>" data-topic="유엘">&lt;ul></li>
-                    <li data-name="&lt;var>" data-topic="바">&lt;var></li>
-                    <li data-name="&lt;video>" data-topic="비디오">&lt;video></li>
-                    <li data-name="&lt;wbr>" data-topic="더블유프이알">&lt;wbr></li>            
+                    <li>align-content</li>
+                    <li>align-items</li>
+                    <li>align-self</li>
+                    <li>all</li>
                 </ul>
-            </div>
         </div>
+    </div>
         <div class="girl">
             <img src="img/search_girl.png" alt="">
         </div>
@@ -280,32 +166,48 @@
         </div>
     </div>
     <script>
-        const searchBox = document.querySelector("#search-box");
-        const cssList = document.querySelectorAll(".list ul li")
+        const cssProp = [
+            {
+                id: 1,
+                name : "align-content"
+            },
+            {
+                id: 4,
+                name : "align-selfdd"
+            },
+            {
+                id: 2,
+                name : "align-items"
+            },
+            {
+                id: 3,
+                name : "align-self"
+            },
+            {
+                id: 5,
+                name : "align-sedd"
+            },
+        ];
+        
+        const searchResult = document.querySelector(".search-result");
+        const asceButton = document.querySelector(".asce");
 
-        //searchBox.addEventListener("keyup,function(){}");
-        searchBox.addEventListener("keyup", () => {     //키보드 이벤트
-            const searchWord =searchBox.value;      //input 태그에 글씨를 쓰면 : 변수에 저장
-                                                    //사용자가 입력한 정보
-            //console.log(searchWord);
+        function updataList(){
+            let listHTML = '';
 
-            cssList.forEach((el) => {       //리스트 갯수
-                //console.log(el);
+            // document.write(cssProp[0].name)
+            // document.write(cssProp[1].name)
+            // document.write(cssProp[2].name)
 
-                const cssName = el.dataset.name;    //리스트에 name 속성 값을 가져옮
-                const cssTopic = el.dataset.topic;  //리스트에 topic 속성 값을 가져옮
+            // searchResult.innerHTML = "<li>"+cssProp[0].name+"</li>";
+            // searchResult.innerHTML += "<li>"+cssProp[1].name+"</li>";
+            // searchResult.innerHTML += "<li>"+cssProp[2].name+"</li>";
 
-                //console.log(cssName);
-                //console.log(cssTopic);
-
-                if( searchWord.charAt(0) === cssName.charAt(0) || searchWord.charAt(0) === cssTopic.charAt(0)) { //타입의 유형까지 같다 (===)
-                    el.classList.remove("hide");
-                   } else {
-                    el.classList.add("hide");
-                 }
-             })
-         });
-
+            for ( let prop of cssProp ){
+                searchResult.innerHTML += "<li>"+prop.id +" : "+ prop.name+"</li>";
+            }
+        }
+        updataList();
     </script>
 </body>
 </html>
