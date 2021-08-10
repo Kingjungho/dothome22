@@ -282,23 +282,23 @@
 
     <h2 class="mt20">데이터 실행 : 함수</h2>
     <ul>
-        <li><a href="sample#1">01. 선언적 함수</a></li>
-        <li><a href="sample#2">02. 익명 함수</a></li>
-        <li><a href="sample#3">03. 매개변수 함수</a></li>
-        <li><a href="sample#4">04. 리턴값 함수</a></li>
-        <li><a href="sample#5">05. 화살표 함수 : 선언적 함수</a></li>
-        <li><a href="sample#6">06. 화살표 함수 : 익명 함수</a></li>
-        <li><a href="sample#7">07. 화살표 함수 : 리턴값 함수</a></li>
-        <li><a href="sample#8">08. 화살표 함수 : 익명함수 + 매개변수 + 리턴값</a></li>
-        <li><a href="sample#9">09. 화살표 함수 : 익명함수 + 매개변수 + 리턴값 + 괄호생략</a></li>
-        <li><a href="sample#10">10. 화살표 함수 : 익명함수 + 매개변수 + 리턴값 + 괄호생략 + 리턴생략</a></li>
-        <li><a href="sample#11">11. 화살표 함수 : 선언적 함수 + 매개변수 + 리턴값 + 괄호 생략 + 리턴 생략</a></li>
-        <li><a href="sample#12">12. 내부 함수</a></li>
-        <li><a href="sample#13">13. 즉시실행 함수</a></li>
-        <li><a href="sample#14">14. 파라미터 함수</a></li>
-        <li><a href="sample#15">15. 아규먼트 함수</a></li>
-        <li><a href="sample#16">16. 재귀 함수</a></li>
-        <li><a href="sample#17">17. 콜백 함수</a></li>
+        <li><a href="#sample01">01. 선언적 함수</a></li>
+        <li><a href="#sample02">02. 익명 함수</a></li>
+        <li><a href="#sample03">03. 매개변수 함수</a></li>
+        <li><a href="#sample04">04. 리턴값 함수</a></li>
+        <li><a href="#sample05">05. 화살표 함수 : 선언적 함수</a></li>
+        <li><a href="#sample06">06. 화살표 함수 : 익명 함수</a></li>
+        <li><a href="#sample07">07. 화살표 함수 : 리턴값 함수</a></li>
+        <li><a href="#sample08">08. 화살표 함수 : 익명함수 + 매개변수 + 리턴값</a></li>
+        <li><a href="#sample09">09. 화살표 함수 : 익명함수 + 매개변수 + 리턴값 + 괄호생략</a></li>
+        <li><a href="#sample10">10. 화살표 함수 : 익명함수 + 매개변수 + 리턴값 + 괄호생략 + 리턴생략</a></li>
+        <li><a href="#sample11">11. 화살표 함수 : 선언적 함수 + 매개변수 + 리턴값 + 괄호 생략 + 리턴 생략</a></li>
+        <li><a href="#sample12">12. 내부 함수</a></li>
+        <li><a href="#sample13">13. 즉시실행 함수</a></li>
+        <li><a href="#sample14">14. 파라미터 함수</a></li>
+        <li><a href="#sample15">15. 아규먼트 함수</a></li>
+        <li><a href="#sample16">16. 재귀 함수</a></li>
+        <li><a href="#sample17">17. 콜백 함수</a></li>
     </ul>
     <hr>
     <!--sample1 -->
@@ -340,6 +340,11 @@
         document.write(str);
     }
     func("함수가 실행되었습니다.");
+
+    function func1(str1, str2) {
+        document.write(str1, str2);
+    }
+    func1("함수가", "실행되었습니다.");
 }
 </code></pre>
         </div>
@@ -699,6 +704,11 @@
                 document.write(str);
             }
             func("함수가 실행되었습니다.<br><br>");
+
+            function func1(str1, str2) {
+                document.write(str1, str2);
+            }
+            func1("함수가", "실행되었습니다.<br><br>");
         }
 
         //sample04
