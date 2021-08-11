@@ -232,13 +232,11 @@
         .ol4::before {
             content: "데이터 제어하기 :";
         }
-
         .ol5::before {
-            content: "데이터 연습하기 :";
+            content: "데이터 내장 객체 :";
         }
-
         .ol6::before {
-            content: "데이터 메서드 :";
+            content: "데이터 제어하기 : ";
         }
     </style>
 </head>
@@ -266,17 +264,18 @@
         <li><a href="javascript200.html">반복문</a></li>
     </ol>
     <ol class="ol5">
-        <li><a href="javascript400.html">알고리즘 연습</a></li>
+        <li><a href="javascript602.html">문자열 객체</a></li>
+        <li><a href="javascript601.html">배열 객체</a></li>
+        <li><a href="javascript604.html">날짜 객체</a></li>
+        <li><a href="javascript609.html">수학 객체</a></li>
+        <li><a href="javascript608.html">숫자 객체</a></li>
+        <li><a href="javascript603.html">브라우저 객체</a></li>
+        <li><a href="javascript607.html">요소 객체</a></li>
+        <li><a href="javascript605.html">이벤트 객체</a></li>
     </ol>
     <ol class="ol6">
-        <li><a href="javascript601.html">배열 메서드</a></li>
-        <li><a href="javascript602.html">문자열 메서드</a></li>
-        <li><a href="javascript603.html">브라우저 메서드</a></li>
-        <li><a href="javascript604.html">날짜 메서드</a></li>
-        <li><a href="javascript605.html">이벤트 메서드</a></li>
-    </ol>
-    <ol class="ol7">
         <li><a href="javascript606.html">샘플</a></li>
+        <li><a href="javascript400.html">알고리즘 연습</a></li> 
     </ol>
 
 
@@ -565,7 +564,7 @@
         <div class="code">
             <pre class="line-numbers"><code class="language-js">{      
     function func(num){
-        if( num <=1 ){
+        if( num &lt;=1 ){
             document.write("함수가 실행되었습니다.")
         } else {
             document.write("함수가 실행되었습니다.")
@@ -585,15 +584,14 @@
         <h2>17. 콜백함수<span class="dot"></span></h2>
         <div class="code">
             <pre class="line-numbers"><code class="language-js">{      
-    function func(num){
-        if( num &lt;=1 ){
-            document.write("함수가 실행되었습니다.")
-        } else {
-            document.write("함수가 실행되었습니다.")
-            func(num-1);
-        }
+    function funA(){
+        document.write("함수A가 실행되었습니다.");
     }
-    func(5);
+    function funB(str){
+        document.write("함수B가 실행되었습니다.");
+        str(); //funA();
+    }
+    funB(funA);
 }
 </code></pre>
         </div>
@@ -627,8 +625,6 @@
         <h2>19. 콜백함수 : 동기/비동기<span class="dot"></span></h2>
         <div class="code">
             <pre class="line-numbers"><code class="language-js">{      
-    document.write("***19. 콜백함수 : 동기/비동기***<br>");
-
     function funA(){
         console.log("funA가 실행되었습니다.")
     }
@@ -965,7 +961,6 @@
         }
         funC();
         funD();
-    
 
     //03
     function funE(callback){
