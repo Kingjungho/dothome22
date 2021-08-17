@@ -321,7 +321,7 @@
     <ul class="page">
         <li><a href="../refer-html/index.html">HTML</a></li>
         <li><a href="../refer-css/index.html">CSS</a></li>
-        <li><a href="../Javascript/javascript100.html">JAVASCRIPT</a></li>
+        <li><a href="../Javascript/javascriptRefer01.html">JAVASCRIPT</a></li>
     </ul>
     <nav class="menu">
     <ul>
@@ -741,31 +741,23 @@
         <h2>18. 변수의 변환 : 형 변환<span class="dot"></span></h2>
         <div class="code">
             <pre class="line-numbers"><code class="language-js">{                  
-    let x = 100;        //변수 설정 : 지역 변수
-    let y = 200;
-    let z = "javascript";
-    let a = 300;   
-        
-    function func(){
-    let x = 100;        //변수 설정 : 지역 변수
-    let y = 200;
-    let z = "javascript";
-    a = 400;            //전역 변수 : 변수 값이 300 -> 400 변경
-    y = 500;            //지역 변수 : 변수 값이 200 -> 500 변경
-    
-    document.write("함수 안");
-    document.write(x);
-    document.write(y);
-    document.write(z);
-    document.write(a);
-    }
-    func();
+    let x = 100;
+    let y = "100";
 
-    document.write("함수 밖");
-    document.write(x);
-    document.write(y);
-    document.write(z);
-    document.write(a);             
+    document.write("x: " + x + " : " + typeof (x);
+    document.write("y: " + y + " : " + typeof (y);
+
+    x = "" + x; //숫자를 문자열로 형 변환
+    document.write("x: " + x + " : " + typeof (x);
+
+    y = Number(y);
+    document.write("y: " + y + " : " + typeof (y);
+
+    x = Number(x);
+    document.write("x: " + x + " : " + typeof (x);
+
+    y = String(y);
+    document.write("y: " + y + " : " + typeof (y);             
 }
 </code></pre>
         </div>
