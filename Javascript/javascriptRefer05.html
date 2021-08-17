@@ -35,6 +35,7 @@
         body {
             padding: 5%;
             margin-bottom: 400px;
+            line-height: 1.6;
         }
 
         h1 {
@@ -1413,11 +1414,11 @@
         document.querySelector(".sample05_M6").innerHTML = "search('/javascript/'')";
         document.querySelector(".sample05_R6").innerHTML = text6;
 
-        const text7 = str.includes("javascript");
+        const text7 = str.search(/jquery/);
 
         document.querySelector(".sample05_N7").innerHTML = "7";
         document.querySelector(".sample05_Q7").innerHTML = str;
-        document.querySelector(".sample05_M7").innerHTML = "includes('javascript')";
+        document.querySelector(".sample05_M7").innerHTML = ".search(/jquery/)";
         document.querySelector(".sample05_R7").innerHTML = text7;
 
         const text8 = str.includes("javascript");
