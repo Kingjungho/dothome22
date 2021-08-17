@@ -20,6 +20,7 @@
 }
 
 /* float을 이용한 레이아웃 */
+/* 익스플로어까지 맞추어야 한다면 사용한다. */
 /* .card-wrap {
     overflow: hidden;
 }
@@ -35,4 +36,24 @@
 /* flex를 이용한 레이아웃 */
 .card-wrap {
     display: flex;
+    justify-content: space-between;
+}
+.card-wrap > div {
+    width: 387px;
+}
+.card {}
+.card .card-img {}
+.card .card-title {
+    display: block;
+    font-size: 32px;
+}
+.card .card-desc {
+    display: block;
+    font-size: 20px;
+    font-weight: 300;
+}
+.card .card-keyword {
+    font-size: 16px;
+    font-weight: 300;
+    opacity: 0.5;
 }
