@@ -4,7 +4,7 @@
     width: 100%;
     margin: 0 auto;
      /* background-color: rgba(0, 0, 0, 0.13)  */
-     position: absolute;
+     position: relative;
 }
 .container-fluid {
     width: 96%;

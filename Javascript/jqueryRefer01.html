@@ -86,7 +86,7 @@
             position: relative;
             font-size: 16px;
             line-height: 1.4;
-            background-color: #F2F2F2;
+            background-color: #f2f6fd;
             padding: 15px;
             border-bottom: 1px solid #E6E6E6;
             border-radius: 5px 5px 0 0;
@@ -380,6 +380,7 @@
         }
         .view ul {
             display: flex;
+            flex-wrap:wrap;
         }
         .view li {
             border: 1px solid #e6e6e6;
@@ -387,10 +388,17 @@
             margin: 10px;
             color:#222;
             border-radius: 5px;
+            white-space: nowrap;
         }
         .view li.red {
             border: 1px dashed #a51a3d;
             background-color: #f9f2f4;
+            color: #a51a3d;
+        }
+        .view li.blue {
+            border: 1px dashed #3d90b7;
+            background-color: #e7f6fd;
+            color: #3d90b7;
         }
         .btn {
             padding: 20px;
@@ -399,7 +407,9 @@
         }
         .btn a {
             border: 1px solid #f2f2f2;
-            padding: 10px 20px;
+            border-radius: 40px;
+            margin: 4px 0;
+            padding: 7px 25px;
             display: inline-block;
             border-radius: 20px;
             margin: 2px;
@@ -409,6 +419,28 @@
         .btn a:hover {
             background: #000;
             color: #fff;
+        }
+        @media (max-width: 800px){
+            .view {
+                padding: 10px 10px 0 10px;
+            }
+            .view li {
+                padding: 10px;
+                margin: 0 8px 8px 0;
+            }
+            .btn {
+                padding: 10px;
+            }
+            .table {
+                overflow: auto;
+            }
+            .table table th {
+                font-weight: normal;
+                white-space: nowrap;
+            }
+            .table table td {
+                white-space: nowrap;
+            }
         }
     </style>
 </head>
@@ -460,8 +492,8 @@
                 <tr>
                     <td class="center" rowspan="5"><a href="#sample01">1</a></td>
                     <td>태그 선택자</td>
-                    <td>$("p)</td>
-                    <td>기본 태그를 선택합니다.</td>
+                    <td>$("li)</td>
+                    <td>기본 (li)태그를 선택합니다.</td>
                 </tr>
                 <tr>
                     <td>클래스 선택자</td>
@@ -476,7 +508,7 @@
                 <tr>
                     <td>그룹 선택자</td>
                     <td>$("#id, .class")</td>
-                    <td>여러개를 선택합니다</td>
+                    <td>여러개 (#id, .class)를 선택합니다</td>
                 </tr>
                 <tr>
                     <td>전체 선택자</td>
@@ -494,7 +526,7 @@
         <h2>01. 기본 선택자<span class="dot"></span></h2>
         <div class="view view1">
             <ul>
-                <li>$("p")</li>
+                <li>$("li")</li>
                 <li class="class">$(."class")</li>
                 <li id="id">$("#id")</li>
                 <li>$(".class, #id")</li>
@@ -505,56 +537,91 @@
             <a href="#c" class="reset1">리셋</a>
             <a href="#c" class="btn1-1">클릭하면 클래스를 선택합니다.</a>
             <a href="#c" class="btn1-2">클릭하면 아이디를 선택합니다.</a>
-            <a href="#c" class="btn1-3">클릭하면 기본 태그를 선택합니다.</a>
-            <a href="#c" class="btn1-4">클릭하면 여러가지 태그를 선택합니다.</a>
+            <a href="#c" class="btn1-3">클릭하면 기본(li) 태그를 선택합니다.</a>
+            <a href="#c" class="btn1-4">클릭하면 여러가지(#id, .class) 태그를 선택합니다.</a>
             <a href="#c" class="btn1-5">클릭하면 전체 태그를 선택합니다.</a>
         </div>
             <pre class="line-numbers"><code class="language-js">{
     $(".reset1").click(function(){
-        $(".view1 li").removeClass("red");
+        $(".view1 li").removeClass("blue");
     });
     $(".btn1-1").click(function(){
-        $(".view1 .class").addClass("red");
+        $(".view1 .class").addClass("blue");
     });
     $(".btn1-2").click(function(){
-        $(".view1 #id").addClass("red");
+        $(".view1 #id").addClass("blue");
     });
     $(".btn1-3").click(function(){
-        $(".view1 li").addClass("red");
+        $(".view1 li").addClass("blue");
     });
     $(".btn1-4").click(function(){
-        $(".view1 .class, .view #id").addClass("red");
+        $(".view1 .class, .view #id").addClass("blue");
     });
     $(".btn1-5").click(function(){
-        $(".view1 *").addClass("red");
+        $(".view1 *").addClass("blue");
     });
+}
+</code></pre>
+        </div>
+    </div>
+    <script>
+        $(".reset1").click(function(){
+            $(".view1 li").removeClass("blue");
+        });
+        $(".btn1-1").click(function(){
+            $(".view1 .class").addClass("blue");
+        });
+        $(".btn1-2").click(function(){
+            $(".view1 #id").addClass("blue");
+        });
+        $(".btn1-3").click(function(){
+            $(".view1 li").addClass("blue");
+        });
+        $(".btn1-4").click(function(){
+            $(".view1 .class, .view #id").addClass("blue");
+        });
+        $(".btn1-5").click(function(){
+            $(".view1 *").addClass("blue");
+        });
+        </script>  
+    <hr>
+
+    <!--sample1 -->
+    <div id="sample01" class="sample">
+        <h2>01. 기본 선택자<span class="dot"></span></h2>
+        <div class="view view1j">
+            <ul>
+                <li>$("li")</li>
+                <li class="class">$(."class")</li>
+                <li id="id">$("#id")</li>
+                <li>$(".class, #id")</li>
+                <li>$("*")</li>
+            </ul>
+        </div>
+        <div class="btn btn1">
+            <a href="#c" class="reset1j">리셋</a>
+            <a href="#c" class="btn1-1j">클릭하면 클래스를 선택합니다.</a>
+            <a href="#c" class="btn1-2j">클릭하면 아이디를 선택합니다.</a>
+            <a href="#c" class="btn1-3j">클릭하면 기본(li) 태그를 선택합니다.</a>
+            <a href="#c" class="btn1-4j">클릭하면 여러가지(#id, .class) 태그를 선택합니다.</a>
+            <a href="#c" class="btn1-5j">클릭하면 전체 태그를 선택합니다.</a>
+        </div>
+            <pre class="line-numbers"><code class="language-js">{
+
 }
 </code></pre>
         </div>
     </div>
 
     <hr>
-
     <script>
-        $(".reset1").click(function(){
-            $(".view1 li").removeClass("red");
+        const btn1 = document.querySelector(".btn1-1j");  //선택자를 변수에 저장
+        // const class = document.querySelector(".class"); 
+        btn1.addEventListener("click", function(){  //버튼을 클릭하면 함수를 실행
+            document.querySelector(".class")
         });
-        $(".btn1-1").click(function(){
-            $(".view1 .class").addClass("red");
-        });
-        $(".btn1-2").click(function(){
-            $(".view1 #id").addClass("red");
-        });
-        $(".btn1-3").click(function(){
-            $(".view1 li").addClass("red");
-        });
-        $(".btn1-4").click(function(){
-            $(".view1 .class, .view #id").addClass("red");
-        });
-        $(".btn1-5").click(function(){
-            $(".view1 *").addClass("red");
-        });
-        </script>  
+    </script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/prism.min.js"></script>
     <script>
