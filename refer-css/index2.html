@@ -244,12 +244,189 @@
         <section class="refer">
             <h3><a href="index.html">Alphabet</a></h3>
             <h3 class="active"><a href="index2.html">Topics</a></h3>
+            
             <ul class="link">
-                <li><a href="#sample01">animation</a></li>
-                <li><a href="#sample02">background</a></li>
-                <li><a href="#sample03">box</a></li>
+                <li><a href="#sample01">기본 선택자</a></li>
+                <li><a href="#sample02">계층 선택자</a></li>
+                <li><a href="#sample03">속성 선택자</a></li>
+                <li><a href="#sample04">가상 요소</a></li>
+                <li><a href="#sample05">가상 클래스</a></li>
+                <li><a href="#sample06">링크 가상 클래스</a></li>
+                <li><a href="#sample07">폼 클래스</a></li>
             </ul>
+            <ul class="link">
+                <li><a href="#sample08">animation</a></li>
+                <li><a href="#sample09">background</a></li>
+                <li><a href="#sample10">box</a></li>
+            </ul>
+            
+            <!-- sample01 -->
+            <h4>기본 선택자</h4>
+            <div id="sample01">
+                <table>
+                    <colgroup>
+                        <col style="width: 10%">
+                        <col style="width: 20%">
+                        <col style="width: 10%">
+                        <col style="width: 60%">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>선택자</th>
+                            <th>종류</th>
+                            <th>예시</th>
+                            <th>설명</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th rowspan="5">기본 선택자</th>
+                            <td>태그 선택자</td>
+                            <td>p {color:#fff;}</td>
+                            <td>p 태그를 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                        </tr>
+                        <tr>
+                            <td>클래스 선택자</td>
+                            <td>.class {color:#fff;}</td>
+                            <td>class 클래스를 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                        </tr>
+                        <tr>
+                            <td>아이디 선택자</td>
+                            <td>#id {color:#fff;}</td>
+                            <td>id 아이드를 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                        </tr>
+                        <tr>
+                            <td>그룹 선택자</td>
+                            <td>p, div {color:#fff;}</td>
+                            <td>p 태그와 div 태그를 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                        </tr>
+                        <tr>
+                            <td>전체 선택자</td>
+                            <td>{color:#fff;}</td>
+                            <td>전체 태그를 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                        </tr>
+                        <tr>
+                            <th rowspan="4">계층 선택자</th>
+                            <td>하위 선택자(Descendant Selector)</td>
+                            <td>div p {color:#fff;}</td>
+                            <td>div 태그의 모든 자식 중 p 태그를 모두 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                        </tr>
+                        <tr>
+                            <td>자식 선택자(Child Selector)</td>
+                            <td>div > p {color:#fff;}</td>
+                            <td>div 태그의 모든 자식 중 첫번째 자식 p 태그를 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                        </tr>
+                        <tr>
+                            <td>형제 선택자(sibling Selector)</td>
+                            <td>div ~ p {color:#fff;}</td>
+                            <td>div 태그의 인접한 형제 p 태그를 모두 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                        </tr>
+                        <tr>
+                            <td>인접 형제 선택자(Adjacent Sibling Selector)</td>
+                            <td>div + p {color:#fff;}</td>
+                            <td>div 태그의 인접한 형제 첫번째 p 태그를 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                        </tr>
+                        <tr>
+                            <th rowspan="4">가상 선택자</th>
+                            <td>하위 선택자(Descendant Selector)</td>
+                            <td>div p {color:#fff;}</td>
+                            <td>div 태그의 모든 자식 중 p 태그를 모두 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                        </tr>
+                        <tr>
+                            <td>자식 선택자(Child Selector)</td>
+                            <td>div > p {color:#fff;}</td>
+                            <td>div 태그의 모든 자식 중 첫번째 자식 p 태그를 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                        </tr>
+                        <tr>
+                            <td>형제 선택자(sibling Selector)</td>
+                            <td>div ~ p {color:#fff;}</td>
+                            <td>div 태그의 인접한 형제 p 태그를 모두 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                        </tr>
+                        <tr>
+                            <td>인접 형제 선택자(Adjacent Sibling Selector)</td>
+                            <td>div + p {color:#fff;}</td>
+                            <td>div 태그의 인접한 형제 첫번째 p 태그를 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                        </tr>                                        
+                    </tbody>
+                </table>
+            </div>
+            <!-- sample01 -->
 
+            <!-- sample02 -->
+            <h4>속성 선택자</h4>
+            <div id="sample01">
+                <table>
+                    <colgroup>
+                        <col style="width: 10%">
+                        <col style="width: 20%">
+                        <col style="width: 10%">
+                        <col style="width: 60%">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>선택자</th>
+                            <th>종류</th>
+                            <th>예시</th>
+                            <th>설명</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th rowspan="5">기본 선택자</th>
+                            <td>태그 선택자</td>
+                            <td>p {color:#fff;}</td>
+                            <td>p 태그를 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                        </tr>
+                        <tr>
+                            <td>클래스 선택자</td>
+                            <td>.class {color:#fff;}</td>
+                            <td>class 클래스를 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                        </tr>
+                        <tr>
+                            <td>아이디 선택자</td>
+                            <td>#id {color:#fff;}</td>
+                            <td>id 아이드를 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                        </tr>
+                        <tr>
+                            <td>그룹 선택자</td>
+                            <td>p, div {color:#fff;}</td>
+                            <td>p 태그와 div 태그를 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                        </tr>
+                        <tr>
+                            <td>전체 선택자</td>
+                            <td>{color:#fff;}</td>
+                            <td>전체 태그를 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                        </tr>
+                        <tr>
+                            <th rowspan="4">계층 선택자</th>
+                            <td>하위 선택자(Descendant Selector)</td>
+                            <td>div p {color:#fff;}</td>
+                            <td>div 태그의 모든 자식 중 p 태그를 모두 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                        </tr>
+                        <tr>
+                            <td>자식 선택자(Child Selector)</td>
+                            <td>div > p {color:#fff;}</td>
+                            <td>div 태그의 모든 자식 중 첫번째 자식 p 태그를 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                        </tr>
+                        <tr>
+                            <td>형제 선택자(sibling Selector)</td>
+                            <td>div ~ p {color:#fff;}</td>
+                            <td>div 태그의 인접한 형제 p 태그를 모두 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                        </tr>
+                        <tr>
+                            <td>인접 형제 선택자(Adjacent Sibling Selector)</td>
+                            <td>div + p {color:#fff;}</td>
+                            <td>div 태그의 인접한 형제 첫번째 p 태그를 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                        </tr>                                     
+                    </tbody>
+                </table>
+            </div>
+            <!-- sample02 -->
+
+           
+
+         
+            <!-- sample -->
             <h4>애니메이션</h4>
             <div id="sample01">
                 <table>
@@ -348,6 +525,9 @@
                     </tbody>
                 </table>
             </div>
+            <!-- sample -->
+
+
             <!-- sample02 -->
             <h4>백그라운드</h4>
             <div id="sample02">

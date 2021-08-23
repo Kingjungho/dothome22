@@ -308,7 +308,7 @@ document.querySelector(".sample03_R2").innerHTML = arr2;
     <div class="code">
         <pre class="line-numbers"><code class="language-js">{ 
 const arr = [100, 200, 300, 400, 500];
-const text = arr.pop(500);
+const text = arr.shift(500);
 
 document.querySelector(".sample04_P1").innerHTML = text;
 document.querySelector(".sample04_R1").innerHTML = arr;
@@ -1187,11 +1187,11 @@ document.querySelector(".sample14_R3").innerHTML = result3;
     //04. 배열 메서드 : pop() : 배열 마지막 요소에 삭제하기 : 반환(삭제된 요소)
     {
         const arr = [100, 200, 300, 400, 500];
-        const text = arr.pop(500);
+        const text = arr.shift();
 
         document.querySelector(".sample04_N1").innerHTML// = "1";
         document.querySelector(".sample04_Q1").innerHTML = "[100, 200, 300, 400, 500]";
-        document.querySelector(".sample04_M1").innerHTML = ".pop(500)";
+        document.querySelector(".sample04_M1").innerHTML = ".shift(500)";
         document.querySelector(".sample04_P1").innerHTML = text;
         document.querySelector(".sample04_R1").innerHTML = arr;
 
