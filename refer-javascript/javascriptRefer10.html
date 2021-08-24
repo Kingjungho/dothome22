@@ -14,6 +14,91 @@
         <link rel="stylesheet" href="style.css">
    
 </head>
+<style>
+    .ex1 {
+        display: flex;
+        justify-content: space-between;
+    }
+    .ex1 > div {
+        width: 18%;
+        border: 4px dashed transparent;
+    }
+    .ex1 > div.active {
+        border: 1px dashed #a51a3d;
+        background-color: #a51a3d;
+        border-radius: 5px;
+    }
+    .ex1 > div.active img {
+        opacity: 0.4;
+    }
+    .ex1 > div img {
+        width: 100%;
+        border-radius: 5px;
+        vertical-align: top;
+    }
+    .ex2 {
+        display: flex;
+        justify-content: space-between;
+    }
+    .ex2 > div {
+        width: 18%;
+        border: 4px dashed transparent;
+    }
+    .ex2 > div.active {
+        border: 1px dashed #a51a3d;
+        background-color: #a51a3d;
+        border-radius: 5px;
+    }
+    .ex2 > div.active img {
+        opacity: 0.4;
+    }
+    .ex2 > div img {
+        width: 100%;
+        border-radius: 5px;
+        vertical-align: top;
+    }
+    .ex3 {
+        display: flex;
+        justify-content: space-between;
+    }
+    .ex3 > div {
+        width: 18%;
+        border: 4px dashed transparent;
+    }
+    .ex3 > div.active {
+        border: 1px dashed #a51a3d;
+        background-color: #a51a3d;
+        border-radius: 5px;
+    }
+    .ex3 > div.active img {
+        opacity: 0.4;
+    }
+    .ex3 > div img {
+        width: 100%;
+        border-radius: 5px;
+        vertical-align: top;
+    }
+    .btn {
+    padding: 20px;
+    border: 1px solid #f2f2f2;
+    border-top: 0;
+}
+    .btn a {
+    border: 1px solid #f2f2f2;
+    border-radius: 40px;
+    margin: 4px 0;
+    padding: 7px 25px;
+    display: inline-block;
+    border-radius: 20px;
+    margin: 2px;
+    color:#222;
+    transition: all 0.2s;;
+}
+    .btn a:hover {
+    background: #000;
+    color: #fff;
+}
+</style>
 
 <body>
 
@@ -49,15 +134,178 @@
 <hr>
 
 <h2 class="mt20">요소 객체</h2>
-<ul class="list">
-    <li><a href="#sample1"></a>요소 객체 : 선택자 : querySelector()</li>
-    <li><a href="#sample1"></a>요소 객체 : 선택자 : querySelectorAll()</li>
-    <li><a href="#sample1"></a>요소 객체 : 선택자 : getElementById() : 아이디 선택자</li>
-</ul>
+<ol class="list">
+    <li><a href="#sample01"></a>요소 객체 : 클래스 메서드 : classList.add()</li>
+    <li><a href="#sample02"></a>요소 객체 : 클래스 메서드 : classList.remove()</li>
+    <li><a href="#sample03"></a>요소 객체 : 클래스 메서드 : classList.toggle()</li>
+    <li><a href="#sample04"></a>요소 객체 : 클래스 메서드 : classList.contains()</li>
+</ol>
 
     <hr>
 
+     <!--sample1 -->
+     <div id="sample01" class="sample">
+        <h2>01. 요소 객체 : 클래스 메서드 : classList.add() / classList.remove()<span class="dot"></span></h2>
+        <div class="view ex1">
+            <div><img src="img/image01.jpg" alt="이미지"></div>
+            <div><img src="img/image02.jpg" alt="이미지"></div>
+            <div><img src="img/image03.jpg" alt="이미지"></div>
+            <div><img src="img/image04.jpg" alt="이미지"></div>
+            <div><img src="img/image05.jpg" alt="이미지"></div>
+        </div>
+        <div class="btn">
+            <a href="#c" class="btn1-1">클릭하면 모든 이미지에 클래스(active)를 추가합니다.</a>
+            <a href="#c" class="btn1-2">클릭하면 모든 이미지에 클래스(active)를 삭제합니다.</a>
+        </div>
+        <div class="code">
+            <pre class="line-numbers"><code class="language-js">{
+    document.querySelector(".btn1-1").addEventListener("click", function(){
+        document.querySelectorAll(".ex1 div").forEach((el) => {
+            el.classList.add("active");
+        })
+    });
 
+    document.querySelector(".btn1-2").addEventListener("click", function(){
+        document.querySelectorAll(".ex1 div").forEach((el) => {
+            el.classList.remove("active");
+        })
+    });
+}
+</code></pre>
+        </div>
+    </div>
+
+    <hr>
+
+    <script>
+    //     $(".btn1-1").click(function(){
+    //     $(".ex1 div").addClass("active")
+    // });
+
+    document.querySelector(".btn1-1").addEventListener("click", function(){
+        document.querySelectorAll(".ex1 div").forEach((el) => {
+            el.classList.add("active");
+        })
+    });
+
+    document.querySelector(".btn1-2").addEventListener("click", function(){
+        document.querySelectorAll(".ex1 div").forEach((el) => {
+            el.classList.remove("active");
+        })
+    });
+
+
+
+
+    // $(".btn1-2").click(function(){
+    //     $(".ex1 div").removeClass("active")
+    // });
+    </script>
+
+    <!--sample2 -->
+    <div id="sample02" class="sample">
+        <h2>요소 객체 : 클래스 메서드 : classList.toggle()<span class="dot"></span></h2>
+        <div class="view ex2">
+            <div><img src="img/image06.jpg" alt="이미지6"></div>
+            <div><img src="img/image07.jpg" alt="이미지7"></div>
+            <div><img src="img/image08.jpg" alt="이미지8"></div>
+            <div><img src="img/image09.jpg" alt="이미지9"></div>
+            <div><img src="img/image10.jpg" alt="이미지10"></div>
+        </div>
+        <div class="btn">
+            <a href="#c" class="btn2-1">이미지를 클릭하면 모든 이미지에 클래스(active)를 추가 / 삭제합니다.</a>
+        </div>
+        <div class="code">
+            <pre class="line-numbers"><code class="language-js">{
+    // 모든 이미지 선택
+    document.querySelectorAll(".ex2 div").forEach((el) => {
+        el.addEventListener("click", function(){
+            document.querySelectorAll(".ex2 div").forEach((el) => {
+                el.classList.toggle("active")
+            });
+        });
+    });
+
+    //클릭한 이미지만 선택
+    document.querySelectorAll(".ex2 div").forEach((el) => {
+        el.addEventListener("click", function(){        //화살표 함수는 this를 인식을 못함.
+            this.classList.toggle("active")
+        });
+    });
+}
+</code></pre>
+        </div>
+    </div>
+
+    <hr>
+
+    <script>
+    // 모든 이미지 선택
+    document.querySelectorAll(".ex2 div").forEach((el) => {
+        el.addEventListener("click", function(){
+            document.querySelectorAll(".ex2 div").forEach((el) => {
+                el.classList.toggle("active")
+            });
+        });
+    });
+
+    //클릭한 이미지만 선택
+    document.querySelectorAll(".ex2 div").forEach((el) => {
+        el.addEventListener("click", function(){      //화살표 함수는 this를 인식을 못함.
+            this.classList.toggle("active")
+        });
+    });
+    </script>
+
+    <!--sample3 -->
+    <div id="sample03" class="sample">
+        <h2>03. 요소 객체 : 클래스 메서드 : classList.contains()<span class="dot"></span></h2>
+        <div class="view ex3">
+            <div><img src="img/image11.jpg" alt="이미지11"></div>
+            <div class="active"><img src="img/image12.jpg" alt="이미지12"></div>
+            <div><img src="img/image13.jpg" alt="이미지13"></div>
+            <div class="active"><img src="img/image14.jpg" alt="이미지14"></div>
+            <div><img src="img/image15.jpg" alt="이미지15"></div>
+        </div>
+        <div class="btn">
+            <a href="#c" class="btn3-0">리셋</a>
+            <a href="#c" class="btn3-1">클릭하면 .active 클래스를 찾은 후에 클래스를 제거합니다.</a>
+        </div>
+        <div class="code">
+            <pre class="line-numbers"><code class="language-js">{
+    document.querySelector(".btn3-0").addEventListener("click", ()=>{
+        document.querySelector(".ex3 div:nth-child(2)").classList.add("active")
+        document.querySelector(".ex3 div:nth-child(4)").classList.add("active")
+    })
+
+    document.querySelector(".btn3-1").addEventListener("click", () => {
+        document.querySelectorAll(".ex3 > div").forEach(el => {
+            if( el.classList.contains("active") ){
+                    el.classList.remove("active")           
+            }
+        });    
+    });
+}
+</code></pre>
+        </div>
+    </div>
+
+    <hr>
+
+    <script>
+        document.querySelector(".btn3-0").addEventListener("click", ()=>{
+            document.querySelector(".ex3 div:nth-child(2)").classList.add("active")
+            document.querySelector(".ex3 div:nth-child(4)").classList.add("active")
+        })
+
+        document.querySelector(".btn3-1").addEventListener("click", () => {
+            document.querySelectorAll(".ex3 > div").forEach(el => {
+                if( el.classList.contains("active") ){
+                        el.classList.remove("active")           
+                }
+            });    
+        });
+    </script>
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

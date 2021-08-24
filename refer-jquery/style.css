@@ -31,6 +31,7 @@ h1 {
 
 h1 a {
     font-family: 'TmonMonsori';
+    color: #351f68;
 }
 
 hr {
@@ -212,8 +213,8 @@ a {
 
 .menu li a {
     font-family: 'NEXON Lv1 Gothic OTF';
-    color: #000;
-    border: 1px dashed #000;
+    color: rgb(65, 63, 156);
+    border: 1px dashed rgb(52, 27, 139);
     padding: 10px 30px;
     display: inline-block;
     border-radius: 50px;
@@ -360,18 +361,18 @@ a {
 
 /* option */
 .view {
-    padding: 20px;
+    padding: 20px; 
     border: 1px solid #f2f2f2;
 }
 .view ul {
     display: flex;
-    flex-wrap:wrap;
+    flex-wrap: wrap;
 }
 .view li {
     border: 1px solid #e6e6e6;
     padding: 20px;
     margin: 10px;
-    color:#222;
+    color: #222;
     border-radius: 5px;
     white-space: nowrap;
 }
@@ -402,7 +403,7 @@ a {
     transition: all 0.2s;;
 }
 .btn a:hover {
-    background: #000;
+    background: rgb(143, 129, 223);
     color: #fff;
 }
 @media (max-width: 800px){
