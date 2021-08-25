@@ -1,72 +1,131 @@
-.container {
-    max-width: 1200px;
-    width: 100%;
-    margin: 0 auto;
-     /* background-color: rgba(0, 0, 0, 0.13)  */
-     position: relative;
-}
-.container-fluid {
-    width: 96%;
-    margin: 0 auto;
+/* imageType  */
+.imageType {
+    background-color: #f3f3f3;
 }
 
-
-.imgType {
+.imageType {
     margin: 150px 0;
     background-color: #fff;
-    box-shadow: 0 0 50px rgb(0 0 0 / 10%);
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
 }
+
+/* imageType01 */
 .imageType01 {
-    overflow: hidden;
+    font-family: 'GmarketSans';
+    padding: 150px 0;
 }
 .imageType01 h2 {
-    font-size:45px;
-     font-weight: 700;
-     margin-left: 40px;
-     margin-top: 100px;
+    font-weight: 500;
+    font-size: 50px;
+    margin-bottom: 36px;
 }
-.imageType01 .image-wrap {
-    display: flex;
-}
-.imageType01 img { 
-    width: 590px;
-    height: 388px;
-    margin: 10px;
-    margin-left: 40px;
-}
-.imageType01 .image-wrap .image {
-    position: relative;
-}
-.imageType01 .image-wrap .image .image-inner {
-    position: absolute;
-    bottom:70px;
-    left:40px;
-    color: #fff;
-    width: 400px;
-    margin-left: 20px;
-}
-.imageType01 .image-wrap .image-tit {
-    font-size: 30px;
-    display: inline-block;
-    padding: 10px;
-    white-space: nowrap;
-}
-.imageType01 .image-wrap .image .image-inner .image-desc {
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
+.imageType .image-wrap {
     overflow: hidden;
-    display: inline-block;
-    margin-left: 10px;
 }
-
-.imageType01 .image-wrap .image-word {
+.imageType .image {
+    position: relative;
+    float: left;
+    width: 50%;
+    height: 385px;
+    word-wrap: 590px;
+}
+.imageType .image:first-child {
+    margin-right: 15px;
+}
+.imageType .image .image-cont {
+    position: absolute;
+    left: 30px;
+    bottom: 30px;
+    color: #fff;
+}
+.imageType .image .image-title {
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+.imageType .image .image-desc {
+    font-size: 14px;
+    font-weight: 300;
+    padding-right: 20px;
+    line-height: 1.4; 
+    word-break: keep-all;   
+}
+.imageType .image .image-btn {
+    padding: 8px 18px;
+    background-color: #9a481d;
     display: inline-block;
-    text-decoration: underline;
-    margin-left: 10px;
+    color: #fff;
     margin-top: 10px;
 }
+.imageType .image .image-btn.s2 {
+    background-color: #b59140e0;
+    width: 400px;
+    padding: 20px;
+}
+.imageType .image .image-btn.s2 .image-desc {
+    padding-right: 0;
+}
+
+.imageType .image .image-btn.s2 .image-btn {
+    padding: 0;
+    border-bottom: 1px solid #fff;
+}
+
+.imageType .image .image-btn red {}
+.imageType .image .image-btn yellow {}
 
 
 
+/* imageType02 */
+
+.imageType02 {
+    padding: 150px 0;
+    font-family: 'GmarketSans';
+}
+
+.imageType02 h2 {
+    padding: 130px 0;
+    font-weight: 700;
+    font-size: 45px;
+}
+
+.imageType02 .image-wrap {
+    display: grid;
+    grid-template-columns: repeat(2, 600px);
+    gap: 20px;
+}
+
+.imageType02 .image-wrap .image {
+    width: 590px;
+    height: 590px;
+} 
+
+.imageType02 .image-wrap .image .image-inner1 {
+    position: absolute;
+    left: 23%;
+    top: 77%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0,0,0,0.6);
+    width: 490px;
+    padding: 15px 15px;
+    color: #fff;
+}
+.imageType02 .image-wrap .image .image-inner1 .image-tit {
+    display: block;
+    font-size: 40px;
+
+}
+.imageType02 .image-wrap .image .image-inner1 .image-desc {
+    display: block;
+    font-size: 20px;
+}
+
+.imageType02 .image-wrap .image .image-inner2 {
+    width: 285px;
+    height: 285px;
+}
+
+.imageType02 .image-wrap .image .image-inner2 div {
+    float: left;
+}
 

@@ -11,8 +11,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/themes/prism-okaidia.min.css"
         integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        
         <link rel="stylesheet" href="style.css">
+        
         <style>
             .ex1 {
                 display: flex;
@@ -33,7 +37,6 @@
             .ex1 > div img {
                 width: 100%;
                 border-radius: 5px;
-                display: block;
                 vertical-align: top;
             }
             .ex2 {
@@ -55,7 +58,6 @@
             .ex2 > div img {
                 width: 100%;
                 border-radius: 5px;
-                display: block;
                 vertical-align: top;
             }
             .ex3 {
@@ -77,7 +79,6 @@
             .ex3 > div img {
                 width: 100%;
                 border-radius: 5px;
-                display: block;
                 vertical-align: top;
             }
         </style>
@@ -90,7 +91,7 @@
     <ul class="page">
         <li><a href="../refer-html/index.html">HTML</a></li>
         <li><a href="../refer-css/index.html">CSS</a></li>
-        <li><a href="../refer-javascript/javascriptRefer01.html">JAVASCRIPT</a></li>
+        <li><a href="../refer-javascript/index.html">JAVASCRIPT</a></li>
     </ul>
     <div class="title">
         <h1><a href="index.html">속성 메서드</a></h1>
@@ -374,19 +375,19 @@
     <hr>
 
     <script>
-        //리셋버튼을 클릭하면 첫번째 네번째에 클래스 추가
-        // $(".btn3-0").click(function(){
-        //     $(".ex3 > div:nth-child(1)").addClass("active");
-        //     $(".ex3 > div:nth-child(4)").addClass("active");
-        // });
+        // 리셋버튼을 클릭하면 첫번째 네번째에 클래스 추가
+        $(".btn3-0").click(function(){
+            $(".ex3 > div:nth-child(1)").addClass("active");
+            $(".ex3 > div:nth-child(4)").addClass("active");
+        });
 
 
 
-        // $(".btn3-1").click(function(){
-        //     if( $(".ex3 > div").hasClass("active") ){
-        //         $(".ex3 > div.active").removeClass("active");
-        //     }
-        // });
+        $(".btn3-1").click(function(){
+            if( $(".ex3 > div").hasClass("active") ){
+                $(".ex3 > div.active").removeClass("active");
+            }
+        });
         
     </script>
 
@@ -475,7 +476,7 @@
 
     <script>
         function demension(name, size){
-            $(".text4").text("이 원의 "+ name +" " + "값은" + size + " px 입니다." );
+            $(".text4").text("이 원의 "+ name +" " + "값은 " + size + " px 입니다." );
         }
 
         $(".btn4-1").click(function(){
@@ -498,15 +499,16 @@
         });
 
         $(".btn4-7").click(function(){
-            $(".text4").text("이 샘플 박스의 가로 값은 " + $("#sample04").width() + " px 입니다" )
+            $(".text4").text("이 샘플 박스의 가로 값은 " + $("#sample04").width() + "px 입니다" )
         });
         $(".btn4-8").click(function(){
-            $(".text4").text("이 샘플 박스의 가로 값은 " + $(document).width() + " px 입니다" )
+            $(".text4").text("이 샘플 박스의 가로 값은 " + $(document).width() + "px 입니다" )
         });
         $(".btn4-9").click(function(){
-            $(".text4").text("이 브라우저의 가로 값은 " + $(window).width() + " px 입니다" )
+            $(".text4").text("이 브라우저의 가로 값은 " + $(window).width() + "px 입니다" )
         });
     </script>
+
 
 <style>
     .ex5 {
@@ -631,17 +633,91 @@
 
 <script>
     $(".btn6-1").click(function(){
-        $(".text6").text( "이 원의 x축 값은" + $(".circle6").offset().left + "px 입니다.") 
+        $(".text6").text( "이 원의 x축 값은 " + parseInt($(".circle6").offset().left + "px 입니다.")) 
+    }); 
+    $(".btn6-2").click(function(){ 
+        $(".text6").text( "이 원의 x축 값은 " + parseInt($(".circle6").offset().top + "px 입니다."))
+    }); 
+    $(".btn6-3").click(function(){ 
+        $(".text6").text( "이 원의 x축 값은 " + parseInt($(".circle6").position().left + "px 입니다."))
+    }); 
+    $(".btn6-4").click(function(){ 
+        $(".text6").text( "이 원의 x축 값은 " + parseInt($(".circle6").position().top + "px 입니다."))
     });
-    $(".btn6-2").click(function(){
-        $(".text6").text( "이 원의 x축 값은" + $(".circle6").offset().top + "px 입니다.") 
+</script>
+
+<style>
+    .ex7 {
+        min-height: 300px;
+        position: relative;
+    }
+
+    .ex7 .circle {
+        position: absolute;
+        display: block;
+        left: 50%;
+        top: 50%;
+        margin-top: -50px;
+        margin-left: -50px;
+        height: 100px;
+        width: 100px;
+        padding: 10px;
+        border-radius: 50%;
+        background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+    }
+</style>
+<!--sample7 -->
+<div id="sample07" class="sample">
+    <h2>07. offset() , position()<span class="dot"></span></h2>
+    <div class="view ex7">
+        <span class="circle circle7"></span>
+        <div class="text text7">
+            <p class="text7-1">offset().left = <span>0</span></p>
+            <p class="text7-2">offset().top = <span>0</span></p>
+            <p class="text7-3">position().left = <span>0</span></p>
+            <p class="text7-4">position().top = <span>0</span></p>
+            <p class="text7-5">position().top = <span>0</span></p>
+    </div>
+    <div class="btn">
+        <a href="#c" class="btn7-1">원을 드래그하세요!</a>
+    </div>
+    <div class="code">
+        <pre class="line-numbers"><code class="language-js">{
+    $( ".circle7" ).draggable({
+        start: function() {
+            $(".text7-5").text("드래그가 시작되었습니다.");
+        },
+        drag: function(){
+            $(".text7-1 span").text( parseInt ( $(".circle7").offset().left) +"px");
+            $(".text7-2 span").text( parseInt ( $(".circle7").offset().top) +"px");
+            $(".text7-3 span").text( parseInt ( $(".circle7").position().left) +"px");
+            $(".text7-4 span").text( parseInt ( $(".circle7").position().top) +"px");
+        },
+        stop: function() {
+            $(".text7-5").text("드래그가 끝났습니다.");
+        },
     });
-    $(".btn6-3").click(function(){
-        $(".text6").text( "이 원의 x축 값은" + $(".circle6").position().left + "px 입니다.") 
-    });
-    $(".btn6-4").click(function(){
-        $(".text6").text( "이 원의 x축 값은" + $(".circle6").position().top + "px 입니다.") 
-    });
+}
+</code></pre>
+    </div>
+</div>
+
+
+<script>
+   $( ".circle7" ).draggable({
+       start: function() {
+           $(".text7-5").text("드래그가 시작되었습니다.");
+       },
+       drag: function(){
+           $(".text7-1 span").text( parseInt ( $(".circle7").offset().left) +"px");
+           $(".text7-2 span").text( parseInt ( $(".circle7").offset().top) +"px");
+           $(".text7-3 span").text( parseInt ( $(".circle7").position().left) +"px");
+           $(".text7-4 span").text( parseInt ( $(".circle7").position().top) +"px");
+       },
+       stop: function() {
+           $(".text7-5").text("드래그가 끝났습니다.");
+       },
+   });
 </script>
            
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
