@@ -119,10 +119,10 @@
     <div class="table">
         <table>
             <colgroup>
-            <col style = "width: 4%" />
+            <col style = "width: 10%" />
             <col style = "width: 20%" />
             <col style = "width: 20%" />
-            <col style = "width: 36%" />
+            <col style = "width: 50%" />
         </colgroup>
             <thead>
                 <tr>
@@ -353,12 +353,13 @@
     <hr>
 
     <script>
-        //모든 이미지 선택
-    //  $(".ex2 div").click(function(){
-    //      $(".ex2 div").toggleClass("active");
-    //  });
-    //클릭한 이미지만 선택
-    $(".ex2 div").click(function(){
+    //모든 이미지 선택
+    $(".ex2 div").click(function () {
+        $(".ex2 div").toggleClass("active");
+    });
+
+    //선택한 이미지 선택
+    $(".ex2 div").click(function () {
         $(this).toggleClass("active");
     });
     </script>
@@ -464,7 +465,7 @@
         <div class="code">
             <pre class="line-numbers"><code class="language-js">{
     function demension(name, size){
-        $(".text4").text("이 원의 "+ name +" " + "값은" + size + " px 입니다." );
+        $(".text4").text("이 원의 "+ name +" " + "값은 " + size + " px 입니다." );
     }
 
     $(".btn4-1").click(function(){
@@ -477,22 +478,29 @@
         demension("가로(outerWidth)", $(".circle4").outerWidth());
     });
     $(".btn4-4").click(function(){
-        demension("세로(height)", $(".circle4").height());
+        demension("가로(outerWidth(true))", $(".circle4").outerWidth(true));
     });
     $(".btn4-5").click(function(){
-        demension("세로(innerHeight)", $(".circle4").innerHeight());
+        demension("세로(height)", $(".circle4").height());
     });
     $(".btn4-6").click(function(){
-        demension("세로(outerHeight)", $(".circle4").outerHeight());
+        demension("세로(innerHeight)", $(".circle4").innerHeight());
     });
     $(".btn4-7").click(function(){
-        $(".text4").text("이 샘플 박스의 가로 값은 " + $("#sample04").width() + " px 입니다" )
+        demension("세로(outerHeight)", $(".circle4").outerHeight());
     });
     $(".btn4-8").click(function(){
-        $(".text4").text("이 샘플 박스의 가로 값은 " + $(document).width() + " px 입니다" )
+        demension("세로(outerHeight(true))", $(".circle4").outerHeight(true));
     });
+
     $(".btn4-9").click(function(){
-        $(".text4").text("이 브라우저의 가로 값은 " + $(window).width() + " px 입니다" )
+        $(".text4").text("이 샘플 박스의 가로 값은 " + $("#sample04").width() + "px 입니다.<br>" + "이 샘플의 박스 세로 값은 " + $("#sample04").height() + "입니다." )
+    });
+    $(".btn4-10").click(function(){
+        $(".text4").html("이 문서 박스의 가로 값은 " + $(document).width() + "px 입니다.<br>" + "이 문서 박스의 세로 값은 " + $(document).height() + "px 입니다." ); 
+    });
+    $(".btn4-11").click(function(){
+        $(".text4").html("이 브라우저의 가로 값은 " + $(window).width() + "px 입니다.<br>" + "이 브라우저의 세로 값은 " + $(window).height() + "px 입니다.")
     });
 }
 </code></pre>
@@ -532,13 +540,13 @@
         });
 
         $(".btn4-9").click(function(){
-            $(".text4").text("이 샘플 박스의 가로 값은 " + $("#sample04").width() + "px 입니다" )
+            $(".text4").text("이 샘플 박스의 가로 값은 " + $("#sample04").width() + "px 입니다.<br>" + "이 샘플의 박스 세로 값은 " + $("#sample04").height() + "입니다." )
         });
         $(".btn4-10").click(function(){
-            $(".text4").html("이 문서 박스의 가로 값은 " + $(document).width() + "px 입니다" ); 
+            $(".text4").html("이 문서 박스의 가로 값은 " + $(document).width() + "px 입니다.<br>" + "이 문서 박스의 세로 값은 " + $(document).height() + "px 입니다." ); 
         });
         $(".btn4-11").click(function(){
-            $(".text4").html("이 브라우저의 가로 값은 " + $(window).width() + "px 입니다" )
+            $(".text4").html("이 브라우저의 가로 값은 " + $(window).width() + "px 입니다.<br>" + "이 브라우저의 세로 값은 " + $(window).height() + "px 입니다.")
         });
     </script>
 

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃 연습 16</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        body {
+            background-color: #ef9a9a;
+        }
+        #wrap {
+            font-family: 'GmarketSans';
+            font-weight: 700;
+            width: 2000px;
+            margin: 0 auto;
+            font-size: 50px;
+            color: #fff;
+            text-align: center;
+            text-transform: uppercase;
+        }
+        header {
+            height: 200px;
+            line-height: 200px;
+            width: 100%;
+            background-color: #ec407a;
+        }
+        nav {
+            height: 200px;
+            line-height: 200px;
+            width: 100%;
+            background-color: #e91e63;
+        }
+        aside {
+            height: 1000px;
+            line-height: 1000px;
+            width: 30%;
+            background-color: #d81b60;
+            float: left;
+        }
+        .content1 {
+            width: 70%;
+            height: 500px;
+            line-height: 500px;
+            background-color: #c2185b;
+            float: left;
+        }
+        .content2 {
+            width: 70%;
+            height: 500px;
+            line-height: 500px;
+            background-color: #ad1457;
+            float: left;
+            display: flex;
+        }
+        .cont1 {
+            width: 50%;
+            height: 500px;
+            line-height: 500px;
+            background-color: #ad1457;
+            box-sizing: border-box;
+            border: 80px solid #880e4f;
+        }
+        .cont2 {
+            width: 50%;
+            height: 500px;
+            line-height: 500px;
+            background-color: #ad1457;
+            box-sizing: border-box;
+            border: 80px solid #880e4f;   
+        }
+        footer {
+            width: 100%;
+            height: 200px;
+            line-height: 200px;
+            background-color: #880e4f;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header>HEADER</header>
+        <nav>NAV</nav>
+        <main>
+            <aside>SIDE</aside>
+            <section class="content1">CONTENT1</section>
+            <article class="content2">
+                <div class="cont1">cont1</div>
+                <div class="cont2">cont2</div>
+            </article>
+        </main>
+        <footer>FOOTER</footer>
+    </div>
+    
+</body>
+</html>
