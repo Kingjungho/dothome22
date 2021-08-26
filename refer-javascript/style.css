@@ -176,7 +176,7 @@ a {
     padding: 3px 0 16px 0;
 }
 .mt20 {
-    margin-top: 20px;
+    margin: 20px 0 10px 8px;
 }
 .page {
     position: absolute;
@@ -323,4 +323,24 @@ a {
         color: #BDBDBD;
         background: #F1F1F1;
     }
+}
+.btn {
+    padding: 20px;
+    border: 1px solid #f2f2f2;
+    border-top: 0;
+}
+.btn a {
+    border: 1px solid #f2f2f2;
+    border-radius: 40px;
+    margin: 4px 0;
+    padding: 7px 25px;
+    display: inline-block;
+    border-radius: 20px;
+    margin: 2px;
+    color:#222;
+    transition: all 0.2s;;
+}
+.btn a:hover {
+    background: rgb(143, 129, 223);
+    color: #fff;
 }

@@ -47,247 +47,255 @@
 </nav>
  
 <h2 class="mt20">브라우저 객체</h2>
-<ol class="list">
-    
-</ol>
+<div class="list">
+    <ol>
+        <li>브라우저 객체 : window 객체 메서드 : window.alert() : 경고창 표시하기</li>
+        <li>브라우저 객체 : window 객체 메서드 : window.confirm() : 확인창 표시하기</li>
+        <li>브라우저 객체 : window 객체 메서드 : window.prompt() : 입력창 표시하기</li>
+
+        <br>
+
+        <li>브라우저 객체 : window 객체 속성 : window.innerWidth : 브라우저 화면의 가로 값을 가져옵니다.</li>
+        <li>브라우저 객체 : window 객체 속성 : window.innerHeight : 브라우저 화면의 세로 값을 가져옵니다.</li>
+        <li>브라우저 객체 : window 객체 속성 : window.outerWidth : 브라우저 전체의 가로 값을 가져옵니다.</li>
+        <li>브라우저 객체 : window 객체 속성 : window.outerHeight : 브라우저 전체의 세로 값을 가져옵니다.</li>
+        <li>브라우저 객체 : window 객체 속성 : window.screenLeft : / window.screenX : 브라우저 왼쪽 위치 값을 가져옵니다.</li>
+        <li>브라우저 객체 : window 객체 속성 : window.screenTop : / window.screenY : 브라우저 윗쪽 위치 값을 가져옵니다.</li>
+
+        <br>
+
+        <li>브라우저 객체 : window 객체 메서드 : window.moveBy() : 브라우저 위치를 상대적으로 이동</li>
+        <li>브라우저 객체 : window 객체 메서드 : window.moveTo() : 브라우저 위치를 절대적으로 이동</li>
+        <li>브라우저 객체 : window 객체 메서드 : window.resizeBy() : 브라우저 크기를 상대적으로 이동</li>
+        <li>브라우저 객체 : window 객체 메서드 : window.resizeTo() : 브라우저 크기를 절대적으로 이동</li>
+        <li>브라우저 객체 : window 객체 메서드 : window.scrollBy() : 브라우저 스크롤 위치를 상대적으로 이동</li>
+        <li>브라우저 객체 : window 객체 메서드 : window.scrollTo() : 브라우저 스크롤 위치를 절대적으로 이동</li>
+        <li>브라우저 객체 : window 객체 메서드 : window.scrollX : 브라우저 가로 스크롤 크기</li>
+        <li>브라우저 객체 : window 객체 메서드 : window.scrollY : 브라우저 세로 스크롤 크기</li>
+
+        <br>
+
+        <li>브라우저 객체 : screen 객체 속성 : window.screen.width : 화면의 가로 값을 가져옵니다.</li>
+        <li>브라우저 객체 : screen 객체 속성 : window.screen.height : 화면의 세로 값을 가져옵니다.</li>
+        <li>브라우저 객체 : screen 객체 속성 : window.screen.availWidth : 실제 이용 가능한 화면의 가로 값을 가져옵니다.</li>
+        <li>브라우저 객체 : screen 객체 속성 : window.screen.availHeight : 실제 이용 가능한 화면의 세로 값을 가져옵니다.</li>
+        <li>브라우저 객체 : screen 객체 속성 : window.screen.colorDepth : 사용 가능한 색상 수</li>
+        <li>브라우저 객체 : screen 객체 속성 : window.screen.pixelDepth : 한 픽셀당 비트 수</li>
+    </ol>
+</div>
+
+
     <hr>
 
-        <!--sample01 -->
+    <!--sample1 -->
     <div id="sample01" class="sample">
-        <h2>01. 날짜 메서드 : getFullYear() : 연도 불러오기<span class="dot"></span></h2>
-    <div class="view">
-        <table>
-            <colgroup>
-                <col style="width: 4%;">
-                <col style="width: 22%;">
-                <col style="width: 22%;">
-                <col style="width: 52%;">
-            </colgroup>
-            <thead>
-                <tr>
-                    <th>번호</th>
-                    <th>기본 값</th>
-                    <th>메서드</th>
-                    <th>결과 값</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="sample01_N1"></td>
-                    <td class="sample01_Q1"></td>
-                    <td class="sample01_M1"></td>
-                    <td class="sample01_R1"></td>
-                </tr>
-                <tr>
-                    <td class="sample01_N2"></td>
-                    <td class="sample01_Q2"></td>
-                    <td class="sample01_M2"></td>
-                    <td class="sample01_R2"></td>
-                </tr>
-                <tr>
-                    <td class="sample01_N3"></td>
-                    <td class="sample01_Q3"></td>
-                    <td class="sample01_M3"></td>
-                    <td class="sample01_R3"></td>
-                </tr>
-                <tr>
-                    <td class="sample01_N4"></td>
-                    <td class="sample01_Q4"></td>
-                    <td class="sample01_M4"></td>
-                    <td class="sample01_R4"></td>
-                </tr>
-                <tr>
-                    <td class="sample01_N5"></td>
-                    <td class="sample01_Q5"></td>
-                    <td class="sample01_M5"></td>
-                    <td class="sample01_R5"></td>
-                </tr>
-                <tr>
-                    <td class="sample01_N6"></td>
-                    <td class="sample01_Q6"></td>
-                    <td class="sample01_M6"></td>
-                    <td class="sample01_R6"></td>
-                </tr>
-                <tr>
-                    <td class="sample01_N7"></td>
-                    <td class="sample01_Q7"></td>
-                    <td class="sample01_M7"></td>
-                    <td class="sample01_R7"></td>
-                </tr>
-                <tr>
-                    <td class="sample01_N8"></td>
-                    <td class="sample01_Q8"></td>
-                    <td class="sample01_M8"></td>
-                    <td class="sample01_R8"></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+        <h2>01. 브라우저 객체 : window.alert() : 알림창<span class="dot"></span></h2>
+        <div class="view ex1">
+
+        </div>
+        <div class="btn">
+            <a href="#c" class="btn1-1">클릭하면 알림창을 표시합니다.</a>
+        </div>
         <div class="code">
-            <pre class="line-numbers"><code class="language-js">{ 
-        const date = new Date();
-        const year = date.getFullYear();
-
-    document.querySelector(".sample01_R1").innerHTML = "지금은 " + year + "년 입니다";
-    
-    const month = date.getMonth() + 1;
-
-    document.querySelector(".sample01_R2").innerHTML = "지금은 " + month + "월 입니다";
-
-    const days = date.getDate();
-
-    document.querySelector(".sample01_R3").innerHTML = "지금은 " + days + "일 입니다";
-
-    const hour = date.getHours();
-
-    document.querySelector(".sample01_R4").innerHTML = "지금은 " + hour + "시 입니다";
-
-    const minutes = date.getMinutes();
-
-    document.querySelector(".sample01_R5").innerHTML = "지금은 " + minutes + "분 입니다";
-
-    const seconds = date.getSeconds();
-
-    document.querySelector(".sample01_R6").innerHTML = "지금은 " + seconds + "초 입니다";
-
-    const Milliseconds = date.getMilliseconds();
-
-    document.querySelector(".sample01_R7").innerHTML = "지금은 " + Milliseconds + "초 입니다";
-
-    const day = date.getDay();
-    //0 --> 일요일 : dayList[0]
-    //1 --> 월요일 : dayList[0]
-    //2 --> 화요일 : dayList[0]
-    //3 --> 수요일 : dayList[0]
-    //4 --> 목요일 : dayList[0]
-    //5 --> 금요일 : dayList[0]
-    //6 --> 토요일 : dayList[0]
-    const dayList = ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일'];
-
-    //0 1 2 3 4 5 6
-    document.querySelector(".sample01_R8").innerHTML = "지금은 " + dayList[day] + "입니다";
-}            
+            <pre class="line-numbers"><code class="language-js">{
+    document.querySelector(".btn1-1").addEventListener("click", function(){
+        alert("알림창")
+}
 </code></pre>
         </div>
     </div>
 
-
     <hr>
 
-    <!--sample02 -->
+    <script>
+        document.querySelector(".btn1-1").addEventListener("click", function(){
+            alert("알림창")
+        });
+    </script>
+
+    <!--sample2 -->
     <div id="sample02" class="sample">
-        <h2>01. 날짜 메서드 : getFullYear() : 연도 불러오기<span class="dot"></span></h2>
-    <div class="view">
-        <table>
-            <colgroup>
-                <col style="width: 4%;">
-                <col style="width: 22%;">
-                <col style="width: 22%;">
-                <col style="width: 52%;">
-            </colgroup>
-            <thead>
-                <tr>
-                    <th>번호</th>
-                    <th>기본 값</th>
-                    <th>메서드</th>
-                    <th>결과 값</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="sample02_N1"></td>
-                    <td class="sample02_Q1"></td>
-                    <td class="sample02_M1"></td>
-                    <td class="sample02_R1"></td>
-                </tr>
-                <tr>
-                    <td class="sample02_N2"></td>
-                    <td class="sample02_Q2"></td>
-                    <td class="sample02_M2"></td>
-                    <td class="sample02_R2"></td>
-                </tr>
-                <tr>
-                    <td class="sample02_N3"></td>
-                    <td class="sample02_Q3"></td>
-                    <td class="sample02_M3"></td>
-                    <td class="sample02_R3"></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+        <h2>02. 브라우저 객체 : window.confirm() : 확인창<span class="dot"></span></h2>
+        <div class="view ex2">
+            <p class="text text2">여기는 텍스트 영역입니다.</p>
+
+        </div>
+        <div class="btn">
+            <a href="#c" class="btn2-1">클릭하면 알림창을 표시합니다.</a>
+        </div>
         <div class="code">
-            <pre class="line-numbers"><code class="language-js">{ 
-    const date = new Date();
-    const locale = date.toLocaleString();
-    
-    document.querySelector(".sample02_R1").innerHTML = locale;
+            <pre class="line-numbers"><code class="language-js">{
+    const btn = document.querySelector(".btn2-1");
 
-    const localeDate = date.toLocaleString();
+    btn.addEventListener("click", () => {
+    const text = confirm("오늘 공부할 준비가 되었나요?"); //true, false
 
-    document.querySelector(".sample02_R2").innerHTML = localeDate;
+    document.querySelector(".text2").innerHTML = text;
 
-    const localeTime = date.toLocaleTimeString();
+    //만약에 true가 나오면 "오늘 공부할 준비가 되었습니다."
+    //false가 나오면 "오늘 몸이 안 좋아요!!"
 
-    document.querySelector(".sample02_R3").innerHTML = localeTime;
-}            
+    if (text) {
+        document.querySelector(".text2").innerHTML = "오늘 공부할 준비가 되었습니다.";
+        } else {
+        document.querySelector(".text2").innerHTML = "오늘 몸이 안 좋아요!!";
+        }  
+    });
+}
 </code></pre>
         </div>
     </div>
 
-
     <hr>
 
-    <!--sample03 -->
-    <div id="sample03" class="sample">
-        <h2>01. 날짜 문자열<span class="dot"></span></h2>
-    <div class="view">
-        <table>
-            <colgroup>
-                <col style="width: 4%;">
-                <col style="width: 22%;">
-                <col style="width: 22%;">
-                <col style="width: 52%;">
-            </colgroup>
-            <thead>
-                <tr>
-                    <th>번호</th>
-                    <th>기본 값</th>
-                    <th>메서드</th>
-                    <th>결과 값</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="sample03_N1"></td>
-                    <td class="sample03_Q1"></td>
-                    <td class="sample03_M1"></td>
-                    <td class="sample03_R1"></td>
-                </tr>
-                <tr>
-                    <td class="sample03_N2"></td>
-                    <td class="sample03_Q2"></td>
-                    <td class="sample03_M2"></td>
-                    <td class="sample03_R2"></td>
-                </tr>
-                <tr>
-                    <td class="sample03_N3"></td>
-                    <td class="sample03_Q3"></td>
-                    <td class="sample03_M3"></td>
-                    <td class="sample03_R3"></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-        <div class="code">
-            <pre class="line-numbers"><code class="language-js">{ 
+<script>
+    const btn = document.querySelector(".btn2-1");
+
+    btn.addEventListener("click", () => {
+        const text = confirm("오늘 공부할 준비가 되었나요?"); //true, false
+
+        document.querySelector(".text2").innerHTML = text;
+
+        //만약에 true가 나오면 "오늘 공부할 준비가 되었습니다."
+        //false가 나오면 "오늘 몸이 안 좋아요!!"
         
-}            
+        if (text) {
+            document.querySelector(".text2").innerHTML = "오늘 공부할 준비가 되었습니다.";
+            } else {
+            document.querySelector(".text2").innerHTML = "오늘 몸이 안 좋아요!!";
+            }  
+    });
+    </script>
+
+     <!--sample3 -->
+     <div id="sample03" class="sample">
+        <h2>02. 브라우저 객체 : window.prompt() : 입력창 표시하기<span class="dot"></span></h2>
+        <div class="view ex3">
+            <p class="text text3">여기는 텍스트 영역입니다.</p>
+
+        </div>
+        <div class="btn">
+            <a href="#c" class="btn3-1">클릭하면 입력창을 표시합니다.</a>
+        </div>
+        <div class="code">
+            <pre class="line-numbers"><code class="language-js">{
+    document.querySelector(".btn3-1").addEventListener("click", () => {
+        const text = prompt("오늘 공부할 준비가 되었나요?");
+
+        document.querySelector(".text3").innerHTML = text;
+    });
+}
 </code></pre>
         </div>
     </div>
 
+    <hr>
+
+    <script>
+        document.querySelector(".btn3-1").addEventListener("click", () => {
+            const text = prompt("오늘 공부할 준비가 되었나요?");
+
+            document.querySelector(".text3").innerHTML = text;
+        });
+    </script>
+
+    <!--sample4 -->
+    <div id="sample04" class="sample">
+        <h2>04. 브라우저 객체 : window.innerWidth() : innerHeight() <span class="dot"></span></h2>
+        <div class="view ex4">
+            <p class="text text4-1"></p>
+            <p class="text text4-2"></p>
+            <p class="text text4-3"></p>
+            <p class="text text4-4"></p>
+            <p class="text text4-5"></p>
+            <p class="text text4-6"></p>
+            <p class="text text4-7"></p>
+            <p class="text text4-8"></p>
+        </div>
+        <div class="btn">
+            <a href="#c" class="btn4-1">클릭하면 브라우저 화면의 가로 값(innerWidth)을 가져옵니다.</a>
+            <a href="#c" class="btn4-2">클릭하면 브라우저 화면의 세로 값(innerHeight)을 가져옵니다.</a>
+            <a href="#c" class="btn4-3">클릭하면 브라우저 전체의 가로 값(outerWidth)을 가져옵니다.</a>
+            <a href="#c" class="btn4-4">클릭하면 브라우저 전체의 세로 값(outerHeight)을 가져옵니다.</a>
+            <a href="#c" class="btn4-5">클릭하면 브라우저 윗쪽의 위치 값(screenTop)을 가져옵니다.</a>
+            <a href="#c" class="btn4-6">클릭하면 브라우저 왼쪽의 위치 값(screenLeft)을 가져옵니다.</a>
+            <a href="#c" class="btn4-7">클릭하면 브라우저 윗쪽의 위치 값(screenX)을 가져옵니다.</a>
+            <a href="#c" class="btn4-8">클릭하면 브라우저 왼쪽의 위치 값(screenY)을 가져옵니다.</a>
+        </div>
+        <div class="code">
+            <pre class="line-numbers"><code class="language-js">{
+
+}
+</code></pre>
+        </div>
+    </div>
 
     <hr>
+
+    <script>
+       const btn1 = document.querySelector(".btn4-1");
+       const btn2 = document.querySelector(".btn4-2");
+       const btn3 = document.querySelector(".btn4-3");
+       const btn4 = document.querySelector(".btn4-4");
+       const btn5 = document.querySelector(".btn4-5");
+       const btn6 = document.querySelector(".btn4-6");
+       const btn7 = document.querySelector(".btn4-7");
+       const btn8 = document.querySelector(".btn4-8");
+
+       const innerW = window.innerWidth;
+       const innerH = window.innerHeight;
+       const outerW = window.outerWidth;
+       const outerH = window.outerHeight;
+       const screenT = window.screenTop;
+       const screenL = window.screenLeft;
+       const screenX = window.screenX;
+       const screenY = window.screenY;
+
+       btn1.addEventListener("click", function(){
+        document.querySelector(".text4-1").innerHTML = "당신이 보고 있는 브라우저의 화면 가로 값(innerWidth)은 " + innerW + "px 입니다";
+       });
+       btn2.addEventListener("click", function(){
+        document.querySelector(".text4-2").innerHTML = "당신이 보고 있는 브라우저의 화면 세로 값(innerHeight)은 " + innerH + "px 입니다";
+       });
+       btn3.addEventListener("click", function(){
+        document.querySelector(".text4-3").innerHTML = "당신이 보고 있는 브라우저의 전체 가로 값(outerWidth)은 " + outerW + "px 입니다";
+       });
+       btn4.addEventListener("click", function(){
+        document.querySelector(".text4-4").innerHTML = "당신이 보고 있는 브라우저의 전체 세로 값(outerHeight)은 " + outerH + "px 입니다";
+       });
+       btn5.addEventListener("click", function(){
+        document.querySelector(".text4-5").innerHTML = "당신이 보고 있는 브라우저의 윗쪽 위치 값(screenTop)은 " + screenT + "px 입니다";
+       });
+       btn6.addEventListener("click", function(){
+        document.querySelector(".text4-6").innerHTML = "당신이 보고 있는 브라우저의  위치 값(screenLeft)은 " + screenL + "px 입니다";
+       });
+       btn7.addEventListener("click", function(){
+        document.querySelector(".text4-7").innerHTML = "당신이 보고 있는 브라우저의 왼쪽 위치 값(screenX)은 " + screenX + "px 입니다";
+       });
+       btn8.addEventListener("click", function(){
+        document.querySelector(".text4-8").innerHTML = "당신이 보고 있는 브라우저의 위쪽 위치 값(screenY)은 " + screenY + "px 입니다";
+       });
+
+       window.addEventListener("resize", () => {
+        const innerW = window.innerWidth;
+       const innerH = window.innerHeight;
+       const outerW = window.outerWidth;
+       const outerH = window.outerHeight;
+       const screenT = window.screenTop;
+       const screenL = window.screenLeft;
+       const screenX = window.screenX;
+       const screenY = window.screenY;
+       
+        document.querySelector(".text4-1").innerHTML = "당신이 보고 있는 브라우저의 화면 가로 값(innerWidth)은 " + innerW + "px 입니다";
+        document.querySelector(".text4-2").innerHTML = "당신이 보고 있는 브라우저의 화면 세로 값(innerHeight)은 " + innerH + "px 입니다";
+        document.querySelector(".text4-3").innerHTML = "당신이 보고 있는 브라우저의 전체 가로 값(outerWidth)은 " + outerW + "px 입니다";
+        document.querySelector(".text4-4").innerHTML = "당신이 보고 있는 브라우저의 전체 세로 값(outerHeight)은 " + outerH + "px 입니다";
+        document.querySelector(".text4-5").innerHTML = "당신이 보고 있는 브라우저의 윗쪽 위치 값(screenTop)은 " + screenT + "px 입니다";
+        document.querySelector(".text4-6").innerHTML = "당신이 보고 있는 브라우저의 왼쪽 위치 값(screenLeft)은 " + screenL + "px 입니다";
+        document.querySelector(".text4-7").innerHTML = "당신이 보고 있는 브라우저의 왼쪽 위치 값(screenX)은 " + screenX + "px 입니다";
+        document.querySelector(".text4-8").innerHTML = "당신이 보고 있는 브라우저의 윗쪽 위치 값(screenY)은 " + screenY + "px 입니다";
+       });
+    </script>
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
