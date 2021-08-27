@@ -77,7 +77,6 @@
     <hr>
 
 
-
     <!--sample1 -->
     <div id="sample01" class="sample">
         <h2>01. 변수 : 데이터 저장소 <span class="dot"></span></h2>
@@ -94,17 +93,21 @@
 </code></pre>
         </div>
     </div>
-    <div class="btn">
-        <a href="#c" class="btn1">결과보기</a>
-    </div>
+   <div class="btm"><a href="#c">결과보기</a></div>
+   <ul class="menu1">
+       <li>100</li>
+       <li>200</li>
+       <li>javascript</li>
+   </ul>
     <script>
- let btn = document.querySelector(".btn1")
+        const toggleBtn = document.querySelector(".btm");
+        const menu1 = document.querySelector(".menu1");
 
- btn.addEventListener("click", () => {
-     
- });
-
+        toggleBtn.addEventListener("click", () => {
+            menu1.classList.toggle("active");
+        });
     </script>
+    
     <hr>
 
     <!--sample2 -->
@@ -126,6 +129,21 @@
 </code></pre>
         </div>
     </div>
+
+    <div class="btm"><a href="#c">결과보기</a></div>
+   <ul class="menu1">
+       <li>100</li>
+       <li>200</li>
+       <li>javascript</li>
+   </ul>
+    <script>
+        const toggleBtn = document.querySelector(".btm");
+        const menu1 = document.querySelector(".menu1");
+
+        toggleBtn.addEventListener("click", () => {
+            menu1.classList.toggle("active");
+        });
+    </script>
 
     <hr>
 

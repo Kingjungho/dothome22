@@ -1,5 +1,6 @@
+/* imageType */
 body {
-    background-color: #F3F3F3;
+    background-color: #f3f3f3;
 }
 .imageType {
     margin: 150px 0;
@@ -49,18 +50,18 @@ body {
 .imageType01 .image .image-btn {
     padding: 8px 18px;
     display: inline-block;
-    background-color: rgba(29, 24, 24, 0.418);
+    background-color: #777;
     color: #fff;
     margin-top: 10px;
 }
 .imageType01 .image .image-btn.red {
-    background-color: #9A481D;
+    background-color: #9a481d;
 }
 .imageType01 .image .image-btn.yellow {
-    background-color: #B59140;
+    background-color: #b59140;
 }
 .imageType01 .image .image-cont.s2 {
-    background-color: #201d1649;
+    background-color: #b59240e0;
     width: 400px;
     padding: 20px;
 }
@@ -71,32 +72,66 @@ body {
     padding: 0;
     border-bottom: 1px solid #fff;;
 }
-
-/* imageType 02 */
+/* imageType02 */
 .imageType02 {
     font-family: 'GmarketSans';
     padding: 100px 0;
 }
 .imageType02 h2 {
-    font-size: 45px;
-    padding-bottom: 50px;
-
+    font-size: 50px;
+    font-weight: 500;
+    margin-bottom: 36px;
 }
 .imageType02 .image-wrap {
-  display: flex;
-
+    display: flex;
+    justify-content: space-between;
 }
-.imageType02 .image-wrap .image{
-    width: 385px;
-    height: 385px;
+.imageType02 .image {
+    width: 386px;
     position: relative;
+    perspective: 800px;
 }
-.imageType02 .image-wrap .image .image-cont {
+.imageType02 .image::after {
+    content: '';
+    background: #fff;
+    display: block;
     position: absolute;
-    top: 50px;
-    left: 50px;
+    left: 30px; top: 30px; right: 30px; bottom: 30px;
+    opacity: 0;
+    transform: rotateX(-90deg);
+    transition: all 0.4s ease-in-out;
+}
+.imageType02 .image:hover::after {
+    opacity: 0.9;
+    transform: rotateX(0deg);
+}
+.imageType02 .image .image-img {}
+.imageType02 .image .image-cont {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: #fff;
+    text-align: center;
+    opacity: 0;
+    transform: translate(-50%, 50%);
+    z-index: 1000;
+    transition: all 0.3s ease-out;
+}
+.imageType02 .image:hover .image-cont {
+    opacity: 1;
+    transform: translate(-50%, -50%);
 }
 .imageType02 .image .image-title {
-
+    font-size: 30px;
+    font-weight: 500;
+    color: #000;
 }
-.imageType02 .image .image-desc {}
+.imageType02 .image .image-btn {
+    color: #fff;
+    padding: 7px 24px 5px 24px;
+    background: #000;
+    border-radius: 40px;
+    font-weight: 300;
+    margin-top: 5px;
+    display: inline-block;
+}

@@ -344,3 +344,32 @@ a {
     background: rgb(143, 129, 223);
     color: #fff;
 }
+
+
+
+/* 결과보기 토글버튼 */
+.menu1 {
+    display: none;
+}
+.menu1.active {
+    display: flex;
+    list-style: none;
+    margin-top: 10px;
+    margin-right: 5px;
+}
+.menu1.active li {
+    margin-right: 15px;
+   color: rgb(0, 79, 104);
+}
+
+.btm {
+    background-color: #e6e6e6;
+    display: inline-block;
+    padding: 10px;
+    border-radius: 10%;
+    margin: 10px 0;
+    border: 1px solid #000
+}
+.btm.active {
+    display: block;
+}

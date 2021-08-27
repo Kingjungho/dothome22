@@ -1,102 +1,82 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ImageType</title>
+    <title>imageType</title>
 
+    <!-- CSS -->
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/common.css">
-
+    <!-- Image Type CSS -->
     <link rel="stylesheet" href="css/imgType.css">
 </head>
 
 <body>
-
-    <!-- 이미지를 표현하는 방법 
-        1- 이미지를 img 태그 (alt) ==> 이미지가 의미가 있을 때
-        2- 이미지를 background ==> 이미지가 의미가 없을 때(장식, 배경)
-
-        3- 의미가 있는 이미지도 요즘은 background로 사용한다. ==> 이미지 스프라이트 기법 (네이버 , 다음)
-         이미지 스프라이트를 사용하게 되면 접근성이 깨짐 ==> IR 효과(alt)
-
-         4. 이미지 해상도 ==> 이미지 분류작업 ==> picture 태그, figure 태그 생김
-
-         3.4번이 최신 방법 웹 표준 준수
-    !-->
-
-    <!-- imageType 01 -->
+    <!-- imageType01 -->
     <section class="imageType">
         <div class="container">
             <div class="imageType01">
                 <h2>게임 추천 사이트(게임랜드)</h2>
                 <div class="image-wrap">
                     <div class="image">
-                        <img class="image-img" src="/site/img/card12.jpg" alt="">
+                        <img class="image-img" src="img/card12.jpg" alt="웰시코기 이미지입니다.">
                         <div class="image-cont">
-                        <h3 class="image-title">게임랜드에 오신 것을 환영합니다 !</h3>
-                        <p class="image-desc">다양한 장르의 게임을 추천받으세요 !다양한 기능과 커뮤니티를 즐겨보세요 !</p>
-                        <a class="image-btn" href="">자세히 보기</a>
-                    </div>
-                    </div>
-                    <div class="image">
-                        <img class="image-img" src="/site/img/card13.jpg" alt="">
-                    </div>
-                    <div class="image-cont s2">
-                        <h3 class="image-title">유저들과 함께 즐겨보세요 !</h3>
-                        <p class="image-desc">세계 각국의 사람들과의 소통을 통해
-                            여러 나라의 게임 문화를 알아가보세요 !</p>
-                        <a class="image-btn" href="">자세히 보기</a>
-                    </div>
-                    </div>
-                </div>  
-            </div>
-        </div>
-    </section>
-    <!-- imageType 01 -->
-
-    <!-- imageType 02 -->
-    <section class="imageType">
-        <div class="container">
-            <div class="imageType02">
-                <h2>게임 추천 사이트</h2>
-                <div class="image-wrap">
-                    <div class="image">
-                        <img src="/site/img/card17.jpg" alt="이미지17">
-                        <div class="image-inner1">
-                            <strong class="image-tit">장르별 맞춤 추천</strong>
-                            <span class="image-desc">간단한 조사를 통한 원하는 게임 장르추천 기능 및 선택 가능</span>
+                            <h3 class="image-title">게임랜드에 오신 것을 환영합니다 !</h3>
+                            <p class="image-desc">다양한 장르의 게임을 추천받으세요 !
+                                다양한 기능과 커뮤니티를 즐겨보세요 ! </p>
+                            <a class="image-btn" href="#">자세히 보기</a>
                         </div>
                     </div>
                     <div class="image">
-                        <div class="image-inner2">
-                            <div>
-                                <img src="/site/img/card18.jpg" alt="이미지18">
-                                <strong class="inner-tit">전 세계 게임 추천기능</strong>
-                            </div>
-                            <div>
-                                <img src="/site/img/card19.jpg" alt="이미지19">
-                                <strong class="inner-tit">온라인 VR기능 체험존</strong>
-                            </div>
-                            <div>
-                                <img src="/site/img/card20.jpg" alt="이미지20">
-                                <strong class="inner-tit">게임 유저 만족도 확인</strong>
-                            </div>
-                            <div>
-                                <img src="/site/img/card21.jpg" alt="이미지21">
-                                <strong class="inner-tit">실시간 이벤트</strong>
-                            </div>
+                        <img class="image-img" src="img/card13.jpg" alt="비숑프리제 이미지입니다.">
+                        <div class="image-cont s2">
+                            <h3 class="image-title">유저들과 함께 즐겨보세요 !</h3>
+                            <p class="image-desc">세계 각국의 사람들과의 소통을 통해
+                                여러 나라의 게임 문화를 알아가보세요 !
+                            </p>
+                            <a class="image-btn" href="#">자세히 보기</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    <!-- imageType01 -->
 
-    <!-- imageType 02 -->
+    <!-- imageType02 -->
+    <section class="imageType">
+        <div class="container">
+            <div class="imageType02">
+                <h2>게임랜드 소개</h2>
+                <div class="image-wrap">
+                <div class="image">
+                    <img src="img/card22.jpg" alt="">
+                    <strong class="image-title">초보자 튜토리얼 제공</strong>
+                    <span class="image-desc">자세히 보기</span>
+                </div>
+                <div class="image">
+                    <img src="img/card23.jpg" alt="">
+                    <div class="cont">
+                    <strong class="image-title">초보자 튜토리얼 제공</strong>
+                    <span class="image-desc">자세히 보기</span>
+                </div>
+                </div>
+                <div class="image">
+                    <img src="img/card24.jpg" alt="">
+                    <div class="cont">
+                    <strong class="image-title">초보자 튜토리얼 제공</strong>
+                    <span class="image-desc">자세히 보기</span>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+    <!-- imageType02 -->
 </body>
 
 </html>
