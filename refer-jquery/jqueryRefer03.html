@@ -92,6 +92,7 @@
         <li><a href="../refer-html/index.html">HTML</a></li>
         <li><a href="../refer-css/index.html">CSS</a></li>
         <li><a href="../refer-javascript/index.html">JAVASCRIPT</a></li>
+        <li><a href="../refer-jquery/index.html">JQUERY</a></li>
     </ul>
     <div class="title">
         <h1><a href="index.html">속성 메서드</a></h1>
@@ -698,17 +699,18 @@
         display: block;
         left: 50%;
         top: 50%;
-        margin-top: -50px;
-        margin-left: -50px;
+        transform: translate(-50%, -50%);
         height: 100px;
         width: 100px;
         padding: 10px;
+        margin: 10px;
+        border: 5px solid #391a8f;
         border-radius: 50%;
         background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
     }
 </style>
-<!--sample7 -->
-<div id="sample07" class="sample">
+<!--sample6 -->
+<div id="sample06" class="sample">
     <h2>07. offset() , position()<span class="dot"></span></h2>
     <div class="view ex7">
         <span class="circle circle7"></span>
@@ -718,6 +720,7 @@
             <p class="text7-3">position().left = <span>0</span></p>
             <p class="text7-4">position().top = <span>0</span></p>
             <p class="text7-5">position().top = <span>0</span></p>
+    </div>
     </div>
     <div class="btn">
         <a href="#c" class="btn7-1">원을 드래그하세요!</a>
@@ -743,9 +746,10 @@
     </div>
 </div>
 
+<hr>
 
 <script>
-   $( ".circle7" ).draggable({
+    $( ".circle7" ).draggable({
        start: function() {
            $(".text7-5").text("드래그가 시작되었습니다.");
        },
