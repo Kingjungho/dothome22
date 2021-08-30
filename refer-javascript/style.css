@@ -344,7 +344,31 @@ a {
     background: rgb(143, 129, 223);
     color: #fff;
 }
+.result h3 a {
+    font-size: 16px;
+    padding: 10px 15px;
+    background-color: #f1f1f1;
+    display: inline-block;
+    border-radius: 4px;
+    color: #000;
+    font-weight: normal;
+    margin-top: 5px;
+}
+.result div span{
+    display: block;
+}
+.result div {
+    background: #272822;
+    color: #fff;
+    padding:15px 20px;
+    border: 4px;
+    border-radius: 0 4px 4px 4px;
+    display: none;
+}
 
+.result.show div {
+    display: block;
+}
 
 
 /* 결과보기 토글버튼 */

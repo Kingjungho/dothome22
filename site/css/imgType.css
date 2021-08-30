@@ -89,14 +89,30 @@ body {
 .imageType02 .image-wrap .image{
     width: 385px;
     height: 385px;
+    margin-right: 20px;
     position: relative;
 }
-.imageType02 .image-wrap .image .image-cont {
+.imageType02 .image-wrap .image .cont {
     position: absolute;
-    top: 50px;
-    left: 50px;
+    top: 30%;
+    left: 25%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.329);
+    padding: 10px;
+    border-radius: 10px;
 }
 .imageType02 .image .image-title {
-
+display: block;
+font-size: 21px;
+color: #fff;
 }
-.imageType02 .image .image-desc {}
+.imageType02 .image .image-desc {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 14px;
+    background-color: rgb(0, 247, 226);
+    margin-right: 10px;
+    border-radius: 20px;
+    padding: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.671);
+}
