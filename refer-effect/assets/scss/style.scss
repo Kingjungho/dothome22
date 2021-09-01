@@ -1,3 +1,51 @@
+@charset "utf-8";
+
+/* webfonts */
+@font-face {
+    font-family: 'NEXONLv1Gothic';
+    font-weight: 300;
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF Light.woff') format('woff');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NEXONLv1Gothic';
+    font-weight: 400;
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff') format('woff');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NEXONLv1Gothic';
+    font-weight: 700;
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF Bold.woff') format('woff');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NEXONLv2Gothic';
+    font-weight: 300;
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv2 Gothic Light.woff') format('woff');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NEXONLv2Gothic';
+    font-weight: 400;
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv2 Gothic.woff') format('woff');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NEXONLv2Gothic';
+    font-weight: 700;
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv2 Gothic Bold.woff') format('woff');
+    font-style: normal;
+}
+
+
+// reset
+// 여백 초기화
 body,
 div,
 dl,
@@ -12,13 +60,13 @@ h3,
 h4,
 h5,
 h6,
-pre, 
-code, 
+pre,
+code,
 form,
 fieldset,
 legend,
-textarea, 
-p, 
+textarea,
+p,
 blockquote,
 th,
 td,
@@ -27,13 +75,217 @@ select,
 button,
 figure,
 figcaption {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
+
+// variable
+$font-Six: 'Six Caps';
+$font-Nexon1: 'NEXONLv1Gothic';
+$font-Nexon2: 'NEXONLv2Gothic';
+$gradient1: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+$gradient2: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+$gradient3: linear-gradient(120deg, #d41ee9 0%, #5e0916b2 100%);
+$gradient4: linear-gradient(to right, #fa709a 0%, #fee140 100%);
+$gradient5: linear-gradient(to top, #3c6161 0%, #330867 100%);
+$gradient6: linear-gradient(to top, #d299c2 0%, #fef9d7 100%);
+
+// mixin
+@mixin positionCenter {
+    transform: translate(-50%, -50%);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+
+@mixin flexCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin content {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+// bg
+.bg {
+    position: relative;
+    height: 100vh;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    &::before {
+        @include content;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: -1;
+    }
+}
+
+@for $i from 0 through 20 {
+    .bg#{$i} {
+        background-image: url(../img/bg#{$i}@2.jpg);
+    }
+}
+
 #main {
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  background: #11e8bb;
-  background: linear-gradient(to bottom, #11e8bb 0%, #8200c9 100%);  
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: #11e8bb;
+    background: $gradient1;
+
+    &.game {
+        background: $gradient2;
+    }
+
+    &.menu {
+        background: $gradient3;
+    }
+
+    &.mouse {
+        background: $gradient4;
+    }
+
+    &.parallax {
+        background: $gradient5;
+    }
+
+    &.slider {
+        background: $gradient6;
+    }
+
+
+}
+
+#contents {
+    h1 {
+        @include positionCenter;
+        font-size: 10vw;
+        white-space: nowrap;
+        font-family: $font-Six, sans-serif;
+        font-weight: normal;
+        text-transform: uppercase;
+        letter-spacing: 1vw;
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        background-image: linear-gradient(to bottom, #8200c9, #60317959)
+    }
+}
+
+nav {
+    @include positionCenter;
+    bottom: 10px;
+    top: auto;
+
+    li {
+        list-style: none;
+        display: inline;
+
+        a {
+            color: #fff;
+            text-decoration: none;
+            width: 100px;
+            height: 40px;
+            line-height: 50px;
+            border: 1px solid #fff;
+            display: inline-block;
+            border-radius: 50px;
+            font-size: 14px;
+            text-align: center;
+            margin: 4px;
+            font-family: $font-Nexon1;
+            box-shadow: inset 0 0 0 #fff;
+            transition: all 0.4s;
+
+            &:hover {
+                box-shadow: inset 0 -100px 0 #fff;
+                color: #6c4a70;
+            }
+
+        }
+    }
+}
+
+// info
+.info {
+    color: #fff;
+    font-family: $font-Nexon1;
+    padding: 20px;
+
+    &.right {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    &.bottom {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+
+    h1 {
+        font-weight: 300;
+        font-size: 20px;
+        line-height: 1.6;
+        border-bottom: 1px dashed #fff;
+        margin-bottom: 10px;
+        display: inline-block;
+    }
+
+    p {
+        font-weight: 300;
+        font-size: 16px;
+    }
+
+
+    li {
+        list-style: none;
+        display: inline;
+
+
+        a {
+            display: inline-block;
+            text-decoration: none;
+            color: #fff;
+            border: 1px dashed #fff;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            line-height: 20px;
+            font-size: 12px;
+            margin-bottom: 5px;
+        }
+    }
+
+    &.active {
+        a {
+            background: #fff;
+            color: #000;
+        }
+    }
+
+    button {
+        background: transparent;
+        border: 1px solid #fff;
+        padding: 5px 20px;
+        color: #fff;
+        border-radius: 50px;
+        box-sizing: 0 0 0 #fff inset;
+        transition: all 0.4s;
+
+
+        &:hover {
+            box-shadow: 0 -50px 0 #fff inset;
+            color: #000;
+        }
+    }
 }
