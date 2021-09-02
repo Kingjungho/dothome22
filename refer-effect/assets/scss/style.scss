@@ -123,7 +123,7 @@ $gradient6: linear-gradient(to top, #d299c2 0%, #fef9d7 100%);
         @include content;
         width: 100%;
         height: 100vh;
-        background: rgba(0, 0, 0, 0.6);
+        background: rgba(114, 118, 163, 0.466);
         z-index: -1;
     }
 }
@@ -232,17 +232,19 @@ nav {
     }
 
     h1 {
-        font-weight: 300;
-        font-size: 20px;
+        font-weight: 700;
+        font-size: 40px;
         line-height: 1.6;
-        border-bottom: 1px dashed #fff;
+        border-bottom: 5px solid rgb(68, 19, 204);
         margin-bottom: 10px;
         display: inline-block;
+        color: rgb(255, 255, 255);
     }
 
     p {
-        font-weight: 300;
-        font-size: 16px;
+        font-weight: 500;
+        font-size: 25px;
+        color: rgb(255, 255, 255);
     }
 
 
@@ -254,7 +256,7 @@ nav {
         a {
             display: inline-block;
             text-decoration: none;
-            color: #fff;
+            color: rgb(243, 243, 243);
             border: 1px dashed #fff;
             border-radius: 50%;
             width: 20px;
@@ -282,8 +284,8 @@ nav {
         box-sizing: 0 0 0 #fff inset;
         transition: all 0.4s;
         cursor: pointer;
-  
-  
+
+
         &:hover {
             box-shadow: 0 -50px 0 #fff inset;
             color: #000;
@@ -295,79 +297,113 @@ nav {
 //modal
 
 #modal {
-	position: fixed;
-	left: 0; top: 0;
-	width: 100%; height: 100vh;
-	z-index: 1000;
-	transform: scale(0);
-	
-	.modal-bg {
-		background: rgba(0,0,0,0.6);
-		height: 100vh;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		
-		.modal-cont {
-			
-			h2 {
-				font-weight: 400;
-				font-size: 30px;
-				margin-bottom: 10px;
-			}
-			p {
-				font-weight: 300;
-				line-height: 1.6;
-			}
-			button {
-				float: right;
-				border: 1px solid #000;
-				background: #000;
-				border-radius: 20px;
-				color: #fff;
-				padding: 5px 10px;
-				cursor: pointer;
-				 font-family: 'GmarketSans';
-                 margin-top: 10px;
-			}
-		}
-	}
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1000;
+    transform: scale(0);
+
+    .modal-bg {
+        background: rgba(0, 0, 0, 0.6);
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .modal-cont {
+
+            h2 {
+                font-weight: 400;
+                font-size: 30px;
+                margin-bottom: 10px;
+            }
+
+            p {
+                font-weight: 300;
+                line-height: 1.6;
+            }
+
+            button {
+                float: right;
+                border: 1px solid #000;
+                background: #000;
+                border-radius: 20px;
+                color: #fff;
+                padding: 5px 10px;
+                cursor: pointer;
+                font-family: 'GmarketSans';
+                margin-top: 10px;
+            }
+        }
+    }
 }
+
 #modal.show {
-  animation: unfoldIn 1s ease forwards;
+    animation: unfoldIn 1s ease forwards;
 }
+
 @keyframes unfoldIn {
-  0%   {transform:scaley(0.005) scalex(0);}
-  50%  {transform:scaley(0.005) scalex(1);}
-  100% {transform:scaley(1) scalex(1);}
+    0% {
+        transform: scaley(0.005) scalex(0);
+    }
+
+    50% {
+        transform: scaley(0.005) scalex(1);
+    }
+
+    100% {
+        transform: scaley(1) scalex(1);
+    }
 }
 
 #modal.show.hide {
-  animation: unfoldOut 1s ease forwards;
+    animation: unfoldOut 1s ease forwards;
 }
+
 @keyframes unfoldOut {
-  0%   {transform:scaley(1) scalex(1);}
-  50%  {transform:scaley(0.005) scalex(1);}
-  100% {transform:scaley(0.005) scalex(0);}
+    0% {
+        transform: scaley(1) scalex(1);
+    }
+
+    50% {
+        transform: scaley(0.005) scalex(1);
+    }
+
+    100% {
+        transform: scaley(0.005) scalex(0);
+    }
 }
 
 #modal.show .modal-bg .modal-cont {
-  transform:scale(0);
-  animation:zoomIn 0.5s 0.8s ease forwards;
+    transform: scale(0);
+    animation: zoomIn 0.5s 0.8s ease forwards;
 }
 
 #modal.show.hide .modal-bg .modal-cont {
-  transform:scale(0);
-  animation:zoomOut 0.5s ease forwards;
+    transform: scale(0);
+    animation: zoomOut 0.5s ease forwards;
 }
 
 @keyframes zoomIn {
-  0% {transform:scale(0)}
-  100% {transform:scale(1)}
+    0% {
+        transform: scale(0)
+    }
+
+    100% {
+        transform: scale(1)
+    }
 }
+
 @keyframes zoomOut {
-  0% {transform:scale(1)}
-  100% {transform:scale(0)}
+    0% {
+        transform: scale(1)
+    }
+
+    100% {
+        transform: scale(0)
+    }
 }
 
 
@@ -375,7 +411,7 @@ nav {
 .code-view {
     background: #fff;
     width: 60vw;
-    border:1px solid #f2f2f2;
+    border: 1px solid #f2f2f2;
     border-radius: 10px;
     overflow: hidden;
 
@@ -385,6 +421,7 @@ nav {
         .dot {
             padding: 3px 10px 3px 8px;
         }
+
         span {
             width: 12px;
             height: 12px;
@@ -392,18 +429,22 @@ nav {
             border-radius: 50%;
             margin: 0 2px;
         }
-        span:nth-child(1){
+
+        span:nth-child(1) {
             background-color: #f56565;
         }
-        span:nth-child(2){
+
+        span:nth-child(2) {
             background-color: #f6e05e;
         }
-        span:nth-child(3){
+
+        span:nth-child(3) {
             background-color: #48bb78;
         }
     }
+
     .view-title {
-        border:1px solid #f2f2f2;
+        border: 1px solid #f2f2f2;
         padding: 0 10px;
 
         li {
@@ -417,11 +458,34 @@ nav {
                 margin: 0 5px;
                 display: inline-block;
             }
+
             &.active a {
                 border-top: 2px solid #667EEA;
                 color: #4a5568;
             }
         }
     }
+ .view-cont {
+
+        .html {
+            height: 70vh;
+            overflow-y: scroll
+        }
+
+        > div {
+            display: none;
+        }
+
+        > div:nth-child(1){
+            display: block;
+        }
+        .css {
+            height: 70vh;
+            overflow-y: scroll
+        }
+        .javascript {
+            height: 70vh;
+            overflow-y: scroll
+        }
+    }   
 }
-        

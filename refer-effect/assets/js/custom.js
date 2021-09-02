@@ -9,30 +9,32 @@
     });
     
 
-    document.addEventListener('DOMContentLoaded', (event) => {
+      document.addEventListener('DOMContentLoaded', (event) => {
       document.querySelectorAll('pre code').forEach((el) => {
-          hljs.highlightElement(el);
+            hljs.highlightElement(el);
       });
-  });
+   });
 
 
+   //
 
-  //Code tab menu
 
-  const tabBtn1 = document.querySelectorAll(".code-view .view-title li a");
-  const tabCont1 = document.querySelectorAll(".language-html .hljs ");
+   const tabBtn1 = document.querySelectorAll(".code-view .view-title li");
+   const tabCont1 = document.querySelectorAll(".view-cont > div");
 
-  tabBtn1.forEach((element) => {
-   element.addEventListener("click", function(){
-       
-       tabBtn1.forEach(el => {
-           el.classList.remove("active")
-       });
-       element.classList.add("active")
+        //1. 버튼을 클릭하면 클릭한 버튼한테 active 추가
 
-       tabCont1.forEach( el => {
-           el.style.display = "none";
-       })
-       tabCont1[index].style.display ="block";
-   })
-});
+        tabBtn1.forEach((element, index) => {
+            element.addEventListener("click", function () {
+
+                tabBtn1.forEach(el => {
+                    el.classList.remove("active")
+                });
+                element.classList.add("active")
+               
+                tabCont1.forEach(el => {
+                  el.style.display = "none";
+              })
+              tabCont1[index].style.display = "block";
+          })
+      });
