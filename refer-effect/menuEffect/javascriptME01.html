@@ -140,19 +140,10 @@
                         </ul>
                     </div>
                     <div class="view-cont">
-<pre><code class="language-html">&lt;!doctype html&gt;
-&lt;html&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot; /&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
-    &lt;link href=&quot;/path/to/tailwind.css&quot; rel=&quot;stylesheet&quot;&gt;
-    &lt;!-- ... --&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;!-- ... --&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
+<pre><code class="language-html">
+    <div>html code</div>
+    <div>css code</div>
+    <div>javascript code</div>
                     </div>
                 </div>
                 
@@ -165,10 +156,24 @@
     <script src="../assets/js/custom.js"></script>
     <script src="../assets/js/highlight.min.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', (event) => {
-            document.querySelectorAll('pre code').forEach((el) => {
-                hljs.highlightElement(el);
-            });
+        const tabBtn = document.querySelectorAll(".tab-btn ul li");
+        const tabCont = document.querySelectorAll(".tab-cont > div");
+
+        //1. 버튼을 클릭하면 클릭한 버튼한테 active 추가
+
+        tabBtn.forEach((element, index) => {
+            element.addEventListener("click", function(){
+                
+                tabBtn.forEach(el => {
+                    el.classList.remove("active")
+                });
+                element.classList.add("active")
+
+                tabCont.forEach( el => {
+                    el.style.display = "none";
+                })
+                tabCont[index].style.display ="block";
+            })
         });
     </script>
 </body>
