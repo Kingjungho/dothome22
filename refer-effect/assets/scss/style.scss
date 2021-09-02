@@ -281,11 +281,147 @@ nav {
         border-radius: 50px;
         box-sizing: 0 0 0 #fff inset;
         transition: all 0.4s;
-
-
+        cursor: pointer;
+  
+  
         &:hover {
             box-shadow: 0 -50px 0 #fff inset;
             color: #000;
         }
     }
 }
+
+
+//modal
+
+#modal {
+	position: fixed;
+	left: 0; top: 0;
+	width: 100%; height: 100vh;
+	z-index: 1000;
+	transform: scale(0);
+	
+	.modal-bg {
+		background: rgba(0,0,0,0.6);
+		height: 100vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		
+		.modal-cont {
+			
+			h2 {
+				font-weight: 400;
+				font-size: 30px;
+				margin-bottom: 10px;
+			}
+			p {
+				font-weight: 300;
+				line-height: 1.6;
+			}
+			button {
+				float: right;
+				border: 1px solid #000;
+				background: #000;
+				border-radius: 20px;
+				color: #fff;
+				padding: 5px 10px;
+				cursor: pointer;
+				 font-family: 'GmarketSans';
+                 margin-top: 10px;
+			}
+		}
+	}
+}
+#modal.show {
+  animation: unfoldIn 1s ease forwards;
+}
+@keyframes unfoldIn {
+  0%   {transform:scaley(0.005) scalex(0);}
+  50%  {transform:scaley(0.005) scalex(1);}
+  100% {transform:scaley(1) scalex(1);}
+}
+
+#modal.show.hide {
+  animation: unfoldOut 1s ease forwards;
+}
+@keyframes unfoldOut {
+  0%   {transform:scaley(1) scalex(1);}
+  50%  {transform:scaley(0.005) scalex(1);}
+  100% {transform:scaley(0.005) scalex(0);}
+}
+
+#modal.show .modal-bg .modal-cont {
+  transform:scale(0);
+  animation:zoomIn 0.5s 0.8s ease forwards;
+}
+
+#modal.show.hide .modal-bg .modal-cont {
+  transform:scale(0);
+  animation:zoomOut 0.5s ease forwards;
+}
+
+@keyframes zoomIn {
+  0% {transform:scale(0)}
+  100% {transform:scale(1)}
+}
+@keyframes zoomOut {
+  0% {transform:scale(1)}
+  100% {transform:scale(0)}
+}
+
+
+// code-view
+.code-view {
+    background: #fff;
+    width: 60vw;
+    border:1px solid #f2f2f2;
+    border-radius: 10px;
+    overflow: hidden;
+
+    .view-header {
+        padding: 10px;
+
+        .dot {
+            padding: 3px 10px 3px 8px;
+        }
+        span {
+            width: 12px;
+            height: 12px;
+            display: inline-block;
+            border-radius: 50%;
+            margin: 0 2px;
+        }
+        span:nth-child(1){
+            background-color: #f56565;
+        }
+        span:nth-child(2){
+            background-color: #f6e05e;
+        }
+        span:nth-child(3){
+            background-color: #48bb78;
+        }
+    }
+    .view-title {
+        border:1px solid #f2f2f2;
+        padding: 0 10px;
+
+        li {
+            display: inline;
+            list-style: none;
+
+            a {
+                text-decoration: none;
+                color: #cccccc;
+                padding: 5px 5px 12px;
+                margin: 0 5px;
+                display: inline-block;
+            }
+            &.active a {
+                border-top: 2px solid #667EEA;
+                color: #4a5568;
+            }
+        }
+    }
+}
+        
