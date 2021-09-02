@@ -289,7 +289,7 @@ nav li a:hover {
   font-weight: 700;
   font-size: 40px;
   line-height: 1.6;
-  border-bottom: 5px solid #4413cc;
+  border-bottom: 2px dashed white;
   margin-bottom: 10px;
   display: inline-block;
   color: white;
