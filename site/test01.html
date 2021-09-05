@@ -89,20 +89,20 @@
         .nav-title {
             font-size: 75px;
             margin-top: 150px;
-            margin-left: 170px;
+            margin-left: 183px;
             font-weight: 700;
         }
 
         .nav-title2 {
             font-size: 43px;
-            margin-left: 170px;
+            margin-left: 183px;
             margin-top: 40px;
             font-weight: 400;
         }
 
         .nav-desc {
             font-size: 22px;
-            margin-left: 170px;
+            margin-left: 183px;
             margin-top: 30px;
         }
 
@@ -162,7 +162,6 @@
             padding: 150px;
             justify-content: center;
             background-color: #111;
-            margin-top: 570px;
         }
 
         .middle-left {
@@ -447,6 +446,55 @@
             font-size: 20px;
             margin-bottom: 30px;
         }
+        .section input[id*="slide"] {
+            display: none;
+        }
+        .section .slidewrap {
+            min-width: 1200px;
+            margin: 0 auto;
+            overflow: hidden;
+            text-align: center;
+        }
+        .section .slidelist {
+            white-space: nowrap;
+             font-size: 0;
+        }
+        .section .slidelist > li {
+            display: inline-block;
+            vertical-align: middle;
+            width: 100%;
+            transition: all .5s;
+        }
+        .section .slidelist > li > a {
+            display: block;
+            position: relative;
+        }
+        .section .slidelist > li > a img {
+            width: 1180px;
+            height: 410px;
+        }
+        .section .slidelist label {
+            position: absolute;
+            z-index: 10;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 50px;
+            cursor: pointer;
+        }
+        .section .slidelist .left {
+            left: 310px;
+            background: url('../site/img/arrow-left.svg') center center / 100% no-repeat;
+        }
+        .section .slidelist .right {
+            right: 310px;
+            background: url('../site/img/arrow-right.svg') center center  / 100% no-repeat;
+        }
+        .section [id="slide01"]:checked ~ .slidewrap .slidelist > li {transform:translateX(0%);}
+        .section [id="slide02"]:checked ~ .slidewrap .slidelist > li {transform:translateX(-100%);}
+        .section [id="slide03"]:checked ~ .slidewrap .slidelist > li {transform:translateX(-200%);}
+        .section [id="slide04"]:checked ~ .slidewrap .slidelist > li {transform:translateX(-300%);}
+        .section [id="slide05"]:checked ~ .slidewrap .slidelist > li {transform:translateX(-400%);}
+        .section [id="slide06"]:checked ~ .slidewrap .slidelist > li {transform:translateX(-500%);}
     </style>
 </head>
 
@@ -477,23 +525,61 @@
                         프로그램을 지금
                         경험해보세요.</div>
                 </div>
-                <div class="slide">
-                    <div class="slide-inner">
-                        <div class="inner-wrap">
-                        </div>
+                <div class="section">
+                    <input type="radio" name="slide" id="slide01" checked>
+                    <input type="radio" name="slide" id="slide02">
+                    <input type="radio" name="slide" id="slide03">
+                    <input type="radio" name="slide" id="slide04">
+                    <input type="radio" name="slide" id="slide05">
+                    <input type="radio" name="slide" id="slide06">
+                
+
+                <div class="slidewrap">
+                    <ul class="slidelist">
+                        <li>
+                            <a href="#">
+                                <label for="slide06" class="left"></label>
+                                <img src="../site/img/zz3.jpg" alt="">
+                                <label for="slide05" class="right"></label>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <label for="slide04" class="left"></label>
+                                <img src="../site/img/zz4.png" alt="">
+                                <label for="slide03" class="right"></label>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <label for="slide02" class="left"></label>
+                                <img src="../site/img/zz5.png" alt="">
+                                <label for="slide01" class="right"></label>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <label for="slide02" class="left"></label>
+                                <img src="../site/img/zz6.png" alt="">
+                                <label for="slide03" class="right"></label>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <label for="slide04" class="left"></label>
+                                <img src="../site/img/zz7.png" alt="">
+                                <label for="slide05" class="right"></label>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <label for="slide06" class="left"></label>
+                                <img src="../site/img/zz8.jpg" alt="">
+                                <label for="slide01" class="right"></label>
+                            </a>
+                        </li>
+                    </ul>
                     </div>
-                    <div class="slide-inner1">
-                        <div class="inner-title">광고 표시, 어떻게 하지?</div>
-                            <h2 class="inner-desc">정당하게 광고하자!<br>
-                                추천보증광고 표시법</h2>
-                            <div class="inner-word">
-                                지금 만나보세요→
-                            </div>
-                    </div>
-                    <div class="slide-inner2"></div>
-                    <div class="slide-inner3"></div>
-                    <div class="slide-inner4"></div>
-                    <div class="slide-inner5"></div>
                 </div>
                 <div class="container2">
                     <div class="middle-wrap">
