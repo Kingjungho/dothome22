@@ -6,44 +6,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
+
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/reset.css">
 
     <style>
         .container1 {
-        width: 100%;
-        margin: 0 auto;
-        position: relative;
+            width: 100%;
+            margin: 0 auto;
+            position: relative;
         }
+
         .container1-fluid {
-        width: 96%;
-        margin: 0 auto;
+            width: 96%;
+            margin: 0 auto;
         }
 
         .layout {
             background-image: url(../site/img/zz.png);
-            
+
         }
 
         .testType01 {
             position: relative;
             font-family: 'NanumBarunGothic';
+            color: #fff;
         }
 
         .header {
             display: flex;
-            background-color: rgba(0, 0, 0, 0.24);
             color: #fff;
             padding: 2px;
-            margin-left: 10px;
+            margin-left: 130px;
+            margin-top: 30px;
         }
+
         .header img {
             position: absolute;
             width: 40px;
-            top: 35px;
-            left: 30px;
+            top: 37px;
+            left: 162px;
         }
+
         .header-left {
             margin: 30px 0 25px 80px;
             font-weight: 700;
@@ -52,12 +56,12 @@
 
         .header-middle {
             margin: 0 30px 0 90px;
-            font-size: 17px;
+            font-size: 18px;
         }
 
         .header-middle span {
             display: inline-block;
-            margin: 45px 28px 30px 50px;
+            margin: 45px 20px 30px 50px;
             text-align: center;
 
         }
@@ -65,13 +69,16 @@
         .header-right {
             display: inline-block;
             margin-top: 50px;
-            margin-left: 110px;
+            margin-left: 160px;
+            text-align: center;
         }
 
         .header-right span {
-            border: 1px solid #fff;
             border-radius: 30px;
-            padding: 20px;
+            padding: 13px;
+            font-size: 14px;
+            border: 1px solid rgba(247, 242, 242, 0.3);
+            border-radius: 20px;
         }
 
         .nav {
@@ -100,49 +107,345 @@
         }
 
         .slide {
-            width: 50vw;
+            position: absolute;
+            right: 470px;
+            bottom: 3800px;
+            padding: 20px;
         }
-        .slide .slide-inner:nth-child(1) {
+        .slide .slide-inner1 {
             background-image: url(../site/img/zz3.jpg);
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
-            width: 100%;
+            width: 1024px;
+            height: 410px;
+            border-radius: 30px;
+            padding: 5px;
         }
-        .slide .slide-inner:nth-child(2) {
-            background-image: url(../site/img/zz4.jpg);
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            width: 100%;
+        .slide-inner1 .inner-title {
+            margin-bottom: 10px;
+            font-size: 16px;
+            margin: 50px 0 20px 65px;
+            color: hsla(0,0%,100%,.6);
+            font-weight: 700;
         }
-        .slide .slide-inner:nth-child(3) {
-            background-image: url(../site/img/zz5.jpg);
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            width: 100%;
+        .slide-inner1 .inner-desc {
+            font-size: 35px;
+            line-height: 50px;
+            letter-spacing: -.6px;
+            margin: 0 0 30px 65px;
         }
-        .slide .slide-inner:nth-child(4) {
-            background-image: url(../site/img/zz6.jpg);
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            width: 100%;
+        .slide-inner1 .inner-word {
+            display: inline-block;
+            vertical-align: top;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 26px;
+            letter-spacing: -.2px;
+            color: #fff;
+            margin: 0 0 30px 65px;
         }
-        .slide .slide-inner:nth-child(5) {
-            background-image: url(../site/img/zz7.jpg);
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            width: 100%;
+        .middle-wrap {}
+
+        .middle-wrap .middle-title {
+            padding: 20px 30px 30px 0;
+            margin-bottom: 25px;
         }
-        .slide .slide-inner:nth-child(6) {
-            background-image: url(../site/img/zz8.jpg);
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
+
+        .middle-wrap h1 {
+            font-size: 50px;
+            color: #6d8bff;
+            margin-bottom: 15px;
+        }
+        .container2 {
+            display: flex;
+            padding: 150px;
+            justify-content: center;
+            background-color: #111;
+            margin-top: 570px;
+        }
+
+        .middle-left {
+            background-color: rgba(85, 80, 80, 0.281);
+            width: 496px;
+            height: 870px;
+            padding: 40px 40px 30px 40px;
+            border-radius: 20px;
+            position: relative;
+        }
+
+        .middle-left img {
+            position: absolute;
+            bottom: 0;
+            right: 20px;
+        }
+
+        .left-title {
+            color: hsla(0,0%,100%,.6);
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .left-desc {
+            font-size: 34px;
+            margin-bottom: 15px;
+        }
+
+        .left-word {
+            color: #6d8bff;
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .midlle-right {
+            background-color: rgba(85, 80, 80, 0.281);
+            margin-left: 30px;
+            margin-bottom: 30px;
+            padding: 40px 40px 0 40px;
+            border-radius: 20px;
+            position: relative;
+            width: 496px;
+            height: 570px;
+            position: relative;
+        }
+
+        .right-title {
+            color: hsla(0,0%,100%,.6);
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .right-desc {
+            font-size: 34px;
+            margin-bottom: 15px;
+        }
+
+        .right-word {
+            color:#6d8bff;
+            font-weight: 700;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .midlle-right img {
+            width: 496px;
+            height: 294px;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+
+        .midlle-right2 {
+            background-color: rgba(85, 80, 80, 0.281);
+            margin-left: 30px;
+            padding: 40px 40px 0 40px;
+            border-radius: 20px;
+            width: 496px;
+            height: 570px;
+            position: relative;
+        }
+
+        .midlle-right2 .right-title {
+            color: hsla(0,0%,100%,.6);
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .midlle-right2 .right-desc {
+            font-size: 34px;
+            margin-bottom: 15px;
+            
+        }
+
+        .midlle-right2 .right-word {
+            color: #6d8bff;
+            font-weight: 700;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .midlle-right2 img {
+            position: absolute;
+            width: 496px;
+            height: 294px;
+            bottom: 0;
+
+        }
+        .container3 {
+            padding: 150px;
+            background-color: #1c1c1c;;
+        }
+        .container3 h2 {
+            text-align: center;
+            font-size: 50px;
+            margin-bottom: 50px;
+            color: rgb(11, 248, 138);
+        }
+        .bottom-wrap {
+            display: flex;
             width: 100%;
+            justify-content: center;
+        }
+        .card1 {
+            background-color: rgb(63, 216, 139);
+            padding: 50px;
+            margin-right: 25px;
+            border-radius: 20px;
+            width: 496px;
+            height: 466px;
+            position: relative;
+        }
+        .card1 h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .card1 strong {
+            font-size: 30px;
+        }
+        .card1 .card1-word {
+            font-size: 18px;
+            margin-top: 20px;
+            color: #91ffc2;
+        }
+        .card1 img {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+        .card2 {
+            width: 100%;
+            background-color: rgb(74, 99, 211);
+            padding: 50px;
+            margin-right: 25px;
+            border-radius: 20px;
+            width: 496px;
+            height: 466px;
+            position: relative;
+        }
+        .card2 h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .card2 strong {
+            font-size: 30px;    
+        }
+        .card2 .card2-word {
+            font-size: 18px;
+            margin-top: 20px;
+            color: #91ffc2;
+        }
+        .card2 img {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+       .bottom-wrap2  {
+           display: flex;
+           justify-content: center;
+       }
+        .bottom-wrap2 .card3 {
+            background-color: rgba(101, 0, 233, 0.692);
+            margin-top: 30px;
+            border-radius: 20px;
+            width: 1120px;
+            height: 328px;
+            padding: 50px;
+            position: relative;
+            margin-right: 15px;
+        }
+        .card3 h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .card3 strong {
+            font-size: 30px;
+        }
+        .card3 .card3-word {
+            font-size: 18px;
+            margin-top: 20px;
+            color: #91ffc2;
+        }
+        .card3 img {
+            width: 609px;
+            height: 237px;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+        .container4 {
+            text-align: center; 
+            padding: 150px;
+        }
+        .last-title {
+            margin-bottom: 30px;
+            font-size: 23px;
+            font-weight: 700;
+            line-height: 70px;
+            letter-spacing: -.68px;
+        }
+        .last1 {
+            
+        }
+        .last1 .last {
+            display: inline-block;
+            width: 340px;
+            border-radius: 41px;
+            box-shadow: 0 10px 6px -10px rgb(0 0 0 / 6%);
+            background-color: #fff;
+            font-size: 22px;
+            line-height: 80px;
+            letter-spacing: -.4px;
+            color: #000;
+            margin-right: 18px;
+
+        }
+        .last1 .last.blue {
+            background-color: #4b65f7;
+            color: #fff;
+        }
+        .top {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 54px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgb(0, 0, 0);
+            font-family: HelveticaNeue, helvetica, sans-serif;
+            font-size: 14px;
+            line-height: 17px;
+            font-weight: 500;
+            letter-spacing: 0.47px;
+            color: rgb(102, 102, 102);
+        }
+        .conatainer5 {
+            text-align: center;
+            padding: 20px;
+            background-color: #000;
+        }
+        .login {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+            width: 80px;
+            height: 29px;
+            border-radius: 4px;
+            background: rgb(50, 50, 50);
+            font-size: 13px;
+            letter-spacing: -0.5px;
+            color: rgb(153, 153, 153);
+        }
+        .login-desc {
+            margin: 30px 0 10px 0;
+            color: rgb(50, 50, 50);
+            font-size: 12px;
+        }
+        .naver {
+            color: rgb(50, 50, 50);
+            font-weight: 700;
+            font-size: 20px;
+            margin-bottom: 30px;
         }
     </style>
 </head>
@@ -177,19 +480,87 @@
                 <div class="slide">
                     <div class="slide-inner">
                         <div class="inner-wrap">
-                            <div class="inner-title">광고 표시, 어떻게 하지?</div>
-                            <h2 class="inner-desc">정당하게 광고하자!<br>
-                                추천보증광고 표시법</h2>
-                                <div class="inner-word">
-                                    지금 만나보세요→
-                                </div>
                         </div>
                     </div>
-                    <div class="slide-inner"></div>
-                    <div class="slide-inner"></div>
-                    <div class="slide-inner"></div>
-                    <div class="slide-inner"></div>
-                    <div class="slide-inner"></div>
+                    <div class="slide-inner1">
+                        <div class="inner-title">광고 표시, 어떻게 하지?</div>
+                            <h2 class="inner-desc">정당하게 광고하자!<br>
+                                추천보증광고 표시법</h2>
+                            <div class="inner-word">
+                                지금 만나보세요→
+                            </div>
+                    </div>
+                    <div class="slide-inner2"></div>
+                    <div class="slide-inner3"></div>
+                    <div class="slide-inner4"></div>
+                    <div class="slide-inner5"></div>
+                </div>
+                <div class="container2">
+                    <div class="middle-wrap">
+                        <div class="middle-title">
+                            <h1>인플루언서에게<br>제공되는<br>광고 수익과 혜택</h1>
+                        </div>
+                        <div class="middle-left">
+                            <div class="left-title">인플루언서 홈</div>
+                            <div class="left-desc">취향을 자유롭게 표현하는<br>나만의 홈페이지</div>
+                            <div class="left-word">자세히 알아보기 →</div>
+                            <img src="../site/img/zz10.png" alt="">
+                        </div>
+                    </div>
+                    <div class="middle-wrap2">
+                        <div class="midlle-right">
+                            <div class="right-title">특별한 광고</div>
+                            <div class="right-desc">더 커진 수익과 효과적인<br>헤드뷰 광고</div>
+                            <div class="right-word">자세히 알아보기 →</div>
+                            <img src="../site/img/zz11.png" alt="">
+                        </div>
+                        <div class="midlle-right2">
+                            <div class="right-title">검색 참여</div>
+                            <div class="right-desc">인플루언서의 콘텐츠를<br>더 많이 보여주는 검색 결과</div>
+                            <div class="right-word">자세히 알아보기 →</div>
+                            <img src="../site/img/zz12.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="container3">
+                    <h2>오직 네이버 인플루언서만을 위한<br> 성장 지원 프로그램</h2>
+                    <div class="bottom-wrap">
+                        <div class="card1">
+                            <h3>슈퍼애드</h3>
+                            <strong>네이버 배너를 통한<br>홍보 지원</strong>
+                            <div class="card1-word">자세히 알아보기 →</div>
+                            <img src="../site/img/zz13.png" alt="">
+                        </div>
+                        <div class="card2">
+                            <h3>엑스퍼트 프로그램</h3>
+                            <strong>세금, 법률 등<br>컨설팅 비용 지원</strong>
+                            <div class="card2-word">자세히 알아보기 →</div>
+                            <img src="../site/img/zz14.png" alt="">
+                        </div>
+                    </div>
+                    <div class="bottom-wrap2">
+                        <div class="card3">
+                        <h3>크리에이터 워크숍</h3>
+                        <strong>어디에서도 볼 수 없었던<br>무료 강연과 교육</strong>
+                        <div class="card3-word">자세히 알아보기 →</div>
+                        <img src="../site/img/zz15.png" alt="">
+                    </div>
+                    </div>
+                </div>
+                <div class="container4">
+                    <div class="last-title">
+                    <h2>인플루언서 검색에 대한 정보가 더 필요한가요?</h2>
+                </div>
+                <div class="last1">
+                <span class="last">인플루언서 검색 지원 안내</span>
+                <span class="last blue">인플루언서 검색 소개페이지</span>
+            </div>
+                </div>
+                <div class="top">TOP↑</div>
+                <div class="conatainer5">
+                    <div class="login">로그인</div>
+                    <div class="login-desc">NAVER Copyright © NAVER Corp. All Rights Reserved.</div>
+                    <div class="naver">NAVER</div>
                 </div>
             </div>
         </div>
