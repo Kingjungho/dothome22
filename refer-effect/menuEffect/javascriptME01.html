@@ -65,52 +65,64 @@
         .tab-cont>div p {
             line-height: 1.6;
         }
-        @media (max-width:1200px){
+
+        @media (max-width:1200px) {
             .info h1 {
                 font-size: 30px;
             }
         }
+
         @media (max-width:800px) {
             .tab-btn li a {
                 white-space: nowrap;
                 padding: 18px;
 
             }
+
             .tab-cont {
                 overflow: hidden;
             }
+
             .tab-cont h2 {
                 font-size: 21px;
             }
+
             .tab-cont p {
                 font-size: 14px;
             }
+
             .info h1 {
                 font-size: 16px;
                 border-bottom: 2px dashed #fff;
             }
+
             .info p {
                 font-size: 12px;
             }
-            .info.right li{
+
+            .info.right li {
                 display: inline-block;
                 width: 13px;
                 padding: 3px;
             }
+
             .code-view {
                 height: 125vw;
                 width: 90vw;
             }
+
             .hljs {
                 font-size: 12px;
                 height: 100%;
             }
+
             #tab-menu {
                 width: 85vw;
             }
-        .code-view .view-title li {
-            font-size: 14px;
-        }
+
+            .code-view .view-title li {
+                font-size: 14px;
+            }
         }
     </style>
 </head>
@@ -200,7 +212,7 @@
                     </div>
                     <div class="view-cont">
                         <div class="html">
-<pre><code class="language-html">&lt;div id="tab-menu">
+                            <pre><code class="language-html">&lt;div id="tab-menu">
 &lt;div class="tab-btn">
     &lt;ul>
         &lt;li class="active">&lt;a href="#">원칙1&lt;/a>&lt;/li>
@@ -235,10 +247,10 @@
 &lt;/div>
 &lt;/div>
 </code></pre>
-</div>
+                        </div>
 
-<div class="css">
-<pre><code class="language-css">#tab-menu {
+                        <div class="css">
+                            <pre><code class="language-css">#tab-menu {
         max-width: 600px;
         background: rgb(173, 173, 173);
         position: absolute;
@@ -286,10 +298,10 @@
         line-height: 1.6;
     }
 </code></pre>
-</div>
+                        </div>
 
-<div class="javascript">
-<pre><code class="language-javascript">const tabBtn = document.querySelectorAll(".tab-btn ul li");
+                        <div class="javascript">
+                            <pre><code class="language-javascript">const tabBtn = document.querySelectorAll(".tab-btn ul li");
 const tabCont = document.querySelectorAll(".tab-cont > div");
 
     tabBtn.forEach((element, index) => {
@@ -307,11 +319,9 @@ const tabCont = document.querySelectorAll(".tab-cont > div");
     });})
 
 </pre></code>
-</div>
-
-</div>
-</div>
-
+                        </div>
+                    </div>
+                </div>
                 <button>닫기</button>
             </div>
         </div>
@@ -322,27 +332,8 @@ const tabCont = document.querySelectorAll(".tab-cont > div");
     <script src="../assets/js/custom.js"></script>
     <script src="../assets/js/highlight.min.js"></script>
     <script>
-        const tabBtn = document.querySelectorAll(".tab-btn ul li");
-        const tabCont = document.querySelectorAll(".tab-cont > div");
 
-        //1. 버튼을 클릭하면 클릭한 버튼한테 active 추가
-
-        tabBtn.forEach((element, index) => {
-            element.addEventListener("click", function () {
-
-                tabBtn.forEach(el => {
-                    el.classList.remove("active")
-                });
-                element.classList.add("active")
-
-                tabCont.forEach(el => {
-                    el.style.display = "none";
-                })
-                tabCont[index].style.display = "block";
-            })
-        });
-
-        window.onload = function (){
+        window.onload = function () {
             //init();
             // animaet();
             agentCheck(); //호환성 체크
