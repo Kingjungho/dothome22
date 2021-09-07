@@ -24,30 +24,34 @@
         }
         .paraDot li {
             list-style: none;
-            width: 20px; height: 20px;
+        }
+        .paraDot li a {
+            width: 20px;
+            height: 20px;
+            display: block;
+            border: 1px solid #fff;
             border-radius: 50%;
             margin: 8px;
             position: relative;
-        }
-        .paraDot li a {
-            transform: scale(1.0);
-            margin: 16px 0;
             text-decoration: none;
-            color: #f4726d;
-            background: rgba(255, 255, 255, 0.3);
-            box-shadow:  0 0 0 2px white;
-            width: 100%; height: 100%;
-            transition: all 0.3s ease;
-            display: block;
-            border-radius: 50%;
-            border: 2px solid #fff;
         }
         .paraDot li a span {
-            display: none;
+            position: absolute;
+            left: -105px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #fff;
+            color: #000;
+            display: block;
+            padding: 2px 15px;
+            border-radius: 30px;
+            opacity: 0;
         }
         .paraDot li.active a {
-            box-shadow:0px 0px 10px white;
-            transform: scale(1.4);
+            background: #fff;
+        }
+        .paraDot li.active a span {
+            opacity: 1;
         }
         .source button{
             display: fixed;
@@ -84,15 +88,15 @@
         <!-- nav -->
         <nav class="paraDot">
             <ul>
-                <li class="active"><a href="#section1"><span>s1</span></a></li> <!-- li*9>a[href="#section$"]{s$}-->
-                <li><a href="#section2"><span>s2</span></a></li>
-                <li><a href="#section3"><span>s3</span></a></li>
-                <li><a href="#section4"><span>s4</span></a></li>
-                <li><a href="#section5"><span>s5</span></a></li>
-                <li><a href="#section6"><span>s6</span></a></li>
-                <li><a href="#section7"><span>s7</span></a></li>
-                <li><a href="#section8"><span>s8</span></a></li>
-                <li><a href="#section9"><span>s9</span></a></li>
+                <li class="active"><a href="#section1"><span>section1</span></a></li> <!-- li*9>a[href="#section$"]{s$}-->
+                <li><a href="#section2"><span>section2</span></a></li>
+                <li><a href="#section3"><span>section3</span></a></li>
+                <li><a href="#section4"><span>section4</span></a></li>
+                <li><a href="#section5"><span>section5</span></a></li>
+                <li><a href="#section6"><span>section6</span></a></li>
+                <li><a href="#section7"><span>section7</span></a></li>
+                <li><a href="#section8"><span>section8</span></a></li>
+                <li><a href="#section9"><span>section9</span></a></li>
             </ul>
         </nav>
         <!-- nav -->
@@ -287,43 +291,56 @@
 
             $(".paraScroll span").text(parseInt(scrollTop));
 
-            if(scrollTop >= $(".content-item").eq(0).offset().top -2){
-                $(".paraDot ul li").eq(0).addClass("active").siblings().removeClass("active")
-            }
+            // if(scrollTop >= $(".content-item").eq(0).offset().top -2){
+            //     $(".paraDot ul li").eq(0).addClass("active").siblings().removeClass("active")
+            // }
             
-            if(scrollTop >= $(".content-item").eq(1).offset().top -2){
-                $(".paraDot ul li").eq(1).addClass("active").siblings().removeClass("active")
-            }
+            // if(scrollTop >= $(".content-item").eq(1).offset().top -2){
+            //     $(".paraDot ul li").eq(1).addClass("active").siblings().removeClass("active")
+            // }
             
-            if(scrollTop >= $(".content-item").eq(2).offset().top -2){
-                $(".paraDot ul li").eq(2).addClass("active").siblings().removeClass("active")
-            }
+            // if(scrollTop >= $(".content-item").eq(2).offset().top -2){
+            //     $(".paraDot ul li").eq(2).addClass("active").siblings().removeClass("active")
+            // }
             
-            if(scrollTop >= $(".content-item").eq(3).offset().top -2){
-                $(".paraDot ul li").eq(3).addClass("active").siblings().removeClass("active")
-            }
+            // if(scrollTop >= $(".content-item").eq(3).offset().top -2){
+            //     $(".paraDot ul li").eq(3).addClass("active").siblings().removeClass("active")
+            // }
             
-            if(scrollTop >= $(".content-item").eq(4).offset().top -2){
-                $(".paraDot ul li").eq(4).addClass("active").siblings().removeClass("active")
-            }
+            // if(scrollTop >= $(".content-item").eq(4).offset().top -2){
+            //     $(".paraDot ul li").eq(4).addClass("active").siblings().removeClass("active")
+            // }
             
-            if(scrollTop >= $(".content-item").eq(5).offset().top -2){
-                $(".paraDot ul li").eq(5).addClass("active").siblings().removeClass("active")
-            }
+            // if(scrollTop >= $(".content-item").eq(5).offset().top -2){
+            //     $(".paraDot ul li").eq(5).addClass("active").siblings().removeClass("active")
+            // }
             
-            if(scrollTop >= $(".content-item").eq(6).offset().top -2){
-                $(".paraDot ul li").eq(6).addClass("active").siblings().removeClass("active")
-            }
+            // if(scrollTop >= $(".content-item").eq(6).offset().top -2){
+            //     $(".paraDot ul li").eq(6).addClass("active").siblings().removeClass("active")
+            // }
             
-            if(scrollTop >= $(".content-item").eq(7).offset().top -2){
-                $(".paraDot ul li").eq(7).addClass("active").siblings().removeClass("active")
-            }
+            // if(scrollTop >= $(".content-item").eq(7).offset().top -2){
+            //     $(".paraDot ul li").eq(7).addClass("active").siblings().removeClass("active")
+            // }
             
-            if(scrollTop >= $(".content-item").eq(8).offset().top -2){
-                $(".paraDot ul li").eq(8).addClass("active").siblings().removeClass("active")
-            }
+            // if(scrollTop >= $(".content-item").eq(8).offset().top -2){
+            //     $(".paraDot ul li").eq(8).addClass("active").siblings().removeClass("active")
+            // }
+            // for문
+        //         for (let i=0; i<$(".content-item").length; i++){
+        //             if(scrollTop >= $(".content-item").eq(i).offset().top -2){
+        //         $(".paraDot ul li").eq(i).addClass("active").siblings().removeClass("active")
+        //     }
+        // }
 
-        });
+        // each
+
+        $(".content-item").each(function(i){
+            if(scrollTop >= $(".content-item").eq(i).offset().top -2){
+                $(".paraDot ul li").eq(i).addClass("active").siblings().removeClass("active")
+            }
+    });
+});
     </script>
 
 </body>
