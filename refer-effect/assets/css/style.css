@@ -101,6 +101,10 @@ figcaption {
   z-index: -1;
 }
 
+.bg.blue::before {
+  background: rgba(201, 202, 218, 0.466);
+}
+
 .bg0 {
   background-image: url(../img/bg0@2.jpg);
 }
@@ -279,34 +283,46 @@ figcaption {
   color: #fff;
   font-family: "NEXONLv1Gothic";
   padding: 20px;
-}
-
-.info.right {
   position: absolute;
-  right: 0;
+  left: 0;
   top: 0;
 }
 
+.info.right {
+  left: auto;
+  right: 0px;
+}
+
 .info.bottom {
-  position: absolute;
+  top: auto;
+  left: auto;
   bottom: 0;
   right: 0;
 }
 
+.info.left {
+  top: auto;
+  left: 0;
+  bottom: 0;
+}
+
 .info h1 {
-  font-weight: 700;
-  font-size: 40px;
+  font-weight: 300;
+  font-size: 20px;
   line-height: 1.6;
-  border-bottom: 2px dashed white;
-  margin-bottom: 10px;
+  border-bottom: 1px dashed #fff;
   display: inline-block;
-  color: white;
+  margin-bottom: 10px;
+}
+
+.info h1 a {
+  color: #fff;
+  text-decoration: none;
 }
 
 .info p {
-  font-weight: 500;
-  font-size: 25px;
-  color: white;
+  font-weight: 300;
+  font-size: 16px;
 }
 
 .info li {
@@ -317,20 +333,34 @@ figcaption {
 .info li a {
   display: inline-block;
   text-decoration: none;
-  color: #f3f3f3;
+  color: #fff;
   border: 1px dashed #fff;
   border-radius: 50%;
   width: 20px;
   height: 20px;
-  text-align: center;
   line-height: 20px;
+  text-align: center;
   font-size: 12px;
   margin-bottom: 5px;
 }
 
-.info.active a {
+.info li.active a {
   background: #fff;
   color: #000;
+}
+
+.info.list {
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  padding: 20px;
+  font-size: 12px;
+  line-height: 1.8;
+  border-radius: 10px;
+  margin: 20px;
+}
+
+.info.list li {
+  display: block;
 }
 
 .info button {
@@ -339,8 +369,8 @@ figcaption {
   padding: 5px 20px;
   color: #fff;
   border-radius: 50px;
-  -webkit-box-sizing: 0 0 0 #fff inset;
-          box-sizing: 0 0 0 #fff inset;
+  -webkit-box-shadow: 0 0 0 #fff inset;
+          box-shadow: 0 0 0 #fff inset;
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
   cursor: pointer;
@@ -872,4 +902,42 @@ figcaption {
 .FooterInfo li.active a {
   background: #fff;
   color: #000;
+}
+
+.mouseCont {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: #fff;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  font-family: 'NEXONLv2Gothic';
+}
+
+.mouseCont p {
+  font-size: 2.5vw;
+  line-height: 2;
+  font-weight: 300;
+}
+
+.mouseCont h2 {
+  font-size: 3vw;
+  font-weight: normal;
+  font-weight: 400;
+}
+
+.mouseCont em {
+  font-style: normal;
+  border-bottom: 0.3vw solid #b7e3e4;
 }

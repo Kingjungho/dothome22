@@ -135,6 +135,11 @@ $gradient6: linear-gradient(to top, #d299c2 0%, #fef9d7 100%);
         background: rgba(114, 118, 163, 0.466);
         z-index: -1;
     }
+    &.blue {
+        &::before {
+            background: rgba(201, 202, 218, 0.466);
+        }
+    }
 }
 
 @for $i from 0 through 20 {
@@ -227,74 +232,84 @@ $gradient6: linear-gradient(to top, #d299c2 0%, #fef9d7 100%);
     color: #fff;
     font-family: $font-Nexon1;
     padding: 20px;
-
+    position: absolute;
+    left: 0;
+    top: 0;
     &.right {
-        position: absolute;
-        right: 0;
-        top: 0;
+        left: auto;
+        right: 0px;
     }
-
     &.bottom {
-        position: absolute;
-        bottom: 0;
+        top: auto;
+        left: auto;
+        bottom: 0; 
         right: 0;
     }
-
+    &.left {
+        top: auto;
+        left: 0;
+        bottom: 0;
+    }
     h1 {
-        font-weight: 700;
-        font-size: 40px;
+        font-weight: 300;
+        font-size: 20px;
         line-height: 1.6;
-        border-bottom: 2px dashed rgb(255, 255, 255);
-        margin-bottom: 10px;
+        border-bottom: 1px dashed #fff;
         display: inline-block;
-        color: rgb(255, 255, 255);
+        margin-bottom: 10px;
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
     }
-
     p {
-        font-weight: 500;
-        font-size: 25px;
-        color: rgb(255, 255, 255);
+        font-weight: 300;
+        font-size: 16px;
     }
-
-
     li {
         list-style: none;
         display: inline;
-
-
         a {
             display: inline-block;
             text-decoration: none;
-            color: rgb(243, 243, 243);
+            color: #fff;
             border: 1px dashed #fff;
             border-radius: 50%;
-            width: 20px;
+            width: 20px; 
             height: 20px;
-            text-align: center;
             line-height: 20px;
+            text-align: center;
             font-size: 12px;
             margin-bottom: 5px;
         }
-    }
-
-    &.active {
-        a {
-            background: #fff;
-            color: #000;
+        &.active {
+            a {
+                background: #fff;
+                color: #000;
+            }
         }
     }
-
+    &.list {
+        background: rgba(0,0,0,.4);
+        color: #fff;
+        padding: 20px;
+        font-size: 12px;
+        line-height: 1.8;
+        border-radius: 10px;
+        margin: 20px;
+        li {
+            display: block;
+        }
+    }
     button {
         background: transparent;
         border: 1px solid #fff;
         padding: 5px 20px;
         color: #fff;
         border-radius: 50px;
-        box-sizing: 0 0 0 #fff inset;
+        box-shadow: 0 0 0 #fff inset;
         transition: all 0.4s;
         cursor: pointer;
-
-
         &:hover {
             box-shadow: 0 -50px 0 #fff inset;
             color: #000;
@@ -710,5 +725,37 @@ $gradient6: linear-gradient(to top, #d299c2 0%, #fef9d7 100%);
             background: #fff;
             color: #000;
         }
+    }
+}
+
+
+//mouseCont
+.mouseCont {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #fff;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    font-family: 'NEXONLv2Gothic';
+
+    p {
+        font-size: 2.5vw;
+        line-height: 2;
+        font-weight: 300;
+    }
+
+    h2 {
+        font-size: 3vw;
+        font-weight: normal;
+        font-weight: 400;
+    }
+    
+    em {
+        font-style: normal;
+        border-bottom: 0.3vw solid #b7e3e4;
+        
     }
 }
