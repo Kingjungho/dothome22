@@ -9,6 +9,84 @@
     ​
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/highlight.css">
+    <style>
+    .mouseCont {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        color: #fff;
+        height: 100vh;
+        width: 100%;
+        overflow: hidden;
+        font-family: 'NEXONLv2Gothic';
+        cursor: none;
+}
+    .mouseCont p {
+        font-size: 2.5vw;
+        line-height: 2;
+        font-weight: 300;
+    }
+
+    .mouseCont h2 {
+        font-size: 3vw;
+        font-weight: normal;
+        font-weight: 400;
+    }
+    .mouseCont span {
+        font-style: normal;
+        border-bottom: 0.3vw solid rgb(218, 51, 0);
+        color: rgb(218, 51, 0);
+
+    }
+    .mouseCont em {
+    }
+    .cursor {
+        position: absolute;
+        left: 0; top: 0;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border:3px solid #fff;
+        z-index: 9999;
+        background-color: rgba(255, 255, 255, 0.1);
+        user-select: none; 
+        /* 컨트롤이 불가능 */
+        pointer-events: none;
+        transition: background-color .2s,
+        border-color .9s,
+        border-radius .2s,
+        transform .6s;
+    }
+    .cursor.style1 {
+        background-color: rgba(218, 51, 0, 0.068);
+        border-color:rgba(218, 51, 0, 0.219);
+        transform: rotateX(720deg) scale(1.8) translate(50px, 10%);
+        background-image: url(../assets/img/bg9.jpg);
+        background-size: cover;
+        background-position: center;
+        
+    }
+    .cursor.style2 {
+        background-color: rgba(218, 51, 0, 0.363);
+        border-color:rgba(218, 51, 0, 0.377);
+        transform: rotateX(720deg) scale(1.5);
+    }
+    .cursor.style3 {
+        background-color: rgba(11, 226, 144, 0.315);
+        border-color:rgba(56, 170, 113, 0.993);
+        transform: translateX(1em) scale(1.5);
+    }
+    .cursor.style4 {
+        background-color: rgba(11, 226, 144, 0.315);
+        border-color:rgba(56, 170, 113, 0.993);
+        transform: translateX(1em) scale(1.5);
+    }
+    .cursor.style5 {}
+    .cursor.style6 {}
+ 
+ 
+    </style>
 </head>
 
 <body class="bg bg2 blue">
@@ -17,8 +95,8 @@
     <main>
      <div class="cursor"></div>
      <article class="mouseCont">
-         <p>The future is much like the present, only longer.</p>
-         <h2>미래는 현재와 무척 닮았다. <em>단지 더 길뿐이다.</em></h2>
+         <p><span class="style1">The future</span> is much like the present, <span class="style2">only longer.</span></p>
+         <h2><span class="style3">미래</span>는 <span class="style4">현재</span>와 <span class="style5">무척</span> <span class="style6">닮았다.</span> 단지 더 길뿐이다.</h2>
          <p>Early morning hath gold in its mouth.</p>
          <h2>이른 아침은 입에 황금을 물고 있다.</h2>
          <p>Life is a risk.</p>
@@ -123,10 +201,89 @@
     <!-- //modal -->
     ​
     <!-- script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script src="../assets/js/jquery.min.js"></script>
     <script src="../assets/js/custom.js"></script>
     <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        //출력용
+        $(window).mousemove(function(e){
+            $(".clientX").text(e.clientX + "px");   //브라우저 X좌표 기준
+            $(".clientY").text(e.clientY + "px");   //브라우저 Y좌표 기준
+            $(".offsetX").text(e.offsetX + "px");   //요소 X좌표 기준
+            $(".offsetY").text(e.offsetY + "px");   //요소 Y좌표 기준
+            $(".pageX").text(e.pageX + "px");       //페이지 X좌표 기준
+            $(".pageY").text(e.pageY + "px");       //페이지 X좌표 기준
+            $(".screenX").text(e.screenX + "px");   //디바이스(스크린) X좌표 기준
+            $(".screenY").text(e.screenY + "px");   //디바이스(스크린) Y좌표 기준
+        });
 
+        //마우스 움직이기
+        $(window).mousemove((e) => {
+            // $(".cursor").css({"left":"100px", "top":"100px"});
+            // $(".cursor").css({left:"100px", top:"100px"});
+            // $(".cursor").css({left:100, "background-color":100});
+            // $(".cursor").css({left:100, backgroundColor:100});
+           
+            $(".cursor").css({left: e.clientX - 25, top: e.clientY - 25});
+            // $(".mouseCont em").mouseover(() => {
+            //     $(".cursor").addClass("active")
+            // });
+            // $(".mouseCont em").mouseout(() => {
+            //     $(".cursor").removeClass("active")
+            // });
+
+            // $(".mouseCont em").mouseenter(() => {
+            //     $(".cursor").addClass("active")
+            // });
+            // $(".mouseCont em").mouseleave(() => {
+            //     $(".cursor").removeClass("active")
+            // });
+
+            // $(".mouseCont em").hover(() => {
+            //     $(".cursor").addClass("style1")
+            // }, () => {
+            //     $(".cursor").removeClass("style1")
+            // });
+
+            $(".mouseCont .style1").hover(() => {
+                $(".cursor").addClass("style1")
+            }, () => {
+                $(".cursor").removeClass("style1")
+            });
+
+            $(".mouseCont .style2").hover(() => {
+                $(".cursor").addClass("style2")
+            }, () => {
+                $(".cursor").removeClass("style2")
+            });
+
+            $(".mouseCont .style3").hover(() => {
+                $(".cursor").addClass("style3")
+            }, () => {
+                $(".cursor").removeClass("style3")
+            });
+
+            $(".mouseCont .style4").hover(() => {
+                $(".cursor").addClass("style4")
+            }, () => {
+                $(".cursor").removeClass("style4")
+            });
+
+            $(".mouseCont .style5").hover(() => {
+                $(".cursor").addClass("style5")
+            }, () => {
+                $(".cursor").removeClass("style5")
+            });
+
+            $(".mouseCont .style6").hover(() => {
+                $(".cursor").addClass("style6")
+            }, () => {
+                $(".cursor").removeClass("style6")
+            });
+        })
+    </script>
 </body>
 
 </html>
