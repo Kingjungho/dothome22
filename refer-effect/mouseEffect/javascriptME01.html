@@ -9,35 +9,122 @@
     ​
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/highlight.css">
+    <style>
+        .mouseCont {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: #fff;
+            height: 100vh;
+            width: 100%;
+            overflow: hidden;
+            font-family: 'NEXONLv2Gothic';
+            cursor: none;
+        }
+
+        .mouseCont p {
+            font-size: 2.5vw;
+            line-height: 2;
+            font-weight: 300;
+        }
+
+        .mouseCont h2 {
+            font-size: 3vw;
+            font-weight: normal;
+            font-weight: 400;
+        }
+
+        .mouseCont span {
+            font-style: normal;
+            border-bottom: 0.3vw solid rgb(151, 60, 0);
+            color: rgba(218, 51, 0, 0.63);
+
+        }
+
+
+        .cursor {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 3px solid #fff;
+            z-index: 9999;
+            background-color: rgba(255, 255, 255, 0.1);
+            user-select: none;
+            /* 컨트롤이 불가능 */
+            pointer-events: none;
+            transition: background-color .2s,
+                border-color .9s,
+                border-radius .2s,
+                transform .6s;
+        }
+
+        .cursor.style1 {
+            background-color: rgba(218, 51, 0, 0.068);
+            border-color: rgba(218, 51, 0, 0.219);
+            transform: rotateX(720deg) scale(1.8) translate(50px, 10%);
+            background-image: url(../assets/img/bg9.jpg);
+            background-size: cover;
+            background-position: center;
+
+        }
+
+        .cursor.style2 {
+            background-color: rgba(218, 51, 0, 0.363);
+            border-color: rgba(218, 51, 0, 0.377);
+            transform: rotateX(720deg) scale(1.5);
+        }
+
+        .cursor.style3 {
+            background-color: rgba(11, 226, 144, 0.315);
+            border-color: rgba(56, 170, 113, 0.993);
+            transform: translateX(1em) scale(1.5);
+        }
+
+        .cursor.style4 {
+            background-color: rgba(11, 226, 144, 0.315);
+            border-color: rgba(56, 170, 113, 0.993);
+            transform: translateX(1em) scale(1.5);
+        }
+
+        .cursor.style5 {}
+
+        .cursor.style6 {}
+    </style>
 </head>
 
-<body class="bg bg2 blue">
+<body class="bg bg6 blue">
     ​
     <!-- contents -->
     <main>
-     <div class="cursor"></div>
-     <article class="mouseCont">
-         <p>The future is much like the present, only longer.</p>
-         <h2>미래는 현재와 무척 닮았다. <em>단지 더 길뿐이다.</em></h2>
-         <p>Early morning hath gold in its mouth.</p>
-         <h2>이른 아침은 입에 황금을 물고 있다.</h2>
-         <p>Life is a risk.</p>
-         <h2>인생은 위험의 연속이다.</h2>
-         <p>Never leave that 'till tomorrow which you can do today.</p>
-         <h2>오늘 할 수 있는 일을 내일로 미루지 마라.</h2>
-         <p>If you don't risk anything you risk even more.</p>
-         <h2>아무런 위험을 감수하지 않는다면 더 큰 위험을 감수하게 될 것이다.</h2>
-         <p>Ability is of little account without opportunity.</p>
-         <h2>기회 없는 능력은 쓸모가 없다.</h2>
-         <p></p>
-         <h2></h2>
-         <p></p>
-         <h2></h2>
-         <p></p>
-         <h2></h2>
-         <p></p>
-         <h2></h2>
-     </article>
+        <div class="cursor"></div>
+        <article class="mouseCont">
+            <p><span class="style1">The future</span> is much like the present, <span class="style2">only longer.</span>
+            </p>
+            <h2><span class="style3">미래</span>는 <span class="style4">현재</span>와 <span class="style5">무척</span> <span
+                    class="style6">닮았다.</span> 단지 더 길뿐이다.</h2>
+            <p>Early morning hath gold in its mouth.</p>
+            <h2>이른 아침은 입에 황금을 물고 있다.</h2>
+            <p>Life is a risk.</p>
+            <h2>인생은 위험의 연속이다.</h2>
+            <p>Never leave that 'till tomorrow which you can do today.</p>
+            <h2>오늘 할 수 있는 일을 내일로 미루지 마라.</h2>
+            <p>If you don't risk anything you risk even more.</p>
+            <h2>아무런 위험을 감수하지 않는다면 더 큰 위험을 감수하게 될 것이다.</h2>
+            <p>Ability is of little account without opportunity.</p>
+            <h2>기회 없는 능력은 쓸모가 없다.</h2>
+            <p></p>
+            <h2></h2>
+            <p></p>
+            <h2></h2>
+            <p></p>
+            <h2></h2>
+            <p></p>
+            <h2></h2>
+        </article>
     </main>
     <!-- contents -->
     ​
@@ -65,15 +152,15 @@
     </div>
     ​<div class="info left list">
         <ul>
-        <li>clientX : <span class="clientX">0</span></li>
-        <li>clientY : <span class="clientY">0</span></li>
-        <li>offsetX : <span class="offsetX">0</span></li>
-        <li>offsetY : <span class="offsetY">0</span></li>
-        <li>pageX : <span class="pageX">0</span></li>
-        <li>pageY : <span class="pageY">0</span></li>
-        <li>screenX : <span class="screenX">0</span></li>
-        <li>screenY : <span class="screenY">0</span></li>
-    </ul>
+            <li>clientX : <span class="clientX">0</span></li>
+            <li>clientY : <span class="clientY">0</span></li>
+            <li>offsetX : <span class="offsetX">0</span></li>
+            <li>offsetY : <span class="offsetY">0</span></li>
+            <li>pageX : <span class="pageX">0</span></li>
+            <li>pageY : <span class="pageY">0</span></li>
+            <li>screenX : <span class="screenX">0</span></li>
+            <li>screenY : <span class="screenY">0</span></li>
+        </ul>
     </div>
     <div class="info bottom">
         <button>소스 보기</button>
@@ -100,7 +187,18 @@
                         </ul>
                     </div>
                     <div class="view-cont">
-                        <pre><code class="language-html">
+                        <pre><code class="language-html">&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot; /&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+    &lt;link href=&quot;/path/to/tailwind.css&quot; rel=&quot;stylesheet&quot;&gt;
+    &lt;!-- ... --&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- ... --&gt;
+&lt;/body&gt;
+&lt;/html&gt;
 </code></pre>
                     </div>
                 </div>
@@ -115,6 +213,92 @@
     <script src="../assets/js/jquery.min.js"></script>
     <script src="../assets/js/custom.js"></script>
     <script src="../assets/js/highlight.min.js"></script>
-
+    <script>
+        //출력용
+        window.addEventListener("mousemove", function(e){
+            document.querySelector(".clientX").innerText = e.clientX + "px";   
+            document.querySelector(".clientY").innerText = e.clientY + "px";  
+            document.querySelector(".offsetX").innerText = e.offsetX + "px";  
+            document.querySelector(".offsetY").innerText = e.offsetY + "px";   
+            document.querySelector(".pageX").innerText = e.pageX + "px";     
+            document.querySelector(".pageY").innerText = e.pageY + "px";      
+            document.querySelector(".screenX").innerText = e.screenX + "px";   
+            document.querySelector(".screenY").innerText = e.screenY + "px";   
+        });
+        //마우스 움직익
+        window.addEventListener("mousemove", function(e){
+            // document.querySelector(".cursor").style.left = e.clientX - 25 + "px";
+            // document.querySelector(".cursor").style.top = e.clientY - 25 + "px";
+            let x = e.clientX - 25 + "px";
+            let y = e.clientY - 25 + "px";
+            document.querySelector(".cursor").style.cssText = "left:" + x + "; top:" + y;
+        });
+        // document.querySelector(".mouseCont .style1").addEventListener("mouseover", function(){
+        //     document.querySelector(".cursor").classList.add("style1");
+        // });
+        // document.querySelector(".mouseCont .style1").addEventListener("mouseout", function(){
+        //     document.querySelector(".cursor").classList.remove("style1");
+        // });
+        // document.querySelector(".mouseCont .style2").addEventListener("mouseover", function(){
+        //     document.querySelector(".cursor").classList.add("style2");
+        // });
+        // document.querySelector(".mouseCont .style2").addEventListener("mouseout", function(){
+        //     document.querySelector(".cursor").classList.remove("style2");
+        // });
+        // document.querySelector(".mouseCont .style3").addEventListener("mouseover", function(){
+        //     document.querySelector(".cursor").classList.add("style3");
+        // });
+        // document.querySelector(".mouseCont .style3").addEventListener("mouseout", function(){
+        //     document.querySelector(".cursor").classList.remove("style3");
+        // });
+        // document.querySelector(".mouseCont .style4").addEventListener("mouseover", function(){
+        //     document.querySelector(".cursor").classList.add("style4");
+        // });
+        // document.querySelector(".mouseCont .style4").addEventListener("mouseout", function(){
+        //     document.querySelector(".cursor").classList.remove("style4");
+        // });
+        // document.querySelector(".mouseCont .style5").addEventListener("mouseover", function(){
+        //     document.querySelector(".cursor").classList.add("style5");
+        // });
+        // document.querySelector(".mouseCont .style5").addEventListener("mouseout", function(){
+        //     document.querySelector(".cursor").classList.remove("style5");
+        // });
+        // document.querySelector(".mouseCont .style6").addEventListener("mouseover", function(){
+        //     document.querySelector(".cursor").classList.add("style6");
+        // });
+        // document.querySelector(".mouseCont .style6").addEventListener("mouseout", function(){
+        //     document.querySelector(".cursor").classList.remove("style6");
+        // });
+        //for문
+        // for( let i=1; i<=6; i++ ){
+        //     document.querySelector(".mouseCont .style"+i).addEventListener("mouseover", function(){
+        //         document.querySelector(".cursor").classList.add("style"+i);
+        //     });
+        //     document.querySelector(".mouseCont .style"+i).addEventListener("mouseout", function(){
+        //         document.querySelector(".cursor").classList.remove("style"+i);
+        //     });
+        // }
+        //forEach
+        // document.querySelectorAll(".mouseCont span").forEach((element, index) => {
+        //     element.addEventListener("mouseover", () => {
+        //         document.querySelector(".cursor").classList.add("style"+ (index+1));
+        //     });
+        //     element.addEventListener("mouseout", () => {
+        //         document.querySelector(".cursor").classList.remove("style"+ (index+1));
+        //     });
+        // })
+        //getAtrribute()
+        document.querySelectorAll(".mouseCont span").forEach((element) => {
+            let style = element.getAttribute("class");
+            element.addEventListener("mouseover", () => {
+                document.querySelector(".cursor").classList.add(style);
+            });
+            element.addEventListener("mouseout", () => {
+                document.querySelector(".cursor").classList.remove(style);
+            });
+        })
+        
+    </script>
 </body>
+
 </html>
