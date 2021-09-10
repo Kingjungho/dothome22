@@ -533,7 +533,7 @@ mysql> SELECT * FROM myreview;
 | youName | youCont                                | regTime |
 +---------+----------------------------------------+---------+
 | 김가연  | 이 가방 너무 좋네요!! 당장 사야쥐      |    1122  |
-| 김가연  | 이거 사지 마세요~~ 사게예요~~          |    1122  |
+| 김가연  | 이거 사지 마세요~~ 사기예요~~          |    1122  |
 | 황상연  | 여기 제품 좋습니다. 여기 알바생이옝요~ |    1122   |
 | 황가연  | 이거 엄청 좋네요~~ 굳 추천!!           |    1122  |
 +---------+----------------------------------------+---------+
@@ -546,19 +546,19 @@ mysql> SELECT * FROM myreview;
 | youName | youCont                                | reviewTime |
 +---------+----------------------------------------+------------+
 | 김가연  | 이 가방 너무 좋네요!! 당장 사야쥐      |       1122   |
-| 김가연  | 이거 사지 마세요~~ 사게예요~~          |       1122  |
+| 김가연  | 이거 사지 마세요~~ 사기예요~~          |       1122  |
 | 황상연  | 여기 제품 좋습니다. 여기 알바생이옝요~  |       1122  |
 | 황가연  | 이거 엄청 좋네요~~ 굳 추천!!           |       1122  |
 +---------+----------------------------------------+------------+
 4 rows in set (0.00 sec)
 </code></pre>
                     <h4 class="pt20">필드 내용이 없는 경우 표시하는 방법</h4>
-<pre class="language-js"><code>mysql> SELECT m.youName, r.youCont, r.regTime FROM mymember m LEFT JOIN myreview r ON (m.myMemberID = r.myMemberID);
+                    <pre class="language-js"><code>mysql> SELECT m.youName, r.youCont, r.regTime FROM mymember m LEFT JOIN myreview r ON (m.myMemberID = r.myMemberID);
 +---------+----------------------------------------+---------+
 | youName | youCont                                | regTime |
 +---------+----------------------------------------+---------+
 | 김가연  | 이 가방 너무 좋네요!! 당장 사야쥐       |   1122  |
-| 김가연  | 이거 사지 마세요~~ 사게예요~~           |   1122  |
+| 김가연  | 이거 사지 마세요~~ 사기예요~~           |   1122  |
 | 황상연  | 여기 제품 좋습니다. 여기 알바생이옝요~   |   1122  |
 | 황가연  | 이거 엄청 좋네요~~ 굳 추천!!            |   1122  |
 | 홍주연  | NULL                                   |   NULL  |
@@ -569,13 +569,13 @@ mysql> SELECT * FROM myreview;
 
                     <h3 id="intro7-2" class="pt30"></h3>
                     <div class="bs-callout bs-callout-info">
-                        
+
                     </div>
                     <pre class="language-js"><code>
 </code></pre>
                     <h3 id="intro7-3" class="pt30"></h3>
                     <div class="bs-callout bs-callout-info">
-                       
+
                     </div>
                     <pre class="language-js"><code>
 </code></pre>
@@ -631,8 +631,8 @@ mysql> SELECT * FROM myreview;
                                 <li><a href="#intro7-1">JOIN문 사용하기</a></li>
                             </ul>
                         </li>
+                    </ul>
                 </div>
-                </ul>
             </div>
             <!--//col-md-3 -->
         </div>
