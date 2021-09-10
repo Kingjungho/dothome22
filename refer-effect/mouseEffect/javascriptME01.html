@@ -279,14 +279,14 @@
         //     });
         // }
         //forEach
-        // document.querySelectorAll(".mouseCont span").forEach((element, index) => {
-        //     element.addEventListener("mouseover", () => {
-        //         document.querySelector(".cursor").classList.add("style"+ (index+1));
-        //     });
-        //     element.addEventListener("mouseout", () => {
-        //         document.querySelector(".cursor").classList.remove("style"+ (index+1));
-        //     });
-        // })
+        document.querySelectorAll(".mouseCont span").forEach((element, index) => {
+            element.addEventListener("mouseover", () => {
+                document.querySelector(".cursor").classList.add("style"+ (index+1));
+            });
+            element.addEventListener("mouseout", () => {
+                document.querySelector(".cursor").classList.remove("style"+ (index+1));
+            });
+        })
         //getAtrribute()
         document.querySelectorAll(".mouseCont span").forEach((element) => {
             let style = element.getAttribute("class");
