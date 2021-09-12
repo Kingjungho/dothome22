@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,83 +13,405 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+
+    <!-- Slide Type CSS -->
+    <link rel="stylesheet" href="../site/css/slideType.css">
+
+    <!-- swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
 </head>
 <style>
     * {
         font-family: 'Noto Sans KR', sans-serif;
     }
-    /* 레이아웃 */
-#header {
-    width: 100%;
-    height: 63px;
-    border-bottom: 1px solid #c6c6c6;
-}
-/* 가운데 영역 */
-.container {
-    position: relative;
-    width: 1280px;
-    margin: 0 auto;
-}
 
-/* 로우 영역 */
-.row {
-    padding: 0 24px;
-}
-/* 헤더 영역 */
-.header {
-    overflow: hidden;
-    
-}
-.header h1 {
-    float: left;
-}
-.header h1 em {
-    padding: 15px 8px 3px 0;
-    display: inline-block;
-}
-.header h1 em img {
-    width: 155px;
-}
-.header h1 strong {
-    display: block;
-    position: absolute;
-    left: 194px;
-    top: 23px;
-} 
-.header h1 strong img {
-    width: 126px;
-} 
-.header .nav {
-    float: right;
-    overflow: hidden;
-}
-.header .nav ul {
-   
-}
-.header .nav li {
-    float: left;
-    width: 103px;
-    text-align: center;
-    border-right: 1px solid #c6c6c6;
-    border-left: 1px solid #c6c6c6;
-}
-.header .nav li a {
-    display: block;
-    padding: 19px 10px;
-    font-size: 17px;
-    font-weight: 700;
-    color: #444;
-}
+    /* 테두리 초기화 */
+    img,
+    fieldset {
+        border: 0 none;
+    }
+
+    /* 반응형 */
+    video,
+    img {
+        width: 100%;
+    }
+
+    /* IR 효과 */
+    .ir_pm {
+        /* 의미있는 이미지의 대체 텍스트를 제공하는 경우(Phark Method) */
+        display: block;
+        overflow: hidden;
+        font-size: 0;
+        line-height: 0;
+        text-indent: -9999px;
+    }
+
+    .ir_wa {
+        /* 의미있는 이미지의 대체 텍스트로 이미지가 없어도 대체 텍스트를 보여주고자 할 때 */
+        display: block;
+        overflow: hidden;
+        position: relative;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+    }
+
+    .ir_so {
+        /* 대체 텍스트가 아닌 접근성을 위한 숨김 텍스트를 제공할 때 */
+        overflow: hidden;
+        position: absolute;
+        width: 0;
+        height: 0;
+        line-height: 0;
+        text-indent: -9999px;
+    }
+
+    /* 레이아웃 */
+    #mNav {
+        display: none;
+        position: absolute;
+        top: 33px;
+        right: 14px;
+    }
+
+    #header {
+        width: 100%;
+        border-bottom: 1px solid #c6c6c6;
+    }
+
+    #banner {
+        position: relative;
+    }
+
+    /* 가운데 영역 */
+    .container {
+        position: relative;
+        width: 1280px;
+        margin: 0 auto;
+    }
+
+    /* 로우 영역 */
+    .row {
+        padding: 0 28px;
+    }
+
+    /* 모바일 메뉴 */
+    .ham {
+        display: block;
+        width: 25px;
+        height: 10px;
+        background: rgba(0, 0, 0, 0);
+        margin-top: 15px 10px 10px 10px;
+    }
+
+    .ham span {
+        display: block;
+        width: 25px;
+        height: 4px;
+        background: #39106a;
+        position: relative;
+    }
+
+    .ham span:before {
+        content: '';
+        width: 25px;
+        height: 4px;
+        background: #39106a;
+        position: absolute;
+        left: 0;
+        bottom: -7px;
+    }
+
+    .ham span:after {
+        content: '';
+        width: 25px;
+        height: 4px;
+        background: #39106a;
+        position: absolute;
+        left: 0;
+        top: -7px;
+    }
+
+    /* 헤더 영역 */
+    .header {
+        overflow: hidden;
+    }
+
+    .header h1 {
+        float: left;
+    }
+
+    .header h1 em {
+        padding: 15px 8px 3px 0;
+        display: inline-block;
+    }
+
+    .header h1 em img {
+        width: 155px;
+        background: #000;
+    }
+
+    .header h1 strong {
+        display: block;
+        position: absolute;
+        left: 194px;
+        top: 23px;
+    }
+
+    .header h1 strong img {
+        width: 126px;
+        background: #000;
+    }
+
+    .header .nav {
+        float: right;
+        overflow: hidden;
+    }
+
+    .header .nav ul {}
+
+    .header .nav li {
+        float: left;
+        width: 103px;
+        text-align: center;
+        border-right: 1px solid #c6c6c6;
+        border-left: 1px solid #c6c6c6;
+    }
+
+    .header .nav li a {
+        display: block;
+        padding: 19px 10px;
+        font-size: 17px;
+        font-weight: 700;
+        color: #444;
+    }
+
+    /* 배너 */
+    .banner_menu {
+        position: absolute;
+        left: 0;
+        top: 20px;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: 10;
+    }
+
+    .banner_menu a {
+        color: #fff;
+        font-size: 16px;
+        transition: all 0.3s;
+    }
+
+    .banner_menu a:hover {
+        color: #c1c1c1;
+    }
+
+    .banner_menu .bm_left {
+        float: left;
+    }
+
+    .banner_menu .bm_left ul {
+        padding-top: 7px;
+    }
+
+    .banner_menu .bm_left li {
+        display: inline;
+        position: relative;
+        margin-right: 30px;
+    }
+
+    .banner_menu .bm_left li.toral {
+        margin-right: 20px;
+    }
+
+    .banner_menu .bm_left li.toral a {
+        font-size: 14px;
+        padding: 3px 10px;
+        display: inline-block;
+        border: 1px solid #fff;
+        transition: all 0.3s;
+    }
+
+    .banner_menu .bm_left li.toral a:hover {
+        background: #fff;
+        border-color: #000;
+        color: #000;
+    }
+
+    .banner_menu .bm_right {
+        float: right;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .banner_menu .bm_right ul {
+        float: left;
+
+    }
+
+    .banner_menu .bm_right ul:first-child {
+        padding-top: 7px;
+    }
+
+    .banner_menu .bm_right li {
+        display: inline;
+        text-align: center;
+        margin-right: 20px;
+        position: relative;
+    }
+
+    .banner_menu .bm_right li.line {
+        margin-right: 30px;
+    }
+
+    .banner_menu .bm_right li.white {
+        margin-right: 10px;
+    }
+
+    .banner_menu .bm_right li.white a {
+        width: 80px;
+        background-color: #fff;
+        color: #3a0e6a;
+        padding: 7px 30px 9px 30px;
+        border: 1px solid #fff;
+        display: inline-block;
+    }
+
+    .banner_menu .bm_right li.purple {
+        margin-right: 0;
+    }
+
+    .banner_menu .bm_right li.purple a {
+        width: 80px;
+        background-color: #3a0e6a;
+        color: #ffff;
+        padding: 7px 30px 9px 30px;
+        border: 1px solid #6e40c4;
+        display: inline-block;
+    }
+
+    .banner_menu li.line {
+        margin-right: 30px;
+    }
+
+    .banner_menu li.line:after {
+        content: '';
+        width: 1px;
+        height: 14px;
+        background: #fff;
+        position: absolute;
+        right: -18px;
+        top: 2px;
+    }
+
+    .slider img {
+        width: 100%;
+        height: 680px;
+    }
+    /* 슬라이드 */
+    .slider {
+        width: 100%;
+    }
+    .slider .ss1 {
+        background-image: url(img/uu1.jpg) no-repeat center center;
+        background-size: cover;
+    }
+    .slider .ss2 {
+        background-image: url(img/uu1.jpg) no-repeat center center;
+        background-size: cover;
+    }
+    .slider .ss3 {
+        background-image: url(img/uu1.jpg) no-repeat center center;
+        background-size: cover;
+    }
+
+    /* 미디어 쿼리 */
+    @media (max-width:1290px) {
+        .container {
+            width: 100%;
+        }
+
+        .header .nav ul li {
+            width: 93px;
+        }
+
+        .header .nav ul li a {
+            font-size: 15px;
+        }
+
+        .header h1 em {
+            padding: 11px 8px 5px 0px;
+        }
+
+        .header h1 strong {
+            top: 19px;
+        }
+
+    }
+
+    @media (max-width:1024px) {
+        #mNav {
+            display: block;
+        }
+
+        .nav {
+            display: none;
+        }
+
+        .row {
+            padding: 0 24px;
+        }
+
+        .header h1 {
+            float: none;
+            text-align: center;
+        }
+
+        .header h1 strong {
+            left: 24px;
+        }
+    }
+
+    @media (max-width:960px) {}
+
+    @media (max-width:768px) {
+        .row {
+            padding: 0 16px;
+        }
+
+        #mNav {
+            right: 6px;
+        }
+
+        .header h1 {
+            text-align-last: left;
+        }
+
+        .header h1 strong {
+            display: none;
+        }
+    }
+
+    @media (max-width:480px) {}
+
+    @media (max-width:320px) {}
 </style>
+
 <body>
     <header id="header">
         <div class="container">
             <div class="row">
                 <div class="header">
                     <h1><a href="#c">
-                        <em><img src="img/ss1.png" alt="MEGABOX"></em>
-                        <strong><img src="img/ss1.png" alt=""></strong>
-                    </a></h1>
+                            <em><img src="img/ss1.png" alt="MEGABOX"></em>
+                            <strong><img src="img/ss1.png" alt=""></strong>
+                        </a></h1>
+                    <nav id="mNav">
+                        <h2 class="ir_so">메가박스 전체메뉴</h2>
+                        <a href="#" class="ham"><span></span></a>
+                    </nav>
                     <nav class="nav">
                         <ul>
                             <li><a href="#">영화</a></li>
@@ -105,5 +428,63 @@
         </div>
     </header>
     <!-- header -->
+
+    <section id="banner">
+        <h2 class="ir_so">최신 영화 소식</h2>
+        <div class="banner_menu">
+            <div class="container">
+                <div class="row">
+                    <div class="bm_left">
+                        <ul>
+                            <li class="toral"><a href="#">전체 메뉴</a></li>
+                            <li class="line"><a href="#">필름 소사이어티</a></li>
+                            <li><a href="#">클래식 소사이어티</a></li>
+                        </ul>
+                    </div>
+                    <div class="bm_right">
+                        <ul>
+                            <li class="line"><a href="#">고객센터</a></li>
+                            <li class="line"><a href="#">멤버쉽</a></li>
+                            <li><a href="#">VIP</a></li>
+                        </ul>
+                        <ul>
+                            <li class="white"><a href="#">상영시간표</a></li>
+                            <li class="purple"><a href="#">빠른 예매</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slider">
+            <div class="swiper">
+                <div class="swiper-container">
+                    <div class="swiper-slide ss1">Slide 1</div>
+                    <div class="swiper-slide ss2">Slide 2</div>
+                    <div class="swiper-slide ss3">Slide 3</div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+    </section>
+    <!-- banner -->
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper-container', {
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                type: 'bullets',
+            },  
+            autoplay: {
+                delay: 5000,
+            },
+        });
+    </script>
 </body>
+
 </html>
