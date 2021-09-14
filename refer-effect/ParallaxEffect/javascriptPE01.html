@@ -787,13 +787,13 @@ for(let i=1; i&lt;10; i++){
                     el.classList.remove("active")
                 });
                 element.classList.add("active")
-               
+
                 tabCont2.forEach(el => {
-                  el.style.display = "none";
-              })
-              tabCont2[index].style.display = "block";
-          })
-      });
+                el.style.display = "none";    
+            })
+            tabCont2[index].style.display = "block";
+        })      
+    });
 
       document.addEventListener('DOMContentLoaded', (event) => {
       document.querySelectorAll('pre code').forEach((el) => {

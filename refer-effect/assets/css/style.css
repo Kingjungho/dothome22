@@ -94,7 +94,7 @@ figcaption {
   z-index: -1;
 }
 .bg.blue::before {
-  background: rgba(255, 255, 255, 0.363);
+  background: rgba(0, 0, 0, 0.493);
 }
 
 .bg0 {

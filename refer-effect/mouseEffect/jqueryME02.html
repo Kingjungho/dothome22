@@ -69,7 +69,7 @@
     }
     .cursor-follower.active {
         transform:scale(8);
-        background: #000;
+        background: rgba(177, 160, 160, 0.404);
     }
     </style>
 </head>
@@ -186,9 +186,9 @@
         //오버 효과
         $(".mouseCont em").hover(function(){
             cursor.addClass("active");
-            follower.removeClass("active");
+            follower.addClass("active");
         }, function(){
-            cursor.addClass("active");
+            cursor.removeClass("active");
             follower.removeClass("active");
         })
         // 출력용
