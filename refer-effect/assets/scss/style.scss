@@ -137,9 +137,14 @@ $gradient6: linear-gradient(to top, #d299c2 0%, #fef9d7 100%);
     }
     &.blue {
         &::before {
-            background: rgba(0, 0, 0, 0.493);
-        }
+            background-color: rgba(5, 36, 70, 0.9);
+        }    
     }
+    &.brown {
+        &::before {
+            background-color: rgb(50, 37, 11, 0.9);
+        }
+}
 }
 
 @for $i from 0 through 20 {
