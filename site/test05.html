@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    .testType05 {
+        font-family: 'NanumSquareRound';
+        width: 100%;
+    }
+
+    .header {
+        position: fixed;
+        width: 100%;
+        background-color: #fff;
+    }
+
+    .header-wrap {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        border-bottom: 1px solid rgba(145, 144, 144, 0.397);
+        font-weight: bold;
+    }
+
+    .header-left {
+        background: url(https://whale.naver.com/_resource/img/main/logo_whale.svg) no-repeat center;
+        width: 150px;
+        height: 40px;
+        cursor: pointer;
+    }
+
+    .header-middle {
+        font-size: 18px;
+    }
+
+    .header-middle span {
+        margin: 10px;
+        display: inline-block;
+        padding: 30px;
+    }
+
+    .header-middle span:hover {
+        color: #05c3a7;
+        transition: all 0.6s;
+        cursor: pointer;
+    }
+
+    .header-right {
+        color: #15c5aa;
+        padding: 0 27px;
+        font-size: 18px;
+        text-align: center;
+        line-height: 50px;
+        border: 1px solid #15c5aa;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .header-right:hover {
+        background-color: #15c5aa;
+        color: #fff;
+        transition: all 0.6s;
+    }
+    .header2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #333;
+        color: #fff;
+        width: 100%;
+        text-align: center;
+    }
+
+    .header2 span {
+        display: inline-block;
+        color: #838383;
+        font-size: 18px;
+        padding: 20px 30px;
+        cursor: pointer;
+        width: 15%;
+        margin-top: 10px;
+    }
+
+    .banner {
+        width: 100%;
+        margin: 0 auto;
+        height: 670px;
+        background: url(https://whale.naver.com/_resource/img/whywhale/top_tasking_bg.jpg);
+    }
+
+    .banner-wrap {
+        padding: 160px 0 0px 180px;
+    }
+
+    .banner-title {
+        font-size: 50px;
+        color: #fff;
+        font-weight: bold;
+    }
+
+    .banner-desc {
+        font-size: 30px;
+        color: #fff;
+        padding: 30px 0 50px;
+
+    }
+
+    .banner-word {
+        font-size: 35px;
+        border: 1px solid #05c3a7;
+        display: inline-block;
+        padding: 20px 40px;
+        background-color: #05c3a7;
+        border-radius: 50px;
+        color: #fff;
+
+    }
+
+    .box {
+        width: 100%;
+        height: 670px;
+        background-color: #ecedf1;
+    }
+
+    .box-wrap {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .box-text {
+        margin-top: 200px;
+        color: #000;
+        padding-left: 80px;
+        position: relative;
+    }
+
+    .box-title:before {
+        background: url(https://whale.naver.com/_resource/img/whywhale/icon_why_tab1_05.png) no-repeat;
+        display: inline-block;
+        content: "";
+        clear: both;
+        width: 70px;
+        height: 70px;
+        background-size: 100%;
+        position: absolute;
+        top: -5px;
+        left: 0;
+    }
+
+    .box-title2:before {
+        background: url(https://whale.naver.com/_resource/img/whywhale/icon_why_tab1_02.png) no-repeat top center;
+        display: inline-block;
+        content: "";
+        clear: both;
+        width: 70px;
+        height: 70px;
+        background-size: 100%;
+        position: absolute;
+        top: -5px;
+        left: 0;
+    }
+
+    .box-title3:before {
+        background: url(https://whale.naver.com/_resource/img/whywhale/icon_why_tab1_04.png) no-repeat top center;
+        display: inline-block;
+        content: "";
+        clear: both;
+        width: 70px;
+        height: 70px;
+        background-size: 100%;
+        position: absolute;
+        top: -5px;
+        left: 0;
+    }
+
+    .box-title {
+        font-weight: bold;
+        font-size: 50px;
+    }
+
+    .box-title2 {
+        font-weight: bold;
+        font-size: 50px;
+    }
+
+    .box-title3 {
+        font-weight: bold;
+        font-size: 50px;
+    }
+
+    .box-desc {
+        color: #333130;
+        font-size: 26px;
+        margin: 30px 0 50px;
+    }
+
+    .box-word {
+        display: inline-block;
+        color: #2d68d2;
+        line-height: 20px;
+        font-size: 18px;
+        font-weight: bold;
+        position: relative;
+    }
+
+    .box-word::before {
+        position: absolute;
+        top: -1px;
+        left: -25px;
+        display: inline-block;
+        content: "";
+        clear: both;
+        width: 20px;
+        height: 20px;
+        background: url(https://whale.naver.com/_resource/img/whywhale/icon_function_detailgo.png) no-repeat top center;
+        background-size: 100%;
+    }
+
+    .box-img img {
+        width: 640px;
+        height: 326.812px;
+        margin-top: 200px;
+    }
+
+    .box-word-img {
+        margin-top: 50px;
+        width: 20px;
+        height: 50px;
+        display: flex;
+    }
+
+    .box-word-img .img-left {
+        margin-right: 4px;
+    }
+
+    .box2 {
+        width: 100%;
+        height: 670px;
+    }
+
+    .box2-wrap {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .box2-img img {
+        width: 640px;
+        height: 320px;
+        margin-top: 200px;
+    }
+
+    .box2-text {
+        padding-top: 200px;
+    }
+
+    .box2-title {
+        color: #000;
+        font-size: 50px;
+        font-weight: bold;
+        position: relative;
+
+    }
+
+    .box2-title2 {
+        color: #000;
+        font-size: 50px;
+        font-weight: bold;
+        position: relative;
+
+
+    }
+
+    .box2-title::before {
+        background: url(https://whale.naver.com/_resource/img/whywhale/icon_why_tab1_01.png) no-repeat top center;
+        display: inline-block;
+        content: "";
+        clear: both;
+        width: 70px;
+        height: 70px;
+        background-size: 100%;
+        float: left;
+        
+    }
+
+    .box2-title2::before {
+        background: url(https://whale.naver.com/_resource/img/whywhale/icon_why_tab1_03.png) no-repeat top center;
+        display: inline-block;
+        content: "";
+        clear: both;
+        width: 70px;
+        height: 70px;
+        background-size: 100%;
+        float: left;
+
+    }
+
+    .box2-desc {
+        color: #333130;
+        font-size: 26px;
+        margin: 30px 0 50px;
+    }
+
+    .box2-word {
+        display: block;
+        color: #2d68d2;
+        line-height: 20px;
+        font-size: 18px;
+        margin-bottom: 15px;
+        font-weight: bold;
+        position: relative;
+    }
+
+    .box2-word::before {
+        position: absolute;
+        top: -1px;
+        left: -25px;
+        display: inline-block;
+        content: "";
+        clear: both;
+        width: 20px;
+        height: 20px;
+        background: url(https://whale.naver.com/_resource/img/whywhale/icon_function_detailgo.png) no-repeat top center;
+        background-size: 100%;
+    }
+
+    .box2-word2 {
+        display: block;
+        color: #2d68d2;
+        line-height: 20px;
+        font-size: 18px;
+        font-weight: bold;
+        position: relative;
+    }
+
+    .box2-word2::before {
+        position: absolute;
+        top: -1px;
+        left: -25px;
+        display: inline-block;
+        content: "";
+        clear: both;
+        width: 20px;
+        height: 20px;
+        background: url(https://whale.naver.com/_resource/img/whywhale/icon_function_detailgo.png) no-repeat top center;
+        background-size: 100%;
+    }
+
+    .box2-word-img {
+        margin-top: 50px;
+        width: 20px;
+        height: 50px;
+        display: flex;
+    }
+
+    .box2-word-img .img-left {
+        margin-right: 6px;
+    }
+
+    .box3-word {
+        display: block;
+        color: #2d68d2;
+        line-height: 20px;
+        font-size: 18px;
+        margin-bottom: 15px;
+        font-weight: bold;
+        position: relative;
+    }
+
+    .box3-word::before {
+        position: absolute;
+        top: -1px;
+        left: -25px;
+        display: inline-block;
+        content: "";
+        clear: both;
+        width: 20px;
+        height: 20px;
+        background: url(https://whale.naver.com/_resource/img/whywhale/icon_function_detailgo.png) no-repeat top center;
+        background-size: 100%;
+    }
+
+    .box4-word-img {
+        display: flex;
+        margin-top: 30px;
+    }
+
+    .box4-word-img img {
+        height: 50px;
+    }
+
+    .box4-word-img div {
+        margin-bottom: 7px;
+        font-size: 16px;
+        color: #919191;
+    }
+
+    .box-tab {
+        margin-right: 10px;
+    }
+
+    .box-tab2 {}
+
+    .box-tab3 {
+        margin-top: 25px;
+    }
+
+    .aside {
+        width: 100%;
+        height: 500px;
+        text-align: center;
+    }
+
+    .aside-title img {
+        width: 560px;
+        height: 104px;
+        margin-top: 150px;
+    }
+
+    .aside-word {
+        font-size: 26px;
+        border: 1px solid #05c3a7;
+        display: inline-block;
+        padding: 15px 50px;
+        border-radius: 50px;
+        color: #fff;
+        background-color: #05c3a7;
+        margin-top: 10px;
+        cursor: pointer;
+    }
+
+    .footer {
+        width: 100%;
+        height: 73px;
+        text-align: center;
+        padding: 50px 0;
+        background-color: #f9f9f9;
+    }
+
+    .footer-title img {
+        width: 141px;
+        height: 19px;
+        margin-bottom: 30px;
+    }
+
+    .footer-dsec {}
+
+    .footer-middle::before {
+        content: "|";
+        margin-right: 25px;
+
+    }
+
+    .footer-dsec span {
+        margin-right: 20px;
+        font-size: 16px;
+        color: #c0c0c0;
+        font-weight: 300;
+    }
+
+    .footer-right {
+        margin-left: 30px;
+        border: 1px solid #c0c0c0;
+        display: inline-block;
+        border-radius: 5px;
+        padding: 0 15px 0 15px;
+        height: 43px;
+        color: #c0c0c0;
+        font-size: 16px;
+        line-height: 43px;
+    }
+
+    .word-wrap {
+        margin: 30px;
+    }
+</style>
+
+<body>
+    <div class="testType05">
+        <header class="header">
+            <div class="header-wrap">
+                <div class="header-left">
+                    <span></span>
+                </div>
+                <div class="header-middle">
+                    <span>Why We Whale</span>
+                    <span>가이드</span>
+                    <span>스토어</span>
+                    <span>연구소</span>
+                    <span>웨일 스페이스</span>
+                    <span>웨일북</span>
+                </div>
+                <div class="header-right">
+                    <span>다운로드</span>
+                </div>
+            </div>
+        </header>
+        <div class="banner">
+            <div class="header2">
+                <span>옴니태스킹</span>
+                <span>강력한 보안</span>
+                <span>커스터마이징</span>
+            </div>
+            <div class="banner-wrap">
+                <div class="banner-title">
+                    하고 싶은 일들,해야 할 일들<br>네이버 웨일로 한 번에!
+                </div>
+                <div class="banner-desc">네이버 웨일의 다양한 기능을 만나보세요!</div>
+                <div class="banner-word">다운로드</div>
+            </div>
+        </div>
+        <section class="section">
+            <div class="box">
+                <div class="box-wrap">
+                    <div class="box-text">
+                        <div class="box-title">웨일온(Whale ON)</div>
+                        <div class="box-desc">시간제한 없는 무료 화상회의!</div>
+                        <div class="word-wrap">
+                            <div class="box-word">웨일온, 어떻게 사용하나요?</div>
+                        </div>
+                        <div class="box-word-img">
+                            <img src="https://whale.naver.com/_resource/img/whywhale/icon_pc.png" alt=""
+                                class="img-left">
+                            <img src="https://whale.naver.com/_resource/img/whywhale/icon_m.png" alt="">
+                        </div>
+                    </div>
+                    <div class="box-img">
+                        <img src="https://whale.naver.com/_resource/img/gif/ww_01_on.gif">
+                    </div>
+                </div>
+            </div>
+            <div class="box2">
+                <div class="box2-wrap">
+                    <div class="box2-img">
+                        <img src="https://whale.naver.com/_resource/img/gif/ww_01_sidebar.gif" alt="">
+                    </div>
+                    <div class="box2-text">
+                        <div class="box2-title">사이드바</div>
+                        <div class="box2-desc">휴대폰 열지 말고 웨일에서 보세요!</div>
+                        <div class="word-wrap">
+                            <div class="box2-word">사이드바, 어떻게 사용하나요?</div>
+                            <div class="box2-word2">어떤 확장앱이 있는지 궁금하다면?</div>
+                        </div>
+                        <div class="box2-word-img">
+                            <img src="https://whale.naver.com/_resource/img/whywhale/icon_pc.png" alt=""
+                                class="img-left">
+                            <img src="https://whale.naver.com/_resource/img/whywhale/icon_m.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-wrap">
+                    <div class="box-text">
+                        <div class="box-title2">퀵서치 & 번역</div>
+                        <div class="box-desc">궁금한 부분? 드래그해서 바로 확인!</div>
+                        <div class="word-wrap">
+                            <div class="box3-word">퀵서치, 어떤 기능까지 지원하나요?</div>
+                            <div class="box3-word">번역의 자세한 기능이 궁금하다면?</div>
+                        </div>
+                        <div class="box-word-img">
+                            <img src="https://whale.naver.com/_resource/img/whywhale/icon_pc.png" alt=""
+                                class="img-left">
+                            <img src="https://whale.naver.com/_resource/img/whywhale/icon_m.png" alt="">
+                        </div>
+                    </div>
+                    <div class="box-img">
+                        <img src="https://whale.naver.com/_resource/img/gif/ww_01_quick.gif">
+                    </div>
+                </div>
+            </div>
+            <div class="box2">
+                <div class="box2-wrap">
+                    <div class="box2-img">
+                        <img src="https://whale.naver.com/_resource/img/gif/ww_01_sidebar.gif" alt="">
+                    </div>
+                    <div class="box2-text">
+                        <div class="box2-title2">듀얼 탭 & 한글뷰어</div>
+                        <div class="box2-desc">뒤로 가기는 이제 그만!</div>
+                        <div class="word-wrap">
+                            <div class="box2-word">듀얼 탭의 자세한 기능이 궁금하다면?</div>
+                            <div class="box2-word2">한글 문서, 웨일에서 어떻게 볼 수 있나요?</div>
+                        </div>
+                        <div class="box4-word-img">
+                            <div class="box-tab">
+                                <div>듀얼 탭</div>
+                                <img src="https://whale.naver.com/_resource/img/whywhale/icon_pc.png" alt="">
+                            </div>
+                            <div class="box-tab2">
+                                <div>한글뷰어</div>
+                                <img src="https://whale.naver.com/_resource/img/whywhale/icon_pc.png" alt="">
+                            </div>
+                            <div class="box-tab3">
+                                <img src="https://whale.naver.com/_resource/img/whywhale/icon_m.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="box">
+        <div class="box-wrap">
+            <div class="box-text">
+                <div class="box-title3">편리한 캡처</div>
+                <div class="box-desc">클릭 한 번으로 원하는 영역을 깔끔하게!</div>
+                <div class="word-wrap">
+                    <div class="box3-word">캡처의 자세한 기능이 궁금하다면?</div>
+                </div>
+                <div class="box-word-img">
+                    <img src="https://whale.naver.com/_resource/img/whywhale/icon_pc.png" alt="" class="img-left">
+                    <img src="https://whale.naver.com/_resource/img/whywhale/icon_m.png" alt="">
+                </div>
+            </div>
+            <div class="box-img">
+                <img src="https://whale.naver.com/_resource/img/gif/ww_01_capture.gif">
+            </div>
+        </div>
+    </div>
+    </section>
+    <aside class="aside">
+        <div class="aside-title">
+            <img src="https://whale.naver.com/_resource/img/gif/whywewhale.gif" alt="">
+        </div>
+        <div class="aside-word">다운로드</div>
+    </aside>
+    <footer class="footer">
+        <div class="footer-title">
+            <img src="https://whale.naver.com/_resource/img/main/logo_whale_gray.svg" alt="">
+        </div>
+        <div class="footer-dsec">
+            <span>이용약관</span>
+            <span class="footer-middle">개인정보 처리방침</span>
+            <span class="footer-middle">Naver Whale 개인정보 보호를 위한 백서</span>
+            <span class="footer-middle">제휴 제안</span>
+            <span class="footer-middle">고객센터</span>
+            <span class="footer-middle">© NAVER Corp.</span>
+            <span class="footer-right">베타 다운로드</span>
+        </div>
+
+        </div>
+    </footer>
+    </div>
+</body>
+
+</html>
