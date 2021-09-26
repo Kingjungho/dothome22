@@ -19,7 +19,6 @@
     }
 
     .header {
-        position: fixed;
         width: 100%;
         background-color: #fff;
     }
@@ -78,6 +77,7 @@
         color: #fff;
         width: 100%;
         text-align: center;
+        
     }
 
     .header2 span {
@@ -88,8 +88,13 @@
         cursor: pointer;
         width: 15%;
         margin-top: 10px;
+        
     }
 
+    .header2 .middle {
+        border-left: 1px solid #838383;
+        border-right: 1px solid #838383;
+    }
     .banner {
         width: 100%;
         margin: 0 auto;
@@ -483,6 +488,40 @@
     .word-wrap {
         margin: 30px;
     }
+
+    @media (max-width:800px){
+        .header {
+            position: relative;
+        }
+        .header-middle {
+            display: none;
+        }
+        .header-left {
+            margin-right: 500px;            
+        }
+
+        .banner-wrap {
+            position: absolute;
+            top: 30px;
+            left: -150px;
+            margin-right: 30px;
+        }
+        .banner-title {
+            font-size: 40px;
+        }    
+        .banner-desc {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .banner-word {
+            font-size: 18px;
+            padding: 10px 35px;
+        }
+        .banner {
+        background-image : url(https://whale.naver.com/_resource/img/whywhale/top_object_tasking.png) no-repeat bottom right;
+        
+        }
+    }
 </style>
 
 <body>
@@ -508,7 +547,7 @@
         <div class="banner">
             <div class="header2">
                 <span>옴니태스킹</span>
-                <span>강력한 보안</span>
+                <span class="middle">강력한 보안</span>
                 <span>커스터마이징</span>
             </div>
             <div class="banner-wrap">
