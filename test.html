@@ -11,9 +11,11 @@
             document.write(cnt);
         }
         func();
+        document.write("<br>");
     }
 
     {
+        
         function func(){
             let a = [];
 
@@ -23,6 +25,7 @@
                 document.write(a);
             }
             func();
+            document.write("<br>")
         }
 
         {
@@ -35,5 +38,20 @@
                 }
             }
             func();
+            document.write("<br>")
         }
+        {
+            function func(){
+                let a = 0, sum = 0;
+                while( a < 10 ){
+                    a++;
+                    if(a % 2 == 1) continue;
+                    document.write(a);
+                    sum += a;
+                }
+                document.write(sum);
+            }
+            func();
+        }
+        
 </script>
