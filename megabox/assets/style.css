@@ -111,7 +111,6 @@
     width: 103px;
     text-align: center;
     border-right: 1px solid #c6c6c6;
-    border-left: 1px solid #c6c6c6;
 }
 
 .header .nav li a {
@@ -273,7 +272,7 @@
     background:rgba(255, 255, 255, 0.3);
     position: absolute;
     left: 0;
-    bottom: -40px;
+    bottom: -35px;
 }
 .slider .swiper-slide h2 em {
     display: block;
@@ -281,7 +280,7 @@
     font-weight: 100;
 }
 .slider .swiper-slide p {
-    font-size: 35px;
+    font-size: 27px;
     color: #fff;
     padding-top: 55px;
 }
@@ -427,6 +426,7 @@
 
     .header .nav ul li a {
         font-size: 15px;
+        padding: 17px 10px;
     }
 
     .header h1 em {
@@ -436,6 +436,7 @@
     .header h1 strong {
         top: 19px;
     }
+    .swiper-button-prev, .swiper-button-next {display: none;}
 
 }
 
@@ -464,9 +465,6 @@
         display: none;
     }
     .banner_menu .bm_right ul:first-child {
-        display: none;
-    }
-    .swiper-button-prev, .swiper-button-next {
         display: none;
     }
 }
@@ -512,16 +510,14 @@
     }
 
     .header h1 {
-        text-align-last: left;
+        text-align: left;
     }
 
     .header h1 strong {
         display: none;
     }
-
     #movie .row {
         background: #fff;
-        margin: 24px;
         padding: 24px;
     }
     #movie .ir_so {
@@ -534,6 +530,7 @@
         font-weight: bold;
         padding-bottom: 20px;
     }
+
     .movie {
         padding: 0;
     }
@@ -636,7 +633,6 @@
     }
     #movie .row {
         position: relative;
-        margin: 8px;
         padding: 16px;
         margin-right: 0;
         padding-right: 0;
