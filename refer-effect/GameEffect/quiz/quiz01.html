@@ -18,6 +18,7 @@
             box-sizing:border-box;
         }
         body {
+            font-family: 'DungGeunMo';
             height: 100vh;
             background-color: #f6f6f6;
             background-image:
@@ -39,22 +40,22 @@
             list-style: none;
         }
         header {
-            position: fixed;
+            position: absolute;
             left: 0; 
             top: 0;
             width: 100%;
             background: #262626;
-            font-family: 'DungGeunMo';
             color: #fff;
             display: flex;
             align-items: center;
             padding: 10px;
+            z-index: 10;
         }
         header::before {
             content: '';
             width: calc(100% - 10px);
             height: calc(100% - 10px);
-            box-shadow: inset 0px 0px 0px 2px #757575 ;
+            border: 4px ridge #a3a3a3 ;
             position: absolute;
             left: 5px;
             top: 5px;
@@ -76,6 +77,11 @@
         nav li a:hover {
             border-bottom: 1px solid rgb(171, 171, 171);
         }
+        .ir {
+            background: url(dot.jpg);
+            display: block;
+            width: 10px; height: 10px;
+        }
         nav li.active a {
             color: #fff;
         }
@@ -87,6 +93,7 @@
             right: 20px; top: 16px;
             cursor: pointer;
             width: 30px; height: 30px;
+            display: none;
         }
         .ham span {
             width: 20px; height: 3px;
@@ -114,8 +121,80 @@
         .quiz-wrap {
             max-width:500px;
             height: 600px;
-            background: #000;
+            background: #fff;
             margin: 100px auto;
+            border: 8px ridge #cacaca;
+        }
+        .quiz-wrap h2 {
+            font-size: 14px;
+            text-align: center;
+            background: #cacaca;
+            height: 5%;
+            color: #3b3b3b;
+            border: 3px ridge #cacaca;
+            padding-top: 3px;
+            position: relative;
+        }
+        .quiz-wrap h2::before {
+            content: '';
+            position: absolute;
+            left: 2px; top: 2px;
+            width: 15px; height: 15px;
+            background: url(dot.jpg) no-repeat;
+            background-size: cover;
+        }
+        .quiz-wrap h2::after {
+            content: '';
+            position: absolute;
+            right: 2px; top: 2px;
+            width: 35px; height: 15px;
+            background: url(dot.jpg) no-repeat -14px;
+            background-size: cover;
+        }
+        .quiz-wrap .quiz {
+            border: 4px ridge #cacaca;
+            height: 95%;
+        }
+        .quiz-wrap .quiz .question {
+            border: 6px ridge #cacaca;
+            padding: 13px 30px 20px;
+            font-size: 4vw;
+            line-height: 1.4;
+        }
+        .quiz-wrap .quiz .question::before {
+            content: 'Q. ';
+            color: #A5E151;
+            font-size: 8vw;
+            padding-right: 5px;
+            text-shadow: 1px 1px 1px #000;
+        }
+        .quiz-wrap .quiz .answer {
+            height: 60%;
+            background: #e8e7e8;
+            padding: 20px;
+        }
+        
+        @media (max-width:1200px){
+            .ham {
+                display: block;
+            }
+            nav {
+                position: absolute;
+                top: 50px; left: 0;
+                background: #262626;
+                width: 100%;
+                padding: 20px;
+                display: none;
+            }
+            nav.show {
+                display: block;
+            }
+            nav ul {
+                display: block;
+            }
+            nav li {
+                padding: 5px;
+            }
         }
     </style>
 </head>
@@ -139,9 +218,15 @@
     <div class="quiz-wrap">
         <h2>웹디자인 기능사</h2>
         <div class="quiz">
-            <h3 class="question">문제 영역</h3>
+            <h3 class="question">다음 중 디자인의 기본 요소들로 옳은 것은</h3>
             <div class="answer">정답 영역</div>
         </div>
     </div>
+
+    <script>
+        document.querySelector(".ham").addEventListener("click", () => {
+            document.querySelector("nav").classList.toggle("show");
+        })
+    </script>
 </body>
 </html>
