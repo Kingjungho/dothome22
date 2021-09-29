@@ -1,40 +1,46 @@
 /* webfonts */
 @font-face {
-  font-family: "NEXONLv1Gothic";
+  font-family: 'NEXONLv1Gothic';
   font-weight: 300;
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF Light.woff") format("woff");
   font-style: normal;
 }
+
 @font-face {
-  font-family: "NEXONLv1Gothic";
+  font-family: 'NEXONLv1Gothic';
   font-weight: 400;
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff") format("woff");
   font-style: normal;
 }
+
 @font-face {
-  font-family: "NEXONLv1Gothic";
+  font-family: 'NEXONLv1Gothic';
   font-weight: 700;
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF Bold.woff") format("woff");
   font-style: normal;
 }
+
 @font-face {
-  font-family: "NEXONLv2Gothic";
+  font-family: 'NEXONLv2Gothic';
   font-weight: 300;
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv2 Gothic Light.woff") format("woff");
   font-style: normal;
 }
+
 @font-face {
-  font-family: "NEXONLv2Gothic";
+  font-family: 'NEXONLv2Gothic';
   font-weight: 400;
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv2 Gothic.woff") format("woff");
   font-style: normal;
 }
+
 @font-face {
-  font-family: "NEXONLv2Gothic";
+  font-family: 'NEXONLv2Gothic';
   font-weight: 700;
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv2 Gothic Bold.woff") format("woff");
   font-style: normal;
 }
+
 body,
 div,
 dl,
@@ -83,8 +89,9 @@ figcaption {
   background-position: center center;
   background-repeat: no-repeat;
 }
+
 .bg::before {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   top: 0;
@@ -93,8 +100,13 @@ figcaption {
   background: rgba(114, 118, 163, 0.466);
   z-index: -1;
 }
+
 .bg.blue::before {
-  background: rgba(0, 0, 0, 0.493);
+  background-color: rgba(5, 36, 70, 0.9);
+}
+
+.bg.brown::before {
+  background-color: rgba(50, 37, 11, 0.9);
 }
 
 .bg0 {
@@ -186,26 +198,36 @@ figcaption {
   height: 100vh;
   overflow: hidden;
   background: #11e8bb;
+  background: -webkit-gradient(linear, left bottom, left top, from(#fbc2eb), to(#a6c1ee));
   background: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
 }
+
 #main.game {
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
 }
+
 #main.menu {
   background: linear-gradient(120deg, #d41ee9 0%, #5e0916b2 100%);
 }
+
 #main.mouse {
+  background: -webkit-gradient(linear, left top, right top, from(#fa709a), to(#fee140));
   background: linear-gradient(to right, #fa709a 0%, #fee140 100%);
 }
+
 #main.parallax {
+  background: -webkit-gradient(linear, left bottom, left top, from(#3c6161), to(#330867));
   background: linear-gradient(to top, #3c6161 0%, #330867 100%);
 }
+
 #main.slider {
+  background: -webkit-gradient(linear, left bottom, left top, from(#d299c2), to(#fef9d7));
   background: linear-gradient(to top, #d299c2 0%, #fef9d7 100%);
 }
 
 #contents h1 {
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   position: absolute;
   left: 50%;
   top: 50%;
@@ -217,21 +239,25 @@ figcaption {
   letter-spacing: 1vw;
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#8200c9), to(#60317959));
   background-image: linear-gradient(to bottom, #8200c9, #60317959);
 }
 
 .nav {
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   position: absolute;
   left: 50%;
   top: 50%;
   bottom: 10px;
   top: auto;
 }
+
 .nav li {
   list-style: none;
   display: inline;
 }
+
 .nav li a {
   color: #fff;
   text-decoration: none;
@@ -245,11 +271,15 @@ figcaption {
   text-align: center;
   margin: 4px;
   font-family: "NEXONLv1Gothic";
-  box-shadow: inset 0 0 0 #fff;
+  -webkit-box-shadow: inset 0 0 0 #fff;
+          box-shadow: inset 0 0 0 #fff;
+  -webkit-transition: all 0.4s;
   transition: all 0.4s;
 }
+
 .nav li a:hover {
-  box-shadow: inset 0 -100px 0 #fff;
+  -webkit-box-shadow: inset 0 -100px 0 #fff;
+          box-shadow: inset 0 -100px 0 #fff;
   color: #6c4a70;
 }
 
@@ -261,21 +291,25 @@ figcaption {
   left: 0;
   top: 0;
 }
+
 .info.right {
   left: auto;
   right: 0px;
 }
+
 .info.bottom {
   top: auto;
   left: auto;
   bottom: 0;
   right: 0;
 }
+
 .info.left {
   top: auto;
   left: 0;
   bottom: 0;
 }
+
 .info h1 {
   font-weight: 300;
   font-size: 20px;
@@ -284,18 +318,22 @@ figcaption {
   display: inline-block;
   margin-bottom: 10px;
 }
+
 .info h1 a {
   color: #fff;
   text-decoration: none;
 }
+
 .info p {
   font-weight: 300;
   font-size: 16px;
 }
+
 .info li {
   list-style: none;
   display: inline;
 }
+
 .info li a {
   display: inline-block;
   text-decoration: none;
@@ -309,10 +347,12 @@ figcaption {
   font-size: 12px;
   margin-bottom: 5px;
 }
+
 .info li.active a {
   background: #fff;
   color: #000;
 }
+
 .info.list {
   background: rgba(0, 0, 0, 0.4);
   color: #fff;
@@ -322,21 +362,27 @@ figcaption {
   border-radius: 10px;
   margin: 20px;
 }
+
 .info.list li {
   display: block;
 }
+
 .info button {
   background: transparent;
   border: 1px solid #fff;
   padding: 5px 20px;
   color: #fff;
   border-radius: 50px;
-  box-shadow: 0 0 0 #fff inset;
+  -webkit-box-shadow: 0 0 0 #fff inset;
+          box-shadow: 0 0 0 #fff inset;
+  -webkit-transition: all 0.4s;
   transition: all 0.4s;
   cursor: pointer;
 }
+
 .info button:hover {
-  box-shadow: 0 -50px 0 #fff inset;
+  -webkit-box-shadow: 0 -50px 0 #fff inset;
+          box-shadow: 0 -50px 0 #fff inset;
   color: #000;
 }
 
@@ -347,24 +393,35 @@ figcaption {
   width: 100%;
   height: 100vh;
   z-index: 1000;
-  transform: scale(0);
+  -webkit-transform: scale(0);
+          transform: scale(0);
 }
+
 #modal .modal-bg {
   background: rgba(0, 0, 0, 0.6);
   height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
+
 #modal .modal-bg .modal-cont h2 {
   font-weight: 400;
   font-size: 30px;
   margin-bottom: 10px;
 }
+
 #modal .modal-bg .modal-cont p {
   font-weight: 300;
   line-height: 1.6;
 }
+
 #modal .modal-bg .modal-cont button {
   float: right;
   border: 1px solid #000;
@@ -373,7 +430,7 @@ figcaption {
   color: #fff;
   padding: 5px 10px;
   cursor: pointer;
-  font-family: "GmarketSans";
+  font-family: 'GmarketSans';
   margin-top: 10px;
 }
 
@@ -384,27 +441,34 @@ figcaption {
 
 @-webkit-keyframes unfoldIn {
   0% {
-    transform: scaley(0.005) scalex(0);
+    -webkit-transform: scaley(0.005) scalex(0);
+            transform: scaley(0.005) scalex(0);
   }
   50% {
-    transform: scaley(0.005) scalex(1);
+    -webkit-transform: scaley(0.005) scalex(1);
+            transform: scaley(0.005) scalex(1);
   }
   100% {
-    transform: scaley(1) scalex(1);
+    -webkit-transform: scaley(1) scalex(1);
+            transform: scaley(1) scalex(1);
   }
 }
 
 @keyframes unfoldIn {
   0% {
-    transform: scaley(0.005) scalex(0);
+    -webkit-transform: scaley(0.005) scalex(0);
+            transform: scaley(0.005) scalex(0);
   }
   50% {
-    transform: scaley(0.005) scalex(1);
+    -webkit-transform: scaley(0.005) scalex(1);
+            transform: scaley(0.005) scalex(1);
   }
   100% {
-    transform: scaley(1) scalex(1);
+    -webkit-transform: scaley(1) scalex(1);
+            transform: scaley(1) scalex(1);
   }
 }
+
 #modal.show.hide {
   -webkit-animation: unfoldOut 1s ease forwards;
           animation: unfoldOut 1s ease forwards;
@@ -412,72 +476,92 @@ figcaption {
 
 @-webkit-keyframes unfoldOut {
   0% {
-    transform: scaley(1) scalex(1);
+    -webkit-transform: scaley(1) scalex(1);
+            transform: scaley(1) scalex(1);
   }
   50% {
-    transform: scaley(0.005) scalex(1);
+    -webkit-transform: scaley(0.005) scalex(1);
+            transform: scaley(0.005) scalex(1);
   }
   100% {
-    transform: scaley(0.005) scalex(0);
+    -webkit-transform: scaley(0.005) scalex(0);
+            transform: scaley(0.005) scalex(0);
   }
 }
 
 @keyframes unfoldOut {
   0% {
-    transform: scaley(1) scalex(1);
+    -webkit-transform: scaley(1) scalex(1);
+            transform: scaley(1) scalex(1);
   }
   50% {
-    transform: scaley(0.005) scalex(1);
+    -webkit-transform: scaley(0.005) scalex(1);
+            transform: scaley(0.005) scalex(1);
   }
   100% {
-    transform: scaley(0.005) scalex(0);
+    -webkit-transform: scaley(0.005) scalex(0);
+            transform: scaley(0.005) scalex(0);
   }
 }
+
 #modal.show .modal-bg .modal-cont {
-  transform: scale(0);
+  -webkit-transform: scale(0);
+          transform: scale(0);
   -webkit-animation: zoomIn 0.5s 0.8s ease forwards;
           animation: zoomIn 0.5s 0.8s ease forwards;
 }
 
 #modal.show.hide .modal-bg .modal-cont {
-  transform: scale(0);
+  -webkit-transform: scale(0);
+          transform: scale(0);
   -webkit-animation: zoomOut 0.5s ease forwards;
           animation: zoomOut 0.5s ease forwards;
 }
 
 @-webkit-keyframes zoomIn {
   0% {
-    transform: scale(0);
+    -webkit-transform: scale(0);
+            transform: scale(0);
   }
   100% {
-    transform: scale(1);
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
 
 @keyframes zoomIn {
   0% {
-    transform: scale(0);
+    -webkit-transform: scale(0);
+            transform: scale(0);
   }
   100% {
-    transform: scale(1);
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
+
 @-webkit-keyframes zoomOut {
   0% {
-    transform: scale(1);
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
   100% {
-    transform: scale(0);
+    -webkit-transform: scale(0);
+            transform: scale(0);
   }
 }
+
 @keyframes zoomOut {
   0% {
-    transform: scale(1);
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
   100% {
-    transform: scale(0);
+    -webkit-transform: scale(0);
+            transform: scale(0);
   }
 }
+
 .code-view {
   background: #fff;
   width: 60vw;
@@ -485,12 +569,15 @@ figcaption {
   border-radius: 10px;
   overflow: hidden;
 }
+
 .code-view .view-header {
   padding: 10px;
 }
+
 .code-view .view-header .dot {
   padding: 3px 10px 3px 8px;
 }
+
 .code-view .view-header span {
   width: 12px;
   height: 12px;
@@ -498,23 +585,29 @@ figcaption {
   border-radius: 50%;
   margin: 0 2px;
 }
+
 .code-view .view-header span:nth-child(1) {
   background-color: #f56565;
 }
+
 .code-view .view-header span:nth-child(2) {
   background-color: #f6e05e;
 }
+
 .code-view .view-header span:nth-child(3) {
   background-color: #48bb78;
 }
+
 .code-view .view-title {
   border: 1px solid #f2f2f2;
   padding: 0 10px;
 }
+
 .code-view .view-title li {
   display: inline;
   list-style: none;
 }
+
 .code-view .view-title li a {
   text-decoration: none;
   color: #cccccc;
@@ -522,24 +615,30 @@ figcaption {
   margin: 0 5px;
   display: inline-block;
 }
+
 .code-view .view-title li.active a {
   border-top: 2px solid #667EEA;
   color: #4a5568;
 }
+
 .code-view .view-cont .html {
   height: 70vh;
   overflow-y: scroll;
 }
+
 .code-view .view-cont > div {
   display: none;
 }
+
 .code-view .view-cont > div:nth-child(1) {
   display: block;
 }
+
 .code-view .view-cont .css {
   height: 70vh;
   overflow-y: scroll;
 }
+
 .code-view .view-cont .javascript {
   height: 70vh;
   overflow-y: scroll;
@@ -548,7 +647,7 @@ figcaption {
 .parallax {
   background: #222;
   color: #fff;
-  font-family: "NEXONLv1Gothic";
+  font-family: 'NEXONLv1Gothic';
 }
 
 .paraScroll {
@@ -578,6 +677,7 @@ figcaption {
   line-height: 1.8;
   border-radius: 10px;
 }
+
 .paraInfo2 li {
   list-style: none;
 }
@@ -591,10 +691,12 @@ figcaption {
   padding: 15px 20px;
   border-radius: 50px;
 }
+
 .paraNav li {
   display: inline-block;
   list-style: none;
 }
+
 .paraNav li a {
   color: #fff;
   text-decoration: none;
@@ -605,6 +707,7 @@ figcaption {
   text-align: center;
   line-height: 30px;
 }
+
 .paraNav li.active a {
   background: #fff;
   color: #000;
@@ -614,6 +717,7 @@ figcaption {
 .paraInfo {
   padding: 20px;
 }
+
 .paraInfo h1 {
   display: inline-block;
   font-size: 40px;
@@ -621,10 +725,12 @@ figcaption {
   margin-bottom: 11px;
   font-weight: 400;
 }
+
 .paraInfo h1 a {
   color: #fff;
   text-decoration: none;
 }
+
 .paraInfo p {
   font-size: 23px;
   line-height: 1.8;
@@ -638,8 +744,9 @@ figcaption {
   text-align: right;
   position: relative;
 }
+
 .paraCont .content-item .num {
-  font-family: "Lato";
+  font-family: 'Lato';
   font-weight: 100;
   font-size: 25vw;
   opacity: 0.07;
@@ -647,30 +754,41 @@ figcaption {
   right: -5vw;
   top: -10vw;
 }
+
 .paraCont .content-item .title {
   padding-bottom: 10px;
   font-weight: 700;
 }
+
 .paraCont .content-item .img-Wrap {
   width: 100%;
   padding-bottom: 56%;
   background: #000;
   position: relative;
+  overflow: hidden;
 }
+
 .paraCont .content-item .img-Wrap .img {
   position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
+  left: -10%;
+  top: -10%;
+  width: 120%;
+  height: 120%;
   background-size: cover;
   background-repeat: no-repeat;
-  filter: saturate(0%);
-  transition: all 0.3s;
+  -webkit-filter: saturate(0%);
+          filter: saturate(0%);
+  -webkit-transition: -webkit-filter 0.1s;
+  transition: -webkit-filter 0.1s;
+  transition: filter 0.1s;
+  transition: filter 0.1s, -webkit-filter 0.1s;
 }
+
 .paraCont .content-item .img-Wrap .img:hover {
-  filter: saturate(100%);
+  -webkit-filter: saturate(100%);
+          filter: saturate(100%);
 }
+
 .paraCont .content-item .desc {
   font-size: 4vw;
   line-height: 1.4;
@@ -680,14 +798,17 @@ figcaption {
   z-index: 100;
   word-break: keep-all;
 }
+
 .paraCont .content-item:nth-child(even) {
   margin-left: auto;
   text-align: left;
 }
+
 .paraCont .content-item:nth-child(even) .num {
   right: auto;
   left: -5vw;
 }
+
 .paraCont .content-item:nth-child(even) .desc {
   margin-right: auto;
   margin-left: -3vw;
@@ -732,6 +853,7 @@ figcaption {
 .paraFooter {
   padding: 200px 0;
 }
+
 .paraFooter h1 {
   font-size: 8vw;
   line-height: 1.2;
@@ -739,9 +861,10 @@ figcaption {
   text-transform: uppercase;
   margin-bottom: 3vw;
 }
+
 .paraFooter em {
   display: block;
-  font-family: "Lato";
+  font-family: 'Lato';
   font-weight: 100;
   padding-left: 18vw;
 }
@@ -749,20 +872,29 @@ figcaption {
 .FooterInfo {
   padding: 20px;
   text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   background: #000;
   padding: 15px 20px;
   margin-bottom: 2px;
 }
+
 .FooterInfo h2 {
   padding-right: 20px;
 }
+
 .FooterInfo li {
   display: inline;
   list-style: none;
 }
+
 .FooterInfo li a {
   color: #fff;
   border: 1px dashed #fff;
@@ -773,6 +905,7 @@ figcaption {
   line-height: 30px;
   text-decoration: none;
 }
+
 .FooterInfo li.active a {
   background: #fff;
   color: #000;

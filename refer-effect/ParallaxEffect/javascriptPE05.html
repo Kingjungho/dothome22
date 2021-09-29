@@ -86,7 +86,7 @@
     ​
     <!-- header -->
     <header class="paraInfo">
-        <h1><a href="index.html">Parallax Effect01 - Javascript</a></h1>
+        <h1><a href="index.html">Parallax Effect05 - Javascript</a></h1>
         <p>패랠랙스 스크로링 효과 - 나타나기</p>
     </header>
     <!-- //header -->
@@ -221,6 +221,9 @@
                 <li><a href="javascriptPE03.html">3</a></li>
                 <li><a href="javascriptPE04.html">4</a></li>
                 <li class="active"><a href="javascriptPE05.html">5</a></li>
+                <li><a href="javascriptPE06.html">6</a></li>
+                <li><a href="javascriptPE07.html">7</a></li>
+                <li><a href="javascriptPE08.html">8</a></li>
             </ul>
         </div>
         <div class="FooterInfo">
@@ -231,6 +234,9 @@
                 <li><a href="jqueryPE03.html">3</a></li>
                 <li><a href="jqueryPE04.html">4</a></li>
                 <li><a href="jqueryPE05.html">5</a></li>
+                <li><a href="jqueryPE06.html">6</a></li>
+                <li><a href="jqueryPE07.html">7</a></li>
+                <li><a href="jqueryPE08.html">8</a></li>
             </ul>
         </div>
     </footer>
@@ -346,13 +352,13 @@
 
             //메뉴
             document.querySelectorAll(".content-item").forEach((item, index) => {
-                if( scrollTop >= item.offsetTop ) {
-                    document.querySelectorAll("paraNav ul li").forEach(li => {
+                if( scrollTop >= item.offsetTop - 2){
+                    document.querySelectorAll(".paraNav ul li").forEach(li => {
                         li.classList.remove("active");
                     });
                     document.querySelector(".paraNav ul li:nth-child("+(index+1)+")").classList.add("active");
                 }
-            })
+            });
         }
         window.addEventListener("scroll", scrollProgress);
     
