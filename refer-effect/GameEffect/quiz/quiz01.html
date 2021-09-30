@@ -713,7 +713,7 @@
         //문제 정보
         const quizAsk = "채소 장사꾼이 제일 싫어하는 외국의 도시는?";
         const quizAnswer = "시드니";
-
+ 
         //문제 출력
         answerQuestion.innerHTML = quizAsk;
         answerView.innerHTML = quizAnswer;
@@ -722,10 +722,8 @@
         answerConfirm.addEventListener("click",() => {
             answerConfirm.style.display = "none";
             answerView.style.display = "block";
+        //정답을 눌렀을 때 강아지가 웃게 
             answerCard.classList.add("good");
-            //정답을 눌렀을 때 강아지가 웃게 
-
-
         })
 
         //메뉴

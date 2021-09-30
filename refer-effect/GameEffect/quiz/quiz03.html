@@ -787,7 +787,7 @@
                 quizAnswer : "2",
                 quizEx : "디자인의 기본 요소는 점, 섬, 면, 질감으로 이루어져 있습니다."
             }
-        ]
+        ] 
 
         //문제 출력
         function updateQuiz(){
@@ -795,7 +795,7 @@
             questionTitleAsk.innerHTML = quizInfo[0].quizAsk;
             questionAnswerView.innerHTML = quizInfo[0].quizAnswer;
             questionAnswerEx.innerHTML = quizInfo[0].quizEx;
-
+        //quizChoice 화면에 출력하기
             for ( let i=0; i<4; i++){
                 questionAnswerChoice[i].innerHTML = quizInfo[0].quizChoice[i];
             }
