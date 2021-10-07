@@ -13,72 +13,72 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
 
     <style>
-        .paraNav {
-            top: 20px;
-            transition: top 0.4s ease;
-        }
-        .paraNav.hide {
-            top: -200px;
-        }
-        .paraNav li a {
-            width: auto;
-            padding: 5px;
-            width: 30px;
-            height: 30px;
+    .paraNav {
+        top: 20px;
+        transition: top 0.4s ease;
+    }
+    .paraNav.hide {
+        top: -200px;
+    }
+    .paraNav li a {
+        width: auto;
+        padding: 5px;
+        width: 30px;
+        height: 30px;
 
-        }
-        .paraNav li.active a {
-            border-radius: 30px;
-        }
-        
-        /* 한번에 나타나기 */
-        /* .content-item {
-            opacity: 0;
-            transform:translateY(100px);
-            transition: all 1s;
-        }
-        .content-item.show {
-            opacity: 1;
-            transform:translateY(0);
-        } */
+    }
+    .paraNav li.active a {
+        border-radius: 30px;
+    }
+    
+    /* 한번에 나타나기 */
+    /* .content-item {
+        opacity: 0;
+        transform:translateY(100px);
+        transition: all 1s;
+    }
+    .content-item.show {
+        opacity: 1;
+        transform:translateY(0);
+    } */
 
-        /* 개별적으로 나타나기 */
-        .content-item .num {
-            opacity: 0 !important; 
-            transform:translateY(200px);
-            transition: all 1s 0.1s cubic-bezier(0, 0.66, 0.38, 1.01);
-        }
-        .content-item .title {
-            opacity: 0;
-            transform: translateX(-100px);
-            transition: all 1s 0.3s cubic-bezier(0, 0.66, 0.38, 1.01);
-        }
-        .content-item .img-Wrap {
-            opacity: 0;
-            transform:translateY(200px) rotateY(110deg) skew(20deg);
-            transition: all 1s 0.6s cubic-bezier(0, 0.66, 0.38, 1.01);
-        }
-        .content-item .desc {
-            opacity: 0;
-            transform: translateX(-200);
-            transition: all 1s 0.9s cubic-bezier(0, 0.66, 0.38, 1.01);
-        }
-        .content-item.show .num {
-            opacity: 0.07 !important;
-            transform:translateY(0);
-        }
-        .content-item.show .title {
-            opacity: 1;
-            transform: translateX(0px);
-        }
-        .content-item.show .img-Wrap {
-            opacity: 1;
-            transform:translateY(0px) rotate(0);
-        }
-        .content-item.show .desc {
-            opacity: 1;
-            transform: translateX(0);
-        }
+    /* 개별적으로 나타나기 */
+    .content-item .num {
+        opacity: 0 !important; 
+        transform:translateY(200px);
+        transition: all 1s 0.1s cubic-bezier(0, 0.66, 0.38, 1.01);
+    }
+    .content-item .title {
+        opacity: 0;
+        transform: translateX(-100px);
+        transition: all 1s 0.3s cubic-bezier(0, 0.66, 0.38, 1.01);
+    }
+    .content-item .img-Wrap {
+        opacity: 0;
+        transform:translateY(200px) rotateY(110deg) skew(20deg);
+        transition: all 1s 0.6s cubic-bezier(0, 0.66, 0.38, 1.01);
+    }
+    .content-item .desc {
+        opacity: 0;
+        transform: translateX(-200);
+        transition: all 1s 0.9s cubic-bezier(0, 0.66, 0.38, 1.01);
+    }
+    .content-item.show .num {
+        opacity: 0.07 !important;
+        transform:translateY(0);
+    }
+    .content-item.show .title {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+    .content-item.show .img-Wrap {
+        opacity: 1;
+        transform:translateY(0px) rotate(0);
+    }
+    .content-item.show .desc {
+        opacity: 1;
+        transform: translateX(0);
+    }
 </style>
 </head>
 
@@ -269,16 +269,233 @@
                     </div>
                     <div class="view-cont">
                         <div class="html">
-                            <pre><code class="language-html">&lt;div id="tab-menu"&gt;
-    
+                            <pre><code class="language-html">&lt;div class="paraCont">
+&lt;section id="section1" class="content-item">
+    &lt;span class="num">01&lt;/span>
+    &lt;h2 class="title">Section1&lt;/h2>
+    &lt;figure class="img-Wrap">
+        &lt;div class="img">&lt;/div>
+    &lt;/figure>
+    &lt;p class="desc">높은 목표를 세우고, 스스로 채찍질 한다.&lt;/p>
+&lt;/section>
+&lt;!-- //section1 -->
+​
+&lt;section id="section2" class="content-item">
+    &lt;span class="num">02&lt;/span>
+    &lt;h2 class="title">Section2&lt;/h2>
+    &lt;figure class="img-Wrap">
+        &lt;div class="img">&lt;/div>
+    &lt;/figure>
+    &lt;p class="desc">가장 강한 사람은 스스로를 통제할 수 있는 자이다.
+    &lt;/p>
+&lt;/section>
+&lt;!-- //section2 -->
+​
+&lt;section id="section3" class="content-item">
+    &lt;span class="num">03&lt;/span>
+    &lt;h2 class="title">Section3&lt;/h2>
+    &lt;figure class="img-Wrap">
+        &lt;div class="img">&lt;/div>
+    &lt;/figure>
+    &lt;p class="desc">지붕은 햇빛이 밝을 때 수리해야 합니다.&lt;/p>
+&lt;/section>
+&lt;!-- //section3 -->
+​
+&lt;section id="section4" class="content-item">
+    &lt;span class="num">04&lt;/span>
+    &lt;h2 class="title">Section4&lt;/h2>
+    &lt;figure class="img-Wrap">
+        &lt;div class="img">&lt;/div>
+    &lt;/figure>
+    &lt;p class="desc">용기를 가지되 허세는 부리지 말라.
+    &lt;/p>
+&lt;/section>
+&lt;!-- //section4 -->
+​
+&lt;section id="section5" class="content-item">
+    &lt;span class="num">05&lt;/span>
+    &lt;h2 class="title">Section5&lt;/h2>
+    &lt;figure class="img-Wrap">
+        &lt;div class="img">&lt;/div>
+    &lt;/figure>
+    &lt;p class="desc">게으름은 피곤하기 전에 쉬는 습관일 뿐.&lt;/p>
+&lt;/section>
+&lt;!-- //section5 -->
+​
+&lt;section id="section6" class="content-item">
+    &lt;span class="num">06&lt;/span>
+    &lt;h2 class="title">Section6&lt;/h2>
+    &lt;figure class="img-Wrap">
+        &lt;div class="img">&lt;/div>
+    &lt;/figure>
+    &lt;p class="desc">
+        지붕은 햇빛이 밝을 때 수리해야 합니다.&lt;/p>
+&lt;/section>
+&lt;!-- //section6 -->
+​
+&lt;section id="section7" class="content-item">
+    &lt;span class="num">07&lt;/span>
+    &lt;h2 class="title">Section7&lt;/h2>
+    &lt;figure class="img-Wrap">
+        &lt;div class="img">&lt;/div>
+    &lt;/figure>
+    &lt;p class="desc">언제나 현재에 집중할 수 있다면 행복할 것이다.&lt;/p>
+&lt;/section>
+&lt;!-- //section7 -->
+​
+&lt;section id="section8" class="content-item">
+    &lt;span class="num">08&lt;/span>
+    &lt;h2 class="title">Section8&lt;/h2>
+    &lt;figure class="img-Wrap">
+        &lt;div class="img">&lt;/div>
+    &lt;/figure>
+    &lt;p class="desc">교육의 위대한 목표는 앎이 아니라 행동이다.&lt;/p>
+&lt;/section>
+&lt;!-- //section8 -->
+​
+&lt;section id="section9" class="content-item">
+    &lt;span class="num">09&lt;/span>
+    &lt;h2 class="title">Section9&lt;/h2>
+    &lt;figure class="img-Wrap">
+        &lt;div class="img">&lt;/div>
+    &lt;/figure>
+    &lt;p class="desc">직업은 삶의 근간이다.&lt;/p>
+&lt;/section>
+&lt;!-- //section9 -->
+&lt;/div>
 </code></pre>
                         </div>
                         <div class="css">
-                            <pre><code class="language-css"></code></pre>
+                            <pre><code class="language-css">.paraNav {
+    top: 20px;
+    transition: top 0.4s ease;
+}
+.paraNav.hide {
+    top: -200px;
+}
+.paraNav li a {
+    width: auto;
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+
+}
+.paraNav li.active a {
+    border-radius: 30px;
+}
+
+/* 한번에 나타나기 */
+/* .content-item {
+    opacity: 0;
+    transform:translateY(100px);
+    transition: all 1s;
+}
+.content-item.show {
+    opacity: 1;
+    transform:translateY(0);
+} */
+
+/* 개별적으로 나타나기 */
+.content-item .num {
+    opacity: 0 !important; 
+    transform:translateY(200px);
+    transition: all 1s 0.1s cubic-bezier(0, 0.66, 0.38, 1.01);
+}
+.content-item .title {
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: all 1s 0.3s cubic-bezier(0, 0.66, 0.38, 1.01);
+}
+.content-item .img-Wrap {
+    opacity: 0;
+    transform:translateY(200px) rotateY(110deg) skew(20deg);
+    transition: all 1s 0.6s cubic-bezier(0, 0.66, 0.38, 1.01);
+}
+.content-item .desc {
+    opacity: 0;
+    transform: translateX(-200);
+    transition: all 1s 0.9s cubic-bezier(0, 0.66, 0.38, 1.01);
+}
+.content-item.show .num {
+    opacity: 0.07 !important;
+    transform:translateY(0);
+}
+.content-item.show .title {
+    opacity: 1;
+    transform: translateX(0px);
+}
+.content-item.show .img-Wrap {
+    opacity: 1;
+    transform:translateY(0px) rotate(0);
+}
+.content-item.show .desc {
+    opacity: 1;
+    transform: translateX(0);
+}
+                            </code></pre>
                         </div>
                         <div class="javascript">
-                            <pre><code class="language-javascript"></code></pre>
-                        </div>
+                            <pre><code class="language-javascript">$(".paraNav ul li").click(function(e){
+    e.preventDefault();
+    let target = $(this);
+    let index = target.index();
+    let section = $(".content-item").eq(index);
+    let offset = section.offset().top;
+    $("html, body").animate({ scrollTop : offset}, 600)
+});
+
+$(window).scroll(function(){
+    let scrollTop = $(window).scrollTop() + $(window).height()/2;
+
+    // if( scrollTop >= $("#section1").offset().top ){
+    //     $("#section1").addClass("show");
+    // }
+    // if( scrollTop >= $("#section2").offset().top ){
+    //     $("#section2").addClass("show");
+    // }
+    // if( scrollTop >= $("#section3").offset().top ){
+    //     $("#section3").addClass("show");
+    // }
+    // if( scrollTop >= $("#section4").offset().top ){
+    //     $("#section4").addClass("show");
+    // }
+    // if( scrollTop >= $("#section5").offset().top ){
+    //     $("#section5").addClass("show");
+    // }
+    // if( scrollTop >= $("#section6").offset().top ){
+    //     $("#section6").addClass("show");
+    // }
+    // if( scrollTop >= $("#section7").offset().top ){
+    //     $("#section7").addClass("show");
+    // }
+    // if( scrollTop >= $("#section8").offset().top ){
+    //     $("#section8").addClass("show");
+    // }
+    // if( scrollTop >= $("#section9").offset().top ){
+    //     $("#section9").addClass("show");
+    // }
+
+//   for( let i=1; i&lt;=9; i++){
+//         if( scrollTop >= $("#section" +i).offset().top -400){
+//             $("#section" +i).addClass("show");
+//         } else {
+//             $("#section" +i).removeClass("show");
+//         }
+//     }
+
+//each
+$(".content-item").each(function(index){
+    if( scrollTop > $(this).offset().top ){
+        $(this).addClass("show");
+        $(".paraNav ul li").eq(index).addClass("active").siblings().removeClass("active");
+    } 
+});
+
+    //출력
+    $(".paraScroll span").text(parseInt(scrollTop));
+});
+</code></pre>
+ </div>
                     </div>
                 </div>
 

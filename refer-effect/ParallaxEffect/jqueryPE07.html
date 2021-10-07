@@ -13,57 +13,57 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
 
     <style>
-        .paraNav {
-            top: 20px;
-            transition: top 0.4s ease;
-        }
+    .paraNav {
+        top: 20px;
+        transition: top 0.4s ease;
+    }
 
-        .paraNav.hide {
-            top: -200px;
-        }
+    .paraNav.hide {
+        top: -200px;
+    }
 
-        .paraNav li a {
-            width: auto;
-            padding: 5px;
-            width: 30px;
-            height: 30px;
+    .paraNav li a {
+        width: auto;
+        padding: 5px;
+        width: 30px;
+        height: 30px;
 
-        }
+    }
 
-        .paraNav li.active a {
-            border-radius: 30px;
-        }
+    .paraNav li.active a {
+        border-radius: 30px;
+    }
 
-        /* 한번에 나타나기 */
-        /* .content-item .desc {
-            opacity: 0;
-            transition: all 0.33s ease-in-out;
-            transform: translateY(100px) skewX(30deg);
-        }
-        .content-item .desc.show {
-            opacity: 1;
-            transform: translateY(0) skewX(0);
-        } */
+    /* 한번에 나타나기 */
+    /* .content-item .desc {
+        opacity: 0;
+        transition: all 0.33s ease-in-out;
+        transform: translateY(100px) skewX(30deg);
+    }
+    .content-item .desc.show {
+        opacity: 1;
+        transform: translateY(0) skewX(0);
+    } */
 
-        /* 한 글자씩 나타나기 */
-        /* .content-item .desc span {
-            opacity: 0;
-            transition: all 0.33s ease-in-out;
-            transform: translateY(100px) skewX(30deg);
-        }
+    /* 한 글자씩 나타나기 */
+    /* .content-item .desc span {
+        opacity: 0;
+        transition: all 0.33s ease-in-out;
+        transform: translateY(100px) skewX(30deg);
+    }
 
-        .content-item .desc span.show {
-            opacity: 1;
-            transform: translateY(0) skewX(0);
-        } */
+    .content-item .desc span.show {
+        opacity: 1;
+        transform: translateY(0) skewX(0);
+    } */
 
-        /* GSAP 한 글자씩 나타나기 */
-        .content-item .desc span {
-            opacity: 0;
-            display: inline-block;
-            min-width: 1vw;
-            transform: translateY(100px) rotate(90deg) skewY(30deg);
-        }
+    /* GSAP 한 글자씩 나타나기 */
+    .content-item .desc span {
+        opacity: 0;
+        display: inline-block;
+        min-width: 1vw;
+        transform: translateY(100px) rotate(90deg) scale(5);
+    }
     </style>
 </head>
 
@@ -253,14 +253,264 @@
                     </div>
                     <div class="view-cont">
                         <div class="html">
-                            <pre><code class="language-html">&lt;div id="tab-menu"&gt;   
+                            <pre><code class="language-html">&lt;div class="paraCont">
+&lt;section id="section1" class="content-item">
+    &lt;span class="num">01&lt;/span>
+    &lt;h2 class="title">Section1&lt;/h2>
+    &lt;figure class="img-Wrap">
+        &lt;div class="img">&lt;/div>
+    &lt;/figure>
+    &lt;p class="desc">높은 목표를 세우고, 스스로 채찍질 한다.&lt;/p>
+&lt;/section>
+&lt;!-- //section1 -->
+​
+&lt;section id="section2" class="content-item">
+    &lt;span class="num">02&lt;/span>
+    &lt;h2 class="title">Section2&lt;/h2>
+    &lt;figure class="img-Wrap">
+        &lt;div class="img">&lt;/div>
+    &lt;/figure>
+    &lt;p class="desc">가장 강한 사람은 스스로를 통제할 수 있는 자이다.
+    &lt;/p>
+&lt;/section>
+&lt;!-- //section2 -->
+​
+&lt;section id="section3" class="content-item">
+    &lt;span class="num">03&lt;/span>
+    &lt;h2 class="title">Section3&lt;/h2>
+    &lt;figure class="img-Wrap">
+        &lt;div class="img">&lt;/div>
+    &lt;/figure>
+    &lt;p class="desc">지붕은 햇빛이 밝을 때 수리해야 합니다.&lt;/p>
+&lt;/section>
+&lt;!-- //section3 -->
+​
+&lt;section id="section4" class="content-item">
+    &lt;span class="num">04&lt;/span>
+    &lt;h2 class="title">Section4&lt;/h2>
+    &lt;figure class="img-Wrap">
+        &lt;div class="img">&lt;/div>
+    &lt;/figure>
+    &lt;p class="desc">용기를 가지되 허세는 부리지 말라.
+    &lt;/p>
+&lt;/section>
+&lt;!-- //section4 -->
+​
+&lt;section id="section5" class="content-item">
+    &lt;span class="num">05&lt;/span>
+    &lt;h2 class="title">Section5&lt;/h2>
+    &lt;figure class="img-Wrap">
+        &lt;div class="img">&lt;/div>
+    &lt;/figure>
+    &lt;p class="desc">게으름은 피곤하기 전에 쉬는 습관일 뿐.&lt;/p>
+&lt;/section>
+&lt;!-- //section5 -->
+​
+&lt;section id="section6" class="content-item">
+    &lt;span class="num">06&lt;/span>
+    &lt;h2 class="title">Section6&lt;/h2>
+    &lt;figure class="img-Wrap">
+        &lt;div class="img">&lt;/div>
+    &lt;/figure>
+    &lt;p class="desc">
+        지붕은 햇빛이 밝을 때 수리해야 합니다.&lt;/p>
+&lt;/section>
+&lt;!-- //section6 -->
+​
+&lt;section id="section7" class="content-item">
+    &lt;span class="num">07&lt;/span>
+    &lt;h2 class="title">Section7&lt;/h2>
+    &lt;figure class="img-Wrap">
+        &lt;div class="img">&lt;/div>
+    &lt;/figure>
+    &lt;p class="desc">언제나 현재에 집중할 수 있다면 행복할 것이다.&lt;/p>
+&lt;/section>
+&lt;!-- //section7 -->
+​
+&lt;section id="section8" class="content-item">
+    &lt;span class="num">08&lt;/span>
+    &lt;h2 class="title">Section8&lt;/h2>
+    &lt;figure class="img-Wrap">
+        &lt;div class="img">&lt;/div>
+    &lt;/figure>
+    &lt;p class="desc">교육의 위대한 목표는 앎이 아니라 행동이다.&lt;/p>
+&lt;/section>
+&lt;!-- //section8 -->
+​
+&lt;section id="section9" class="content-item">
+    &lt;span class="num">09&lt;/span>
+    &lt;h2 class="title">Section9&lt;/h2>
+    &lt;figure class="img-Wrap">
+        &lt;div class="img">&lt;/div>
+    &lt;/figure>
+    &lt;p class="desc">직업은 삶의 근간이다.&lt;/p>
+&lt;/section>
+&lt;!-- //section9 -->
+&lt;/div>
 </code></pre>
                         </div>
                         <div class="css">
-                            <pre><code class="language-css"></code></pre>
+                            <pre><code class="language-css">.paraNav {
+    top: 20px;
+    transition: top 0.4s ease;
+}
+
+.paraNav.hide {
+    top: -200px;
+}
+
+.paraNav li a {
+    width: auto;
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+
+}
+
+.paraNav li.active a {
+    border-radius: 30px;
+}
+
+/* 한번에 나타나기 */
+/* .content-item .desc {
+    opacity: 0;
+    transition: all 0.33s ease-in-out;
+    transform: translateY(100px) skewX(30deg);
+}
+.content-item .desc.show {
+    opacity: 1;
+    transform: translateY(0) skewX(0);
+} */
+
+/* 한 글자씩 나타나기 */
+/* .content-item .desc span {
+    opacity: 0;
+    transition: all 0.33s ease-in-out;
+    transform: translateY(100px) skewX(30deg);
+}
+
+.content-item .desc span.show {
+    opacity: 1;
+    transform: translateY(0) skewX(0);
+} */
+
+/* GSAP 한 글자씩 나타나기 */
+.content-item .desc span {
+    opacity: 0;
+    display: inline-block;
+    min-width: 1vw;
+    transform: translateY(100px) rotate(90deg) scale(5);
+}
+                            </code></pre>
                         </div>
                         <div class="javascript">
-                            <pre><code class="language-javascript"></code></pre>
+                            <pre><code class="language-javascript">//글씨 쪼개기(한개)
+        // let text = $("#section1 .desc").text();
+        // let split = text.split('').join("</span><span>");
+        // split = "<span>" + split +"</span>";
+        // $("#section1 .desc").html(split);
+
+        //글씨 쪼개기(여러 개) each()
+        $(".content-item .desc").each(function () {
+            let text = $(this).text();
+            let split = text.split('').join("&lt;/span>&lt;span aria-hidden='true'>");
+            split = "&lt;span aria-hidden='true'>" + split + "&lt;/span>";
+            $(this).html(split).attr("aria-label", text);
+        });
+
+        $(window).scroll(function () {
+            // if( $(window).scrollTop() > $("#section1").offset().top ){
+            //     $("#section1 .desc").addClass("show");
+            // } else {
+            //     $("#section1 .desc").removeClass("show");
+            // }
+            // if( $(window).scrollTop() > $("#section2").offset().top ){
+            //     $("#section2 .desc").addClass("show");
+            // } else {
+            //     $("#section2 .desc").removeClass("show");
+            // }
+            // if( $(window).scrollTop() > $("#section3").offset().top ){
+            //     $("#section3 .desc").addClass("show");
+            // } else {
+            //     $("#section3 .desc").removeClass("show");
+            // }
+            // if( $(window).scrollTop() > $("#section4").offset().top ){
+            //     $("#section4 .desc").addClass("show");
+            // } else {
+            //     $("#section4 .desc").removeClass("show");
+            // }
+
+            //     $(".content-item .desc").each(function(){
+            //         if( $(window).scrollTop() >= $(this).offset().top - $(window).height()/2 ){
+            //          $(this).addClass("show");
+            //         } else {
+            //         $(this).removeClass("show");
+            //     }
+            // })
+
+            //한 글자씩 나타나기
+            // if( $(window).scrollTop() >= $("#section1").offset().top ){
+            //     $("#section1 .desc span").each(i => {
+            //         setTimeout(() => {
+            //             $("#section1 .desc span").eq(i).addClass("show");  
+            //         }, 50 * i)
+            //     })
+            // }
+            // if( $(window).scrollTop() >= $("#section2").offset().top ){
+            //     $("#section2 .desc span").each(i => {
+            //         setTimeout(() => {
+            //             $("#section2 .desc span").eq(i).addClass("show");  
+            //         }, 50 * i)
+            //     })
+            // }
+            // if( $(window).scrollTop() >= $("#section3").offset().top ){
+            //     $("#section3 .desc span").each(i => {
+            //         setTimeout(() => {
+            //             $("#section3 .desc span").eq(i).addClass("show");  
+            //         }, 50 * i)
+            //     })
+            // }
+
+            // for ( let i = 1; i &lt;=$(".content-item").length; i++ ){
+            //     if ($(window).scrollTop() >= $("#section" + i).offset().top) {
+            //         $("#section"+i+" .desc span").each(i => {
+            //             setTimeout(() => {
+            //                 $("#section"+i+" .desc span").eq(i).addClass("show");
+            //             }, 50 * i)
+            //         })
+            //     }
+            // }
+
+            //each
+            // $(".content-item .desc").each(function(index){
+            //     if($(window).scrollTop() >= $(this).offset().top - $(window).height()/2){
+            //         $(this).find(".desc span").each(i => {
+            //             setTimeout(()=>{
+            //                 $(this).find(".desc span").eq(i).addClass("show");
+            //             },50 * i);
+            //         });
+            //     }
+            // });
+                
+
+            // gsap
+            $(".content-item").each(function(index){
+                if( $(window).scrollTop() >= $(this).offset().top ){
+                    gsap.to( $(this).find(".desc span"), {
+                        duration: 1,
+                        opacity: 1,
+                        stagger: .05,
+                        y: 0,
+                        ease: "power4.out",
+                        rotation: 0,
+                        scale: 1                    
+                    })
+            // 메뉴
+            $(".paraNav ul li").eq(index).addClass("active").siblings().removeClass("active");
+                }
+            })  
+        });
+</code></pre>
                         </div>
                     </div>
                 </div>
@@ -345,19 +595,29 @@
             //     })
             // }
 
-            // for (i = 1; i < 10; i++) {
+            // for ( let i = 1; i <=$(".content-item").length; i++ ){
             //     if ($(window).scrollTop() >= $("#section" + i).offset().top) {
-            //         $(".content-item .desc span").each(i => {
+            //         $("#section"+i+" .desc span").each(i => {
             //             setTimeout(() => {
-            //                 $(".content-item .desc span").eq(i).addClass("show");
+            //                 $("#section"+i+" .desc span").eq(i).addClass("show");
             //             }, 50 * i)
             //         })
             //     }
             // }
 
             //each
+            // $(".content-item .desc").each(function(index){
+            //     if($(window).scrollTop() >= $(this).offset().top - $(window).height()/2){
+            //         $(this).find(".desc span").each(i => {
+            //             setTimeout(()=>{
+            //                 $(this).find(".desc span").eq(i).addClass("show");
+            //             },50 * i);
+            //         });
+            //     }
+            // });
+                
 
-            //gsap
+            // gsap
             $(".content-item").each(function(index){
                 if( $(window).scrollTop() >= $(this).offset().top ){
                     gsap.to( $(this).find(".desc span"), {
@@ -366,13 +626,14 @@
                         stagger: .05,
                         y: 0,
                         ease: "power4.out",
-                        rotation: 0
+                        rotation: 0,
+                        scale: 1                    
                     })
+            // 메뉴
+            $(".paraNav ul li").eq(index).addClass("active").siblings().removeClass("active");
                 }
-            })
-            
+            })  
         });
     </script>
 </body>
-
 </html>

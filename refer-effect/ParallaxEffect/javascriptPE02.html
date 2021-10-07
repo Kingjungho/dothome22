@@ -12,59 +12,83 @@
     ​
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
     <style>
-        .paraDot {
-            position: fixed;
-            right: 20px;
-            top: 50%;
-            z-index: 1000;
-            transform: translateY(-50%);
-            background: rgba(0,0,0,0.4);
-            padding: 20px 10px;
-            border-radius: 30px;
-        }
-        .paraDot li {
-            list-style: none;
-        }
-        .paraDot li a {
-            width: 20px;
-            height: 20px;
-            display: block;
-            border: 1px solid #fff;
-            border-radius: 50%;
-            margin: 8px;
-            position: relative;
-            text-decoration: none;
-        }
-        .paraDot li a span {
-            position: absolute;
-            left: -105px;
-            top: 50%;
-            transform: translateY(-50%);
-            background: #fff;
+    .paraDot {
+        position: fixed;
+        right: 20px;
+        top: 50%;
+        z-index: 1000;
+        transform: translateY(-50%);
+        background: rgba(0,0,0,0.4);
+        padding: 20px 10px;
+        border-radius: 30px;
+    }
+    .paraDot li {
+        list-style: none;
+    }
+    .paraDot li a {
+        width: 20px;
+        height: 20px;
+        display: block;
+        border: 1px solid #fff;
+        border-radius: 50%;
+        margin: 8px;
+        position: relative;
+        text-decoration: none;
+    }
+    .paraDot li a span {
+        position: absolute;
+        left: -105px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: #fff;
+        color: #000;
+        display: block;
+        padding: 2px 15px;
+        border-radius: 30px;
+        opacity: 0;
+    }
+    .paraDot li.active a {
+        background: #fff;
+    }
+    .paraDot li.active a span {
+        opacity: 1;
+    }
+    .source button{
+        display: fixed;
+        float: right;
+        border: 1px solid #000;
+        background: #000;
+        border-radius: 20px;
+        color: #fff;
+        padding: 5px 10px;
+        cursor: pointer;
+        font-family: 'GmarketSans';
+        margin-top: 10px;
+        padding: 20px;
+    }
+    .source {
+        top: auto;
+        left: auto;
+        bottom: 25px;
+        right: 25px;
+        position: fixed;
+    }
+    .source button{
+        margin-right: 50px;
+        float: right;
+        border: 1px solid rgb(255, 255, 255);
+        background: rgb(0, 0, 0);
+        border-radius: 20px;
+        color: #fff;
+        cursor: pointer;
+        font-family: 'NEXONLv2Gothic';
+        padding: 15px 30px;
+        transition: all 0.4s;
+        box-sizing: 0 0 0 #fff inset;
+    }
+    .source button:hover {
+        box-shadow: 0 -50px 0 #fff inset;
             color: #000;
-            display: block;
-            padding: 2px 15px;
-            border-radius: 30px;
-            opacity: 0;
-        }
-        .paraDot li.active a {
-            background: #fff;
-        }
-        .paraDot li.active a span {
-            opacity: 1;
-        }
-        .source button{
-            display: fixed;
-            float: right;
-            border: 1px solid #000;
-            background: #000;
-            border-radius: 20px;
-            color: #fff;
-            padding: 5px 10px;
-            cursor: pointer;
-            font-family: 'GmarketSans';
-            margin-top: 10px;
-            padding: 20px;
     }
 </style>
 </head>
@@ -258,15 +282,206 @@
                     </div>
                     <div class="view-cont">
                         <div class="html">
-                            <pre><code class="language-html">&lt;div id="tab-menu"&gt;
+                            <pre><code class="language-html">&lt;div class="paraCont">
+&lt;section id="section1" class="content-item">
+    &lt;span class="num">01&lt;/span>
+    &lt;h2 class="title">Section1&lt;/h2>
+    &lt;figure class="img-Wrap">
+        &lt;div class="img">&lt;/div>
+    &lt;/figure>
+    &lt;p class="desc">높은 목표를 세우고, 스스로 채찍질 한다.&lt;/p>
+&lt;/section>
+&lt;!-- //section1 -->
+​
+&lt;section id="section2" class="content-item">
+    &lt;span class="num">02&lt;/span>
+    &lt;h2 class="title">Section2&lt;/h2>
+    &lt;figure class="img-Wrap">
+        &lt;div class="img">&lt;/div>
+    &lt;/figure>
+    &lt;p class="desc">가장 강한 사람은 스스로를 통제할 수 있는 자이다.
+    &lt;/p>
+&lt;/section>
+&lt;!-- //section2 -->
+​
+&lt;section id="section3" class="content-item">
+    &lt;span class="num">03&lt;/span>
+    &lt;h2 class="title">Section3&lt;/h2>
+    &lt;figure class="img-Wrap">
+        &lt;div class="img">&lt;/div>
+    &lt;/figure>
+    &lt;p class="desc">지붕은 햇빛이 밝을 때 수리해야 합니다.&lt;/p>
+&lt;/section>
+&lt;!-- //section3 -->
+​
+&lt;section id="section4" class="content-item">
+    &lt;span class="num">04&lt;/span>
+    &lt;h2 class="title">Section4&lt;/h2>
+    &lt;figure class="img-Wrap">
+        &lt;div class="img">&lt;/div>
+    &lt;/figure>
+    &lt;p class="desc">용기를 가지되 허세는 부리지 말라.
+    &lt;/p>
+&lt;/section>
+&lt;!-- //section4 -->
+​
+&lt;section id="section5" class="content-item">
+    &lt;span class="num">05&lt;/span>
+    &lt;h2 class="title">Section5&lt;/h2>
+    &lt;figure class="img-Wrap">
+        &lt;div class="img">&lt;/div>
+    &lt;/figure>
+    &lt;p class="desc">게으름은 피곤하기 전에 쉬는 습관일 뿐.&lt;/p>
+&lt;/section>
+&lt;!-- //section5 -->
+​
+&lt;section id="section6" class="content-item">
+    &lt;span class="num">06&lt;/span>
+    &lt;h2 class="title">Section6&lt;/h2>
+    &lt;figure class="img-Wrap">
+        &lt;div class="img">&lt;/div>
+    &lt;/figure>
+    &lt;p class="desc">
+        지붕은 햇빛이 밝을 때 수리해야 합니다.&lt;/p>
+&lt;/section>
+&lt;!-- //section6 -->
+​
+&lt;section id="section7" class="content-item">
+    &lt;span class="num">07&lt;/span>
+    &lt;h2 class="title">Section7&lt;/h2>
+    &lt;figure class="img-Wrap">
+        &lt;div class="img">&lt;/div>
+    &lt;/figure>
+    &lt;p class="desc">언제나 현재에 집중할 수 있다면 행복할 것이다.&lt;/p>
+&lt;/section>
+&lt;!-- //section7 -->
+​
+&lt;section id="section8" class="content-item">
+    &lt;span class="num">08&lt;/span>
+    &lt;h2 class="title">Section8&lt;/h2>
+    &lt;figure class="img-Wrap">
+        &lt;div class="img">&lt;/div>
+    &lt;/figure>
+    &lt;p class="desc">교육의 위대한 목표는 앎이 아니라 행동이다.&lt;/p>
+&lt;/section>
+&lt;!-- //section8 -->
+​
+&lt;section id="section9" class="content-item">
+    &lt;span class="num">09&lt;/span>
+    &lt;h2 class="title">Section9&lt;/h2>
+    &lt;figure class="img-Wrap">
+        &lt;div class="img">&lt;/div>
+    &lt;/figure>
+    &lt;p class="desc">직업은 삶의 근간이다.&lt;/p>
+&lt;/section>
+&lt;!-- //section9 -->
     
 </code></pre>
                         </div>
                         <div class="css">
-                            <pre><code class="language-css"></code></pre>
+<pre><code class="language-css">.paraDot {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    z-index: 1000;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.4);
+    padding: 20px 10px;
+    border-radius: 30px;
+}
+.paraDot li {
+    list-style: none;
+}
+.paraDot li a {
+    width: 20px;
+    height: 20px;
+    display: block;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    margin: 8px;
+    position: relative;
+    text-decoration: none;
+}
+.paraDot li a span {
+    position: absolute;
+    left: -105px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #fff;
+    color: #000;
+    display: block;
+    padding: 2px 15px;
+    border-radius: 30px;
+    opacity: 0;
+}
+.paraDot li.active a {
+    background: #fff;
+}
+.paraDot li.active a span {
+    opacity: 1;
+}
+.source button{
+    display: fixed;
+    float: right;
+    border: 1px solid #000;
+    background: #000;
+    border-radius: 20px;
+    color: #fff;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-family: 'GmarketSans';
+    margin-top: 10px;
+    padding: 20px;
+}
+.source {
+    top: auto;
+    left: auto;
+    bottom: 25px;
+    right: 25px;
+    position: fixed;
+}
+.source button{
+    margin-right: 50px;
+    float: right;
+    border: 1px solid rgb(255, 255, 255);
+    background: rgb(0, 0, 0);
+    border-radius: 20px;
+    color: #fff;
+    cursor: pointer;
+    font-family: 'NEXONLv2Gothic';
+    padding: 15px 30px;
+    transition: all 0.4s;
+    box-sizing: 0 0 0 #fff inset;
+}
+.source button:hover {
+    box-shadow: 0 -50px 0 #fff inset;
+        color: #000;
+}
+                            </code></pre>
                         </div>
                         <div class="javascript">
-                            <pre><code class="language-javascript"></code></pre>
+                            <pre><code class="language-javascript">document.querySelectorAll(".paraDot ul li a").forEach((el) => {
+el.addEventListener("click", (e) => {
+        e.preventDefault();
+        document.querySelector(el.getAttribute("href")).scrollIntoView({
+            behavior:"smooth"
+        })
+    })
+})
+
+window.addEventListener("scroll", () => {
+    let scrollTop = document.documentElement.scrollTop || window.scrollY || window.pageYOffset;
+
+    document.querySelector(".paraScroll span").innerText = parseInt(scrollTop) + "px";
+
+    if( scrollTop > document.getElementById("section1").offsetTop ) {
+        document.querySelectorAll(".paraDot ul li").forEach((el) => {
+            el.classList.remove("active");
+        })
+        document.querySelector(".paraDot ul li:nth-child(1)").classList.add("active");
+        }
+    });
+                    </code></pre>
                         </div>
                     </div>
                 </div>
@@ -304,7 +519,44 @@
         });
 
 
-        
+    function modal() {
+        document.querySelector(".source button").addEventListener("click", function(){
+        document.querySelector("#modal").classList.add("show"); 
+        document.querySelector("#modal").classList.remove("hide"); 
+     });
+
+        document.querySelector(".modal-cont button").addEventListener("click", function(){
+        document.querySelector("#modal").classList.add("hide"); 
+     });
+
+   }
+    modal();
+
+    const tabBtn2 = document.querySelectorAll(".code-view .view-title li");
+    const tabCont2 = document.querySelectorAll(".view-cont > div");
+
+        //2. 버튼을 클릭하면 클릭한 버튼한테 active 추가
+
+        tabBtn2.forEach((element, index) => {
+            element.addEventListener("click", function () {
+
+                tabBtn2.forEach(el => {
+                    el.classList.remove("active")
+                });
+                element.classList.add("active")
+
+                tabCont2.forEach(el => {
+                el.style.display = "none";    
+            })
+            tabCont2[index].style.display = "block";
+        })      
+    });
+
+      document.addEventListener('DOMContentLoaded', (event) => {
+      document.querySelectorAll('pre code').forEach((el) => {
+        hljs.highlightElement(el);
+      });
+   });
     </script>
 </body>
 

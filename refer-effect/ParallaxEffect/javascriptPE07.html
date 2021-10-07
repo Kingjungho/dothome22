@@ -17,9 +17,11 @@
             top: 20px;
             transition: top 0.4s ease;
         }
+
         .paraNav.hide {
             top: -200px;
         }
+
         .paraNav li a {
             width: auto;
             padding: 5px;
@@ -27,59 +29,66 @@
             height: 30px;
 
         }
+
         .paraNav li.active a {
             border-radius: 30px;
         }
-        
-        /* 한번에 나타나기 */
-        /* .content-item {
-            opacity: 0;
-            transform:translateY(100px);
-            transition: all 1s;
+        .source {
+            top: auto;
+            left: auto;
+            bottom: 25px;
+            right: 25px;
+            position: fixed;
         }
-        .content-item.show {
+        .source button{
+            margin-right: 50px;
+            float: right;
+            border: 1px solid rgb(255, 255, 255);
+            background: rgb(0, 0, 0);
+            border-radius: 20px;
+            color: #fff;
+            cursor: pointer;
+            font-family: 'NEXONLv2Gothic';
+            padding: 15px 30px;
+            transition: all 0.4s;
+            box-sizing: 0 0 0 #fff inset;
+        }
+        .source button:hover {
+            box-shadow: 0 -50px 0 #fff inset;
+                color: #000;
+        }
+
+        /* 한번에 나타나기 */
+        /* .content-item .desc {
+            opacity: 0;
+            transition: all 0.33s ease-in-out;
+            transform: translateY(100px) skewX(30deg);
+        }
+        .content-item .desc.show {
             opacity: 1;
-            transform:translateY(0);
+            transform: translateY(0) skewX(0);
         } */
 
-        /* 개별적으로 나타나기 */
-        .content-item .num {
-            opacity: 0 !important; 
-            transform:translateY(200px);
-            transition: all 1s 0.1s cubic-bezier(0, 0.66, 0.38, 1.01);
-        }
-        .content-item .title {
+        /* 한 글자씩 나타나기 */
+        .content-item .desc span {
             opacity: 0;
-            transform: translateX(-100px);
-            transition: all 1s 0.3s cubic-bezier(0, 0.66, 0.38, 1.01);
+            transition: all 0.33s ease-in-out;
+            transform: translateY(100px) skewX(30deg);
         }
-        .content-item .img-Wrap {
+
+        .content-item .desc span.show {
+            opacity: 1;
+            transform: translateY(0) skewX(0);
+        }
+
+        /* GSAP 한 글자씩 나타나기 */
+        /* .content-item .desc span {
             opacity: 0;
-            transform:translateY(200px) rotateY(110deg) skew(20deg);
-            transition: all 1s 0.6s cubic-bezier(0, 0.66, 0.38, 1.01);
-        }
-        .content-item .desc {
-            opacity: 0;
-            transform: translateX(-200);
-            transition: all 1s 0.9s cubic-bezier(0, 0.66, 0.38, 1.01);
-        }
-        .content-item.show .num {
-            opacity: 0.07 !important;
-            transform:translateY(0);
-        }
-        .content-item.show .title {
-            opacity: 1;
-            transform: translateX(0px);
-        }
-        .content-item.show .img-Wrap {
-            opacity: 1;
-            transform:translateY(0px) rotate(0);
-        }
-        .content-item.show .desc {
-            opacity: 1;
-            transform: translateX(0);
-        }
-</style>
+            display: inline-block;
+            min-width: 1vw;
+            transform: translateY(100px) rotate(90deg) scale(5);
+        } */
+    </style>
 </head>
 
 <body class="parallax">
@@ -87,7 +96,7 @@
     <!-- header -->
     <header class="paraInfo">
         <h1><a href="index.html">Parallax Effect07 - Javascript</a></h1>
-        <p>패랠랙스 스크로링 효과 - 나타나기</p>
+        <p>패랠랙스 스크로링 효과 - 텍스트 효과</p>
     </header>
     <!-- //header -->
     ​
@@ -95,7 +104,7 @@
     <main>
         <!-- scroll -->
         <div class="paraScroll">scrollTop() : <span>0</span>px</div>
-        
+
         <!-- nav -->
         <nav class="paraNav">
             <ul>
@@ -119,7 +128,7 @@
                 <figure class="img-Wrap">
                     <div class="img"></div>
                 </figure>
-                <p class="desc">높은 목표를 세우고, 스스로 채찍질 한다.</p>
+                <p class="desc split">높은 목표를 세우고, 스스로 채찍질 한다.</p>
             </section>
             <!-- //section1 -->
             ​
@@ -129,8 +138,7 @@
                 <figure class="img-Wrap">
                     <div class="img"></div>
                 </figure>
-                <p class="desc">가장 강한 사람은 스스로를 통제할 수 있는 자이다.
-                </p>
+                <p class="desc split">가장 강한 사람은 스스로를 통제할 수 있는 자이다.</p>
             </section>
             <!-- //section2 -->
             ​
@@ -140,7 +148,7 @@
                 <figure class="img-Wrap">
                     <div class="img"></div>
                 </figure>
-                <p class="desc">지붕은 햇빛이 밝을 때 수리해야 합니다.</p>
+                <p class="desc split">지붕은 햇빛이 밝을 때 수리해야 합니다.</p>
             </section>
             <!-- //section3 -->
             ​
@@ -150,7 +158,7 @@
                 <figure class="img-Wrap">
                     <div class="img"></div>
                 </figure>
-                <p class="desc">용기를 가지되 허세는 부리지 말라.
+                <p class="desc split">용기를 가지되 허세는 부리지 말라.
                 </p>
             </section>
             <!-- //section4 -->
@@ -171,7 +179,7 @@
                 <figure class="img-Wrap">
                     <div class="img"></div>
                 </figure>
-                <p class="desc">
+                <p class="desc split">
                     지붕은 햇빛이 밝을 때 수리해야 합니다.</p>
             </section>
             <!-- //section6 -->
@@ -182,7 +190,7 @@
                 <figure class="img-Wrap">
                     <div class="img"></div>
                 </figure>
-                <p class="desc">언제나 현재에 집중할 수 있다면 행복할 것이다.</p>
+                <p class="desc split">언제나 현재에 집중할 수 있다면 행복할 것이다.</p>
             </section>
             <!-- //section7 -->
             ​
@@ -192,7 +200,7 @@
                 <figure class="img-Wrap">
                     <div class="img"></div>
                 </figure>
-                <p class="desc">교육의 위대한 목표는 앎이 아니라 행동이다.</p>
+                <p class="desc split">교육의 위대한 목표는 앎이 아니라 행동이다.</p>
             </section>
             <!-- //section8 -->
             ​
@@ -202,7 +210,7 @@
                 <figure class="img-Wrap">
                     <div class="img"></div>
                 </figure>
-                <p class="desc">직업은 삶의 근간이다.</p>
+                <p class="desc split">직업은 삶의 근간이다.</p>
             </section>
             <!-- //section9 -->
         </div>
@@ -220,15 +228,15 @@
                 <li><a href="javascriptPE02.html">2</a></li>
                 <li><a href="javascriptPE03.html">3</a></li>
                 <li><a href="javascriptPE04.html">4</a></li>
-                <li class="active"><a href="javascriptPE05.html">5</a></li>
+                <li><a href="javascriptPE05.html">5</a></li>
                 <li><a href="javascriptPE06.html">6</a></li>
-                <li><a href="javascriptPE07.html">7</a></li>
+                <li class="active"><a href="javascriptPE07.html">7</a></li>
                 <li><a href="javascriptPE08.html">8</a></li>
             </ul>
         </div>
         <div class="FooterInfo">
             <h2>제이쿼리</h2>
-            <ul> 
+            <ul>
                 <li><a href="jqueryPE01.html">1</a></li>
                 <li><a href="jqueryPE02.html">2</a></li>
                 <li><a href="jqueryPE03.html">3</a></li>
@@ -269,16 +277,273 @@
                     </div>
                     <div class="view-cont">
                         <div class="html">
-                            <pre><code class="language-html">&lt;div id="tab-menu"&gt;
-    
-</code></pre>
+<pre><code class="language-html">&lt;div class="paraCont">
+    &lt;section id="section1" class="content-item">
+        &lt;span class="num">01&lt;/span>
+        &lt;h2 class="title">Section1&lt;/h2>
+        &lt;figure class="img-Wrap">
+            &lt;div class="img">&lt;/div>
+        &lt;/figure>
+        &lt;p class="desc">높은 목표를 세우고, 스스로 채찍질 한다.&lt;/p>
+    &lt;/section>
+    &lt;!-- //section1 -->
+    ​
+    &lt;section id="section2" class="content-item">
+        &lt;span class="num">02&lt;/span>
+        &lt;h2 class="title">Section2&lt;/h2>
+        &lt;figure class="img-Wrap">
+            &lt;div class="img">&lt;/div>
+        &lt;/figure>
+        &lt;p class="desc">가장 강한 사람은 스스로를 통제할 수 있는 자이다.
+        &lt;/p>
+    &lt;/section>
+    &lt;!-- //section2 -->
+    ​
+    &lt;section id="section3" class="content-item">
+        &lt;span class="num">03&lt;/span>
+        &lt;h2 class="title">Section3&lt;/h2>
+        &lt;figure class="img-Wrap">
+            &lt;div class="img">&lt;/div>
+        &lt;/figure>
+        &lt;p class="desc">지붕은 햇빛이 밝을 때 수리해야 합니다.&lt;/p>
+    &lt;/section>
+    &lt;!-- //section3 -->
+    ​
+    &lt;section id="section4" class="content-item">
+        &lt;span class="num">04&lt;/span>
+        &lt;h2 class="title">Section4&lt;/h2>
+        &lt;figure class="img-Wrap">
+            &lt;div class="img">&lt;/div>
+        &lt;/figure>
+        &lt;p class="desc">용기를 가지되 허세는 부리지 말라.
+        &lt;/p>
+    &lt;/section>
+    &lt;!-- //section4 -->
+    ​
+    &lt;section id="section5" class="content-item">
+        &lt;span class="num">05&lt;/span>
+        &lt;h2 class="title">Section5&lt;/h2>
+        &lt;figure class="img-Wrap">
+            &lt;div class="img">&lt;/div>
+        &lt;/figure>
+        &lt;p class="desc">게으름은 피곤하기 전에 쉬는 습관일 뿐.&lt;/p>
+    &lt;/section>
+    &lt;!-- //section5 -->
+    ​
+    &lt;section id="section6" class="content-item">
+        &lt;span class="num">06&lt;/span>
+        &lt;h2 class="title">Section6&lt;/h2>
+        &lt;figure class="img-Wrap">
+            &lt;div class="img">&lt;/div>
+        &lt;/figure>
+        &lt;p class="desc">
+            지붕은 햇빛이 밝을 때 수리해야 합니다.&lt;/p>
+    &lt;/section>
+    &lt;!-- //section6 -->
+    ​
+    &lt;section id="section7" class="content-item">
+        &lt;span class="num">07&lt;/span>
+        &lt;h2 class="title">Section7&lt;/h2>
+        &lt;figure class="img-Wrap">
+            &lt;div class="img">&lt;/div>
+        &lt;/figure>
+        &lt;p class="desc">언제나 현재에 집중할 수 있다면 행복할 것이다.&lt;/p>
+    &lt;/section>
+    &lt;!-- //section7 -->
+    ​
+    &lt;section id="section8" class="content-item">
+        &lt;span class="num">08&lt;/span>
+        &lt;h2 class="title">Section8&lt;/h2>
+        &lt;figure class="img-Wrap">
+            &lt;div class="img">&lt;/div>
+        &lt;/figure>
+        &lt;p class="desc">교육의 위대한 목표는 앎이 아니라 행동이다.&lt;/p>
+    &lt;/section>
+    &lt;!-- //section8 -->
+    ​
+    &lt;section id="section9" class="content-item">
+        &lt;span class="num">09&lt;/span>
+        &lt;h2 class="title">Section9&lt;/h2>
+        &lt;figure class="img-Wrap">
+            &lt;div class="img">&lt;/div>
+        &lt;/figure>
+        &lt;p class="desc">직업은 삶의 근간이다.&lt;/p>
+    &lt;/section>
+    &lt;!-- //section9 -->
+    </code></pre>
+    </div>
                         </div>
                         <div class="css">
-                            <pre><code class="language-css"></code></pre>
-                        </div>
+                            <pre><code class="language-css">.paraNav {
+    top: 20px;
+    transition: top 0.4s ease;
+}
+.paraNav.hide {
+    top: -200px;
+}
+.paraNav li a {
+    width: auto;
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+}
+.paraNav li.active a {
+    border-radius: 30px;
+}
+.source {
+    top: auto;
+    left: auto;
+    bottom: 25px;
+    right: 25px;
+    position: fixed;
+}
+.source button{
+    margin-right: 50px;
+    float: right;
+    border: 1px solid rgb(255, 255, 255);
+    background: rgb(0, 0, 0);
+    border-radius: 20px;
+    color: #fff;
+    cursor: pointer;
+    font-family: 'NEXONLv2Gothic';
+    padding: 15px 30px;
+    transition: all 0.4s;
+    box-sizing: 0 0 0 #fff inset;
+}
+.source button:hover {
+    box-shadow: 0 -50px 0 #fff inset;
+        color: #000;
+}
+/* 한번에 나타나기 */
+/* .content-item .desc {
+    opacity: 0;
+    transition: all 0.33s ease-in-out;
+    transform: translateY(100px) skewX(30deg);
+}
+.content-item .desc.show {
+    opacity: 1;
+    transform: translateY(0) skewX(0);
+} */
+/* 한 글자씩 나타나기 */
+.content-item .desc span {
+    opacity: 0;
+    transition: all 0.33s ease-in-out;
+    transform: translateY(100px) skewX(30deg);
+}
+.content-item .desc span.show {
+    opacity: 1;
+    transform: translateY(0) skewX(0);
+}
+/* GSAP 한 글자씩 나타나기 */
+/* .content-item .desc span {
+    opacity: 0;
+    display: inline-block;
+    min-width: 1vw;
+    transform: translateY(100px) rotate(90deg) scale(5);
+} */
+</code></pre>
+</div>
                         <div class="javascript">
-                            <pre><code class="language-javascript"></code></pre>
-                        </div>
+                            <pre><code class="language-javascript">//글씨 쪼개기// let text = document.querySelector("#section1 .desc").innerText;
+// let split = text.split('').join("&lt;/span>&lt;span>");
+//     split = "&lt;span>" + split + "&lt;/span>";
+//     document.querySelector("#section1 .desc").innerHTML = split;
+
+//다중 글씨 쪼개기
+document.querySelectorAll(".split").forEach(el => {
+    let text = el.innerText;
+    let split = text.split('').join("&lt;/span>&lt;span aria-hidden='true'>");
+        split = "&lt;span aria-hidden='true'>" + split + "&lt;/span>";
+        el.innerHTML = split;
+        el.setAttribute("aria-label", text);
+})
+
+//스크롤 이펙트
+window.addEventListener("scroll", ()=>{
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop || window.scrollY;
+
+    // if( scrollTop >= document.getElementById("section1").offsetTop - window.innerHeight/2){
+    //     document.querySelectorAll("#section1 .split span").forEach((elem, index) => {
+    //         setTimeout(() => {
+    //             elem.classList.add("show");
+    //         }, 50 * index)
+    //     })
+    // }
+    
+    // if( scrollTop >= document.getElementById("section2").offsetTop - window.innerHeight/2){
+    //     document.querySelectorAll("#section2 .split span").forEach((elem, index) => {
+    //         setTimeout(() => {
+    //             elem.classList.add("show");
+    //         }, 50 * index)
+    //     })
+    // }
+    
+    // if( scrollTop >= document.getElementById("section3").offsetTop - window.innerHeight/2){
+    //     document.querySelectorAll("#section3 .split span").forEach((elem, index) => {
+    //         setTimeout(() => {
+    //             elem.classList.add("show");
+    //         }, 50 * index)
+    //     })
+    // }
+    
+    // if( scrollTop >= document.getElementById("section4").offsetTop - window.innerHeight/2){
+    //     document.querySelectorAll("#section4 .split span").forEach((elem, index) => {
+    //         setTimeout(() => {
+    //             elem.classList.add("show");
+    //         }, 50 * index)
+    //     })
+    // }
+
+    //for문
+    // let count = document.querySelectorAll(".content-item").length;
+    // for( let i=1; i &lt;= count; i++){
+    //     if( scrollTop >= document.getElementById("section"+i).offsetTop){
+    //         document.querySelectorAll("#section"+ i + ".split span").forEach((elem, index) => {
+    //             setTimeout(() => {
+    //                 elem.classList.add("show");
+    //             }, 50 * index)
+    //         })
+    //     }
+    // }
+
+    //forEach()
+    // document.querySelectorAll('.content-item').forEach(function(item){
+    //     if( scrollTop >= item.offsetTop ){
+    //         el.querySelectorAll('.split span').forEach((elem, index)=>{
+    //             setTimeout(() => {
+    //                 elem.classList.add('show');
+    //             }, 50 * index);
+    //         });
+    //     }
+    // });  
+
+    //gsap
+    document.querySelectorAll('.content-item').forEach((el,index) => {
+        if(scrollTop >= el.offsetTop){
+            gsap.to(el.querySelectorAll(".desc span"),{
+                duration: .5,
+                opacity: 1,
+                stagger: .05,
+                y: 0,
+                scale: 1,
+                ease: "power2.out",
+                rotation: 0,
+            });
+        }  
+    });
+    //메뉴
+    document.querySelectorAll(".content-item").forEach((item, index) => {
+        if( scrollTop >= item.offsetTop - 2){
+            document.querySelectorAll(".paraNav ul li").forEach(li => {
+                li.classList.remove("active");
+            });
+            document.querySelector(".paraNav ul li:nth-child("+(index+1)+")").classList.add("active");
+        }
+    });
+    //출력
+    document.querySelector(".paraScroll span").innerText = parseInt(scrollTop);
+})</code></pre>
+</div>
                     </div>
                 </div>
 
@@ -289,79 +554,149 @@
     <!-- //modal -->
     ​
     <!-- script -->
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
     <script src="../assets/js/custom.js"></script>
     <script src="../assets/js/highlight.min.js"></script>
     <script>
-        document.querySelectorAll(".paraNav ul li a").forEach(li => {
-            li.addEventListener("click", e => {
-                e.preventDefault();
-                document.querySelector(li.getAttribute("href")).scrollIntoView({
-                behavior: "smooth"
-              })
-          })
-      })
+    //글씨 쪼개기
+    // let text = document.querySelector("#section1 .desc").innerText;
+    // let split = text.split('').join("</span><span>");
+    //     split = "<span>" + split + "</span>";
+    //     document.querySelector("#section1 .desc").innerHTML = split;
 
-        function scrollProgress(){
-            let scrollTop = (document.documentElement.scrollTop || window.scrollY || window.pageYOffset) + window.innerHeight/2;
+    //다중 글씨 쪼개기
+    document.querySelectorAll(".split").forEach(el => {
+        let text = el.innerText;
+        let split = text.split('').join("</span><span aria-hidden='true'>");
+            split = "<span aria-hidden='true'>" + split + "</span>";
+            el.innerHTML = split;
+            el.setAttribute("aria-label", text);
+    })
 
+    //스크롤 이펙트
+    window.addEventListener("scroll", ()=>{
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop || window.scrollY;
 
-            // if( scrollTop > document.getElementById("section1").offsetTop ){
-            //     document.getElementById("section1").classList.add("show");
-            // }
-            // if( scrollTop > document.getElementById("section2").offsetTop ){
-            //     document.getElementById("section2").classList.add("show");
-            // }
-            // if( scrollTop > document.getElementById("section3").offsetTop ){
-            //     document.getElementById("section3").classList.add("show");
-            // }
-            // if( scrollTop > document.getElementById("section4").offsetTop ){
-            //     document.getElementById("section4").classList.add("show");
-            // }
-            // if( scrollTop > document.getElementById("section5").offsetTop ){
-            //     document.getElementById("section5").classList.add("show");
-            // }
-            // if( scrollTop > document.getElementById("section6").offsetTop ){
-            //     document.getElementById("section6").classList.add("show");
-            // }
-            // if( scrollTop > document.getElementById("section7").offsetTop ){
-            //     document.getElementById("section7").classList.add("show");
-            // }
-            // if( scrollTop > document.getElementById("section8").offsetTop ){
-            //     document.getElementById("section8").classList.add("show");
-            // }
-            // if( scrollTop > document.getElementById("section9").offsetTop ){
-            //     document.getElementById("section9").classList.add("show");
-            // }
+        // if( scrollTop >= document.getElementById("section1").offsetTop - window.innerHeight/2){
+        //     document.querySelectorAll("#section1 .split span").forEach((elem, index) => {
+        //         setTimeout(() => {
+        //             elem.classList.add("show");
+        //         }, 50 * index)
+        //     })
+        // }
+        
+        // if( scrollTop >= document.getElementById("section2").offsetTop - window.innerHeight/2){
+        //     document.querySelectorAll("#section2 .split span").forEach((elem, index) => {
+        //         setTimeout(() => {
+        //             elem.classList.add("show");
+        //         }, 50 * index)
+        //     })
+        // }
+        
+        // if( scrollTop >= document.getElementById("section3").offsetTop - window.innerHeight/2){
+        //     document.querySelectorAll("#section3 .split span").forEach((elem, index) => {
+        //         setTimeout(() => {
+        //             elem.classList.add("show");
+        //         }, 50 * index)
+        //     })
+        // }
+        
+        // if( scrollTop >= document.getElementById("section4").offsetTop - window.innerHeight/2){
+        //     document.querySelectorAll("#section4 .split span").forEach((elem, index) => {
+        //         setTimeout(() => {
+        //             elem.classList.add("show");
+        //         }, 50 * index)
+        //     })
+        // }
 
-            //for
-            // for(i =1; i<10; i++){
-            //     if( scrollTop > document.getElementById("section" +i).offsetTop ){
-            //         document.getElementById("section" +i).classList.add("show");
-            //     }
-            // }
+        //for문
+        // let count = document.querySelectorAll(".content-item").length;
+        // for( let i=1; i <= count; i++){
+        //     if( scrollTop >= document.getElementById("section"+i).offsetTop){
+        //         document.querySelectorAll("#section"+ i + ".split span").forEach((elem, index) => {
+        //             setTimeout(() => {
+        //                 elem.classList.add("show");
+        //             }, 50 * index)
+        //         })
+        //     }
+        // }
 
-            //forEach
-            document.querySelectorAll(".content-item").forEach(item => {
-                scrollTop > item.offsetTop ? item.classList.add("show") : item.classList.remove("show");
-                })
-           
-          
-            //출력
-            document.querySelector(".paraScroll span").innerText = parseInt(scrollTop);
+        //forEach()
+        // document.querySelectorAll('.content-item').forEach(function(item){
+        //     if( scrollTop >= item.offsetTop ){
+        //         el.querySelectorAll('.split span').forEach((elem, index)=>{
+        //             setTimeout(() => {
+        //                 elem.classList.add('show');
+        //             }, 50 * index);
+        //         });
+        //     }
+        // });  
 
-            //메뉴
-            document.querySelectorAll(".content-item").forEach((item, index) => {
-                if( scrollTop >= item.offsetTop ) {
-                    document.querySelectorAll("paraNav ul li").forEach(li => {
-                        li.classList.remove("active");
-                    });
-                    document.querySelector(".paraNav ul li:nth-child("+(index+1)+")").classList.add("active");
-                }
+        //gsap
+        document.querySelectorAll('.content-item').forEach((el,index) => {
+            if(scrollTop >= el.offsetTop){
+                gsap.to(el.querySelectorAll(".desc span"),{
+                    duration: .5,
+                    opacity: 1,
+                    stagger: .05,
+                    y: 0,
+                    scale: 1,
+                    ease: "power2.out",
+                    rotation: 0,
+                });
+            }  
+        });
+        //메뉴
+        document.querySelectorAll(".content-item").forEach((item, index) => {
+            if( scrollTop >= item.offsetTop - 2){
+                document.querySelectorAll(".paraNav ul li").forEach(li => {
+                    li.classList.remove("active");
+                });
+                document.querySelector(".paraNav ul li:nth-child("+(index+1)+")").classList.add("active");
+            }
+        });
+        //출력
+        document.querySelector(".paraScroll span").innerText = parseInt(scrollTop);
+    })
+
+    function modal() {
+        document.querySelector(".source button").addEventListener("click", function(){
+        document.querySelector("#modal").classList.add("show"); 
+        document.querySelector("#modal").classList.remove("hide"); 
+     });
+
+        document.querySelector(".modal-cont button").addEventListener("click", function(){
+        document.querySelector("#modal").classList.add("hide"); 
+     });
+
+   }
+    modal();
+
+    const tabBtn2 = document.querySelectorAll(".code-view .view-title li");
+    const tabCont2 = document.querySelectorAll(".view-cont > div");
+
+        //2. 버튼을 클릭하면 클릭한 버튼한테 active 추가
+
+        tabBtn2.forEach((element, index) => {
+            element.addEventListener("click", function () {
+
+                tabBtn2.forEach(el => {
+                    el.classList.remove("active")
+                });
+                element.classList.add("active")
+
+                tabCont2.forEach(el => {
+                el.style.display = "none";    
             })
-        }
-        window.addEventListener("scroll", scrollProgress);
-    
+            tabCont2[index].style.display = "block";
+        })      
+    });
+
+      document.addEventListener('DOMContentLoaded', (event) => {
+      document.querySelectorAll('pre code').forEach((el) => {
+        hljs.highlightElement(el);
+      });
+   });
     </script>
 </body>
 </html>
