@@ -17,9 +17,11 @@
             top: 20px;
             transition: top 0.4s ease;
         }
+
         .paraNav.hide {
             top: -200px;
         }
+
         .paraNav li a {
             width: auto;
             padding: 5px;
@@ -27,67 +29,50 @@
             height: 30px;
 
         }
+
         .paraNav li.active a {
             border-radius: 30px;
         }
-        
+
         /* 한번에 나타나기 */
-        /* .content-item {
+        /* .content-item .desc {
             opacity: 0;
-            transform:translateY(100px);
-            transition: all 1s;
+            transition: all 0.33s ease-in-out;
+            transform: translateY(100px) skewX(30deg);
         }
-        .content-item.show {
+        .content-item .desc.show {
             opacity: 1;
-            transform:translateY(0);
+            transform: translateY(0) skewX(0);
         } */
 
-        /* 개별적으로 나타나기 */
-        .content-item .num {
-            opacity: 0 !important; 
-            transform:translateY(200px);
-            transition: all 1s 0.1s cubic-bezier(0, 0.66, 0.38, 1.01);
-        }
-        .content-item .title {
+        /* 한 글자씩 나타나기 */
+        /* .content-item .desc span {
             opacity: 0;
-            transform: translateX(-100px);
-            transition: all 1s 0.3s cubic-bezier(0, 0.66, 0.38, 1.01);
+            transition: all 0.33s ease-in-out;
+            transform: translateY(100px) skewX(30deg);
         }
-        .content-item .img-Wrap {
+
+        .content-item .desc span.show {
+            opacity: 1;
+            transform: translateY(0) skewX(0);
+        } */
+
+        /* GSAP 한 글자씩 나타나기 */
+        .content-item .desc span {
             opacity: 0;
-            transform:translateY(200px) rotateY(110deg) skew(20deg);
-            transition: all 1s 0.6s cubic-bezier(0, 0.66, 0.38, 1.01);
+            display: inline-block;
+            min-width: 1vw;
+            transform: translateY(100px) rotate(90deg) skewY(30deg);
         }
-        .content-item .desc {
-            opacity: 0;
-            transform: translateX(-200);
-            transition: all 1s 0.9s cubic-bezier(0, 0.66, 0.38, 1.01);
-        }
-        .content-item.show .num {
-            opacity: 0.07 !important;
-            transform:translateY(0);
-        }
-        .content-item.show .title {
-            opacity: 1;
-            transform: translateX(0px);
-        }
-        .content-item.show .img-Wrap {
-            opacity: 1;
-            transform:translateY(0px) rotate(0);
-        }
-        .content-item.show .desc {
-            opacity: 1;
-            transform: translateX(0);
-        }
-</style>
+    </style>
 </head>
 
 <body class="parallax">
     ​
     <!-- header -->
     <header class="paraInfo">
-        <h1><a href="index.html">Parallax Effect01 - jQuery</a></h1>
-        <p>패랠랙스 스크로링 효과 - 나타나기</p>
+        <h1><a href="index.html">Parallax Effect07 - jQuery</a></h1>
+        <p>패랠랙스 스크로링 효과 - 텍스트 효과</p>
     </header>
     <!-- //header -->
     ​
@@ -95,7 +80,7 @@
     <main>
         <!-- scroll -->
         <div class="paraScroll">scrollTop() : <span>0</span>px</div>
-        
+
         <!-- nav -->
         <nav class="paraNav">
             <ul>
@@ -129,8 +114,7 @@
                 <figure class="img-Wrap">
                     <div class="img"></div>
                 </figure>
-                <p class="desc">가장 강한 사람은 스스로를 통제할 수 있는 자이다.
-                </p>
+                <p class="desc">가장 강한 사람은 스스로를 통제할 수 있는 자이다.</p>
             </section>
             <!-- //section2 -->
             ​
@@ -228,7 +212,7 @@
         </div>
         <div class="FooterInfo">
             <h2>제이쿼리</h2>
-            <ul> 
+            <ul>
                 <li><a href="jqueryPE01.html">1</a></li>
                 <li><a href="jqueryPE02.html">2</a></li>
                 <li><a href="jqueryPE03.html">3</a></li>
@@ -269,8 +253,7 @@
                     </div>
                     <div class="view-cont">
                         <div class="html">
-                            <pre><code class="language-html">&lt;div id="tab-menu"&gt;
-    
+                            <pre><code class="language-html">&lt;div id="tab-menu"&gt;   
 </code></pre>
                         </div>
                         <div class="css">
@@ -291,10 +274,105 @@
     <!-- script -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
     <script src="../assets/js/custom.js"></script>
     <script src="../assets/js/highlight.min.js"></script>
     <script>
-   
+        //글씨 쪼개기(한개)
+        // let text = $("#section1 .desc").text();
+        // let split = text.split('').join("</span><span>");
+        // split = "<span>" + split +"</span>";
+        // $("#section1 .desc").html(split);
+
+        //글씨 쪼개기(여러 개) each()
+        $(".content-item .desc").each(function () {
+            let text = $(this).text();
+            let split = text.split('').join("</span><span aria-hidden='true'>");
+            split = "<span aria-hidden='true'>" + split + "</span>";
+            $(this).html(split).attr("aria-label", text);
+        });
+
+        $(window).scroll(function () {
+            // if( $(window).scrollTop() > $("#section1").offset().top ){
+            //     $("#section1 .desc").addClass("show");
+            // } else {
+            //     $("#section1 .desc").removeClass("show");
+            // }
+            // if( $(window).scrollTop() > $("#section2").offset().top ){
+            //     $("#section2 .desc").addClass("show");
+            // } else {
+            //     $("#section2 .desc").removeClass("show");
+            // }
+            // if( $(window).scrollTop() > $("#section3").offset().top ){
+            //     $("#section3 .desc").addClass("show");
+            // } else {
+            //     $("#section3 .desc").removeClass("show");
+            // }
+            // if( $(window).scrollTop() > $("#section4").offset().top ){
+            //     $("#section4 .desc").addClass("show");
+            // } else {
+            //     $("#section4 .desc").removeClass("show");
+            // }
+
+            //     $(".content-item .desc").each(function(){
+            //         if( $(window).scrollTop() >= $(this).offset().top - $(window).height()/2 ){
+            //          $(this).addClass("show");
+            //         } else {
+            //         $(this).removeClass("show");
+            //     }
+            // })
+
+            //한 글자씩 나타나기
+            // if( $(window).scrollTop() >= $("#section1").offset().top ){
+            //     $("#section1 .desc span").each(i => {
+            //         setTimeout(() => {
+            //             $("#section1 .desc span").eq(i).addClass("show");  
+            //         }, 50 * i)
+            //     })
+            // }
+            // if( $(window).scrollTop() >= $("#section2").offset().top ){
+            //     $("#section2 .desc span").each(i => {
+            //         setTimeout(() => {
+            //             $("#section2 .desc span").eq(i).addClass("show");  
+            //         }, 50 * i)
+            //     })
+            // }
+            // if( $(window).scrollTop() >= $("#section3").offset().top ){
+            //     $("#section3 .desc span").each(i => {
+            //         setTimeout(() => {
+            //             $("#section3 .desc span").eq(i).addClass("show");  
+            //         }, 50 * i)
+            //     })
+            // }
+
+            // for (i = 1; i < 10; i++) {
+            //     if ($(window).scrollTop() >= $("#section" + i).offset().top) {
+            //         $(".content-item .desc span").each(i => {
+            //             setTimeout(() => {
+            //                 $(".content-item .desc span").eq(i).addClass("show");
+            //             }, 50 * i)
+            //         })
+            //     }
+            // }
+
+            //each
+
+            //gsap
+            $(".content-item").each(function(index){
+                if( $(window).scrollTop() >= $(this).offset().top ){
+                    gsap.to( $(this).find(".desc span"), {
+                        duration: 1,
+                        opacity: 1,
+                        stagger: .05,
+                        y: 0,
+                        ease: "power4.out",
+                        rotation: 0
+                    })
+                }
+            })
+            
+        });
     </script>
 </body>
+
 </html>
