@@ -10,71 +10,95 @@
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/highlight.css">
     <style>
-    .mouseCont {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        color: rgb(255, 255, 255);
-        height: 100vh;
-        width: 100%;
-        overflow: hidden;
-        font-family: 'NEXONLv2Gothic';
-        /* cursor: none; */
-}
-    .mouseCont p {
-        font-size: 2.5vw;
-        line-height: 2;
-        font-weight: 300;
-    }
+        .source {
+            top: auto;
+            left: auto;
+            bottom: 25px;
+            right: 25px;
+            position: fixed;
+        }
+        .source button {
+            margin-right: 50px;
+            float: right;
+            border: 1px solid rgb(255, 255, 255);
+            background: rgb(0, 0, 0);
+            border-radius: 20px;
+            color: #fff;
+            cursor: pointer;
+            font-family: 'NEXONLv2Gothic';
+            padding: 15px 30px;
+            transition: all 0.4s;
+            box-sizing: 0 0 0 #fff inset;
+        }
+        .source button:hover {
+            box-shadow: 0 -50px 0 #fff inset;
+            color: #000;
+        }
+        .mouseCont {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: rgb(255, 255, 255);
+            height: 100vh;
+            width: 100%;
+            overflow: hidden;
+            font-family: 'NEXONLv2Gothic';
+            /* cursor: none; */
+        }
+        .mouseCont p {
+            font-size: 2.5vw;
+            line-height: 2;
+            font-weight: 300;
+        }
+        .mouseCont h2 {
+            font-size: 3vw;
+            font-weight: normal;
+            font-weight: 400;
+            line-height: 1.5;
+        }
+        .mouseCont em {
+            font-style: normal;
+            border-bottom: 0.3vw solid rgb(80, 60, 54);
+            color: rgb(80, 60, 54);
 
-    .mouseCont h2 {
-        font-size: 3vw;
-        font-weight: normal;
-        font-weight: 400;
-        line-height: 1.5;
-    }
-    .mouseCont em {
-        font-style: normal;
-        border-bottom: 0.3vw solid rgb(80, 60, 54);
-        color: rgb(80, 60, 54);
-
-    }
-    .cursor {
-        position: absolute;
-        left: 0; top: 0;
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        z-index: 9999;
-        background-color: rgba(255, 255, 255, 0.1);
-        user-select: none; 
-        /* 컨트롤이 불가능 */
-        pointer-events: none;
-        transition: transform 0.3s, opacity 0.2s;
-    }
-    .cursor.active {
-        opacity: .5;
-        transform:scale(0);
-    }
-    .cursor-follower {
-        position: absolute;
-        width: 30px;
-        height: 30px;
-        background: rgba(255, 255, 255, 0.3);
-        border-radius: 50%;
-        user-select: none; 
-        pointer-events: none;
-        transition: transform 0.6s ease-in-out, opacity 0.2s ease-in-out;
-    }
-    .cursor-follower.active {
-        transform:scale(8);
-        background: rgba(177, 160, 160, 0.404);
-    }
-    .cursor-follower.show {
-        transform:scale(5);
-        background: rgba(148, 10, 10, 0.3);
-    }
+        }
+        .cursor {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            z-index: 9999;
+            background-color: rgba(255, 255, 255, 0.1);
+            user-select: none;
+            /* 컨트롤이 불가능 */
+            pointer-events: none;
+            transition: transform 0.3s, opacity 0.2s;
+        }
+        .cursor.active {
+            opacity: .5;
+            transform: scale(0);
+        }
+        .cursor-follower {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            user-select: none;
+            pointer-events: none;
+            transition: transform 0.6s ease-in-out, opacity 0.2s ease-in-out;
+        }
+        .cursor-follower.active {
+            transform: scale(8);
+            background: rgba(177, 160, 160, 0.404);
+        }
+        .cursor-follower.show {
+            transform: scale(5);
+            background: rgba(148, 10, 10, 0.3);
+        }
     </style>
 </head>
 
@@ -89,7 +113,7 @@
             <p>The future is much like the present, only longer.</p>
             <h2><em>미래</em>는 <em>현재</em>와 무척 닮았다. 단지 <em>더 길뿐이다.</em></h2>
             <h2>아무런 <em>위험</em>을 감수하지 않는다면 <em>더 큰 위험</em>을 감수하게 될 것이다.</h2>
-        </article> 
+        </article>
     </main>
     <!-- contents -->
     ​
@@ -117,9 +141,9 @@
     </div>
     ​<div class="info left list">
         <ul>
-        <li>pageX : <span class="pageX">0</span></li>
-        <li>pageY : <span class="pageY">0</span></li>
-    </ul>
+            <li>pageX : <span class="pageX">0</span></li>
+            <li>pageY : <span class="pageY">0</span></li>
+        </ul>
     </div>
     <div class="info bottom">
         <button>소스 보기</button>
@@ -146,19 +170,173 @@
                         </ul>
                     </div>
                     <div class="view-cont">
-                        <pre><code class="language-html">&lt;!doctype html&gt;
-&lt;html&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot; /&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
-    &lt;link href=&quot;/path/to/tailwind.css&quot; rel=&quot;stylesheet&quot;&gt;
-    &lt;!-- ... --&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;!-- ... --&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+<div class="html">
+<pre><code class="language-html"> &lt;!-- contents -->
+    &lt;main>
+        &lt;div class="cursor">&lt;/div>
+        &lt;div class="cursor-follower">&lt;/div>
+
+        &lt;article class="mouseCont">
+            &lt;p>The future is much like the present, only longer.&lt;/p>
+            &lt;h2>&lt;em>미래&lt;/em>는 &lt;em>현재&lt;/em>와 무척 닮았다. 단지 &lt;em>더 길뿐이다.&lt;/em>&lt;/h2>
+            &lt;h2>아무런 &lt;em>위험&lt;/em>을 감수하지 않는다면 &lt;em>더 큰 위험&lt;/em>을 감수하게 될 것이다.&lt;/h2>
+        &lt;/article>
+    &lt;/main>
+    &lt;!-- contents -->
 </code></pre>
+</div>
+<div class="css">
+<pre><code class="language-css">.source {
+    top: auto;
+    left: auto;
+    bottom: 25px;
+    right: 25px;
+    position: fixed;
+}
+.source button {
+    margin-right: 50px;
+    float: right;
+    border: 1px solid rgb(255, 255, 255);
+    background: rgb(0, 0, 0);
+    border-radius: 20px;
+    color: #fff;
+    cursor: pointer;
+    font-family: 'NEXONLv2Gothic';
+    padding: 15px 30px;
+    transition: all 0.4s;
+    box-sizing: 0 0 0 #fff inset;
+}
+.source button:hover {
+    box-shadow: 0 -50px 0 #fff inset;
+    color: #000;
+}
+.mouseCont {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: rgb(255, 255, 255);
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    font-family: 'NEXONLv2Gothic';
+    /* cursor: none; */
+}
+.mouseCont p {
+    font-size: 2.5vw;
+    line-height: 2;
+    font-weight: 300;
+}
+.mouseCont h2 {
+    font-size: 3vw;
+    font-weight: normal;
+    font-weight: 400;
+    line-height: 1.5;
+}
+.mouseCont em {
+    font-style: normal;
+    border-bottom: 0.3vw solid rgb(80, 60, 54);
+    color: rgb(80, 60, 54);
+
+}
+.cursor {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    z-index: 9999;
+    background-color: rgba(255, 255, 255, 0.1);
+    user-select: none;
+    /* 컨트롤이 불가능 */
+    pointer-events: none;
+    transition: transform 0.3s, opacity 0.2s;
+}
+.cursor.active {
+    opacity: .5;
+    transform: scale(0);
+}
+.cursor-follower {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    user-select: none;
+    pointer-events: none;
+    transition: transform 0.6s ease-in-out, opacity 0.2s ease-in-out;
+}
+.cursor-follower.active {
+    transform: scale(8);
+    background: rgba(177, 160, 160, 0.404);
+}
+.cursor-follower.show {
+    transform: scale(5);
+    background: rgba(148, 10, 10, 0.3);
+}
+
+</code></pre>
+</div>
+<div class="javascript">
+<pre><code class="language-javascript">const cursor = document.querySelector(".cursor");
+    const follower = document.querySelector(".cursor-follower");
+
+    //움직임 효과
+    document.addEventListener("mousemove", (e) => {
+        // cursor.style.left = e.pageX - 5 + "px";
+        // cursor.style.top = e.pageY - 5 + "px";
+
+        // let x1 = e.pageX -5 + "px";
+        // let y1= e.pageY -5 + "px";
+        // let x2 = e.pageX - 15 + "px";
+        // let y2 = e.pageY - 15 + "px";
+
+        // cursor.style.cssText = "left:" + x1 + "; top:" + y1;
+        // follower.style.cssText = "left:" + x2 + "; top:" + y2;
+
+        gsap.to(cursor, {
+            duration: 0.3,
+            left: e.pageX - 5,
+            top: e.pageY - 5
+        });
+        gsap.to(follower, {
+            duration: 0.8,
+            left: e.pageX - 15,
+            top: e.pageY - 15
+        });
+
+        //오버 효과
+        document.querySelectorAll(".mouseCont em").forEach(em => {
+            em.addEventListener("mouseenter", () => {
+                cursor.classList.add("active")
+                follower.classList.add("active")
+            });
+            em.addEventListener("mouseleave", () => {
+                cursor.classList.remove("active")
+                follower.classList.remove("active")
+            });
+        })
+
+        //오버 효과2
+        document.querySelectorAll(".info").forEach(em => {
+            em.addEventListener("mouseenter", () => {
+                cursor.classList.add("show")
+                follower.classList.add("show")
+            });
+            em.addEventListener("mouseleave", () => {
+                cursor.classList.remove("show")
+                follower.classList.remove("show")
+            });
+        })
+
+        //출력용
+        document.querySelector(".pageX").innerText = e.pageX;
+        document.querySelector(".pageY").innerText = e.pageY;
+    })
+
+</code></pre>
+                        </div>
                     </div>
                 </div>
 
@@ -190,8 +368,16 @@
             // cursor.style.cssText = "left:" + x1 + "; top:" + y1;
             // follower.style.cssText = "left:" + x2 + "; top:" + y2;
 
-            gsap.to(cursor, {duration: 0.3, left: e.pageX - 5, top:e.pageY - 5 });
-            gsap.to(follower, {duration: 0.8, left: e.pageX - 15, top:e.pageY - 15 });
+            gsap.to(cursor, {
+                duration: 0.3,
+                left: e.pageX - 5,
+                top: e.pageY - 5
+            });
+            gsap.to(follower, {
+                duration: 0.8,
+                left: e.pageX - 15,
+                top: e.pageY - 15
+            });
 
             //오버 효과
             document.querySelectorAll(".mouseCont em").forEach(em => {

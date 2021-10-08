@@ -10,6 +10,30 @@
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/highlight.css">
     <style>
+    .source {
+        top: auto;
+        left: auto;
+        bottom: 25px;
+        right: 25px;
+        position: fixed;
+    }
+    .source button{
+        margin-right: 50px;
+        float: right;
+        border: 1px solid rgb(255, 255, 255);
+        background: rgb(0, 0, 0);
+        border-radius: 20px;
+        color: #fff;
+        cursor: pointer;
+        font-family: 'NEXONLv2Gothic';
+        padding: 15px 30px;
+        transition: all 0.4s;
+        box-sizing: 0 0 0 #fff inset;
+    }
+    .source button:hover {
+        box-shadow: 0 -50px 0 #fff inset;
+        color: #000;
+    }
     .mouseCont {
         display: flex;
         align-items: center;
@@ -21,7 +45,7 @@
         overflow: hidden;
         font-family: 'NEXONLv2Gothic';
         cursor: none;
-}
+    }   
     .mouseCont p {
         font-size: 2.5vw;
         line-height: 2;
@@ -37,7 +61,6 @@
         font-style: normal;
         border-bottom: 0.3vw solid rgb(218, 51, 0);
         color: rgb(218, 51, 0);
-
     }
     .cursor {
         position: absolute;
@@ -80,10 +103,6 @@
         border-color:rgba(56, 170, 113, 0.993);
         transform: translateX(1em) scale(1.5);
     }
-    .cursor.style5 {}
-    .cursor.style6 {}
- 
- 
     </style>
 </head>
 
@@ -162,23 +181,185 @@
                         <ul>
                             <li class="active"><a href="#">Html</a></li>
                             <li><a href="#">CSS</a></li>
-                            <li><a href="#">Javascript</a></li>
+                            <li><a href="#">JQuery</a></li>
                         </ul>
                     </div>
                     <div class="view-cont">
-                        <pre><code class="language-html">&lt;!doctype html&gt;
-&lt;html&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot; /&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
-    &lt;link href=&quot;/path/to/tailwind.css&quot; rel=&quot;stylesheet&quot;&gt;
-    &lt;!-- ... --&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;!-- ... --&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+<div class="html">
+<pre><code class="language-html">&lt;!-- contents -->
+&lt;main>
+&lt;div class="cursor">&lt;div>
+&lt;article class="mouseCont">
+&lt;p>&lt;span class="style1">The future&lt;span> is much like the present, &lt;span class="style2">only longer.&lt;span>&lt;p>
+&lt;h2>&lt;span class="style3">미래&lt;span>는 &lt;span class="style4">현재&lt;span>와 &lt;span class="style5">무척&lt;span> &lt;span class="style6">닮았다.
+&lt;span> 단지 더 길뿐이다.&lt;h2>
+&lt;p>Early morning hath gold in its mouth.&lt;p>
+&lt;h2>이른 아침은 입에 황금을 물고 있다.&lt;h2>
+&lt;p>Life is a risk.&lt;p>
+&lt;h2>인생은 위험의 연속이다.&lt;h2>
+&lt;p>Never leave that 'till tomorrow which you can do today.&lt;p>
+&lt;h2>오늘 할 수 있는 일을 내일로 미루지 마라.&lt;h2>
+&lt;p>If you don't risk anything you risk even more.&lt;p>
+&lt;h2>아무런 위험을 감수하지 않는다면 더 큰 위험을 감수하게 될 것이다.&lt;h2>
+&lt;p>Ability is of little account without opportunity.&lt;p>
+&lt;h2>기회 없는 능력은 쓸모가 없다.&lt;h2>
+&lt;article>
+&lt;main>
+&lt;!-- contents -->
 </code></pre>
+</div>
+<div class="css">
+<pre><code class="language-css">.mouseCont {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #fff;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    font-family: 'NEXONLv2Gothic';
+    cursor: none;
+}   
+.mouseCont p {
+    font-size: 2.5vw;
+    line-height: 2;
+    font-weight: 300;
+}
+
+.mouseCont h2 {
+    font-size: 3vw;
+    font-weight: normal;
+    font-weight: 400;
+}
+.mouseCont span {
+    font-style: normal;
+    border-bottom: 0.3vw solid rgb(218, 51, 0);
+    color: rgb(218, 51, 0);
+}
+.cursor {
+    position: absolute;
+    left: 0; top: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border:3px solid #fff;
+    z-index: 9999;
+    background-color: rgba(255, 255, 255, 0.1);
+    user-select: none; 
+    /* 컨트롤이 불가능 */
+    pointer-events: none;
+    transition: background-color .2s,
+    border-color .9s,
+    border-radius .2s,
+    transform .6s;
+}
+.cursor.style1 {
+    background-color: rgba(218, 51, 0, 0.068);
+    border-color:rgba(218, 51, 0, 0.219);
+    transform: rotateX(720deg) scale(1.8) translate(50px, 10%);
+    background-image: url(../assets/img/bg9.jpg);
+    background-size: cover;
+    background-position: center;
+    
+}
+.cursor.style2 {
+    background-color: rgba(218, 51, 0, 0.363);
+    border-color:rgba(218, 51, 0, 0.377);
+    transform: rotateX(720deg) scale(1.5);
+}
+.cursor.style3 {
+    background-color: rgba(11, 226, 144, 0.315);
+    border-color:rgba(56, 170, 113, 0.993);
+    transform: translateX(1em) scale(1.5);
+}
+.cursor.style4 {
+    background-color: rgba(11, 226, 144, 0.315);
+    border-color:rgba(56, 170, 113, 0.993);
+    transform: translateX(1em) scale(1.5);
+}
+
+</code></pre>
+</div>
+<div class="javascript">
+<pre><code class="language-javascript">// 출력용
+$(window).mousemove(function(e){
+    $(".clientX").text(e.clientX + "px");   //브라우저 X좌표 기준
+    $(".clientY").text(e.clientY + "px");   //브라우저 Y좌표 기준
+    $(".offsetX").text(e.offsetX + "px");   //요소 X좌표 기준
+    $(".offsetY").text(e.offsetY + "px");   //요소 Y좌표 기준
+    $(".pageX").text(e.pageX + "px");       //페이지 X좌표 기준
+    $(".pageY").text(e.pageY + "px");       //페이지 Y좌표 기준
+    $(".screenX").text(e.screenX + "px");   //디바이스 X좌표 기준
+    $(".screenY").text(e.screenY + "px");   //디바이스 Y좌표 기준
+});
+//마우스 움직이기
+$(window).mousemove(function(e){
+    // $(".cursor").css("left","100px");
+    // $(".cursor").css("top","100px");
+    // $(".cursor").css({"left":"100px", "top":"100px"});
+    // $(".cursor").css({left:"100px", top:"100px"});
+    // $(".cursor").css({left:100, "background-color":100});
+    // $(".cursor").css({left:100, backgroundColor:100});
+    
+    $(".cursor").css({ left: e.clientX - 25, top: e.clientY - 25});
+});
+// $(".mouseCont .style1").hover(function(){
+//     $(".cursor").addClass("style1");
+// }, function(){
+//     $(".cursor").removeClass("style1");
+// });
+// $(".mouseCont .style2").hover(function(){
+//     $(".cursor").addClass("style2");
+// }, function(){
+//     $(".cursor").removeClass("style2");
+// });
+// $(".mouseCont .style3").hover(function(){
+//     $(".cursor").addClass("style3");
+// }, function(){
+//     $(".cursor").removeClass("style3");
+// });
+// $(".mouseCont .style4").hover(function(){
+//     $(".cursor").addClass("style4");
+// }, function(){
+//     $(".cursor").removeClass("style4");
+// });
+// $(".mouseCont .style5").hover(function(){
+//     $(".cursor").addClass("style5");
+// }, function(){
+//     $(".cursor").removeClass("style5");
+// });
+// $(".mouseCont .style6").hover(function(){
+//     $(".cursor").addClass("style6");
+// }, function(){
+//     $(".cursor").removeClass("style6");
+// });
+//for문
+// for( let i=1; i&lt;=6; i++ ){
+//     $(".mouseCont .style"+i).hover(function(){
+//         $(".cursor").addClass("style"+i);
+//     }, function(){
+//         $(".cursor").removeClass("style"+i);
+//     });
+// }
+
+//each()
+// $(".mouseCont span").each((index, element) => {
+//     $(element).hover(function(){
+//         $(".cursor").addClass("style"+ (index+1));
+//     }, function(){
+//         $(".cursor").removeClass("style"+(index+1));
+//     });
+// });
+
+//attr()
+$(".mouseCont span").hover(function(){
+    $(".cursor").addClass($(this).attr("class"));
+}, function(){
+    $(".cursor").removeClass($(this).attr("class"));
+});
+</code></pre>
+                        </div>
                     </div>
                 </div>
 

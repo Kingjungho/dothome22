@@ -10,6 +10,30 @@
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/highlight.css">
     <style>
+    .source {
+        top: auto;
+        left: auto;
+        bottom: 25px;
+        right: 25px;
+        position: fixed;
+    }
+    .source button{
+        margin-right: 50px;
+        float: right;
+        border: 1px solid rgb(255, 255, 255);
+        background: rgb(0, 0, 0);
+        border-radius: 20px;
+        color: #fff;
+        cursor: pointer;
+        font-family: 'NEXONLv2Gothic';
+        padding: 15px 30px;
+        transition: all 0.4s;
+        box-sizing: 0 0 0 #fff inset;
+    }
+    .source button:hover {
+        box-shadow: 0 -50px 0 #fff inset;
+        color: #000;
+    }
     .mouseCont {
         display: flex;
         align-items: center;
@@ -21,13 +45,12 @@
         overflow: hidden;
         font-family: 'NEXONLv2Gothic';
         cursor: none;
-}
+    }
     .mouseCont p {
         font-size: 2.5vw;
         line-height: 2;
         font-weight: 300;
     }
-
     .mouseCont h2 {
         font-size: 3vw;
         font-weight: normal;
@@ -38,7 +61,6 @@
         font-style: normal;
         border-bottom: 0.21vw dashed rgb(212, 212, 212);
         color: rgb(243, 45, 45);
-
     }
     .cursor {
         position: absolute;
@@ -143,23 +165,101 @@
                         <ul>
                             <li class="active"><a href="#">Html</a></li>
                             <li><a href="#">CSS</a></li>
-                            <li><a href="#">Javascript</a></li>
+                            <li><a href="#">JQuery</a></li>
                         </ul>
                     </div>
                     <div class="view-cont">
-                        <pre><code class="language-html">&lt;!doctype html&gt;
-&lt;html&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot; /&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
-    &lt;link href=&quot;/path/to/tailwind.css&quot; rel=&quot;stylesheet&quot;&gt;
-    &lt;!-- ... --&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;!-- ... --&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+<div class="html">
+<pre><code class="language-html">&lt;!-- contents -->
+    &lt;main>
+       &lt;div class="cursor">&lt;/div>
+   
+       &lt;article class="mouseCont">
+           &lt;p>&lt;em>Ability&lt;/em> is of little account without &lt;em>opportunity.&lt;/em>&lt;/p>
+           &lt;h2>&lt;em>기회 없는 능력&lt;/em>은 쓸모가 없다.&lt;/h2>
+       &lt;/article> 
+   &lt;/main>
+   &lt;!-- contents -->
 </code></pre>
+</div>
+<div class="css">
+<pre><code class="language-css">.mouseCont {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: rgb(255, 255, 255);
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    font-family: 'NEXONLv2Gothic';
+    cursor: none;
+}
+.mouseCont p {
+    font-size: 2.5vw;
+    line-height: 2;
+    font-weight: 300;
+}
+.mouseCont h2 {
+    font-size: 3vw;
+    font-weight: normal;
+    font-weight: 400;
+    line-height: 1.5;
+}
+.mouseCont em {
+    font-style: normal;
+    border-bottom: 0.21vw dashed rgb(212, 212, 212);
+    color: rgb(243, 45, 45);
+}
+.cursor {
+    position: absolute;
+    left: 0; top: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    z-index: 9999;
+    background-color: #fff;
+    user-select: none; 
+    /* 컨트롤이 불가능 */
+    pointer-events: none;
+    border: 1px solid #fff;
+    transition: transform 0.3s;
+    mix-blend-mode: difference;
+}
+.cursor.active {
+    transform: scale(15);
+    background-color: rgba(255, 255, 255, 0.432);
+}
+.info.left.list li.active {
+    text-decoration: underline;
+    color: rgb(243, 45, 45);
+}
+
+</code></pre>
+</div>
+<div class="javascript">
+<pre><code class="language-javascript">const w = $(".cursor").width() / 2;
+const h = $(".cursor").height() / 2;
+//움직임 효과
+$(window).mousemove(function(e){
+    gsap.to(".cursor", {duration: 0.4, left: e.pageX - 5, top: e.pageY - 5});
+});
+
+//오버 효과
+$(".mouseCont em").hover(function(){
+    $(".cursor").addClass("active");
+}, function(){
+    $(".cursor").removeClass("active");
+});
+
+//출력용
+$(".info.left.list li").click(function(){
+    $(".info.left.list li").removeClass();
+    $(this).addClass("active");
+    $(".cursor").css("mix-blend-mode", $(this).text());
+});
+</code></pre>
+                        </div>
                     </div>
                 </div>
 

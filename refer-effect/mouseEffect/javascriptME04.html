@@ -10,64 +10,88 @@
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/highlight.css">
     <style>
-        body {
-            cursor: none;
-            width: 100%;
-            height: 100vh;
-            overflow: hidden;
-        }
-        .moveImage {
-            position: absolute;
-            left: 50%; top: 50%;
-            transform: translate(-50%, -50%) perspective(600px) rotateX(0deg) rotateY(0deg);
-            transform-style: preserve-3d;
-            will-change: transform; /* 미리 브라우저한테 트랜스폼을 넣는다고 알려주는 기능 */
-            transition: all 0.2s;
-        }
-        .moveImage .mImg {
-            width: 50vw;
-            position: relative;
-        }
-        .moveImage .mImg::before {
-            content: '';
-            position: absolute;
-            left: 5%; bottom: -3%;
-            width: 90%; height: 40px;
-            background: url(../assets/img/bg10.jpg) no-repeat;
-            background-size: 100% 30px;
-            filter: blur(15px);
-            z-index: -1;
-            opacity: 0.9;
-        }
-        .moveImage .mImg img {
-            width: 100%;
-            border-radius: 5px;
-        }
-        .moveImage .mText {
-            font-family: 'NEXONLv1Gothic';
-            font-weight: 300;
-            position: absolute;
-            left: 50%; top: 50%;
-            transform: translate3d(-50%, -50%, 150px);
-            text-align: center;
-            color: #fff;
-            background: rgba(0, 0, 0, .3);
-            padding: 2vw;
-            font-size: 1vw;
-            line-height: 1.6;
-            white-space: nowrap;
-            border-radius: 5px;
-        }
-        .cursor {
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            background: #fff;
-            border-radius: 50%;
-            z-index: 10000;
-            user-select: none;
-            pointer-events: none;
-        }
+    .source {
+        top: auto;
+        left: auto;
+        bottom: 25px;
+        right: 25px;
+        position: fixed;
+    }
+    .source button{
+        margin-right: 50px;
+        float: right;
+        border: 1px solid rgb(255, 255, 255);
+        background: rgb(0, 0, 0);
+        border-radius: 20px;
+        color: #fff;
+        cursor: pointer;
+        font-family: 'NEXONLv2Gothic';
+        padding: 15px 30px;
+        transition: all 0.4s;
+        box-sizing: 0 0 0 #fff inset;
+    }
+    .source button:hover {
+        box-shadow: 0 -50px 0 #fff inset;
+        color: #000;
+    }
+    body {
+        cursor: none;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+    }
+    .moveImage {
+        position: absolute;
+        left: 50%; top: 50%;
+        transform: translate(-50%, -50%) perspective(600px) rotateX(0deg) rotateY(0deg);
+        transform-style: preserve-3d;
+        will-change: transform; /* 미리 브라우저한테 트랜스폼을 넣는다고 알려주는 기능 */
+        transition: all 0.2s;
+    }
+    .moveImage .mImg {
+        width: 50vw;
+        position: relative;
+    }
+    .moveImage .mImg::before {
+        content: '';
+        position: absolute;
+        left: 5%; bottom: -3%;
+        width: 90%; height: 40px;
+        background: url(../assets/img/bg10.jpg) no-repeat;
+        background-size: 100% 30px;
+        filter: blur(15px);
+        z-index: -1;
+        opacity: 0.9;
+    }
+    .moveImage .mImg img {
+        width: 100%;
+        border-radius: 5px;
+    }
+    .moveImage .mText {
+        font-family: 'NEXONLv1Gothic';
+        font-weight: 300;
+        position: absolute;
+        left: 50%; top: 50%;
+        transform: translate3d(-50%, -50%, 150px);
+        text-align: center;
+        color: #fff;
+        background: rgba(0, 0, 0, .3);
+        padding: 2vw;
+        font-size: 1vw;
+        line-height: 1.6;
+        white-space: nowrap;
+        border-radius: 5px;
+    }
+    .cursor {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background: #fff;
+        border-radius: 50%;
+        z-index: 10000;
+        user-select: none;
+        pointer-events: none;
+    }
     </style>
 </head>
 
@@ -149,19 +173,170 @@
                         </ul>
                     </div>
                     <div class="view-cont">
-                        <pre><code class="language-html">&lt;!doctype html&gt;
-&lt;html&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot; /&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
-    &lt;link href=&quot;/path/to/tailwind.css&quot; rel=&quot;stylesheet&quot;&gt;
-    &lt;!-- ... --&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;!-- ... --&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+<div class="html">
+<pre><code class="language-html">&lt;!-- contents -->
+&lt;main>
+&lt;div class="cursor">&lt;div>
+&lt;article class="mouseCont">
+&lt;p>&lt;span class="style1">The future&lt;span> is much like the present, &lt;span class="style2">only longer.&lt;span>&lt;p>
+&lt;h2>&lt;span class="style3">미래&lt;span>는 &lt;span class="style4">현재&lt;span>와 &lt;span class="style5">무척&lt;span> &lt;span class="style6">닮았다.
+&lt;span> 단지 더 길뿐이다.&lt;h2>
+&lt;p>Early morning hath gold in its mouth.&lt;p>
+&lt;h2>이른 아침은 입에 황금을 물고 있다.&lt;h2>
+&lt;p>Life is a risk.&lt;p>
+&lt;h2>인생은 위험의 연속이다.&lt;h2>
+&lt;p>Never leave that 'till tomorrow which you can do today.&lt;p>
+&lt;h2>오늘 할 수 있는 일을 내일로 미루지 마라.&lt;h2>
+&lt;p>If you don't risk anything you risk even more.&lt;p>
+&lt;h2>아무런 위험을 감수하지 않는다면 더 큰 위험을 감수하게 될 것이다.&lt;h2>
+&lt;p>Ability is of little account without opportunity.&lt;p>
+&lt;h2>기회 없는 능력은 쓸모가 없다.&lt;h2>
+&lt;article>
+&lt;main>
+&lt;!-- contents -->
 </code></pre>
+</div>
+<div class="css">
+<pre><code class="language-css">.source {
+    top: auto;
+    left: auto;
+    bottom: 25px;
+    right: 25px;
+    position: fixed;
+}
+.source button{
+    margin-right: 50px;
+    float: right;
+    border: 1px solid rgb(255, 255, 255);
+    background: rgb(0, 0, 0);
+    border-radius: 20px;
+    color: #fff;
+    cursor: pointer;
+    font-family: 'NEXONLv2Gothic';
+    padding: 15px 30px;
+    transition: all 0.4s;
+    box-sizing: 0 0 0 #fff inset;
+}
+.source button:hover {
+    box-shadow: 0 -50px 0 #fff inset;
+    color: #000;
+}
+body {
+    cursor: none;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+.moveImage {
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%) perspective(600px) rotateX(0deg) rotateY(0deg);
+    transform-style: preserve-3d;
+    will-change: transform; /* 미리 브라우저한테 트랜스폼을 넣는다고 알려주는 기능 */
+    transition: all 0.2s;
+}
+.moveImage .mImg {
+    width: 50vw;
+    position: relative;
+}
+.moveImage .mImg::before {
+    content: '';
+    position: absolute;
+    left: 5%; bottom: -3%;
+    width: 90%; height: 40px;
+    background: url(../assets/img/bg10.jpg) no-repeat;
+    background-size: 100% 30px;
+    filter: blur(15px);
+    z-index: -1;
+    opacity: 0.9;
+}
+.moveImage .mImg img {
+    width: 100%;
+    border-radius: 5px;
+}
+.moveImage .mText {
+    font-family: 'NEXONLv1Gothic';
+    font-weight: 300;
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate3d(-50%, -50%, 150px);
+    text-align: center;
+    color: #fff;
+    background: rgba(0, 0, 0, .3);
+    padding: 2vw;
+    font-size: 1vw;
+    line-height: 1.6;
+    white-space: nowrap;
+    border-radius: 5px;
+}
+.cursor {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border-radius: 50%;
+    z-index: 10000;
+    user-select: none;
+    pointer-events: none;
+}
+
+</code></pre>
+</div>
+<div class="javascript">
+<pre><code class="language-javascript">function mouseMove(e){
+    let pageX = 0,
+        pageY = 0,
+        standardX = 0,
+        standardY = 0,
+        maxX = 0,
+        maxY = 0,
+        angleX = 0,
+        angleY = 0,
+        softX = 0,
+        softY = 0;
+
+    //마우스 값
+    pageX = e.pageX;
+    pageY = e.pageY;
+
+    //기준점 가운데로 변경
+    standardX = window.innerWidth/2 - pageX;
+    standardY = window.innerWidth/2 - pageY;
+
+    //최댓값 최솟값
+    maxX = Math.max(-100, Math.min(100, standardX));
+    maxY = Math.max(-100, Math.min(100, standardY));
+
+    //각도를 줄이는 설정
+    angleX = maxX * 0.12;
+    angleY = maxY * 0.12;
+
+    //부드럽게 설정
+    softX += (angleX - softX) * 0.4;
+    softY += (angleY - softY) * 0.4;
+
+    //이미지 움직임
+    const move = document.querySelector(".moveImage");
+    move.style.transform = "translate(-50%, -50%) perspective(600px) rotateX("+softY+"deg) rotateY("+ -softX+"deg)"
+
+    //커서
+    gsap.to(".cursor", {duration: .3, left: pageX, top: pageY});
+
+    //출력
+    document.querySelector(".pageX").textContent = pageX;
+    document.querySelector(".pageY").textContent = pageY;
+    document.querySelector(".standardX").textContent = standardX;
+    document.querySelector(".standardY").textContent = standardY;
+    document.querySelector(".maxX").textContent = maxX;
+    document.querySelector(".maxY").textContent = maxY;
+    document.querySelector(".angleX").textContent = parseInt(angleX);
+    document.querySelector(".angleY").textContent = parseInt(angleY);
+}
+
+document.addEventListener("mousemove", mouseMove);
+
+</code></pre>
+                        </div>
                     </div>
                 </div>
 

@@ -10,6 +10,30 @@
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/highlight.css">
     <style>
+    .source {
+        top: auto;
+        left: auto;
+        bottom: 25px;
+        right: 25px;
+        position: fixed;
+    }
+    .source button{
+        margin-right: 50px;
+        float: right;
+        border: 1px solid rgb(255, 255, 255);
+        background: rgb(0, 0, 0);
+        border-radius: 20px;
+        color: #fff;
+        cursor: pointer;
+        font-family: 'NEXONLv2Gothic';
+        padding: 15px 30px;
+        transition: all 0.4s;
+        box-sizing: 0 0 0 #fff inset;
+    }
+    .source button:hover {
+        box-shadow: 0 -50px 0 #fff inset;
+        color: #000;
+    }
     .mouseCont {
         display: flex;
         align-items: center;
@@ -21,14 +45,13 @@
         overflow: hidden;
         font-family: 'NEXONLv2Gothic';
         cursor: none;
-}
+    }
     .mouseCont p {
         color: rgb(1, 67, 129);
         font-size: 2.5vw;
         line-height: 2;
         font-weight: 500;
     }
-
     .mouseCont h2 {
         color: rgb(1, 67, 129);
         font-size: 3vw;
@@ -129,8 +152,8 @@
     </div>
     <!-- //info -->
     ​
-    <!-- modal -->
-    <div id="modal">
+     <!-- modal -->
+     <div id="modal">
         <div class="modal-bg">
             <div class="modal-cont">
                 <div class="code-view">
@@ -149,19 +172,152 @@
                         </ul>
                     </div>
                     <div class="view-cont">
-                        <pre><code class="language-html">&lt;!doctype html&gt;
-&lt;html&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot; /&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
-    &lt;link href=&quot;/path/to/tailwind.css&quot; rel=&quot;stylesheet&quot;&gt;
-    &lt;!-- ... --&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;!-- ... --&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+<div class="html">
+<pre><code class="language-html">&lt;!-- contents -->
+&lt;main>
+&lt;div class="cursor">&lt;div>
+&lt;article class="mouseCont">
+&lt;p>&lt;span class="style1">The future&lt;span> is much like the present, &lt;span class="style2">only longer.&lt;span>&lt;p>
+&lt;h2>&lt;span class="style3">미래&lt;span>는 &lt;span class="style4">현재&lt;span>와 &lt;span class="style5">무척&lt;span> &lt;span class="style6">닮았다.
+&lt;span> 단지 더 길뿐이다.&lt;h2>
+&lt;p>Early morning hath gold in its mouth.&lt;p>
+&lt;h2>이른 아침은 입에 황금을 물고 있다.&lt;h2>
+&lt;p>Life is a risk.&lt;p>
+&lt;h2>인생은 위험의 연속이다.&lt;h2>
+&lt;p>Never leave that 'till tomorrow which you can do today.&lt;p>
+&lt;h2>오늘 할 수 있는 일을 내일로 미루지 마라.&lt;h2>
+&lt;p>If you don't risk anything you risk even more.&lt;p>
+&lt;h2>아무런 위험을 감수하지 않는다면 더 큰 위험을 감수하게 될 것이다.&lt;h2>
+&lt;p>Ability is of little account without opportunity.&lt;p>
+&lt;h2>기회 없는 능력은 쓸모가 없다.&lt;h2>
+&lt;article>
+&lt;main>
+&lt;!-- contents -->
 </code></pre>
+</div>
+
+<div class="css">
+<pre><code class="language-css">.source {
+    top: auto;
+    left: auto;
+    bottom: 25px;
+    right: 25px;
+    position: fixed;
+}
+.source button{
+    margin-right: 50px;
+    float: right;
+    border: 1px solid rgb(255, 255, 255);
+    background: rgb(0, 0, 0);
+    border-radius: 20px;
+    color: #fff;
+    cursor: pointer;
+    font-family: 'NEXONLv2Gothic';
+    padding: 15px 30px;
+    transition: all 0.4s;
+    box-sizing: 0 0 0 #fff inset;
+}
+.source button:hover {
+    box-shadow: 0 -50px 0 #fff inset;
+    color: #000;
+}
+.mouseCont {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: rgb(255, 255, 255);
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    font-family: 'NEXONLv2Gothic';
+    cursor: none;
+}
+.mouseCont p {
+    color: rgb(1, 67, 129);
+    font-size: 2.5vw;
+    line-height: 2;
+    font-weight: 500;
+}
+.mouseCont h2 {
+    color: rgb(1, 67, 129);
+    font-size: 3vw;
+    font-weight: normal;
+    font-weight: 400;
+    line-height: 1.5;
+}
+.mouseCont em {
+    font-style: normal;
+    border-bottom: 0.21vw dashed rgb(212, 212, 212);
+    color: rgb(247, 245, 245);
+
+}
+.cursor {
+    position: absolute;
+    left: 0; top: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    z-index: 9999;
+    background-color: #fff;
+    user-select: none; 
+    /* 컨트롤이 불가능 */
+    pointer-events: none;
+    border: 1px solid #fff;
+    transition: transform 0.3s;
+    mix-blend-mode: difference;
+}
+.cursor.active {
+    transform: scale(15);
+    background-color: rgba(255, 255, 255, 0.432);
+}
+.info.left.list li.active {
+    text-decoration: underline;
+    color: rgb(243, 45, 45);
+}
+</code></pre>
+</div>
+
+<div class="javascript">
+<pre><code class="language-javascript">const w = document.querySelector(".cursor").clientWidth;
+    const h = document.querySelector(".cursor").clientHeight;
+
+    //움직임 효과
+    document.addEventListener("mousemove", e => {
+        gsap.to(".cursor", {duration: .5, left: e.pageX -w, top: e.pageY -h});
+    })
+
+    //오버 효과
+    document.querySelectorAll(".mouseCont em").forEach( em => {
+        em.addEventListener("mouseenter", () => {
+            document.querySelector(".cursor").classList.add("active");
+        });
+        em.addEventListener("mouseleave", () => {
+            document.querySelector(".cursor").classList.remove("active");
+        });
+    })
+
+    // $(".info.left.list li").click(function(){
+    //     $(".info.left.list li").removeClass();
+    //     $(this).addClass("active");
+    //     $(".cursor").css("mix-blend-mode", $(this).text());
+    // });
+
+    document.querySelectorAll(".info.left.list li").forEach( info => {
+        info.addEventListener("click", function(){
+
+            document.querySelectorAll(".info.left.list li").forEach(li => {
+                li.classList.remove("active");
+                this.classList.add("active");
+            });
+
+            let text = info.textContent || info.innerText;
+            document.querySelector(".cursor").style.mixBlendMode = text;
+        })
+    })
+
+</code></pre>
+                        </div>
                     </div>
                 </div>
 
@@ -177,7 +333,6 @@
     <script src="../assets/js/custom.js"></script>
     <script src="../assets/js/highlight.min.js"></script>
     <script>
-
         const w = document.querySelector(".cursor").clientWidth;
         const h = document.querySelector(".cursor").clientHeight;
 
