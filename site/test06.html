@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 1500px;
+            margin: 0 auto;
+        }
+
+        .header {
+            overflow: hidden;
+        }
+
+        .header-left img {
+            width: 100px;
+            height: 70px;
+            float: left;
+            padding: 20px;
+        }
+
+        .header-right {
+            float: right;
+        }
+
+        .header-right span {
+            padding: 0 30px;
+            display: inline-block;
+            margin-top: 40px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .banner img {
+            width: 100%;
+            height: 650px;
+        }
+
+        .section {
+            overflow: hidden;
+            margin-top: 30px;
+        }
+
+        .section-left {
+            border: 1px solid #000;
+            padding: 30px;
+            float: left;
+            margin-right: 80px;
+            margin-top: 0px;
+            height: 240px;
+            width: 600px;
+        }
+
+        .section-right {
+            float: left;
+        }
+
+        .section-right img {
+            width: 750px;
+            height: 300px;
+        }
+
+        .top-left {
+            font-weight: bold;
+            display: inline-block;
+            font-size: 20px;
+        }
+
+        .top-left::after {
+            content: '|';
+            padding: 10px;
+        }
+
+        .top-left-right {
+            display: inline-block;
+            color: rgba(0, 0, 0, 0.582);
+            font-weight: bold;
+        }
+
+        .top-right {
+            float: right;
+        }
+
+        .top-right::after {
+            content: '';
+            background-image: url(../site/img/111.png);
+            background-size: cover;
+            width: 30px;
+            height: 20px;
+            display: inline-block;
+        }
+
+        .left-dsec {
+            overflow: hidden;
+            padding-top: 30px;
+        }
+
+        .desc-left {
+            float: left;
+            line-height: 35px;
+        }
+
+        .desc-left span {
+            display: inline-block;
+            padding: 20px;
+        }
+
+        .desc-right {
+            float: right;
+            line-height: 35px;
+        }
+
+        .article {
+            margin-top: 50px;
+        }
+
+        .article-wrap {
+            overflow: hidden;
+
+        }
+
+        .article1 {
+            float: left;
+        }
+        .article1 img {
+            width: 356px;
+            margin-right: 15px;
+        }
+
+        .article2 {
+            float: left;
+            margin-right: 15px;
+        }
+        .article2 img {
+            width: 356px;
+        }
+        .article3 {
+            float: left;
+            margin-right: 15px;
+        }
+        .article3 img {
+            width: 356px;
+        }
+        .article4 {
+            float: left;
+            margin-right: 15px;
+        }
+        .article4 img {
+            width: 356px;
+            margin-right: 15px;
+        }
+        .article-title {
+            font-weight: bold;
+            font-size: 20px;
+            padding-bottom: 30px;
+        }
+
+        .aside {
+            border-top: 1px solid rgba(0, 0, 0, 0.301);
+            margin-top: 150px;
+            color: rgba(0, 0, 0, 0.445);
+        }
+
+        .aside-top {
+            padding-top: 50px;
+            display: inline-block;
+        }
+
+        .aside-top::after {
+            content: '|';
+            padding: 0 15px;
+        }
+
+        .aside-top2 {
+            display: inline-block;
+        }
+
+        .aside-middle {
+            display: inline-block;
+        }
+
+        .aside-desc1 {
+            display: inline-block;
+        }
+
+        .aside-desc2 {
+            display: inline-block;
+        }
+
+        .aside-desc3 {
+            display: inline-block;
+        }
+
+        .aside-bottom {
+            padding: 70px 0;
+        }
+
+        .article4 p {
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-left">
+                <img src="../site/img/logo.jpg" alt="">
+            </div>
+            <div class="header-right">
+                <span>즐길거리</span>
+                <span>요금/우대혜택</span>
+                <span>참여프로그램</span>
+                <span>이용가이드</span>
+                <span>소통서비스</span>
+            </div>
+        </div>
+    </header>
+    <div class="banner">
+        <div class="container">
+            <img src="../site/img/imgslide.jpg" alt="">
+        </div>
+    </div>
+    <section class="section">
+        <div class="container">
+            <div class="section-left">
+                <div class="left-wrap">
+                    <div class="left-top">
+                        <div class="top-left">
+                            <span>롯데월드 소식</span>
+                        </div>
+                        <div class="top-left-right">
+                            <span>뉴스 · 공지</span>
+                        </div>
+                        <div class="top-right">
+                            <span>더보기</span>
+                        </div>
+                    </div>
+                    <div class="left-dsec">
+                        <div class="desc-left">그럴싸진관 미라클<br>드림스테이지'힘내 소중한 너'<br>'힘내 소중한 너'음원 발매<br>이요 요금 조정 안내</div>
+                        <div class="desc-right">2018.11.19<br>2018.11.20<br>2018.11.13<br>2018.11.12</div>
+                    </div>
+                </div>
+            </div>
+            <div class="section-right">
+                <img src="../site/img/banner.jpg" alt="">
+            </div>
+        </div>
+    </section>
+    <article class="article">
+        <div class="container">
+            <div class="article-title">특별한 경험</div>
+            <div class="article-wrap">
+                <div class="article1">
+                    <img src="../site/img/img1.jpg" alt="">
+                    <p>연간회원안내</p>
+                </div>
+                <div class="article2">
+                    <img src="../site/img/img2.jpg" alt="">
+                    <p>프리미엄 투어</p>
+                </div>
+                <div class="article3">
+                    <img src="../site/img/img3.jpg" alt="">
+                    <p>공연참여 프로그램</p>
+                </div>
+                <div class="article4">
+                    <img src="../site/img/img4.jpg" alt="">
+                    <p>단체프로그램</p>
+                </div>
+            </div>
+        </div>
+    </article>
+    <aside class="aside">
+        <div class="container">
+            <div class="aside-top">서울특별시 송파구 올림픽로240 호텔롯데 롯데월드</div>
+            <div class="aside-top2">대표자: 박동기</div>
+            <div class="aside-desc-wrap">
+                <div class="aside-desc1">사업자등록번호 : 219-85-00014</div>
+                <div class="aside-desc2">통신판매업신고번호 : 송파 제 5513호</div>
+                <div class="aside-desc3">전화 : 1661-2000</div>
+            </div>
+            <div class="aside-bottom">
+                COPYRIGHT 2018 LOTTEWORLD ALL RIGHTS RESERVED.
+            </div>
+        </div>
+    </aside>
+    </div>
+</body>
+
+</html>
