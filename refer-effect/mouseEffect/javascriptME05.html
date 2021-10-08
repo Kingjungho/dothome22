@@ -157,7 +157,7 @@
                         <ul>
                             <li class="active"><a href="#">Html</a></li>
                             <li><a href="#">CSS</a></li>
-                            <li><a href="#">JQuery</a></li>
+                            <li><a href="#">Javascript</a></li>
                         </ul>
                     </div>
                     <div class="view-cont">
@@ -229,11 +229,34 @@
     user-select: none;
     pointer-events: none;
 }
-
 </code></pre>
 </div>
 <div class="javascript">
-<pre><code class="language-javascript">
+<pre><code class="language-javascript">function mouseMove(e) {
+    let pageX = 0,
+        pageY = 0,
+        standardX = 0,
+        standardY = 0;
+
+    //마우스 좌표 값
+    pageX = e.pageX;
+    pageY = e.pageY;
+    gsap.to(".cursor",  {duration: 0.3, left:pageX, top:pageY});
+
+    //기준점 가운데로 변경 
+    standardX = (window.innerWidth / 2) - pageX;
+    standardY = (window.innerHeight / 2) - pageY;
+
+    //이미지 움직임
+     document.querySelector(".mImg img").setAttribute("style", "transform: translate(" + standardX/20 +"px," + standardY/20 +"px)");
+    
+    //출력
+    document.querySelector(".pageX").textContent = pageX;
+    document.querySelector(".pageY").textContent = pageY;
+    document.querySelector(".standardX").textContent = standardX;
+    document.querySelector(".standardY").textContent = standardY;
+}
+    document.querySelector(".moveImage").addEventListener("mousemove", mouseMove);
 
 </code></pre>
                         </div>
@@ -277,8 +300,7 @@
             document.querySelector(".pageY").textContent = pageY;
             document.querySelector(".standardX").textContent = standardX;
             document.querySelector(".standardY").textContent = standardY;
-        }
-
+    }
             document.querySelector(".moveImage").addEventListener("mousemove", mouseMove);
     </script>
 </body>
