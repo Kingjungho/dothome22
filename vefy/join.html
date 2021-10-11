@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .join_title {
+            font-size: 50px;
+            text-align: center;
+            margin: 170px 0 132px 0;
+        }
+
+        .join_wrap {
+            display: flex;
+            justify-content: space-evenly;
+            
+        }
+
+        .join_left>div {
+            font-size: 15px;
+            color: #c5c5c5;
+            border: 1px solid #cccccc;
+            margin-bottom: 20px;
+            padding: 17px 40px 16px 20px;
+            white-space: nowrap;
+        }
+        .join_left>div:nth-child(8) {
+            margin-bottom: 0;
+        }
+        .join_left>div:last-child {
+            border: none;
+            color: #000;
+            margin-bottom: 172px;
+            padding-left: 0;
+        }
+
+        .id_input {
+            position: relative;
+        }
+
+        .id_input:after {
+            content: '중복확인';
+            position: absolute;
+            right: 15px;
+            top: 11px;
+            color: #fff;
+            background: #4d942c;
+            padding: 5px 24px;
+            border-radius: 5px;
+        }
+
+        .address_input {
+            position: relative;
+        }
+
+        .address_input:after {
+            content: '검색';
+            position: absolute;
+            right: 15px;
+            top: 11px;
+            color: #fff;
+            background: #4d942c;
+            padding: 5px 35px;
+            border-radius: 5px;
+        }
+
+        .join_line {
+            content: '';
+            width: 1px;
+            height: 660px;
+            margin: 0 60px;
+            transform: rotate(180deg);
+            background-color: #c4c4c4;
+        }
+
+        .right_title {
+            color: #fff;
+            background-color: #4d942c;
+            padding: 17px 170px 16px 20px;
+            white-space: nowrap;
+            font-weight: normal;
+        }
+
+        .right_title:before {
+            display: inline-block;
+            content: '';
+            background-color: #fff;
+            width: 20px;
+            height: 20px;
+            vertical-align: -4px;
+            margin-right: 10px;
+        }
+
+        .agree_wrap {
+            background-color: rgba(204, 204, 204, 0.2);
+            font-size: 15px;
+        }
+
+        .right_agree {
+            padding: 30px 40px 45px 20px;
+            
+        }
+
+        .agree_desc {
+            margin: 27px 0 27px 0;
+            
+        }
+        .agree_desc:before {
+            display: inline-block;
+            content: '';
+            border: 1px solid #000;
+            margin-left: 32px;
+            width: 20px;
+            height: 20px;
+            vertical-align: -4px;
+            margin-right: 20px;
+        }
+        .agree_desc2 {
+            padding-bottom: 27px;
+        }
+        .agree_desc2:before {
+            display: inline-block;
+            content: '';
+            border: 1px solid #000;
+            margin-left: 32px;
+            width: 20px;
+            height: 20px;
+            vertical-align: -4px;
+            margin-right: 20px;
+        }
+        .join_click {
+            color: #fff;
+            background-color: #366221;
+            padding: 16px 0;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 20px;
+            margin-top: 20px;
+            margin-bottom: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <header></header>
+    <div class="container">
+        <div class="join_title">회원가입</div>
+        <div class="join_wrap">
+            <div class="join_left">
+                <div class="id_input">아이디 입력</div>
+                <div class="pass_input">비밀번호 입력</div>
+                <div class="pass2_input">비밀번호 확인</div>
+                <div class="name_input">이름</div>
+                <div class="phone_input">휴대폰 번호(ex. 010 - 1234 - 5678)</div>
+                <div class="email_input">이메일 입력</div>
+                <div class="address_input">주소</div>
+                <div class="address2_input">상세 주소</div>
+                <div class="left_desc">* 비밀번호는 공백 없이 영문/숫자 포함 6 ~ 16자 내외로 입력해주시기 바랍니다.</div>
+            </div>
+            <div class="join_line"></div>
+            <div class="join_right">
+                <div class="right_title">모든 약관 동의</div>
+                <div class="agree_wrap">
+                    <div class="right_agree">&lt;개인정보 수집 목적><br>
+                        가입자 개인 식별, 가입 의사 확인, 가입자와의 원활한 의사소통, 가입자와의 교육 커뮤니테이션<br><br>
+
+                        &lt;수집하는 개인정보 목록><br>
+                        아이디(이메일주소), 비밀번호, 이름 보유기간 : 회원 탈퇴 시까지 보유(탈퇴일로부터 즉시 파기합니다.)
+                        개인정보 수집에 대한 동의를 거부할 권리가 있으며, 회원 가입시 개인정보수집을 동의함으로 간주합니다.<br><br>
+
+                        회원가입은 1인당 1개의 이메일 계정을이용할 수 있습니다.
+                        개인정보를 수집 및 이용하며, 회원의 개인정보를 안전하게 취급하고, 교육을 목적으로 사용됩니다.
+                    </div>
+                    <div class="agree_desc">[필수] 개인정보 수집 및 이용에 대한 동의</div>
+                    <div class="agree_desc2">[선택] 마케팅 광고성 정보 수신에 대한 동의</div>
+                </div>
+                <div class="join_click">회원가입</div>
+            </div>
+        </div>
+    </div>
+    <footer></footer>
+</body>
+
+</html>

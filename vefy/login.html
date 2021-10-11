@@ -6,63 +6,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
+    <link rel="stylesheet" href="style.css">
     <style>
-        @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
-
-        * {
-            padding: 0;
-            margin: 0;
-            font-family: 'Noto Sans KR';
-            font-weight: bold;
-        }
-
-        .container {
-            width: 1200px;
-        }
-
-        .loginTitle {
-            font-size: 50px;
-            text-align: center;
-            margin: 170px 0 143px 0;;
-            font-weight: bold;
-        }
-
-        header {
-            background: #4d942c;
-            height: 100px;
-        }
-
-        footer {
-            background: #4d942c;
-            height: 140px;
-        }
-
         .loginWrap {
             display: flex;
             justify-content: center;
             margin-bottom: 200px;
         }
-        .loginLeft {
-        }
+
+        .loginLeft {}
+
         .loginID {
             border: 1px solid #ccc;
             margin-bottom: 40px;
         }
+
         .loginID .id {
             padding: 17px 255px 17px 17px;
             color: #c5c5c5;
             font-weight: 500;
         }
+
         .loginPass {
             border: 1px solid #ccc;
             margin-bottom: 40px;
         }
+
         .loginPass .pass {
             padding: 17px 255px 17px 17px;
             color: #c5c5c5;
             font-weight: 500;
         }
+
         .loginBtn {
             background-color: #4d942c;
             text-align: center;
@@ -71,50 +46,60 @@
             color: #fff;
             font-weight: bold;
         }
+
         .loginSearch {
             text-align: center;
             margin: 30px 0 65px 0;
         }
+
         .loginSearch .idSearch::after {
             content: '|';
             padding: 0 5px;
         }
+
         .vefyLogo {
             background-image: url(img/메인로고_녹.png);
             background-size: cover;
             width: 140px;
             height: 42px;
-            
             margin: 0 auto;
         }
+
         .loginLine {
             border-right: 1px solid #c4c4c4;
             margin-left: 50px;
         }
+
         .loginRight {
             text-align: center;
             margin-left: 50px;
         }
+
         .loginRight .loginDesc {
             color: #4d942c;
             font-size: 20px;
             padding-bottom: 14px;
         }
+
         .loginRight .loginDesc2 {
             color: #366221;
             margin-bottom: 40px;
             font-weight: bold;
         }
+
         .loginRight .joinBtn {
             color: #fff;
-            background-color: #366221;;
+            background-color: #366221;
+            ;
             text-align: center;
             padding: 15px;
             border-radius: 10px;
             font-weight: bold;
             margin-bottom: 40px;
         }
+
         .loginRight .loginImage {}
+
         .loginRight .loginImage img {
             width: 436px;
             height: 216px;
@@ -124,33 +109,35 @@
 
 <body>
     <header></header>
-    <div class="loginTitle">로그인</div>
-    <div class="loginWrap">
-        <div class="loginLeft">
-            <div class="loginClick">
-                <div class="loginID">
-                    <div class="id">
-                        아이디 (이메일 주소)
+    <div class="container">
+        <div class="loginTitle">로그인</div>
+        <div class="loginWrap">
+            <div class="loginLeft">
+                <div class="loginClick">
+                    <div class="loginID">
+                        <div class="id">
+                            아이디 (이메일 주소)
+                        </div>
+                    </div>
+                    <div class="loginPass">
+                        <div class="pass">비밀번호</div>
                     </div>
                 </div>
-                <div class="loginPass">
-                    <div class="pass">비밀번호</div>
+                <div class="loginBtn">로그인</div>
+                <div class="loginSearch">
+                    <span class="idSearch">아이디 찾기</span>
+                    <span>비밀번호 찾기</span>
                 </div>
+                <div class="vefyLogo"></div>
             </div>
-            <div class="loginBtn">로그인</div>
-            <div class="loginSearch">
-                <span class="idSearch">아이디 찾기</span>
-                <span>비밀번호 찾기</span>
-            </div>
-            <div class="vefyLogo"></div>
-        </div>
-        <div class="loginLine"></div>
-        <div class="loginRight">
-            <div class="loginDesc">아직 회원가입 전인가요?</div>
-            <div class="loginDesc2">회원가입을 하시면 다양한 혜택을 받으실 수 있습니다.</div>
-            <div class="joinBtn">회원가입</div>
-            <div class="loginImage">
-                <img src="img/image 213.png" alt="">
+            <div class="loginLine"></div>
+            <div class="loginRight">
+                <div class="loginDesc">아직 회원가입 전인가요?</div>
+                <div class="loginDesc2">회원가입을 하시면 다양한 혜택을 받으실 수 있습니다.</div>
+                <div class="joinBtn">회원가입</div>
+                <div class="loginImage">
+                    <img src="img/image 213.png" alt="">
+                </div>
             </div>
         </div>
     </div>
