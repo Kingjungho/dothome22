@@ -23,24 +23,27 @@
             
         }
 
-        .join_left>div {
+        .join_left > input {
             font-size: 15px;
             color: #c5c5c5;
             border: 1px solid #cccccc;
             margin-bottom: 20px;
-            padding: 17px 40px 16px 20px;
-            white-space: nowrap;
+            padding: 17px 355px 16px 20px;
+            display: block;
         }
-        .join_left>div:nth-child(8) {
+        .join_left > input:nth-child(16) {
             margin-bottom: 0;
         }
-        .join_left>div:last-child {
+        .join_left > input:last-child {
             border: none;
             color: #000;
             margin-bottom: 172px;
             padding-left: 0;
         }
-
+        .left_desc {
+            font-size: 15px;
+            margin-top: 10px;
+        }
         .id_input {
             position: relative;
         }
@@ -73,9 +76,9 @@
 
         .join_line {
             content: '';
-            width: 1px;
-            height: 660px;
             margin: 0 60px;
+            width: 1px;
+            height: 600px;
             transform: rotate(180deg);
             background-color: #c4c4c4;
         }
@@ -145,27 +148,38 @@
             margin-top: 20px;
             margin-bottom: 200px;
         }
+        .join_click a {
+            color: #fff;
+        }
     </style>
 </head>
 
 <body>
     <header></header>
     <div class="container">
-        <form name="login" action="loginSave.php" method="POST">
+        <form name="join" action="joinSave.php" method="POST">
             <fieldset>
                 <legend class="ir_so">회원가입</legend>
         <div class="join_title">회원가입</div>
         <div class="join_wrap">
             <div class="join_left">
-                <input class="id_input">아이디 입력</input>
-                <input class="pass_input">비밀번호 입력</input>
-                <input class="pass2_input">비밀번호 확인</input>
-                <input class="name_input">이름</input>
-                <input class="phone_input">휴대폰 번호(ex. 010 - 1234 - 5678)</input>
-                <input class="email_input">이메일 입력</input>
-                <input class="address_input">주소</input>
-                <input class="address2_input">상세 주소</input>
-                <input class="left_desc">* 비밀번호는 공백 없이 영문/숫자 포함 6 ~ 16자 내외로 입력해주시기 바랍니다.</input>
+                <label for="youId" class="ir_so">아이디</label>
+                <input type="text" name="youId" id="youId" class="id_input" placeholder="아이디를 입력해 주세요." autocomplete="off" autofocus></input>
+                <label for="youPass" class="ir_so">비밀번호</label>
+                <input type="text" name="youPass" id="youPass" class="pass_input" placeholder="비밀번호를 입력해 주세요." autocomplete="off" autofocus></input>
+                <label for="youPass2" class="ir_so">비밀번호 확인</label>
+                <input type="text" name="youPass2" id="youPass2" class="pass2_input"placeholder="비밀번호를 다시 한번 확인해주세요." autocomplete="off" autofocus></input>
+                <label for="youName" class="ir_so">이름 / 닉네임</label>
+                <input type="text" name="youName" id="youName" class="name_input" placeholder="성함을 작성해 주세요." autocomplete="off" autofocus></input>
+                <label for="youPhone" class="ir_so">휴대폰 번호</label>
+                <input type="text" name="youPhone" id="youPhone" class="phone_input" placeholder="휴대폰 번호(ex. 010 - 1234 - 5678)를 작성해주세요." autocomplete="off" autofocus></input>
+                <label for="youEmail" class="ir_so">이메일</label>
+                <input type="text" name="youEmail" id="youEmail" class="email_input" placeholder="이메일을 입력해 주세요." autocomplete="off" autofocus></input>
+                <label for="youAdress" class="ir_so">주소</label>
+                <input type="text" name="youAdress" id="youAdress" class="address_input" placeholder="주소를 입력해 주세요." autocomplete="off" autofocus></input>
+                <label for="youAdress2" class="ir_so">상세 주소</label>
+                <input type="text" name="youAdress2" id="youAdress2" class="address2_input" placeholder="상세 주소를 입력해 주세요." autocomplete="off" autofocus></input>
+                <div class="left_desc">* 비밀번호는 공백 없이 영문/숫자 포함 6 ~ 16자 내외로 입력해주시기 바랍니다.</div>
             </div>
             <div class="join_line"></div>
             <div class="join_right">
@@ -184,7 +198,7 @@
                     <div class="agree_desc">[필수] 개인정보 수집 및 이용에 대한 동의</div>
                     <div class="agree_desc2">[선택] 마케팅 광고성 정보 수신에 대한 동의</div>
                 </div>
-                <div class="join_click">회원가입</div>
+                <div class="join_click"><a href="#">회원가입</a></div>
             </fieldset>
         </form>
             </div>

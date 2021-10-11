@@ -25,6 +25,6 @@
             text-align: center;
             margin: 170px 0 143px 0;
         }
-        .fieldset {
+        fieldset {
             border: none;
         }
