@@ -6,7 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/common.css">
+    <link rel="stylesheet" href="assets/css/fonts.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <style>
         .join_title {
             font-size: 50px;
@@ -148,18 +151,21 @@
 <body>
     <header></header>
     <div class="container">
+        <form name="login" action="loginSave.php" method="POST">
+            <fieldset>
+                <legend class="ir_so">회원가입</legend>
         <div class="join_title">회원가입</div>
         <div class="join_wrap">
             <div class="join_left">
-                <div class="id_input">아이디 입력</div>
-                <div class="pass_input">비밀번호 입력</div>
-                <div class="pass2_input">비밀번호 확인</div>
-                <div class="name_input">이름</div>
-                <div class="phone_input">휴대폰 번호(ex. 010 - 1234 - 5678)</div>
-                <div class="email_input">이메일 입력</div>
-                <div class="address_input">주소</div>
-                <div class="address2_input">상세 주소</div>
-                <div class="left_desc">* 비밀번호는 공백 없이 영문/숫자 포함 6 ~ 16자 내외로 입력해주시기 바랍니다.</div>
+                <input class="id_input">아이디 입력</input>
+                <input class="pass_input">비밀번호 입력</input>
+                <input class="pass2_input">비밀번호 확인</input>
+                <input class="name_input">이름</input>
+                <input class="phone_input">휴대폰 번호(ex. 010 - 1234 - 5678)</input>
+                <input class="email_input">이메일 입력</input>
+                <input class="address_input">주소</input>
+                <input class="address2_input">상세 주소</input>
+                <input class="left_desc">* 비밀번호는 공백 없이 영문/숫자 포함 6 ~ 16자 내외로 입력해주시기 바랍니다.</input>
             </div>
             <div class="join_line"></div>
             <div class="join_right">
@@ -179,6 +185,8 @@
                     <div class="agree_desc2">[선택] 마케팅 광고성 정보 수신에 대한 동의</div>
                 </div>
                 <div class="join_click">회원가입</div>
+            </fieldset>
+        </form>
             </div>
         </div>
     </div>
