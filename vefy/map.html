@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,66 +11,69 @@
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/map.css">
 </head>
+
 <body>
     <header></header>
     <div class="container">
-<div class="vefy_location">
-    <div id="location1" class="active">베피 본점</div>
-    <div id="location2">베피 영등포 분점</div>
-    <div id="location3">베피 안양 분점</div>
-</div>
-<div class="vefy_desc_Wrap">
-<div class="vefy_desc">
-    <div class="vefy_adress">베피 본점</div>
-    <div class="vefy_adress2">주소 : 경기 안산시 단원구 고잔2길 45 6층</div>
-    <div class="vefy_adress3">매장영업시간: 월 ~ 금 : 09 : 00 ~ 21 : 00, 토,일 : 10 : 00 ~ 19 : 00</div>
-    <div class="vefy_call"><img src="http://www.saladykorea.com/superboard/skin/company/basic/images/ico-tel.gif">Tel : 031 - 365 - 5008</div>
-</div>
-<div class="vefy_desc2">
-    <div class="vefy_adress">베피 영등포 분점</div>
-    <div class="vefy_adress2">주소 : 경기 안산시 단원구 고잔2길 45 Tel : 031 365 5008</div>
-    <div class="vefy_adress3">매장영업시간: 월 ~ 금 : 09 : 00 ~ 21 : 00, 토,일 : 10 : 00 ~ 19 : 00</div>
-    <div class="vefy_call"><img src="http://www.saladykorea.com/superboard/skin/company/basic/images/ico-tel.gif">Tel : 031 - 365 - 5008</div>
-</div>
-<div class="vefy_desc3">
-    <div class="vefy_adress">베피 안양 분점</div>
-    <div class="vefy_adress2">주소 : 경기 안산시 단원구 고잔2길 45 Tel : 031 365 5008</div>
-    <div class="vefy_adress3"><img src="http://www.saladykorea.com/superboard/skin/company/basic/images/ico-tel.gif">매장영업시간: 월 ~ 금 : 09 : 00 ~ 21 : 00, 토,일 : 10 : 00 ~ 19 : 00</div>
-</div>
-<div class="vefy_map">
-    <img src="img/Кrakow (Light).jpg" alt="이미지">
-    <div class="vefy_map_location"><img src="img/베피 영등포 분점.png" alt="베피 영등포 분점"></div>
-    <div class="vefy_map_location2"><img src="img/베피 본점.png" alt="베피 본점"></div>
-    <div class="vefy_map_location3"><img src="img/베피 안양 분점.png" alt="베피 안양 분점"></div>
-</div>
-</div>
-</div>
+        <div class="vefy_location">
+            <div class="location">베피 본점</div>
+            <div class="location">베피 영등포 분점</div>
+            <div class="location">베피 안양 분점</div>
+        </div>
+        <div class="vefy_desc_Wrap">
+            <div class="vefy_desc">
+                <div class="vefy_adress">베피 본점</div>
+                <div class="vefy_adress2">주소 : 경기 안산시 단원구 고잔2길 45 6층</div>
+                <div class="vefy_adress3">매장영업시간: 월 ~ 금 : 09 : 00 ~ 21 : 00, 토,일 : 10 : 00 ~ 19 : 00</div>
+                <div class="vefy_call"><img
+                        src="http://www.saladykorea.com/superboard/skin/company/basic/images/ico-tel.gif">Tel : 031 -
+                    365 - 5008</div>
+            </div>
+            <div class="vefy_desc">
+                <div class="vefy_adress">베피 영등포 분점</div>
+                <div class="vefy_adress2">주소 : 서울특별시 영등포구 xxx xxx xxx</div>
+                <div class="vefy_adress3">매장영업시간: 월 ~ 금 : 09 : 00 ~ 21 : 00, 토,일 : 10 : 00 ~ 19 : 00</div>
+                <div class="vefy_call"><img
+                        src="http://www.saladykorea.com/superboard/skin/company/basic/images/ico-tel.gif">Tel : 02 -
+                    xxx - xxxx</div>
+            </div>
+            <div class="vefy_desc">
+                <div class="vefy_adress">베피 안양 분점</div>
+                <div class="vefy_adress2">주소 : 경기도 안양시 xxx xxx xxx</div>
+                <div class="vefy_adress3">매장영업시간: 월 ~ 금 : 09 : 00 ~ 21 : 00, 토,일 : 10 : 00 ~ 19 : 00</div>
+                <div class="vefy_call"><img
+                    src="http://www.saladykorea.com/superboard/skin/company/basic/images/ico-tel.gif">Tel : 032 -
+                xxx - xxxx</div>
+            </div>
+            <div class="vefy_map">
+                <img src="img/Кrakow (Light).jpg" alt="이미지">
+                <div class="vefy_map_location"><img src="img/베피 영등포 분점.png" alt="베피 영등포 분점"></div>
+                <div class="vefy_map_location2"><img src="img/베피 본점.png" alt="베피 본점"></div>
+                <div class="vefy_map_location3"><img src="img/베피 안양 분점.png" alt="베피 안양 분점"></div>
+            </div>
+        </div>
+    </div>
     <footer></footer>
     <script>
-    let location = document.querySelectorAll(".vefy_location");
-    let desc = document.querySelectorAll(".vefy_desc_Wrap");
+    const tabLocation = document.querySelectorAll(".location");
+    const tabDesc = document.querySelectorAll(".vefy_desc");
 
-    for(var i = 0; i < location.length; i++){
-    location[i].querySelector('.btn').addEventListener('click', function(e){
-      e.preventDefault();
-      for(var j = 0; j < tabList.length; j++){
-        // 나머지 버튼 클래스 제거
-        tabList[j].classList.remove('is_on');
+        tabLocation.forEach((element, index) => {
+            element.addEventListener("click", function () {
 
-        // 나머지 컨텐츠 display:none 처리
-        contents[j].style.display = 'none';
-      }
-
-      // 버튼 관련 이벤트
-      this.parentNode.classList.add('is_on');
-
-      // 버튼 클릭시 컨텐츠 전환
-      activeCont = this.getAttribute('href');
-      document.querySelector(activeCont).style.display = 'block';
-    });
-  }
-
-   
+                tabLocation.forEach(el => {
+                    el.classList.remove("active")
+                });
+                element.classList.add("active")
+               
+                tabDesc.forEach(el => {
+                  el.style.display = "none";
+              })
+              tabDesc[index].style.display = "block";
+          })
+      });
+        
     </script>
 </body>
+
 </html>

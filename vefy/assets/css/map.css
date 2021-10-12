@@ -11,22 +11,20 @@ footer {
     display: flex;
 }
 .vefy_location > div {
-    margin: 100px 25px 50px 0;
+    margin: 100px 25px 30px 0;
     font-size: 25px;
-    background-color: #366221;
+    background-color: #4d942c;
     padding: 10px 25px;
     color: #fff;
     border-radius: 5px;
+    cursor: pointer;
 }
-.vefy_location #location1.active {
+.vefy_location .location.active {
     color: rgb(50, 255, 31);
+    transform: scale(1.05);
+    transition: all .3s ease-in;
 }
-.vefy_location #location2.active {
-    color: rgb(50, 255, 31);
-}
-.vefy_location #location3.active {
-    color: rgb(50, 255, 31);
-}
+
 .vefy_desc {
     margin: 50px 0 50px 0;
 }
@@ -51,12 +49,13 @@ footer {
     height: 20px;
     margin-right: 6px;
 }
-.vefy_desc2 {
+.vefy_desc:nth-child(2) {
     display: none;
 }
-.vefy_desc3 {
+.vefy_desc:nth-child(3) {
     display: none;
 }
+
 .vefy_map {
     margin-bottom: 100px;
     position: relative;
