@@ -1,0 +1,82 @@
+header {
+    background: #4d942c;
+    height: 100px;
+}
+footer {
+    background: #4d942c;
+    height: 140px;
+}
+
+.vefy_location {
+    display: flex;
+}
+.vefy_location > div {
+    margin: 100px 25px 50px 0;
+    font-size: 25px;
+    background-color: #366221;
+    padding: 10px 25px;
+    color: #fff;
+    border-radius: 5px;
+}
+.vefy_location #location1.active {
+    color: rgb(50, 255, 31);
+}
+.vefy_location #location2.active {
+    color: rgb(50, 255, 31);
+}
+.vefy_location #location3.active {
+    color: rgb(50, 255, 31);
+}
+.vefy_desc {
+    margin: 50px 0 50px 0;
+}
+.vefy_desc .vefy_adress {
+    font-size: 25px;
+    margin-bottom: 12px;
+}
+.vefy_desc .vefy_adress2 {
+    font-weight: bold;
+    font-size: 20px;
+}
+.vefy_desc .vefy_adress3 {
+    color: rgb(53, 168, 78);
+    margin-top: 15px;
+    font-size: 20px;
+}
+.vefy_desc .vefy_call {
+    font-size: 20px;
+}
+.vefy_desc .vefy_call img {
+    width: 20px;
+    height: 20px;
+    margin-right: 6px;
+}
+.vefy_desc2 {
+    display: none;
+}
+.vefy_desc3 {
+    display: none;
+}
+.vefy_map {
+    margin-bottom: 100px;
+    position: relative;
+}
+.vefy_map img {
+    width: 1200px;
+}
+.vefy_map_location img {
+    position: absolute;
+    top: 50px; left: 250px;
+    width: 130px; height: 80px;
+}
+.vefy_map_location2 img {
+    position: absolute;
+    bottom: 100px; right: 310px;
+    width: 100px; height: 80px;
+}
+.vefy_map_location3 img {
+    position: absolute;
+    top: 150px; right: 270px;
+    width: 130px; height: 80px;
+}
+
