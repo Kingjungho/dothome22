@@ -14,6 +14,7 @@
         * {
             text-align: center;
         }
+
         .login_find {
             display: flex;
             justify-content: center;
@@ -36,9 +37,11 @@
             border-bottom: 1px solid #366221;
             padding: 17px 87px;
         }
+
         .pass_find a {
             color: #999999;
         }
+
         #youName {
             border: 1px solid #cccccc;
             width: 580px;
@@ -46,19 +49,22 @@
             margin-top: 40px;
             text-align: left;
         }
+
         #youPhone {
             border: 1px solid #cccccc;
             width: 580px;
             height: 60px;
             margin-top: 40px;
             text-align: left;
-    
+
         }
+
         .find_desc {
             font-size: 15px;
             line-height: 1.47;
             margin: 10px 0 200px 0;
         }
+
         #loginBtn {
             font-size: 20px;
             padding: 17px 272px;
@@ -69,6 +75,9 @@
             cursor: pointer;
             font-weight: bold;
         }
+        fieldset {
+            border: none;
+        }
     </style>
 </head>
 
@@ -76,28 +85,28 @@
     <header></header>
     <div class="container">
         <form name="login" action="loginSave.php" method="POST">
-        <fieldset>
-            <legend class="ir_so">아이디 찾기</legend>
-    <div class="loginTitle">아이디 / 비밀번호 찾기</div>
-    <div class="login_find">
-        <div class="id_find">아이디 찾기</div>
-        <div class="pass_find"><a href="login_pass.html">비밀번호 찾기</a></div>
+            <fieldset>
+                <legend class="ir_so">아이디 찾기</legend>
+                <div class="loginTitle">아이디 / 비밀번호 찾기</div>
+                <div class="login_find">
+                    <div class="id_find">아이디 찾기</div>
+                    <div class="pass_find"><a href="login_pass.html">비밀번호 찾기</a></div>
+                </div>
+                <div>
+                    <label for="youName" class="ir_so">이름 / 닉네임</label>
+                    <input type="text" name="youName" id="youName" class="input_write" placeholder="이름 또는 닉네임을 입력해 주세요."
+                        autocmplete="off" autofocus>
+                </div>
+                <div>
+                    <label for="youPhone" class="ir_so">휴대폰 번호</label>
+                    <input type="text" name="youPhone" id="youPhone" class="input_write" maxlength="20"
+                        placeholder="휴대폰 번호를 입력해 주세요." autocmplete="off" required>
+                </div>
+                <button id="loginBtn" type="submit" class="btn_submit">확인</button>
+            </fieldset>
+        </form>
+        <div class="find_desc">위 방법으로 아이디 / 비밀번호를 찾을 수 없을 경우<br>고객센터 게시판으로 문의 주시기 바랍니다.</div>
     </div>
-    <div>
-        <label for="youName" class="ir_so">이름 / 닉네임</label>
-        <input type="text" name="youName" id="youName" class="input_write"
-            placeholder="이름 또는 닉네임을 입력해 주세요." autocmplete="off" autofocus>
-        </div>
-        <div>
-            <label for="youPhone" class="ir_so">휴대폰 번호</label>
-            <input type="text" name="youPhone" id="youPhone" class="input_write" maxlength="20"
-                placeholder="휴대폰 번호를 입력해 주세요." autocmplete="off" required>
-            </div>
-            <button id="loginBtn" type="submit" class="btn_submit">확인</button>
-        </fieldset>
-    </form>
-    <div class="find_desc">위 방법으로 아이디 / 비밀번호를 찾을 수 없을 경우<br>고객센터 게시판으로 문의 주시기 바랍니다.</div>
-</div>
     <footer></footer>
 </body>
 

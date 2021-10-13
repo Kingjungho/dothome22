@@ -169,7 +169,7 @@
             <li><a href="javascriptME04.html">4</a></li>
             <li><a href="javascriptME05.html">5</a></li>
             <li><a href="javascriptME06.html">6</a></li>
-            <li class="active"><a href="javascriptME07.html">7</a></li>
+            <li><a href="javascriptME07.html">7</a></li>
             <li><a href="javascriptME08.html">8</a></li>
         </ul>
         <ul>
@@ -179,7 +179,7 @@
             <li><a href="jqueryME04.html">4</a></li>
             <li><a href="jqueryME05.html">5</a></li>
             <li><a href="jqueryME06.html">6</a></li>
-            <li><a href="jqueryME07.html">7</a></li>
+            <li class="active"><a href="jqueryME07.html">7</a></li>
             <li><a href="jqueryME08.html">8</a></li>
         </ul>
     </div>
@@ -253,16 +253,15 @@
     <script src="../assets/js/custom.js"></script>
     <script src="../assets/js/highlight.min.js"></script>
     <script>           
-      function mouseMove(e){
-            let width = window.innerWidth/2;
+         // $(window).mousemove(function(){});
+         function mouseMove(e){
+            let positionSlow = (e.pageX - ($(window).width()/2)) * 0.1;
+            let positionFast = (e.pageX - ($(window).width()/2)) * 0.2;
 
-            let positionSlow = (e.pageX - width) * 0.1;
-            let positionFast = (e.pageX - width) * 0.2;
-        
             gsap.to(".spanSlow", {duration: 0.4, x: positionSlow})
             gsap.to(".spanFast", {duration: 0.4, x: -positionFast})
         }
-        window.addEventListener("mousemove", mouseMove);
+        $(window).on("mousemove", mouseMove);
     </script>
 </body>
 

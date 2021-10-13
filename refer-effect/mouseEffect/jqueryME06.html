@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Effect</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/highlight.css">
+</head>
+<style>
+    .cursor {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background: url(../assets/img/bg8@2.jpg) center center;
+        background-attachment: fixed;
+        background-size: cover;
+        border: 5px solid #fff;
+        overflow: hidden;
+        z-index: -1;
+    }
+
+    .contents {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100vh;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    .contents p {
+        max-width: 70vw;
+        font-size: 3vw;
+        text-align: justify;
+        color: #fff;
+    }
+
+    .contents p:first-child {
+        font-size: 2vw;
+        line-height: 2;
+    }
+
+    .contents p em {
+        color: orange;
+        border-bottom: 2px dashed orange;
+        font-style: normal;
+    }
+</style>
+
+<body class="bg bg8 blue">
+    <!-- contetns -->
+    <main>
+        <div class="cursor"></div>
+        <div class="contents">
+            <p><em>Love</em> your neighbor as your self.</p>
+            <p>네 이웃을 네 몸과 같이 <em>사랑</em>하여라.</p>
+        </div>
+    </main>
+    <!-- //contetns -->
+    <!-- info -->
+    <div class="info">
+        <h1><a href="index.html">Mouse Effect06 - JQuery</a></h1>
+        <p>마우스 이펙트 - 조명 효과</p>
+    </div>
+    <div class="info right">
+        <ul>
+            <li><a href="javascriptME01.html">1</a></li>
+            <li><a href="javascriptME02.html">2</a></li>
+            <li><a href="javascriptME03.html">3</a></li>
+            <li><a href="javascriptME04.html">4</a></li>
+            <li><a href="javascriptME05.html">5</a></li>
+            <li><a href="javascriptME06.html">6</a></li>
+            <li><a href="javascriptME07.html">7</a></li>
+            <li><a href="javascriptME08.html">8</a></li>
+        </ul>
+        <ul>
+            <li><a href="jqueryME01.html">1</a></li>
+            <li><a href="jqueryME02.html">2</a></li>
+            <li><a href="jqueryME03.html">3</a></li>
+            <li><a href="jqueryME04.html">4</a></li>
+            <li><a href="jqueryME05.html">5</a></li>
+            <li class="active"><a href="jqueryME06.html">6</a></li>
+            <li><a href="jqueryME07.html">7</a></li>
+            <li><a href="jqueryME08.html">8</a></li>
+        </ul>
+    </div>
+    <div class="info left list">
+        <ul>
+            <li>pageX : <span class="pageX">0</span></li>
+            <li>pageY : <span class="pageY">0</span></li>
+            <li>standardX : <span class="standardX">0</span></li>
+            <li>standardY : <span class="standardY">0</span></li>
+        </ul>
+    </div>
+    <!-- <div class="info left list">
+        <ul>
+            <li>multiply</li>
+            <li>screen</li>
+            <li>overlay</li>
+            <li>darken</li>
+            <li>lighten</li>
+            <li>color-dodge</li>
+            <li>color-burn</li>
+            <li>hard-light</li>
+            <li>soft-light</li>
+            <li class="active">difference</li>
+            <li>exclusion</li>
+            <li>hue</li>
+            <li>saturation</li>
+            <li>color</li>
+            <li>luminosity</li>
+        </ul>
+    </div> -->
+    <div class="info bottom">
+        <button>소스보기</button>
+    </div>
+    <!--// info -->
+    <!-- modal -->
+    <div id="modal">
+        <div class="modal-bg">
+            <div class="modal-cont">
+                <div class="code-view">
+                    <div class="view-header">
+                        <div class="dot" aria-hidden="true">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="view-title">
+                        <ul>
+                            <li class="active"><a href="#"> Html</a></li>
+                            <li><a href="#"> CSS</a></li>
+                            <li><a href="#"> Jquery</a></li>
+                        </ul>
+                    </div>
+                    <div class="view-cont">
+                        <div class="html">
+                            <pre><code class="language-html">
+    
+</code></pre>
+                        </div>
+                        <div class="css">
+                            <pre><code class="language-css">
+    
+</code></pre>
+                        </div>
+                        <div class="jquery">
+                            <pre><code class="language-javascript">
+    
+</code></pre>
+                        </div>
+                        <div></div>
+                    </div>
+                </div>
+                <button>닫기</button>
+            </div>
+        </div>
+    </div>
+    <!--// modal -->
+    <!-- script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+    <script src="../assets/js/custom.js"></script>
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        const width = $(".cursor").width() / 2;
+        const height = $(".cursor").height() / 2;
+
+        $(window).mousemove(function (e) {
+            gsap.to(".cursor", {
+                duration: 0.5,
+                left: e.pageX - width,
+                top: e.pageY - height
+            });
+        })
+    </script>
+</body>
+
+</html>

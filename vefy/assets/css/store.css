@@ -12,7 +12,6 @@ footer {
     display: inline-block;
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 .glasses img{
     width: 33px; 
@@ -35,37 +34,58 @@ footer {
     border: 1px solid #000;
     padding: 13px 0;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     margin-top: 90px;
     font-size: 21px;
 }
 .header_left {
     border: 1px solid #000;
-    margin-right: 150px;
-    
+    position: relative;
+    margin-left: 40px;
 }
-.ham_wrap{
-    position:absolute;
-    padding-right:10px;
-    padding-left:10px;
-    border:1px solid white;
-  }
-  .ham > span {
-    display:block;
-    width:40px;
-    height:5px;
-    margin-top:10px;
-    margin-bottom:10px;
-    background-color:white;
-  } 
-.header_left .ham {
+.ham {
+    position: absolute;
+    right: 20px;
+    top: 16px;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    display: none;
+}
+.ham span {
+    width: 20px;
+    height: 3px;
+    background: #fff;
+    display: block;
+    position: absolute;
+    left: 5px;
+    top: 13px;
 }
 
+.ham span::before {
+    content: '';
+    width: 20px;
+    height: 3px;
+    background: #fff;
+    position: absolute;
+    left: 0;
+    top: 7px;
+}
+
+.ham span::after {
+    content: '';
+    width: 20px;
+    height: 3px;
+    background: #fff;
+    position: absolute;
+    left: 0;
+    bottom: 7px;
+}
 .header_left .category {
     
 }
 .header_right {
-    
+    margin-right: 30px;
 }
 .header_right span {
 
@@ -86,12 +106,13 @@ footer {
 .store_wrap {
     display: flex;
     justify-content: center;
-
 }
 
 .desc_wrap {
     text-align: center;
-    margin-top: 30px;
+    margin-top: 15px;
+    border: 1px solid #000;
+    border-radius: 5px;
 }
 .store_wrap .store_img {
     margin-right: 15px;
@@ -103,11 +124,11 @@ footer {
     margin-right: 0;
 }
 .store_img .img_title {
-    font-size: 25px;
+    font-size: 23px;
     font-weight: bold;
 }
 .store_img .img_desc {
-    font-size: 20px;
+    font-size: 18px;
 }
 .store_img .img_price {
     font-size: 20px;
