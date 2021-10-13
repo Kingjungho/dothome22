@@ -157,7 +157,7 @@
     ​
     <!-- info -->
     <div class="info">
-        <h1><a href="index.html">Mouse Effect07 - Javascript</a></h1>
+        <h1><a href="index.html">Mouse Effect07 - JQuery</a></h1>
         <p>마우스 이펙트 - 텍스트 효과</p>
     </div>
     ​
@@ -253,17 +253,16 @@
     <script src="../assets/js/custom.js"></script>
     <script src="../assets/js/highlight.min.js"></script>
     <script>           
-        const cursor = document.querySelector(".cursor");
-        // const width = cursor.clientWidth;
-        // const height = cursor.clientHeight;
-        const circle = cursor.getBoundingClientRect() 
-        console.log(circle)
+      function mouseMove(e){
+            let width = window.innerWidth/2;
 
-            function moveCircle(e){
-                gsap.to(cursor, {duration: .3, left: e.pageX -circle.width/2, 
-                                                 top: e.pageY -circle.height/2})
-            }
-        window.addEventListener("mousemove", moveCircle);
+            let positionSlow = (e.pageX - width) * 0.1;
+            let positionFast = (e.pageX - width) * 0.2;
+        
+            gsap.to(".spanSlow", {duration: 0.4, x: positionSlow})
+            gsap.to(".spanFast", {duration: 0.4, x: -positionFast})
+        }
+        window.addEventListener("mousemove", mouseMove);
     </script>
 </body>
 
