@@ -270,19 +270,35 @@ const tabCont = document.querySelectorAll(".tab-cont > div");
 
         let currentIndex = 0;
         let sliderHeight = slider.height();
-        let sliderWidth = slider2.width();
+        let sliderHeight2 = slider2.height();
 
         //콜백함수 
-        setInterval(function() {
-            sliderInner.animate({top: -sliderHeight}, 400, function(){
-                $(".slider.slider1:first-child").appendTo(sliderInner);
-                sliderInner.css("top","");
-            })
+        // setInterval(function() {
+        //     sliderInner.animate({top: -sliderHeight}, 400, function(){
+        //         $(".slider.slider1:first-child").appendTo(sliderInner);
+        //         sliderInner.css("top","");
+        //     })
+        // }, 3000);
+
+        setInterval(() => {
+            currentIndex < 4 ? currentIndex++ : currentIndex = 0;
+
+            let sliderPosition = currentIndex * - sliderHeight;
+            sliderInner.animate({top: sliderPosition}, 600, "easeOutExpo");
         }, 3000);
-        setInterval(function() {
-            sliderInner2.animate({left: -sliderWidth}, 400, function(){
-                $(".slider.slider2:first-child").appendTo(sliderInner2);
-                sliderInner2.css("left","");
+
+
+        // setInterval(function() {
+        //     sliderInner2.animate({left: -sliderWidth}, 400, function(){
+        //         $(".slider.slider2:first-child").appendTo(sliderInner2);
+        //         sliderInner2.css("left","");
+        //     })
+        // }, 3000);
+
+        setInterval(() => {
+            sliderInner2.animate({top: -sliderHeight2 }, 600, "easeOutExpo", function () {
+                $(".slider2:first-child").appendTo(sliderInner2);
+                sliderInner2.css("top", "");
             })
         }, 3000);
     </script>
