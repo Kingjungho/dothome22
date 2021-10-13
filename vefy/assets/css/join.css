@@ -1,3 +1,13 @@
+header {
+    background: #4d942c;
+    height: 100px;
+}
+footer {
+    background: #4d942c;
+    height: 140px;
+}
+
+
 .join_title {
     font-size: 50px;
     text-align: center;
