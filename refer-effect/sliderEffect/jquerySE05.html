@@ -15,22 +15,31 @@
             align-items: center;
             justify-content: center;
             height: 100vh;
-           
-        }
-        .slider-img {
-            width: 800px;
-            height: 480px;
-            position: relative;
         }
         .slider-img img {
             width: 100%;
         }
-        .slider {
-            position: absolute;
-            left: 0; top: 0;
-            transition: all 0.3s;
+        .slider-img {
+           position: absolute;
+           left: 50%; top: 50%;
+           transform: translate(-50%, -50%);
+           width: 800px;
+           height: 480px;
+           overflow: hidden;
         }
-        .slider::before {
+        .slider-inner {
+            width: 4000px;
+            height: 480px;
+            position: relative;
+            overflow: hidden;
+        }
+        .slider-inner .slider {
+            float: left;
+            width: 800px;
+            height: 480px;
+            position: relative;
+        }
+        .slider-inner .slider::before {
             position: absolute;
             left: 5px; top: 5px;
             background: rgba(0, 0, 0, 0.4);
@@ -38,32 +47,62 @@
             padding: 5px 10px 3px;
             font-family:'NEXONLv2Gothic';
         }
-        .slider::before{content: attr(data-name);}
-        .slider:nth-child(1){z-index: 5;}
-        .slider:nth-child(2){z-index: 4;}
-        .slider:nth-child(3){z-index: 3;}
-        .slider:nth-child(4){z-index: 2;}
-        .slider:nth-child(5){z-index: 1;}
+        .slider-inner .slider::before{content: attr(data-name);}
+        .slider-inner .slider:nth-child(1){z-index: 5;}
+        .slider-inner .slider:nth-child(2){z-index: 4;}
+        .slider-inner .slider:nth-child(3){z-index: 3;}
+        .slider-inner .slider:nth-child(4){z-index: 2;}
+        .slider-inner .slider:nth-child(5){z-index: 1;}
         
     /*  .slider:nth-child(1)::before{content: "이미지1";} 
         .slider:nth-child(2)::before{content: "이미지2";}
         .slider:nth-child(3)::before{content: "이미지3";}
         .slider:nth-child(4)::before{content: "이미지4";}
         .slider:nth-child(5)::before{content: "이미지5";} */
+
+        .slider-btn a {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000; 
+            width: 50px; height: 50px;
+            background: rgba(0, 0, 0, .4);
+            text-align: center;
+            line-height: 50px;
+            transition: all 0.2s;
+            display: block;
+            color: #fff;
+            text-decoration: none;
+        }
+        .slider-btn a:hover {
+            background: rgba(241, 96, 86, 1);
+        }
+        .slider-btn .prev {
+            left: 0;
+        }
+        .slider-btn .next {
+            right: 0;
+        }
     </style>
 </head>
 
-<body class="bg bg7 brown">
+<body class="bg bg11 brown">
     ​
     <!-- contents -->
     <main>
         <div class="slider-wrap">
             <div class="slider-img">
-                <div class="slider" data-name="이미지1"><img src="../assets/img/bg7.jpg" alt="이미지1"></div>
-                <div class="slider" data-name="이미지2"><img src="../assets/img/bg8.jpg" alt="이미지2"></div>
-                <div class="slider" data-name="이미지3"><img src="../assets/img/bg9.jpg" alt="이미지3"></div>
-                <div class="slider" data-name="이미지4"><img src="../assets/img/bg10.jpg" alt="이미지4"></div>
-                <div class="slider" data-name="이미지5"><img src="../assets/img/bg1.jpg" alt="이미지5"></div>
+                <div class="slider-inner">
+                    <div class="slider" data-name="이미지1"><img src="../assets/img/bg5.jpg" alt="이미지1"></div>
+                    <div class="slider" data-name="이미지2"><img src="../assets/img/bg6.jpg" alt="이미지2"></div>
+                    <div class="slider" data-name="이미지3"><img src="../assets/img/bg7.jpg" alt="이미지3"></div>
+                    <div class="slider" data-name="이미지4"><img src="../assets/img/bg8.jpg" alt="이미지4"></div>
+                    <div class="slider" data-name="이미지5"><img src="../assets/img/bg9.jpg" alt="이미지5"></div>
+                </div>
+            </div>
+            <div class="slider-btn">
+                <a href="#" class="prev">prev</a>
+                <a href="#" class="next">next</a>
             </div>
         </div>
     </main>
@@ -71,13 +110,13 @@
     ​
     <!-- info -->
     <div class="info">
-        <h1><a href="index.html">Slider Effect01 - Javascript</a></h1>
-        <p>이미지 슬라이드 - 페이드 효과</p>
+        <h1><a href="index.html">Slider Effect05 - Jquery</a></h1>
+        <p>이미지 슬라이드 - 좌로 연속적으로 움직이기</p>
     </div>
     ​
     <div class="info right">
         <ul>
-            <li class="active"><a href="javascriptSE01.html">1</a></li>
+            <li><a href="javascriptSE01.html">1</a></li>
             <li><a href="javascriptSE02.html">2</a></li>
             <li><a href="javascriptSE03.html">3</a></li>
             <li><a href="javascriptSE04.html">4</a></li>
@@ -88,7 +127,7 @@
             <li><a href="jquerySE02.html">2</a></li>
             <li><a href="jquerySE03.html">3</a></li>
             <li><a href="jquerySE04.html">4</a></li>
-            <li><a href="jquerySE05.html">5</a></li>
+            <li class="active"><a href="jquerySE05.html">5</a></li>
         </ul>
     </div>
     ​<div class="info left list">
@@ -237,27 +276,41 @@ const tabCont = document.querySelectorAll(".tab-cont > div");
     <!-- //modal -->
     ​
     <!-- script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script src="../assets/js/custom.js"></script>
     <script src="../assets/js/highlight.min.js"></script>
     <script>
-    const sliderWrap = document.querySelector(".slider-wrap");
-    const sliderImg = document.querySelector(".slider-img");
-    const slider = document.querySelectorAll(".slider");
+        const sliderWrap = $(".slider-wrap");
+        const sliderImg = $(".slider-img");
+        const sliderInner = $(".slider-inner");
+        const slider = $(".slider");
+        const sliderBtn = $(".slider-btn");
 
-    let currentIndex = 0;
-    let sliderCount = slider.length;
-     
-    setInterval(() => {
-        let nextIndex = (currentIndex + 1) % sliderCount; //0 1 2 3 4 0 1 2 3 4 ...
+        let sliderWidth = slider.width();
+        let sliderCount = slider.length;
 
-        // slider[currentIndex].style.display = "none";
-        // slider[nextIndex].style.display = "block";
+        sliderInner.css({marginLeft: -sliderWidth});
+        $(".slider:last-child").appendTo(sliderInner);
 
-        slider[currentIndex].style.opacity = "0";
-        slider[nextIndex].style.opacity = "1";
-
-        currentIndex = nextIndex;
-    }, 2000);
+        function movePrev(){
+            sliderInner.animate({left: sliderWidth}, 400, function(){
+                $(".slider:last-child").prependTo(sliderInner);
+                sliderInner.css("left", "");
+            });
+        }
+        function moveNext(){
+            sliderInner.animate({left: -sliderWidth}, 400, function(){
+                $(".slider:first-child").appendTo(sliderInner);
+                sliderInner.css("left", "");
+            });
+        }
+        sliderBtn.find(".prev").click(function(){
+            movePrev();
+        })
+        sliderBtn.find(".next").click(function(){
+            moveNext();
+        })
     </script>
 </body>
 
