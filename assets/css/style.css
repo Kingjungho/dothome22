@@ -395,11 +395,11 @@
 	opacity: 1;
 	filter: alpha(opacity=100);
 }
-
+.image-wrap.blue .hover-wrap .overlay-img-donut {
+	background: rgb(157, 158, 221);
+}
 .image-wrap .hover-wrap .overlay-img-donut.black {
-
 	background: #000;
-
 }
 
 .image-wrap .hover-wrap .overlay-text-thumb-donut {
