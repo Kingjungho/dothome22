@@ -141,17 +141,72 @@
                     </div>
                     <div class="view-cont">
                         <div class="html">
-                            <pre><code class="language-html">
+                            <pre><code class="language-html"> &lt;!-- contetns -->
+                                &lt;main>
+                                    &lt;div class="cursor">&lt;/div>
+                                    &lt;div class="contents">
+                                        &lt;p>&lt;em>Love&lt;/em> your neighbor as your self.&lt;/p>
+                                        &lt;p>네 이웃을 네 몸과 같이 &lt;em>사랑&lt;/em>하여라.&lt;/p>
+                                    &lt;/div>
+                                &lt;/main>
+                                &lt;!-- //contetns -->
     
 </code></pre>
                         </div>
                         <div class="css">
-                            <pre><code class="language-css">
-    
+                            <pre><code class="language-css">.cursor {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: url(../assets/img/bg8@2.jpg) center center;
+    background-attachment: fixed;
+    background-size: cover;
+    border: 5px solid #fff;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.contents {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.contents p {
+    max-width: 70vw;
+    font-size: 3vw;
+    text-align: justify;
+    color: #fff;
+}
+
+.contents p:first-child {
+    font-size: 2vw;
+    line-height: 2;
+}
+
+.contents p em {
+    color: orange;
+    border-bottom: 2px dashed orange;
+    font-style: normal;
+}
 </code></pre>
                         </div>
                         <div class="jquery">
-                            <pre><code class="language-javascript">
+                            <pre><code class="language-javascript">const width = $(".cursor").width() / 2;
+                                const height = $(".cursor").height() / 2;
+                        
+                                $(window).mousemove(function (e) {
+                                    gsap.to(".cursor", {
+                                        duration: 0.5,
+                                        left: e.pageX - width,
+                                        top: e.pageY - height
+                                    });
+                                })
     
 </code></pre>
                         </div>
