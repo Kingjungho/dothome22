@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/fonts.css">
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        font-weight: bold;
+    }
+
+    .container {
+        width: 1200px;
+        margin: 0 auto;
+        font-family: 'GmarketSans';
+    }
+
+    #header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 60px 0 20px 0;
+    }
+
+    .header-left {}
+
+    .header-left img {
+        width: 120px;
+        height: 50px;
+    }
+
+    .header-right {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .header-right span {
+        margin-right: 30px;
+    }
+
+    .header-right span:last-child {
+        margin-right: 0;
+    }
+    .banner {
+        width: 100%;
+        overflow: hidden;
+        height: 450px;
+    }
+    .banner img {
+        width: 100%;
+    }
+    #banner .slider-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 400px;
+        }
+
+        #banner .slider-img {
+            position: relative;
+            width: 100%;
+            height: 400px;
+        }
+
+        #banner .slider-img img {
+            width: 100%;
+        }
+
+        #banner .slider {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        #banner .slider:nth-child(1) {
+            z-index: 5;
+        }
+
+        #banner .slider:nth-child(2) {
+            z-index: 4;
+        }
+
+
+    #section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 30px;
+        width: 100%;
+        font-weight: bold;
+    }
+
+    #section .box1 {
+        display: flex;
+        justify-content: space-around;
+        margin-right: 10px;
+        background: #f2f2f2;
+        width: 50%;
+    }
+
+    #section .box1_left {
+        padding: 30px;
+    }
+
+    .box1_title {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .box1_desc {
+        font-size: 15px;
+        color: #5a5a5a;
+        margin-bottom: 30px;
+    }
+
+    .box1_search {
+        position: relative;
+        margin-left: 30px;
+    }
+
+    .box1_search::before {
+        position: absolute;
+        content: '';
+        left: -35px;
+        top: -5px;
+        background-image: url(img/쿡킷\ 좌표.png);
+        background-size: cover;
+        width: 30px;
+        height: 30px;
+    }
+
+    #section .box1_right {}
+
+    #section .box1_right img {
+        width: 150px;
+        height: 100px;
+        margin-top: 30px;
+    }
+
+    #section .box2 {
+        display: flex;
+        justify-content: space-around;
+        background: #f2f2f2;
+        width: 50%;
+    }
+
+    #section .box2_left {
+        padding: 30px;
+    }
+
+    .box2_title {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .box2_desc {
+        font-size: 15px;
+        color: #5a5a5a;
+        margin-bottom: 30px;
+    }
+
+    .box2_search {
+        position: relative;
+        margin-left: 30px;
+        font-size: 20px;
+    }
+    .box2_search2 {
+        color: rgb(133, 130, 130);
+    }
+    .box2_search::before {
+        position: absolute;
+        content: '';
+        left: -35px;
+        top: -5px;
+        background-image: url(img/쿡킷\ 좌표.png);
+        background-size: cover;
+        width: 30px;
+        height: 30px;
+    }
+    .box2_search::before {
+        position: absolute;
+        content: '';
+        left: -35px;
+        top: -2px;
+        background-image: url(img/쿡킷\ 시계.png);
+        background-size: cover;
+        width: 30px;
+        height: 30px;
+    }
+
+    #section .box2_right {}
+
+    #section .box2_right img {
+        width: 150px;
+        height: 100px;
+        margin-top: 30px;
+    }
+
+    #aside {
+        margin-top: 70px;
+        font-weight: bold;
+    }
+
+    .aside_title {
+        display: flex;
+        font-size: 35px;
+        margin-bottom: 50px;
+    }
+
+    .aside_title1 {
+        margin-right: 20px;
+    }
+
+    .aside_title2 {
+        color: #868181;
+    }
+
+    .aside_title2::before {
+        content: '|';
+        margin-right: 20px;
+        vertical-align: 1px;
+    }
+
+    .aside_img_wrap {
+        display: flex;
+        width: 100%;
+    }
+
+    .aside_img1 {
+        width: 100%;
+        margin-right: 30px;
+    }
+
+    .aside_img1:last-child {
+        margin-right: 0;
+    }
+
+    .aside_img1 img {
+        width: 100%;
+    }
+
+    .aside_wrap {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 15px;
+        font-weight: bold;
+    }
+
+    .wrap_left {}
+
+    .aside_desc {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .aside_price {
+        font-size: 18px
+    }
+
+    .aside_price2 {
+        color: #948d8d;
+        font-size: 17px;
+        margin-left: 3px;
+    }
+
+    .wrap_right {
+        margin-top: 10px
+    }
+
+    .wrap_right img {
+        width: 38px;
+        height: 38px;
+    }
+
+    #footer {
+        margin-top: 160px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        background: rgb(36, 34, 34);
+    }
+    .footer_wrap {
+        margin-bottom: 60px;
+    }
+    .footer_left img {
+        width: 190px;
+        height: 80px;
+        margin-left: 40px;
+        margin-bottom: 70px;
+    }
+
+    .footer_right {
+        color: #fff;
+        margin-top: 60px;
+        font-weight: bold;
+    }
+
+    .right_top span {
+        margin: 20px 35px 20px 0;
+        font-weight: bold;
+        display: inline-block;
+
+    }
+
+    .right_bottom {
+        color: rgb(80, 80, 80);
+        font-weight: bold;
+        font-size: 13px;
+    }
+    .bottom1 {
+        margin-bottom: 20px;
+    }
+    .bottom2 {
+        margin-bottom: 20px;
+    }
+    .bottom3 {
+        margin-bottom: 20px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <header id="header">
+            <div class="header-left">
+                <span><img src="img/쿡킷 제목.png" alt="쿡킷"></span>
+            </div>
+            <div class="header-right">
+                <span>COOKIT 소개</span>
+                <span>COOKIT 메뉴</span>
+                <span>리뷰</span>
+                <span>이벤트</span>
+                <span>MY쿡킷</span>
+            </div>
+        </header>
+        <div class="banner">
+            <div class="slider-wrap">
+                <div class="slider-img">
+                    <div class="slider"><img src="img/쿡킷 배너.png" alt="이미지1"></div>
+                    <div class="slider"><img src="img/쿡킷 배너.png" alt="이미지2"></div>
+                </div>
+            </div>
+        </div>
+        <section id="section">
+            <div class="box1">
+                <div class="box1_left">
+                    <div class="box1_title">우리집도 COOKIT 배송이 되나요?</div>
+                    <div class="box1_desc">배송이 가능한지 알려드려요.</div>
+                    <div class="box1_search">배송지 검색</div>
+                </div>
+                <div class="box1_right">
+                    <img src="img/쿡킷 과일사진.png" alt="과일사진">
+                </div>
+            </div>
+            <div class="box2">
+                <div class="box2_left">
+                    <div class="box2_title">7월 30일(화)에 받을 수 있어요</div>
+                    <div class="box2_desc">배송이 가능한지 알려드려요.</div>
+                    <span class="box2_search">63:28:32</span>
+                    <span class="box2_search2">남은 시간</span>
+                </div>
+                <div class="box2_right">
+                    <img src="img/쿡킷배송사진.png" alt="배송사진">
+                </div>
+            </div>
+        </section>
+        <aside id="aside">
+            <div class="aside_title">
+                <div class="aside_title1">실시간 베스트</div>
+                <div class="aside_title2">생생한 리뷰</div>
+            </div>
+            <div class="aside_img_wrap">
+                <div class="aside_img1">
+                    <img src="img/음식사진1.png" alt="음식사진1">
+                    <div class="aside_wrap">
+                        <div class="wrap_left">
+                            <div class="aside_desc">평양식 어묵쟁반</div>
+                            <span class="aside_price">33,800원</span>
+                            <span class="aside_price2">/3인분</span>
+                        </div>
+                        <div class="wrap_right">
+                            <img src="img/장바구니.png" alt="장바구니">
+                        </div>
+                    </div>
+                </div>
+                <div class="aside_img1">
+                    <img src="img/음식사진2.png" alt="음식사진2">
+                    <div class="aside_wrap">
+                        <div class="wrap_left">
+                            <div class="aside_desc">새우주꾸미삼겹살</div>
+                            <span class="aside_price">29,800원</span>
+                            <span class="aside_price2">/3인분</span>
+                        </div>
+                        <div class="wrap_right">
+                            <img src="img/장바구니.png" alt="장바구니">
+                        </div>
+                    </div>
+                </div>
+                <div class="aside_img1">
+                    <img src="img/음식사진3.png" alt="">
+                    <div class="aside_wrap">
+                        <div class="wrap_left">
+                            <div class="aside_desc">방풍나물 아귀찜</div>
+                            <span class="aside_price">32,800원</span>
+                            <span class="aside_price2">3인분</span>
+                        </div>
+                        <div class="wrap_right">
+                            <img src="img/장바구니.png" alt="장바구니">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+    <footer id="footer">
+        <div class="footer_left">
+            <img src="img/쿡킷 푸터.png" alt="푸터">
+        </div>
+        <div class="footer_wrap">
+            <div class="footer_right">
+                <div class="right_top">
+                    <span>이용약관</span>
+                    <span>개인정보처리 방침</span>
+                    <span>법적고지</span>
+                    <span>사업자정보 확인</span>
+                </div>
+                <div class="right_bottom">
+                    <div class="bottom1">
+                        <span>씨제이제일제당(주)</span>
+                        <span>대표자 : 신현재</span>
+                    </div>
+                    <div class="bottom2">
+                        <span>주소 : 서울 중구 동호로 330 CJ제일제당 센터 (우) 04560</span>
+                        <span>사업자등록번호 : 104-86-09535</span>
+                    </div>
+                    <div class="bottom3">
+                        <span>통신판매업신고 중구 제 07767호</span>
+                        <span>개인정보보호 책임자 : 류화정</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="../../../refer-effect/assets/js/custom.js"></script>
+    <script src="../../../refer-effect/assets/js/highlight.min.js"></script>
+
+    <script>
+       const sliderWrap = $(".slider-wrap");
+        const sliderImg = $(".slider-img");
+        const slider = $(".slider");
+
+        let currentIndex = 0; 
+        let sliderCount = slider.length; 
+
+        setInterval(function () {
+            let nextIndex = (currentIndex + 1) % sliderCount;
+
+            slider.eq(currentIndex).fadeOut(); 
+            slider.eq(nextIndex).fadeIn(); 
+
+            currentIndex = nextIndex;
+        }, 2000);
+    </script>
+</body>
+
+</html>
