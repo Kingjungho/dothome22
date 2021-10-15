@@ -376,7 +376,6 @@ const tabCont = document.querySelectorAll(".tab-cont > div");
             gotoSlider(nextIndex);
             dotActive()
         }
-
             function dotActive(){
             sliderDot.querySelectorAll("a").forEach((el,index)=>{
                 index == currentIndex ? el.classList.add('active') : el.classList.remove('active');
