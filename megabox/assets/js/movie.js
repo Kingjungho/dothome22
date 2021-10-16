@@ -8,7 +8,7 @@
         var $selector = {
             body: $( "body" ),
             overlay: $( "#blackout" ),
-            modal: $( "#trailerModal" ),
+            modal: $( "#trailerModal" ), 
             showButton: $( "#showTrailer" ),
             hideButton: $( "#hideTrailer" ),
         };
