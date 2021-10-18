@@ -58,21 +58,45 @@
     const tabLocation = document.querySelectorAll(".location");
     const tabDesc = document.querySelectorAll(".vefy_desc");
 
-        tabLocation.forEach((element, index) => {
-            element.addEventListener("click", function () {
+    
+    // tabLocation.forEach(item => {
+    //     item.addEventListener("click", function(){
+    //         tabLocation.forEach(item => {
+    //             item.classList.remove("active")
+    //         })
+    //         item.classList.add("active")
+    //     })
+    // })
 
-                tabLocation.forEach(el => {
-                    el.classList.remove("active")
-                });
-                element.classList.add("active")
+    //     tabLocation.forEach((element, index) => {
+    //         element.addEventListener("click", function () {
+
+    //             tabLocation.forEach(el => {
+    //                 el.classList.remove("active")
+    //             });
+    //             element.classList.add("active")
                
-                tabDesc.forEach(el => {
-                  el.style.display = "none";
-              })
-              tabDesc[index].style.display = "block";
-          })
-      });
-        
+    //             tabDesc.forEach(el => {
+    //               el.style.display = "none";
+    //           })
+    //           tabDesc[index].style.display = "block";
+    //       })
+    //   });
+    tabLocation.forEach((item, index) => {
+        item.addEventListener("click", function(){
+            tabLocation.forEach(item => {
+                item.classList.remove("active") 
+            })
+            item.classList.add("active")
+
+            tabDesc.forEach(item => {
+                item.style.display = "none";
+            })
+            tabDesc[index].style.display ="block"
+        })
+    })
+
+
     </script>
 </body>
 
