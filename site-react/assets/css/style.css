@@ -916,7 +916,7 @@ table {
           box-shadow: 0 -14px 0 black;
 }
 
-@media (max-width: 1150px) {
+@media (max-width: 1170px) {
   #header .header__menu {
     display: none;
   }
