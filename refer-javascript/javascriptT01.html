@@ -287,35 +287,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/prism.min.js"></script>
     <script>
-    //     let arr = [5, 3, 7, 11, 2, 15, 17];
-    //     function solution(num){
-    //         let answer;
-    //         let min = 5;
+        let number = [5, 3, 7, 11, 2, 15, 17];
 
-    //         for(let i=0; i<arr.length; i++){
-    //             if(arr[i] < min){ //(5 < 5)
-    //                 min = arr[i];
-    //         }
-    //     }
-    //     answer = min;
-    //     return answer;
-    // }
-    //     console.log(solution(arr));
-
-    // function solution2(){
-    //     let answer = Math.min(5, 3, 7, 11, 2, 15, 17)
-    //     return answer;
-    // }
-    //     console.log(solution2());
-
-    function solution(arr3){
-        let answer = Math.min(...arr3);
-
-        return answer;
-    }
-        let arr3 = [5, 3, 7, 11, 2, 15, 17];
-        console.log(solution(arr3))
-
+        function solution(arr){
+            let answer;
+           answer = Math.min(...arr)
+           return answer;
+        }
+        console.log(solution(number))
     </script>
 </body>
 

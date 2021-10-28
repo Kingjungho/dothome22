@@ -208,7 +208,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/prism.min.js"></script>
     <script>
-        
+        const solution = (n) => {
+            let answer = 0;
+            for(let i=1; i<=n; i++){
+                answer += i;
+            }
+            return answer;
+        }
+        console.log(solution(10))
     </script>
 </body>
 </html>
