@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>javascript</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/themes/prism-okaidia.min.css" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/themes/prism-okaidia.min.css"
+        integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         @font-face {
             font-family: 'NEXON Lv1 Gothic OTF';
@@ -14,40 +17,49 @@
             font-weight: normal;
             font-style: normal;
         }
+
         * {
             margin: 0;
             padding: 0;
             font-family: 'NEXON Lv1 Gothic OTF';
         }
+
         body {
             padding: 5%;
             margin-bottom: 400px;
         }
+
         h1 {
             padding-bottom: 20px;
         }
+
         hr {
             margin: 5% 0;
             border-style: dashed;
             border-color: #e6e6e6;
             border-width: 1px;
         }
+
         img {
             vertical-align: top;
             border-radius: 5px;
             margin: 5px;
         }
+
         ul {
             list-style: none;
         }
+
         a {
             text-decoration: none;
             color: #333;
         }
+
         .sample {
             border: 1px solid #e6e6e6;
             border-radius: 5px;
         }
+
         .sample h2 {
             position: relative;
             font-size: 16px;
@@ -56,6 +68,7 @@
             border-bottom: 1px solid #e6e6e6;
             border-radius: 5px 5px 0 0;
         }
+
         .sample h2 .dot {
             width: 10px;
             height: 10px;
@@ -66,6 +79,7 @@
             right: 30px;
             top: 20px;
         }
+
         .sample h2 .dot::before {
             content: '';
             width: 10px;
@@ -76,6 +90,7 @@
             left: -15px;
             top: 0;
         }
+
         .sample h2 .dot::after {
             content: '';
             width: 10px;
@@ -83,19 +98,23 @@
             background: #989898;
             position: absolute;
             border-radius: 50%;
-            right: -15px; 
+            right: -15px;
             top: 0;
         }
+
         .sample .ex {
             padding: 20px;
         }
+
         .sample .ex .text {
             margin: 10px 0;
         }
+
         .sample .re {
             padding: 20px;
             border-top: 1px solid #e6e6e6;
         }
+
         .sample .re a {
             color: #333;
             text-decoration: none;
@@ -105,60 +124,79 @@
             margin: 5px;
             display: inline-block;
         }
+
         .sample .re a:hover {
             background-color: #000;
             color: #fff;
         }
+
         .sample .problem {
             padding: 25px;
             border-bottom: 1px solid #e6e6e6;
             line-height: 1.6;
         }
-        .sample pre {margin: 0 !important; border-radius: 0;;}
+
+        .sample pre {
+            margin: 0 !important;
+            border-radius: 0;
+            ;
+        }
+
         .sample .desc {
             padding: 25px;
             border-bottom: 1px solid #e6e6e6;
         }
+
         .sample .desc dt {
             padding: 3px 0;
             margin-bottom: 6px;
             line-height: 1.6;
         }
+
         .sample .desc dd {
             padding: 3px 0 16px 0;
             line-height: 1.6;
         }
+
         .sample .sam {
             padding: 25px;
             border-bottom: 1px solid #e6e6e6;
         }
+
         .sample .sam dt {
             padding: 3px 0;
             margin-bottom: 6px;
         }
+
         .sample .sam dd {
             padding: 3px 0 16px 0;
         }
+
         ol {
             list-style: none;
             margin-bottom: 40px;
         }
+
         ol li {
             border: 1px solid #000;
             display: inline-block;
-            width: 40px; height: 40px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             text-align: center;
             line-height: 40px;
         }
+
         ol li.active {
             background: #000;
         }
+
         ol li.active a {
             color: #fff;
         }
     </style>
 </head>
+
 <body>
 
     <h1>Javscript 알고리즘</h1>
@@ -166,8 +204,8 @@
         <li><a href="javascriptT01.html"></a>01</li>
         <li><a href="javascriptT02.html"></a>02</li>
         <li><a href="javascriptT03.html"></a>03</li>
-        <li class="active"><a href="javascriptT04.html"></a>04</li>
-        <li><a href="javascriptT05.html"></a>05</li>
+        <li><a href="javascriptT04.html"></a>04</li>
+        <li class="active"><a href="javascriptT05.html"></a>05</li>
         <li><a href="javascriptT06.html"></a>06</li>
         <li><a href="javascriptT07.html"></a>07</li>
         <li><a href="javascriptT08.html"></a>08</li>
@@ -177,17 +215,20 @@
 
     <div id="sample1" class="sample">
         <h2>홀수<span class="dot"></span></h2>
-        <p class="problem">Q : 7개의 수가 주어지면 그 숫자 중 가장 작은 수를 출력하는 프로그램을 작성하시오!
-            예를 들어 7개의 자연수 12, 77, 38, 41, 53, 92, 85가 주어지면 이 중 홀수는
-            77, 41, 53, 85이므로 합은 256이 되고
-            최소값은 41이 됩니다.
+        <p class="problem">Q : 서울시는 6월 1일 부터 교통 혼잡을 막기 위해서 자동차 10부제를 실행한다. 자동차 10부제는 자동차
+            번호의 1의 자리 숫자와 날짜의 일의 자리 숫자가 일치하면 자동차의 운행을 금지하는 것이다.
+            예를 들어 자동차 번호의 1의 자리 숫자가 7이면 7일, 17일, 27일에 운행하지 못한다.
+            또한 자동차 번호의 1의 자리가 숫자가 0이면, 10일, 20일, 30일에는 운행하지 못한다.
+            여러분들이 일일 경찰관이 되어 10부제를 위반하는 자동차의 대수를 세는 봉사활동을 하려고 한다.
+            날짜의 1의 자리 숫자가 주어지고 7대의 자동차 번호의 끝 두자리 수가 주어졌을 때
+            위반하는 자동차의 대수를 출력하는 프로그램을 작성합니다.
         </p>
         <div class="desc">
             <dl>
                 <dt><i class="fa fa-info-circle" aria-hidden="true"></i>입력 설명</dt>
-                <dd>자연수 7개가 주어지고 주어지는 자연수는 100보다 작고 홀수는 한 개 이상 반드시 존재합니다.</dd>
+                <dd>날짜의 1의 자리 숫자가 주어지고, 7대의 자동차 번호의 끝 두자리가 주어진다.</dd>
                 <dt><i class="fa fa-info-circle" aria-hidden="true"></i>출력 설명</dt>
-                <dd>홀수의 합을 출력하고, 홀수 중에 최솟값을 출력합니다. </dd>
+                <dd>주어진 날짜와 자동차의 일의 자리 숫자를 보고 10부제를 위반하는 차량의 대수를 출력합니다. </dd>
             </dl>
             <!-- ul : 목록형 태그 : 순서 상관 없음
             ol : 목록형 태그 : 순서 상관 있음
@@ -196,9 +237,9 @@
         <div class="sam">
             <dl>
                 <dt><i class="fa fa-file-text-o" aria-hidden="true"></i>입력 예제</dt>
-                <dd>12 77 38 41 52 92 85</dd>
+                <dd>3<br>25 23 11 47 53 17 33</dd>
                 <dt><i class="fa fa-file-text-o" aria-hidden="true"></i>출력 예제</dt>
-                <dt>256 41</dt>
+                <dt>3</dt>
             </dl>
         </div>
         <div class="code">
@@ -211,38 +252,20 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/prism.min.js"></script>
     <script>
-        // let sum = 0;
-        // let arr = [12, 77, 38, 41, 53, 92, 85];
-        // function solution(num){
-        //     for(let i=0; i<arr.length; i++){
-        //     if(arr[i] % 2 === 0) continue;
-        //     sum += arr[i];
-        //     console.log(sum)
-        //     }
-        // }
-        // console.log(solution(arr))
+      let  day = 3;
+      let carNumber = [25, 23, 11, 47, 53, 17, 33];
 
-        function solution(num){
-            let answer = [];
-            let sum = 0;
-            let min = Number.MAX_SAFE_INTEGER;
-
-            for( let x of arr ){
-                if(x % 2 === 1){
-                    sum += x;
-
-                    if(x<min){
-                        min = x;
-                    }
-                }
-            }
-            answer.push(sum);
-            answer.push(min);
-
-            return answer;
-        }
-        let arr = [12, 77, 38, 41, 53, 92, 85];
-        console.log(solution(arr))
+      function solution(day, carNumber){
+          let answer = 0;
+          for(let i of carNumber){
+              if(i % 10 === day){
+                  answer++;
+              }
+          }
+          return answer;
+      }
+      console.log(solution(day, carNumber))
     </script>
 </body>
+
 </html>
