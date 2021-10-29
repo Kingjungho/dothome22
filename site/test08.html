@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/fonts.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'S-CoreDream';
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        .container {
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        .mainWrap {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 80px;
+        }
+        .rightMenu {
+            width: 70%;
+        }
+        .leftMenu .goverment {
+            font-size: 38px;
+            display: block;
+            margin-bottom: 50px;
+            position: relative;
+            margin-left: 40px;
+            color: rgba(0, 0, 0, 0.342);
+        }
+
+        .leftMenu .goverment:before {
+            position: absolute;
+            left: -50px;
+            content: '';
+            background-image: url(img/왼쪽메뉴.jpg);
+            background-size: cover;
+            width: 50px;
+            height: 50px;
+        }
+
+        .service {
+            display: inline-block;
+            display: flex;
+            flex-direction: column;
+            font-weight: bold;
+            font-size: 25px;
+            margin-bottom: 30px;
+        }
+
+        .service .serviceDesc > li{
+            display: block;
+            font-size: 15px;
+            margin-right: 20px;
+            color: #000;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.158);
+            padding: 20px 90px 20px 0;
+        }
+
+        .service.active {
+            color: rgba(19, 23, 255, 0.705);
+        }
+
+        .bannerRight img {
+            height: 450px;
+        }
+
+        .main {
+            text-align: center;
+            margin: 70px 0;
+        }
+
+        .mainTop {
+            font-size: 25px;
+            font-weight: bold;
+            color: rgba(0, 0, 0, 0.397);
+            margin-bottom: 30px;
+            cursor: pointer;
+        }
+
+        .mainTop>span.active {
+            color: #000;
+        }
+
+        .mainTitle:after {
+            content: '|';
+            margin: 0 15px;
+            vertical-align: 3px;
+        }
+
+        .mainMiddleWrap img {
+            width: 160px;
+            height: 156px;
+        }
+
+        .mainMiddle {
+            display: flex;
+            font-weight: bold
+        }
+
+        #nav {
+            margin-top: 100px;
+            width: 100%;
+            background-color: rgba(182, 176, 176, 0.089);
+            padding: 30px;
+            display: flex;
+            text-align: center;
+        }
+
+        .navBox {
+            border: 1px solid rgba(0, 0, 0, 0.082);
+            background-color: #fff;
+            padding: 20px;
+            margin-right: 30px;
+        }
+
+        .navBox:last-child {
+            margin-right: 0;
+        }
+
+        .navBox img {
+            width: 80%;
+        }
+
+        .navTitle {
+            font-size: 25px;
+            font-weight: bold;
+            position: relative;
+        }
+
+        .navTitle:after {
+            content: url(img/화살표.jpg);
+            position: absolute;
+            right: 0;
+            top: -15px;
+        }
+
+        .navText>div {
+            width: 190px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-size: 13px;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        #footer {
+            display: flex;
+            justify-content: space-between;
+            background-color: rgba(0, 0, 0, 0.096);
+            margin-top: 50px;
+            width: 100%;
+        }
+
+        .footerLeft img {
+            width: 150px;
+            height: 150px;
+        }
+
+        .footerLeft {
+            display: flex;
+        }
+
+        .footerLeft span {
+            padding: 30px;
+            line-height: 1.8;
+        }
+
+        .footerRight {
+            padding: 50px;
+        }
+
+        .footerRight img {
+            width: 250px;
+        }
+
+        .none {
+            display: none;
+        }
+
+        .sliderWrap {
+            height: 400px;
+            overflow: hidden;
+        }
+        .service .serviceDesc {
+            display: none;
+        }
+        .service .serviceDesc.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="mainWrap">
+            <div class="leftMenu">
+                <span class="goverment">정부24</span>
+                <ul>
+                    <li class="service">서비스
+                        <ul class="serviceDesc">
+                            <li><a href="#">분야별 정책정보</a></li>
+                            <li><a href="#">정책뉴스</a></li>
+                            <li><a href="#">연구보고서</a></li>
+                            <li><a href="#">간행물</a></li>
+                            <li><a href="#">정책자료</a></li>
+                        </ul>
+                    </li>
+                    <li class="service">정책정보
+                        <ul class="serviceDesc">
+                            <li><a href="#">분야별 정책정보</a></li>
+                            <li><a href="#">정책뉴스</a></li>
+                            <li><a href="#">연구보고서</a></li>
+                            <li><a href="#">간행물</a></li>
+                            <li><a href="#">정책자료</a></li>
+                        </ul>
+                    </li>
+                    <li class="service">기관정보
+                        <ul class="serviceDesc">
+                            <li><a href="#">분야별 정책정보</a></li>
+                            <li><a href="#">정책뉴스</a></li>
+                            <li><a href="#">연구보고서</a></li>
+                            <li><a href="#">간행물</a></li>
+                            <li><a href="#">정책자료</a></li>
+                        </ul>
+                    </li>
+                    <li class="service">고객센터
+                        <ul class="serviceDesc">
+                            <li><a href="#">분야별 정책정보</a></li>
+                            <li><a href="#">정책뉴스</a></li>
+                            <li><a href="#">연구보고서</a></li>
+                            <li><a href="#">간행물</a></li>
+                            <li><a href="#">정책자료</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="rightMenu">
+                <div class="bannerRight">
+                    <div class="sliderWrap">
+                        <div class="slider-inner">
+                            <div class="slider" data-name="이미지1"><img src="img/새로운 시작.jpg" alt="이미지1"></div>
+                            <div class="slider" data-name="이미지1"><img src="img/쿡킷 배너.png" alt="이미지1"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="main">
+                    <div class="mainTop">
+                        <span class="mainTitle active">자주 찾는 서비스</span>
+                        <span>키워드 서비스</span>
+                    </div>
+                    <div class="tabMenu1">
+                        <div class="mainMiddle">
+                            <div class="mainMiddleWrap">
+                                <img src="img/메뉴1.jpg" alt="메뉴1">
+                                <span class="mainDesc">주민등록표등본<br>(초본 교부)</span>
+                            </div>
+                            <div class="mainMiddleWrap">
+                                <img src="img/메뉴2.jpg" alt="메뉴1">
+                                <span class="mainDesc">토지(임야)대장<br>열람/등본 발급신청</span>
+                            </div>
+                            <div class="mainMiddleWrap">
+                                <img src="img/메뉴3.jpg" alt="메뉴1">
+                                <span class="mainDesc">건축물대장 등/초본<br>발급(열람) 신청</span>
+                            </div>
+                            <div class="mainMiddleWrap">
+                                <img src="img/메뉴4.jpg" alt="메뉴1">
+                                <span class="mainDesc">지밧엣 납세증명</span>
+                            </div>
+                            <div class="mainMiddleWrap">
+                                <img src="img/메뉴5.jpg" alt="메뉴1">
+                                <span class="mainDesc">지적도(임야도) 등본<br> 발급 및 알람</span>
+                            </div>
+                        </div>
+                        <div class="tabMenu2">
+                            <div class="mainMiddle">
+                                <div class="mainMiddleWrap">
+                                    <img src="img/메뉴1.jpg" alt="메뉴1">
+                                    <span class="mainDesc">지적도(임야도) 등본<br> 발급 및 알람</span>
+                                </div>
+                                <div class="mainMiddleWrap">
+                                    <img src="img/메뉴3.jpg" alt="메뉴1">
+                                    <span class="mainDesc">토지(임야)대장<br>열람/등본 발급신청</span>
+                                </div>
+                                <div class="mainMiddleWrap">
+                                    <img src="img/메뉴2.jpg" alt="메뉴1">
+                                    <span class="mainDesc">토지(임야)대장<br>열람/등본 발급신청</span>
+                                </div>
+                                <div class="mainMiddleWrap">
+                                    <img src="img/메뉴4.jpg" alt="메뉴1">
+                                    <span class="mainDesc">지밧엣 납세증명</span>
+                                </div>
+                                <div class="mainMiddleWrap">
+                                    <img src="img/메뉴5.jpg" alt="메뉴1">
+                                    <span class="mainDesc">지밧엣 납세증명</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <nav id="nav">
+                    <div class="navBox">
+                        <div class="navTitle">공지사항</div>
+                        <img src="img/푸터메뉴1.jpg" alt="">
+                        <div class="navText">
+                            <div>[어디서나 대학민원]호서대학교 팩스</div>
+                            <div>[전라북도 고창군]새올행정시스템</div>
+                            <div>[어디서나 대학민원]호서대학교 팩스</div>
+                        </div>
+                    </div>
+                    <div class="navBox">
+                        <div class="navTitle">자료실</div>
+                        <img src="img/푸터메뉴2.jpg" alt="">
+                        <div class="navText">
+                            <div>[어디서나 대학민원]호서대학교 팩스</div>
+                            <div>[전라북도 고창군]새올행정시스템</div>
+                            <div>[어디서나 대학민원]호서대학교 팩스</div>
+                        </div>
+                    </div>
+                    <div class="navBox">
+                        <div class="navTitle">QNA</div>
+                        <img src="img/푸터메뉴3.jpg" alt="">
+                        <div class="navText">
+                            <div>[어디서나 대학민원]호서대학교 팩스</div>
+                            <div>[전라북도 고창군]새올행정시스템</div>
+                            <div>[어디서나 대학민원]호서대학교 팩스</div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <footer id="footer">
+            <div class="footerLeft">
+                <img src="img/푸터메뉴마지막.jpg" alt="정부24">
+                <span>03171 서울특별시 세종대로 209 (세종로) 행정안전부<br>정부24 콜센터 1588-2188 정부민원안내콜센터 국번없이 110<br>Copyright of the
+                    interior and Safety. All Rights reaserved</span>
+            </div>
+            <div class="footerRight">
+                <img src="img/푸터메뉴마지막2.jpg" alt="">
+            </div>
+        </footer>
+
+        <script>
+            
+            //텝 메뉴
+            let $tabButton = document.querySelectorAll(".mainTop > span");
+            let $tabMenu = document.querySelectorAll(".mainMiddle");
+
+            $tabMenu[1].style.display = "none";
+            $tabButton.forEach((elem, index) => {
+                elem.addEventListener("click", function () {
+
+                    $tabButton.forEach(el => {
+                        el.classList.remove("active");
+                    });
+                    elem.classList.add("active");
+
+                    $tabMenu.forEach(element => {
+                        element.style.display = "none";
+                    })
+                    $tabMenu[index].style.display = "flex";
+                });
+            })
+
+          
+
+        const tabBtn = document.querySelectorAll('.service')
+        const tabMenu = document.querySelectorAll(".service .serviceDesc");
+        
+        tabBtn.forEach( ( element, index ) =>{
+            element.addEventListener("click",function(){
+                tabBtn.forEach((el)=>{
+                    el.classList.remove("active");
+                });
+                element.classList.add("active");
+
+                tabMenu.forEach(el => {
+                    el.style.display = "none";
+                });
+                tabMenu[index].style.display = "block";
+            });
+        })
+         
+
+
+
+
+
+            //슬라이드 이미지        
+            const sliderImg2 = document.querySelector(".slider-img2");
+            const sliderInner2 = document.querySelector(".slider-inner");
+            const slider = document.querySelector(".slider");
+
+            let currentIndex2 = 0;
+            let sliderHeight2 = slider.offsetHeight;
+            let sliderCount = document.querySelectorAll(".slider").length;
+
+            let sliderClone = sliderInner2.firstElementChild.cloneNode(true);
+            sliderInner2.appendChild(sliderClone)
+
+            setInterval(() => {
+                currentIndex2++;
+                sliderInner2.style.transition = "all 0.3s";
+                sliderInner2.style.transform = "translateY(" + -sliderHeight2 * currentIndex2 + "px)";
+
+                if (currentIndex2 == sliderCount) {
+                    setTimeout(() => {
+                        sliderInner2.style.transition = "0s";
+                        sliderInner2.style.transform = "translateY(0)";
+                    }, 300);
+                    currentIndex2 = 0;
+                }
+            }, 2000);
+
+
+        </script>
+</body>
+
+</html>
