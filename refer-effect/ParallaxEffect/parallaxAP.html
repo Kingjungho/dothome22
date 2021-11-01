@@ -123,7 +123,7 @@
 
     #section4 {
       /* background: blue; */
-      height: 13000px;
+      height: 16000px;
       z-index: 3000;
     }
 
@@ -497,10 +497,12 @@
         left: 15%;
         top: 70%;
       }
+
       .s4Text1 .circle7 {
         left: 90%;
         top: 50%;
       }
+
       .s4Text1 .circle8 {
         left: 80%;
         top: 20%;
@@ -614,106 +616,227 @@
             } */
       /* animation 2*/
       .particle-network-animation {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 100vh;
-  background-color: #171717;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 100vh;
+        background-color: #171717;
+      }
+
+      .particle-network-animation::before {
+        z-index: -2;
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-image: url(https://images.unsplash.com/photo-1450849608880-6f787542c88a?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=786a67dca1d8791d181bfd90b16240d9);
+        background-position: center center;
+        background-size: cover;
+        opacity: 0.2;
+      }
+
+      .glow {
+        z-index: -1;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        background-image: radial-gradient(circle closest-side, rgba(255, 255, 255, 0.025), transparent);
+      }
+
+      .glow-1 {
+        width: 150vw;
+        height: 150vh;
+        margin-top: -75vh;
+        margin-left: -75vw;
+        animation: glow-1-move 25s linear infinite both;
+      }
+
+      @keyframes glow-1-move {
+        from {
+          transform: translate(-100%, 100%);
+        }
+
+        to {
+          transform: translate(100%, -100%);
+        }
+      }
+
+      .glow-2 {
+        width: 100vw;
+        height: 100vh;
+        margin-top: -50vh;
+        margin-left: -50vw;
+        animation: glow-2-move 25s linear 8.3333333333s infinite both;
+      }
+
+      @keyframes glow-2-move {
+        from {
+          transform: translate(-100%, 0%);
+        }
+
+        to {
+          transform: translate(100%, 100%);
+        }
+      }
+
+      .glow-3 {
+        width: 120vw;
+        height: 120vh;
+        margin-top: -60vh;
+        margin-left: -60vw;
+        animation: glow-3-move 25s linear 16.6666666667s infinite both;
+      }
+
+      @keyframes glow-3-move {
+        from {
+          transform: translate(100%, 100%);
+        }
+
+        to {
+          transform: translate(0%, -100%);
+        }
+      }
+
+      .animation {
+        color: #fff;
+      }
+      .s4Text2 {
+  background:#363C49;
 }
-.particle-network-animation::before {
-  z-index: -2;
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-image: url(https://images.unsplash.com/photo-1450849608880-6f787542c88a?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=786a67dca1d8791d181bfd90b16240d9);
-  background-position: center center;
-  background-size: cover;
-  opacity: 0.2;
+.star {
+  display:block;
+  width:4px;
+  height:4px;
+  border-radius:50%;
+  background:#FFF;
+  top:100px;
+  left:400px;
+  position:relative;
+  transform-origin:100% 0;
+  animation:star-ani 1s infinite ease-out;
+  animation-direction: normal;
+  opacity:1;
+  z-index: 1000;
+}
+.star:after {
+  content:'';
+  position:absolute;
+  top:0px;
+  left:4px;
+  border:2px solid #F00;
+  border-width:2px 150px 2px 150px; 
+  border-color:transparent transparent transparent #FFF;
+  transform:rotate(-45deg) translate3d(1px, -1px, 0);
+  transform-origin:0% 100%;
+  animation:shooting-ani 1s infinite  ease-out;
+  animation-direction: normal;
 }
 
-.glow {
-  z-index: -1;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  background-image: radial-gradient(circle closest-side, rgba(255, 255, 255, 0.025), transparent);
+.pink {
+  top:150px;
+  left:500px;
+  background:#ff5a99;
+  animation-delay:1.8s;
+}
+.pink:after {
+  border-color:transparent transparent transparent #ff5a99 ;
+  animation-delay:1.8s;
 }
 
-.glow-1 {
-  width: 150vw;
-  height: 150vh;
-  margin-top: -75vh;
-  margin-left: -75vw;
-  animation: glow-1-move 25s linear infinite both;
+.blue {
+  top:100px;
+  left:450px;
+  background:#4dabff ;
+  animation-delay:4.5s;
+}
+.blue:after {
+  border-color:transparent transparent transparent #4dabff;
+  animation-delay:4.5s;
 }
 
-@keyframes glow-1-move {
-  from {
-    transform: translate(-100%, 100%);
-  }
-  to {
-    transform: translate(100%, -100%);
-  }
+.yellow {
+  top:50px;
+  left:600px;
+  background:#ffcd5c;
+  animation-delay:5.8s;
 }
-.glow-2 {
-  width: 100vw;
-  height: 100vh;
-  margin-top: -50vh;
-  margin-left: -50vw;
-  animation: glow-2-move 25s linear 8.3333333333s infinite both;
+.yellow:after {
+  border-color:transparent transparent transparent #ffcd5c;
+  animation-delay:5.8s;
 }
 
-@keyframes glow-2-move {
-  from {
-    transform: translate(-100%, 0%);
+@-webkit-keyframes shooting-ani {
+  0% {
+    
   }
-  to {
-    transform: translate(100%, 100%);
+  50% {
+    transform:scale(1) rotate(-45deg) translate(0px, 0px);
   }
-}
-.glow-3 {
-  width: 120vw;
-  height: 120vh;
-  margin-top: -60vh;
-  margin-left: -60vw;
-  animation: glow-3-move 25s linear 16.6666666667s infinite both;
+  100% {
+    transform:scale(0.5) rotate(-45deg) translate(0px, -1px);
+  }
 }
 
-@keyframes glow-3-move {
-  from {
-    transform: translate(100%, 100%);
+@-webkit-keyframes star-ani {
+  0% {
+    opacity:0;
+    transform:scale(0) rotate(0) translate3d(0, 0, 0);
   }
-  to {
-    transform: translate(0%, -100%);
+  50% {
+    opacity:1;
+    transform:scale(1) rotate(0) translate3d(-200px, 200px, 0);
+  }
+  100% {
+    opacity:0;
+    transform:scale(1) rotate(0) translate3d(-300px, 300px, 0);
   }
 }
     </style>
     <section id="section4">
       <div class="s4Text1" data-39999="display:none" data-40000="display:block" data-43000="display:block"
         data-48500="display:none">
-        <div class="circle1 fixed" data-40000="width:0vw; height: 0vw; background-color:#e53935;" data-43000="width:200vw; height: 200vw;" >
+        <div class="circle1 fixed" data-40000="width:0vw; height: 0vw; background-color:#e53935;"
+          data-43000="width:200vw; height: 200vw;">
         </div>
-        <div class="circle2 fixed" data-40050="width:0vw; height: 0vw; background-color:#00695c;" data-42000="width:200vw; height: 200vw">
+        <div class="circle2 fixed" data-40050="width:0vw; height: 0vw; background-color:#00695c;"
+          data-42000="width:200vw; height: 200vw">
         </div>
-        <div class="circle3 fixed" data-40100="width:0vw; height: 0vw; background-color:#6a1b9a;" data-43000="width:200vw; height: 200vw">
+        <div class="circle3 fixed" data-40100="width:0vw; height: 0vw; background-color:#6a1b9a;"
+          data-43000="width:200vw; height: 200vw">
         </div>
-        <div class="circle4 fixed" data-40150="width:0vw; height: 0vw; background-color:#d1c4e9 ;" data-44000="width:200vw; height: 200vw">
+        <div class="circle4 fixed" data-40150="width:0vw; height: 0vw; background-color:#d1c4e9 ;"
+          data-44000="width:200vw; height: 200vw">
         </div>
-        <div class="circle5 fixed" data-40200="width:5vw; height: 5vw; background-color:#1565c0;" data-46000="width:200vw; height: 200vw">
+        <div class="circle5 fixed" data-40200="width:5vw; height: 5vw; background-color:#1565c0;"
+          data-45000="width:200vw; height: 200vw">
         </div>
-        <div class="circle6 fixed" data-40250="width:5vw; height: 5vw; background-color:#ad1457;" data-47000="width:200vw; height: 200vw">
+        <div class="circle6 fixed" data-40250="width:5vw; height: 5vw; background-color:#ad1457;"
+          data-46000="width:200vw; height: 200vw">
         </div>
-        <div class="circle7 fixed" data-40250="width:5vw; height: 5vw; background-color:green;" data-47000="width:200vw; height: 200vw">
+        <div class="circle7 fixed" data-40250="width:5vw; height: 5vw; background-color:green;"
+          data-46000="width:200vw; height: 200vw">
         </div>
-        <div class="circle8 fixed" data-40250="width:15vw; height: 15vw; background-color:#212121" data-46800="width:200vw; height: 200vw">
+        <div class="circle8 fixed" data-40250="width:15vw; height: 15vw; background-color:#212121"
+          data-44000="width:200vw; height: 200vw">
         </div>
       </div>
-      <div class="s4Text2">
-        <!-- <div class="scene"
+      <div class="s4Text2" data-44000="display:none" data-44001="display:block" data-60000="display:block"
+        data-60001="display:none">
+        <div class='particle-network-animation' data-42000="opacity:0"
+        data-43000="opacity:0.3"
+        data-45000="opacity:1">
+        </div>
+        <span class="star"
+        data-47000="display:none"
+        data-47001="display:block"></span>
+<span class="star pink"></span>
+<span class="star blue"></span>
+<span class="star yellow"></span>
+      </div>
+      <!-- <div class="scene"
                 data-43000 = "opacity:0.2"
                 data-51000 = "opacity:1"
                 data-51800 = "opacity:0">
@@ -732,12 +855,8 @@
                         <div class="wall wall-back"></div>
                     </div>
                 </div> -->
-        <div class='particle-network-animation'
-                data-44000 = "opacity:0"
-                data-45000 = "opacity:1">
-                </div>
-       
-      </div>
+
+
 
 
     </section><!-- //section4 -->

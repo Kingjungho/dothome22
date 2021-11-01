@@ -15,6 +15,7 @@
             font-family: 'S-CoreDream';
             list-style: none;
         }
+
         a {
             text-decoration: none;
             color: #000;
@@ -30,9 +31,11 @@
             justify-content: space-between;
             margin-top: 80px;
         }
+
         .rightMenu {
             width: 70%;
         }
+
         .leftMenu .goverment {
             font-size: 38px;
             display: block;
@@ -61,7 +64,7 @@
             margin-bottom: 30px;
         }
 
-        .service .serviceDesc > li{
+        .service .serviceDesc>li {
             display: block;
             font-size: 15px;
             margin-right: 20px;
@@ -196,9 +199,17 @@
             height: 400px;
             overflow: hidden;
         }
+
+        .slider img {
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+        }
+
         .service .serviceDesc {
             display: none;
         }
+
         .service .serviceDesc.active {
             display: block;
         }
@@ -280,7 +291,7 @@
                             </div>
                             <div class="mainMiddleWrap">
                                 <img src="img/메뉴4.jpg" alt="메뉴1">
-                                <span class="mainDesc">지밧엣 납세증명</span>
+                                <span class="mainDesc">지방세 납세증명</span>
                             </div>
                             <div class="mainMiddleWrap">
                                 <img src="img/메뉴5.jpg" alt="메뉴1">
@@ -291,7 +302,7 @@
                             <div class="mainMiddle">
                                 <div class="mainMiddleWrap">
                                     <img src="img/메뉴1.jpg" alt="메뉴1">
-                                    <span class="mainDesc">지적도(임야도) 등본<br> 발급 및 알람</span>
+                                    <span class="mainDesc"><br>지적도(임야도) 등본<br>발급 및 알람</span>
                                 </div>
                                 <div class="mainMiddleWrap">
                                     <img src="img/메뉴3.jpg" alt="메뉴1">
@@ -303,11 +314,11 @@
                                 </div>
                                 <div class="mainMiddleWrap">
                                     <img src="img/메뉴4.jpg" alt="메뉴1">
-                                    <span class="mainDesc">지밧엣 납세증명</span>
+                                    <span class="mainDesc">지방세 납세증명</span>
                                 </div>
                                 <div class="mainMiddleWrap">
                                     <img src="img/메뉴5.jpg" alt="메뉴1">
-                                    <span class="mainDesc">지밧엣 납세증명</span>
+                                    <span class="mainDesc">지방세 납세증명</span>
                                 </div>
                             </div>
                         </div>
@@ -356,19 +367,18 @@
         </footer>
 
         <script>
-            
             //텝 메뉴
             let $tabButton = document.querySelectorAll(".mainTop > span");
             let $tabMenu = document.querySelectorAll(".mainMiddle");
 
             $tabMenu[1].style.display = "none";
-            $tabButton.forEach((elem, index) => {
-                elem.addEventListener("click", function () {
+            $tabButton.forEach((element, index) => {
+                element.addEventListener("click", function () {
 
                     $tabButton.forEach(el => {
                         el.classList.remove("active");
                     });
-                    elem.classList.add("active");
+                    element.classList.add("active");
 
                     $tabMenu.forEach(element => {
                         element.style.display = "none";
@@ -377,57 +387,55 @@
                 });
             })
 
-          
 
-        const tabBtn = document.querySelectorAll('.service')
-        const tabMenu = document.querySelectorAll(".service .serviceDesc");
-        
-        tabBtn.forEach( ( element, index ) =>{
-            element.addEventListener("click",function(){
-                tabBtn.forEach((el)=>{
-                    el.classList.remove("active");
-                });
-                element.classList.add("active");
 
-                tabMenu.forEach(el => {
-                    el.style.display = "none";
+            const tabBtn = document.querySelectorAll('.service')
+            const tabMenu = document.querySelectorAll(".service .serviceDesc");
+
+            tabBtn.forEach((element, index) => {
+                element.addEventListener("click", function () {
+                    tabBtn.forEach((el) => {
+                        el.classList.remove("active");
+                    });
+                    element.classList.add("active");
+
+                    tabMenu.forEach(el => {
+                        el.style.display = "none";
+                    });
+                    tabMenu[index].style.display = "block";
                 });
-                tabMenu[index].style.display = "block";
-            });
-        })
-         
+            })
+
 
 
 
 
 
             //슬라이드 이미지        
-            const sliderImg2 = document.querySelector(".slider-img2");
-            const sliderInner2 = document.querySelector(".slider-inner");
+            const sliderImg = document.querySelector(".sliderWrap");
+            const sliderInner = document.querySelector(".slider-inner");
             const slider = document.querySelector(".slider");
 
-            let currentIndex2 = 0;
-            let sliderHeight2 = slider.offsetHeight;
+            let currentIndex = 0;
+            let sliderHeight = slider.offsetHeight;
             let sliderCount = document.querySelectorAll(".slider").length;
 
-            let sliderClone = sliderInner2.firstElementChild.cloneNode(true);
-            sliderInner2.appendChild(sliderClone)
+            let sliderClone = sliderInner.firstElementChild.cloneNode(true);
+            sliderInner.appendChild(sliderClone)
 
             setInterval(() => {
-                currentIndex2++;
-                sliderInner2.style.transition = "all 0.3s";
-                sliderInner2.style.transform = "translateY(" + -sliderHeight2 * currentIndex2 + "px)";
+                currentIndex++;
+                sliderInner.style.transition = "all 0.3s";
+                sliderInner.style.transform = "translateY(" + -sliderHeight * currentIndex + "px)";
 
-                if (currentIndex2 == sliderCount) {
+                if (currentIndex == sliderCount) {
                     setTimeout(() => {
-                        sliderInner2.style.transition = "0s";
-                        sliderInner2.style.transform = "translateY(0)";
+                        sliderInner.style.transition = "0s";
+                        sliderInner.style.transform = "translateY(0)";
                     }, 300);
-                    currentIndex2 = 0;
+                    currentIndex = 0;
                 }
             }, 2000);
-
-
         </script>
 </body>
 
