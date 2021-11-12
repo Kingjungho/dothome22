@@ -202,6 +202,7 @@ $gradient6: linear-gradient(to top, #d299c2 0%, #fef9d7 100%);
     @include positionCenter;
     bottom: 10px;
     top: auto;
+    margin-bottom: 70px;
 
     li {
         list-style: none;
@@ -222,6 +223,7 @@ $gradient6: linear-gradient(to top, #d299c2 0%, #fef9d7 100%);
             font-family: $font-Nexon1;
             box-shadow: inset 0 0 0 #fff;
             transition: all 0.4s;
+            
 
             &:hover {
                 box-shadow: inset 0 -100px 0 #fff;

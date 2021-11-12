@@ -251,6 +251,7 @@ figcaption {
   top: 50%;
   bottom: 10px;
   top: auto;
+  margin-bottom: 70px;
 }
 
 .nav li {
