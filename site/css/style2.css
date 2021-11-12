@@ -52,7 +52,7 @@ body {background: url(../img/header_bg.jpg) repeat-x center top}
 }
 .header_tit h1:hover {
     box-shadow: 
-        inset -9em 0 0 0 #257fac,
+        inset -12em 0 0 0 #257fac,
         inset 9em 0 0 0 #257fac;
 }
 .header_tit a{padding: 10px 20px; display: inline-block; margin-top: -7px;
