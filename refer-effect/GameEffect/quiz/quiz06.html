@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
     <title>Quiz</title>
+
+    <!-- font-aswesome - icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+
     <style>
+        /* 둥근모꼴 폰트 */
         @font-face {
             font-family: 'DungGeunMo';
             src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff') format('woff');
@@ -15,96 +18,80 @@
             font-style: normal;
         }
 
-        *,
-        *:before,
-        *:after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        /* 모눈종이 모양 백그라운드 */
+        *, *:before, *:after {
+            margin:0; 
+            padding:0;
+            box-sizing:border-box;
         }
-
         body {
             font-family: 'DungGeunMo';
+            padding: 100px 0;
+
+            /* 배경색 */
             background-color: #f6f6f6;
             background-image:
-                linear-gradient(90deg, #cdcccc 0px, #cdcccc 1px, transparent 1px, transparent 99px, transparent 100px),
-                linear-gradient(#cdcccc 0px, #cdcccc 1px, transparent 1px, transparent 99px, transparent 100px),
-                linear-gradient(#e0e0e0 0px, #e0e0e0 1px, transparent 1px, transparent 99px, transparent 100px),
-                linear-gradient(90deg, #e0e0e0 0px, #e0e0e0 1px, transparent 1px, transparent 99px, transparent 100px),
-                linear-gradient(transparent 0px, transparent 5px, #f6f6f6 5px, #f6f6f6 95px, transparent 95px, transparent 100px),
-                linear-gradient(90deg, #e0e0e0 0px, #e0e0e0 1px, transparent 1px, transparent 99px, #e0e0e0 99px, #e0e0e0 100px),
-                linear-gradient(90deg, transparent 0px, transparent 5px, #f6f6f6 5px, #f6f6f6 95px, transparent 95px, transparent 100px),
-                linear-gradient(transparent 0px, transparent 1px, #f6f6f6 1px, #f6f6f6 99px, transparent 99px, transparent 100px),
-                linear-gradient(#cdcccc, #cdcccc);
-            background-size: 100px 100%, 100% 100px, 100% 10px, 10px 100%, 100% 100px, 100px 100%, 100px 100%, 100px 100px, 100px 100px;
-            padding: 100px 0px;
+            linear-gradient(90deg, #cdcccc 0px, #cdcccc 1px, transparent 1px, transparent 99px,  transparent 100px),
+            linear-gradient(#cdcccc 0px, #cdcccc 1px, transparent 1px, transparent 99px,  transparent 100px),
+            linear-gradient(#e0e0e0 0px, #e0e0e0 1px, transparent 1px, transparent 99px,  transparent 100px),
+            linear-gradient(90deg, #e0e0e0 0px, #e0e0e0 1px, transparent 1px, transparent 99px,  transparent 100px),
+            linear-gradient(transparent 0px, transparent 5px, #f6f6f6 5px, #f6f6f6 95px, transparent 95px, transparent 100px),
+            linear-gradient(90deg, #e0e0e0 0px, #e0e0e0 1px, transparent 1px, transparent 99px, #e0e0e0 99px, #e0e0e0 100px),
+            linear-gradient(90deg, transparent 0px, transparent 5px, #f6f6f6 5px, #f6f6f6 95px, transparent 95px, transparent 100px),
+            linear-gradient(transparent 0px, transparent 1px, #f6f6f6 1px, #f6f6f6 99px, transparent 99px, transparent 100px),
+            linear-gradient(#cdcccc, #cdcccc);
+            background-size:100px 100%, 100% 100px, 100% 10px, 10px 100%, 100% 100px, 100px 100%, 100px 100%, 100px 100px, 100px 100px;
         }
 
+        /* 리셋 */
         a {
             text-decoration: none;
         }
-
         li {
             list-style: none;
         }
 
+        /* header */
         header {
             position: fixed;
-            left: 0;
-            top: 0;
+            left: 0; top: 0;
             width: 100%;
             background: #262626;
             color: #fff;
             display: flex;
-            align-items: center;
             padding: 10px;
+            align-items: center;
             z-index: 10;
         }
-
         header::before {
             content: '';
             width: calc(100% - 10px);
             height: calc(100% - 10px);
             border: 4px ridge #a3a3a3;
             position: absolute;
-            left: 5px;
-            top: 5px;
+            left: 5px; top: 5px;
             z-index: -1;
         }
-
         header h1 {
             padding: 5px 30px 5px 20px;
         }
 
-
         nav ul {
             display: flex;
         }
-
         nav li {
             margin-right: 30px;
         }
-
         nav li a {
             color: rgb(171, 171, 171);
         }
-
         nav li a:hover {
             border-bottom: 1px solid rgb(171, 171, 171);
         }
-
-        .ir {
-            background: url(dot.jpg);
-            display: block;
-            width: 10px;
-            height: 10px;
-        }
-
         nav li.active a {
             color: #fff;
         }
-
-        nav li a:hover a {
+        nav li.active a:hover {
             border-bottom: 1px solid #fff;
         }
 
@@ -117,37 +104,35 @@
             height: 30px;
             display: none;
         }
-
         .ham span {
             width: 20px;
             height: 3px;
             background: #fff;
             display: block;
             position: absolute;
-            left: 5px;
-            top: 13px;
+            left: 5px; top: 13px;
+            border-radius: 100px;
         }
-
         .ham span::before {
             content: '';
             width: 20px;
             height: 3px;
             background: #fff;
             position: absolute;
-            left: 0;
-            top: 7px;
+            left: 0; top: 7px;
+            border-radius: 100px;
         }
-
         .ham span::after {
             content: '';
             width: 20px;
             height: 3px;
             background: #fff;
             position: absolute;
-            left: 0;
-            bottom: 7px;
+            left: 0; bottom: 7px;
+            border-radius: 100px;
         }
 
+        /* quiz-wrap */
         .quizWrap {
             max-width: 500px;
             width: 100%;
@@ -156,7 +141,6 @@
             border: 8px ridge #cacaca;
             position: relative;
         }
-
         .quizWrap h2 {
             font-size: 14px;
             text-align: center;
@@ -166,59 +150,53 @@
             padding: 3px;
             position: relative;
         }
-
         .quizWrap h2::before {
             content: '';
             position: absolute;
-            left: 2px;
-            top: 2px;
-            width: 15px;
-            height: 15px;
-            background: url(dot.jpg) no-repeat;
+            left: 2px; top: 2px;
+            width: 15px; height: 15px;
+            background: url(img/dot.jpg) no-repeat;
             background-size: cover;
         }
-
         .quizWrap h2::after {
             content: '';
             position: absolute;
-            right: 2px;
-            top: 2px;
-            width: 35px;
-            height: 15px;
-            background: url(dot.jpg) no-repeat -14px;
+            right: 2px; top: 2px;
+            width: 35px; height: 15px;
+            background: url(img/dot.jpg) no-repeat -14px;
             background-size: cover;
         }
-
         .question__quiz {
             border: 4px ridge #cacaca;
             min-height: 400px;
         }
-
         .question__title {
-            padding: 20px;
-            font-size: 25px;
+            font-size: 34px;
+            border-bottom: 6px ridge #cacaca;
+            position: relative;
+            padding: 20px 0 0 0;
         }
-
-        .question__title__q .num {
+        .question__title__num {
             color: #A5E151;
             font-size: 34px;
             text-shadow: 1px 1px 1px #000;
+            padding-left: 20px;
         }
-
-        .question__title__q .num::after {
+        .question__title__num::after {
             content: '.';
         }
-
         .question__title__ask {
             font-size: 24px;
             line-height: 1.4;
+            padding: 10px 20px 10px 20px;
+            display: inline-block;
         }
 
+        /* answer */
         .question__answer {
             background: #E8E7E8;
             padding: 20px;
         }
-
         .question__answer__next {
             background: #cacaca;
             text-align: center;
@@ -230,15 +208,12 @@
             font-family: 'DungGeunMo';
             display: none;
         }
-
         .question__answer__next.show {
             display: block;
         }
-
         .question__answer__next:active {
             background: #a3a3a3;
         }
-
         .question__answer__view {
             text-align: center;
             border: 6px groove #fff;
@@ -246,123 +221,96 @@
             font-size: 22px;
             text-shadow: 1px 1px 1px #fff;
         }
-
         .question__answer__ex {
             padding: 20px;
             line-height: 1.4;
         }
 
+        /* selects */
         .question__answer__selects {
-            padding: 10px 0;
+            padding-bottom: 10px;
         }
-
         .question__answer__selects label {
             display: flex;
             position: relative;
             overflow: hidden;
             margin-bottom: 5px;
         }
-
         .question__answer__selects label span {
             font-size: 20px;
             line-height: 1;
             padding: 11px 35px 11px 50px;
             border-radius: 50px;
             position: relative;
-            color: #000000;
             min-height: 40px;
         }
-
         .question__answer__selects label span:hover {
             background-color: #d6ecb6;
         }
-
         .question__answer__selects label span::before {
             content: '';
             width: 30px;
             height: 30px;
+            position: absolute;
+            left: 7px; top: 6px;
             background: #fff;
             border-radius: 50%;
-            box-shadow: inset 0 0 0 3px #A5E151;
-            position: absolute;
-            left: 7px;
-            top: 6px;
-            transition: 0.25s ease;
+            box-shadow: inset 0 0 0 3px #000;
+            transition: 0.25s ease
         }
-
         .question__answer__selects label input {
             position: absolute;
             left: -9999px;
         }
-
-        /* .question__answer__selects input:checked + span {
-            background-color: #d6ecb6;
-        }
-        .question__answer__selects input:checked + span::before {
-            box-shadow: inset 0 0 0 10px #A5E151;
-        } */
         .question__answer__selects label span {
             width: 100%;
+            position: relative;
         }
-
         .question__answer__selects label span i {
             position: absolute;
-            right: 10px;
-            top: 50%;
+            right: 10px; top: 50%;
             transform: translateY(-50%);
         }
-
-        .question__timer {
-            border-bottom: 6px ridge #cacaca;
-            text-align: left;
-
+        /* .question__answer__selects label input:checked + span {
+            background-color: #d6ecb6;
         }
+        .question__answer__selects label input:checked + span::before {
+            box-shadow: inset 0 0 0 15px #A5E151;
+        } */
 
-        .question__timer__sec {
-            display: inline-block;
-            width: 50px;
-            height: 50px;
-            color: rgb(0, 0, 0);
-            text-align: center;
-            line-height: 50px;
-            font-size: 20px;
-            margin: 0 0 6px 10px;
-            background: rgb(233, 233, 233);
-            border-radius: 50px;
-        }
-
-        .question__timer__line {
-            width: 100%;
-            height: 3px;
-            background: #fc0519;
-            padding-bottom: 5px;
-        }
-
-        .question__timer #timer {
-            margin-left: 25px;
-            font-weight: bold;
-        }
-
-        .question__answer__selects label.correct input+span {
+        .question__answer__selects label.correct input + span {
             background-color: #bce284;
         }
-
-        .question__answer__selects label.correct input+span:before {
-            box-shadow: inset 0 0 0 10px #91cd3d;
+        .question__answer__selects label.correct input + span::before {
+            box-shadow: inset 0 0 0 15px #A5E151;
         }
-
-        .question__answer__selects label.incorrect input+span {
+        .question__answer__selects label.incorrect input + span {
             background-color: #f18080;
         }
-
-        .question__answer__selects label.incorrect input+span:before {
-            box-shadow: inset 0 0 0 10px #f18080;
+        .question__answer__selects label.incorrect input + span::before {
+            box-shadow: inset 0 0 0 15px #ea4646;
         }
-
         .question__answer__selects label.disabled {
             pointer-events: none;
         }
 
+        .question__timer__sec {
+            display: inline-block;
+            width: 50px; height: 50px;
+            background: #000;
+            color: #fff;
+            border-radius: 50%;
+            line-height: 50px;
+            font-size: 20px;
+            text-align: center;
+            position: absolute;
+            right: 10px; top: 10px;
+        }
+        .question__timer__line {
+            width: 100%; 
+            height: 5px;
+            background: #A5E151;
+        }
         .question__answer__count {
             text-align: center;
             padding-bottom: 20px;
@@ -372,558 +320,124 @@
         .question__start {
             font-size: 30px;
             position: absolute;
-            left: 50%;
-            top: 50%;
+            left: 50%; top: 50%;
             transform: translate(-50%, -50%);
-            width: 100%;
-            height: 100%;
-            display: flex;
+            width: 100%; height: 100%;
+            backdrop-filter: blur(10px);
             align-items: center;
             justify-content: center;
-            backdrop-filter: blur(10px);
             display: none;
         }
-
         .question__start.active {
             display: flex;
         }
-
         .question__start span {
             background: #fff;
-            padding: 10px;
+            padding: 10px 20px;
             border-radius: 100px;
             cursor: pointer;
-            margin-bottom: 150px;
         }
 
         .question__result {
             position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
+            left: 0; top: 0;
             width: 100%;
             height: 100%;
             background: #ccc;
-            text-align: center;
-            line-height: 35px;
+            padding: 30px;
             display: none;
         }
-
         .question__result.show {
             display: block;
         }
-
-        .question__result .ment {
+        .question__result .title {
             font-size: 30px;
-            margin-top: 145px;
+            line-height: 1.4;
+            padding-bottom: 20px;
         }
-
         .question__result .score {
-            font-size: 16.5px;
+            padding: 10px 0;
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+        .question__result .score span {
+            color: red;
+        }
+        .question__result button {
+            background: #fff;
+            padding: 20px;
+            font-family: 'DungGeunMo';
         }
 
-        .question__result .restart {
-            padding: 8px;
-            background-color: #fff;
-            font-weight: bold;
-        }
-
-        .question__result .quit {
-            padding: 8px;
-            background-color: #fff;
-            font-weight: bold;
-        }
-
-        @media (max-width:1200px) {
+        /* 미디어쿼리 */
+        @media(max-width: 1200px){
             .ham {
                 display: block;
             }
-
             nav {
                 position: absolute;
-                top: 50px;
-                left: 0;
+                top: 60px; left: 0;
                 background: #262626;
                 width: 100%;
                 display: none;
             }
-
             nav.show {
                 display: block;
             }
-
             nav ul {
                 display: block;
                 position: relative;
                 padding: 20px;
                 z-index: 1;
             }
-
             nav ul::before {
                 content: '';
                 width: calc(100% - 10px);
                 height: calc(100% - 10px);
                 border: 4px ridge #a3a3a3;
                 position: absolute;
-                left: 5px;
-                top: 5px;
+                left: 5px; top: 5px;
                 z-index: -1;
             }
-
-            nav li {
+            nav ul li {
                 padding: 5px;
-            }
-        }
-
-        /* dog */
-        .card {
-            position: relative;
-            width: 360px;
-            margin: 20px auto;
-        }
-
-        .dog .head,
-        .dog .body {
-            position: relative;
-            width: 115px;
-        }
-
-        .dog .head {
-            height: 115px;
-            border-radius: 50% 50% 0 0;
-            margin: 0 auto;
-        }
-
-        .dog .ears {
-            position: relative;
-            top: -14%;
-            width: 100%;
-        }
-
-        .dog .ears::before,
-        .dog .ears::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            width: 35px;
-            height: 70px;
-            background: #CB7A1D;
-            border-top: 11px solid #F7AA2B;
-            border-left: 7px solid #F7AA2B;
-            border-right: 7px solid #F7AA2B;
-        }
-
-        .dog .ears::before {
-            left: 0;
-            border-radius: 50% 45% 0 0;
-        }
-
-        .dog .ears::after {
-            right: 0;
-            border-radius: 45% 50% 0 0;
-        }
-
-        .dog .face {
-            position: absolute;
-            background: #F7AA2B;
-            width: 100%;
-            height: 100%;
-            border-radius: 50% 50% 0 0;
-        }
-
-        .dog .face::before,
-        .dog .face::after {
-            content: "";
-            display: block;
-            margin: auto;
-            background: #FEFEFE;
-        }
-
-        .dog .face::before {
-            width: 15px;
-            height: 35px;
-            margin-top: 24px;
-            border-radius: 20px 20px 0 0;
-        }
-
-        .dog .face::after {
-            position: absolute;
-            bottom: -1px;
-            left: 0;
-            right: 0;
-            width: 60px;
-            height: 65px;
-            border-radius: 45% 45% 0 0;
-        }
-
-        .dog .eyes {
-            position: relative;
-            top: 29%;
-            text-align: center;
-        }
-
-        .dog .eyes::before,
-        .dog .eyes::after {
-            content: "";
-            display: inline-block;
-            width: 12px;
-            height: 12px;
-            border-radius: 100%;
-            background: #451d1c;
-            margin: 0 14.5%;
-        }
-
-        .dog .teardrop {
-            position: absolute;
-            top: 125%;
-            left: 19%;
-            width: 6px;
-            height: 6px;
-            border-radius: 0 50% 50% 50%;
-            transform: rotate(45deg);
-            background: #FEFEFE;
-            visibility: hidden;
-        }
-
-        .dog .nose {
-            position: relative;
-            top: 35%;
-            width: 16px;
-            height: 8px;
-            border-radius: 35px 35px 65px 65px;
-            background: #451d1c;
-            margin: auto;
-        }
-
-        .dog .mouth {
-            position: relative;
-            top: 34.5%;
-            width: 4px;
-            height: 6px;
-            margin: 0 auto;
-            text-align: center;
-            background: #451d1c;
-        }
-
-        .dog .mouth::before,
-        .dog .mouth::after {
-            content: "";
-            position: absolute;
-            top: -4px;
-            width: 18px;
-            height: 18px;
-            border-radius: 50%;
-            border: 4px solid #451d1c;
-            border-left-color: transparent;
-            border-top-color: transparent;
-            z-index: 2;
-        }
-
-        .dog .mouth::before {
-            transform: translateX(-89%) rotate(45deg);
-        }
-
-        .dog .mouth::after {
-            transform: translateX(-2px) rotate(45deg);
-        }
-
-        .dog .tongue {
-            position: relative;
-            z-index: 1;
-        }
-
-        .dog .tongue::before,
-        .dog .tongue::after {
-            content: "";
-            position: absolute;
-        }
-
-        .dog .tongue::before {
-            top: 10px;
-            left: -7px;
-            width: 18px;
-            height: 0;
-            border-radius: 50%;
-            background: #451d1c;
-            z-index: -1;
-        }
-
-        .dog .tongue::after {
-            top: 14px;
-            left: -4px;
-            width: 12px;
-            height: 0;
-            border-radius: 20px;
-            background: #F5534F;
-            z-index: 5;
-        }
-
-        .dog .chin {
-            position: relative;
-            top: 47.5%;
-            margin: 0 auto;
-            width: 12px;
-            height: 12px;
-            border-top: 10px solid #e8e7ec;
-            border-left: 5px solid transparent;
-            border-right: 5px solid transparent;
-            border-radius: 2px;
-            z-index: 0;
-        }
-
-        .dog .body {
-            position: relative;
-            height: 139px;
-            margin: auto;
-            z-index: 0;
-        }
-
-        .dog .body::before,
-        .dog .body::after {
-            content: "";
-            position: absolute;
-            top: -1px;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            display: block;
-            width: 100%;
-            margin: auto;
-            background: #F7AA2B;
-        }
-
-        .dog .body::after {
-            top: -2px;
-            bottom: -1px;
-            width: 60px;
-            background: #FEFEFE;
-        }
-
-        .dog .tail {
-            position: absolute;
-            left: -60%;
-            bottom: 1px;
-            background: #F7AA2B;
-            width: 93px;
-            height: 15px;
-            transform: rotate(45deg);
-            transform-origin: 100% 50%;
-            border-radius: 25px 0 0 25px;
-            z-index: -2;
-        }
-
-        .dog .legs {
-            position: absolute;
-            bottom: 0;
-            left: -10%;
-            width: 120%;
-            height: 15%;
-            background: #F7AA2B;
-            border-radius: 10px 10px 0 0;
-        }
-
-        .dog .legs::before,
-        .dog .legs::after {
-            content: "";
-            position: absolute;
-            bottom: 1px;
-            background: #CB7A1D;
-            z-index: -1;
-        }
-
-        .dog .legs::before {
-            left: -7.5%;
-            width: 115%;
-            height: 55%;
-            border-radius: 5px 5px 0 0;
-        }
-
-        .dog .legs::after {
-            left: -3.5%;
-            width: 107%;
-            height: 250%;
-            border-radius: 20px 20px 35px 35px;
-        }
-
-
-        .card.good .face::before {
-            margin-top: 10px;
-        }
-
-        .card.good .face::after {
-            height: 85px;
-        }
-
-        .card.good .eyes {
-            top: 13%;
-        }
-
-        .card.good .eyes::before,
-        .card.good .eyes::after {
-            width: 18px;
-            height: 5px;
-            margin: 0px 12.5%;
-            transform: rotate(-37.5deg);
-            border-radius: 20px;
-        }
-
-        .card.good .eyes::after {
-            transform: rotate(37.5deg);
-        }
-
-        .card.good .nose {
-            top: 18%;
-        }
-
-        .card.good .mouth {
-            top: 16.5%;
-        }
-
-        .card.good .tongue::before {
-            height: 12px;
-        }
-
-        .card.good .tongue::after {
-            height: 24px;
-            animation: movetongue 0.1s linear 0.35s infinite alternate forwards;
-        }
-
-        .card.good .chin {
-            top: 34%;
-        }
-
-        .card.good .tail {
-            animation: movetail 0.1s linear infinite alternate forwards;
-        }
-
-        .card.bad .ears::before {
-            transform: rotate(-50deg) translate(-7px, 2px);
-        }
-
-        .card.bad .ears::after {
-            transform: rotate(50deg) translate(7px, 2px);
-        }
-
-        .card.bad .face::before {
-            margin-top: 28px;
-        }
-
-        .card.bad .face::after {
-            height: 55px;
-        }
-
-        .card.bad .eyes {
-            top: 38%;
-        }
-
-        .card.bad .eyes::before,
-        .card.bad .eyes::after {
-            width: 18px;
-            height: 5px;
-            margin: 0px 14.5%;
-            transform: rotate(-37.5deg);
-            border-radius: 20px;
-        }
-
-        .card.bad .eyes::after {
-            transform: rotate(37.5deg);
-        }
-
-        .card.bad .teardrop {
-            animation: cry 0.1s ease-in 0.25s forwards;
-        }
-
-        .card.bad .nose {
-            top: 44%;
-        }
-
-        .card.bad .mouth {
-            top: 42%;
-        }
-
-        .card.bad .chin {
-            top: 52%;
-        }
-
-        .card.bad .tail {
-            transform: rotate(0);
-        }
-
-        @keyframes movetongue {
-            100% {
-                height: 27px;
-            }
-        }
-
-        @keyframes movetail {
-            0% {
-                transform: rotate(37deg);
-            }
-
-            100% {
-                transform: rotate(52deg);
-            }
-        }
-
-        @keyframes cry {
-            100% {
-                visibility: visible;
             }
         }
     </style>
 </head>
-
 <body>
-    <header>
-        <h1>Quiz</h1>
-        <nav>
-            <ul>
-                <li><a href="quiz01.html">주관식 한 문제</a></li>
-                <li><a href="quiz02.html">주관식 여러 문제</a></li>
-                <li class="active"><a href="quiz03.html">객관식 한 문제</a></li>
-                <li><a href="quiz04.html">객관식 여러 문제</a></li>
-                <li><a href="quiz05.html">객관식 여러 문제 : 이미지 슬라이드</a></li>
-            </ul>
-        </nav>
-        <div class="ham">
-            <span></span>
-        </div>
-    </header>
+    <!-- header -->
+        <header>
+            <h1>Quiz</h1>
+            <nav>
+                <ul>
+                    <li><a href="quiz01.html">주관식 한 문제</a></li>
+                    <li><a href="quiz02.html">주관식 여러 문제</a></li>
+                    <li><a href="quiz03.html">객관식 한 문제</a></li>
+                    <li><a href="quiz04.html">객관식 여러 문제</a></li>
+                    <li class="active"><a href="quiz06.html">객관식 여러 문제 : 시간</a></li>
+                    <li><a href="web20160710.html".html">웹 디자인 기능사 필기 2016년 07월 10일(4회)</a></li>
+                </ul>
+            </nav>
+            <div class="ham">
+                <span></span>
+            </div>
+        </header>
+    <!-- //header -->
 
+    <!-- quiz-wrap -->
     <div class="quizWrap">
-        <h2>넌센스 퀴즈</h2>
+        <h2>넌센스 퀴즈</span></h2>
         <div class="question__quiz">
             <h3 class="question__title">
-                <div class="question__title__q"></div>
-                <!-- <span class="num"></span>
-                <span class="ask"></span> -->
-            </h3>
-            <div class="question__timer">
-                <div id="timer">남은시간<span class="question__timer__sec">15</span></div>
-                <div class="question__timer__line"></div>
-            </div>
-            <div class="question__answer">
-                <div class="question__quiz__img"></div>
-                <div class="card">
-                    <div class="dog">
-                        <div class="head">
-                            <div class="ears"></div>
-                            <div class="face"></div>
-                            <div class="eyes">
-                                <div class="teardrop"></div>
-                            </div>
-                            <div class="nose"></div>
-                            <div class="mouth">
-                                <div class="tongue"></div>
-                            </div>
-                            <div class="chin"></div>
-                        </div>
-                        <div class="body">
-                            <div class="tail"></div>
-                            <div class="legs"></div>
-                        </div>
-                    </div>
+                <div class="question__title__wrap">
+                    <!-- <span class="question__title__num"></span>
+                    <span class="question__title__ask"></span> -->
                 </div>
+                <span class="question__timer__sec">15</span>
+                <div class="question__timer__line"></div>
+            </h3>
+            <div class="question__answer">
                 <div class="question__answer__selects">
                     <!-- <label for="select1" class="correct">
                         <input class="select" type="radio" name="select" id="select1" value="1">
@@ -937,77 +451,89 @@
                         <input class="select" type="radio" name="select" id="select3" value="3">
                         <span class="choice"></span>
                     </label>
-                    <label for="select4">
+                    <label for="select4" class="disabled">
                         <input class="select" type="radio" name="select" id="select4" value="4">
                         <span class="choice"></span>
                     </label> -->
                 </div>
-                <div class="question__ex">
-                    <!-- <span class="ex"></span> -->
-                </div>
                 <div class="question__answer__count">
-                    <!-- <span class="cu">1</span>
-                    <span>/</span>
-                    <span class="to">5</span> -->
+                    <!-- <span class="cu">1</span> / <span class="to">5</span> -->
                 </div>
-                <button class="question__answer__next">다음 문제</button>
-                <!-- <div class="question__answer__view"></div>
-                <div class="question__answer__ex"></div> -->
+                <button class="question__answer__next">다음문제</button>
+                <!-- <div class="question__answer__view"></div> -->
+                <div class="question__answer__ex"></div>
             </div>
         </div>
-        <div class="question__start active"><span>start</span></div>
-        <div class="question__result">
-            <div class="ment">퀴즈를 완성하였습니다.<br> 축하합니다 !!!</div>
-            <div class="score">축하합니다. 당신은 <span>(몇)</span> 문제 중에 <span>(몇)</span> 개를 맞추었습니다!<br>👍👍👍👍👍👍</div>
-            <button class="question__restart">다시 도전하기</button> 
-        </div>
-    </div>
 
+        <div class="question__start active"><span>start</span></div>
+        <!-- question__start -->
+
+        <div class="question__result">
+            <div class="title">퀴즈를 모두 풀었습니다. 축하합니다~ (((o(*ﾟ▽ﾟ*)o)))</div>
+            <div class="score">
+                <!-- 당신은 <span>(몇)</span> 문제 중에 <span>(몇)</span> 개를 맞추었습니다.👍👍 -->
+            </div>
+            <div class="buttons">
+                <button class="question__restart">다시 도전하기</button>
+            </div>
+        </div>
+        <!-- question__result -->
+    </div>
+    <!-- //quiz-wrap -->
+
+    <!-- script -->
     <script>
-        //문제 정보
-        const quizInfo = [{
-                quizNum: 1,
-                quizQuestion: "다음 중 디자인의 기본 요소들로 옳은 것은?",
-                quizAnswer: "점, 선, 면, 질감",
-                quizChoice: [
-                    "선, 색체, 공간, 수량",
-                    "점, 선, 면, 질감",
-                    "시간, 수량, 구조, 공간",
+        // 문제 정보
+        const quizInfo = [
+            {
+                quizNum : 1,
+                quziQuestion : "다음 중 디자인의 기본 요소들로 옳은 것은?",
+                quizAnswer : "점, 선, 면, 질감",
+                quizChoice : [
+                    "선, 색체, 공간, 수량", 
+                    "점, 선, 면, 질감", 
+                    "시간, 수량, 구조, 공간", 
                     "면, 구조, 공간, 수량"
                 ],
-                quizEx: "디자인의 기본 요소는 점, 선, 면, 질감으로 이루어져 있습니다."
+                quizEx : "디자인의 기본 요소는 점, 선, 면, 질감으로 이루어져 있습니다."
             },
+
             {
-                quizNum: 2,
-                quizQuestion: "다음 중 시각 디자인의 4대 매체가 아닌 것은?",
-                quizAnswer: "텍스타일 디자인",
-                quizChoice: [
-                    "포스터 디자인",
-                    "신문 광고 디자인",
-                    "TV 광고 디자인",
+                quizNum : 2,
+                quziQuestion : "다음 중 시각 디자인의 4대 매체가 아닌 것은?",
+                quizAnswer : "텍스타일 디자인",
+                quizChoice : [
+                    "포스터 디자인", 
+                    "신문 광고 디자인", 
+                    "TV 광고 디자인", 
                     "텍스타일 디자인"
                 ],
-                quizEx: "시각 디자인의 4대 매체는 포스터 디자인, 신문 광고 디자인, TV 광고 디자인, 잡지 광고 디자인입니다."
+                quizEx : "시각 디자인 4대 매체는 '포스터 디자인', '신문 광고 디자인', 'TV 광고 디자인', '잡지 광고 디자인' 입니다."
             },
+
             {
-                quizNum: 3,
-                quizQuestion: "다음과 가장 관계 있는 디자인 원리는? [바다 위의 빨깐 등대, 무성한 나뭇잎들 사이에서 핀 꽃, 별이 총총한 밤하늘에 뜬 달, 평평한 벽에 생긴 갈라진 틈 등]",
-                quizAnswer: "강조",
-                quizChoice: [
-                    "조화",
-                    "통일",
-                    "점증",
+                quizNum : 3,
+                quziQuestion : "다음과 가장 관계있는 디자인 원리는? <br> [바다 위의 빨간 등대, 무성한 나뭇잎들 사이에서 핀 꽃, 별이 총총한 밤하늘에 뜬 달, 평평한 벽에 생긴 갈라진 틈 등]",
+                quizAnswer : "강조",
+                quizChoice : [
+                    "조화", 
+                    "통일", 
+                    "점증", 
                     "강조"
                 ],
-                quizEx: "시각 디자인의 4대 매체는 포스터 디자인, 신문 광고 디자인, TV 광고 디자인, 잡지 광고 디자인입니다."
+                quizEx : "강조"
             }
         ]
-        //선택자
+
+        // 선택자
         const quizWrap = document.querySelector(".quizWrap");
+
         const questionStart = document.querySelector(".question__start");
         const questionStartBtn = quizWrap.querySelector(".question__start span");
-        const questionTitle = quizWrap.querySelector(".question__title__q");
+        const questionTitle = quizWrap.querySelector(".question__title__wrap");
         const questionSelect = quizWrap.querySelector(".question__answer__selects");
+        const questionTitleNum = quizWrap.querySelector(".question__title__num");
+        const questionTitleAsk = quizWrap.querySelector(".question__title__ask");
         const questionNext = quizWrap.querySelector(".question__answer__next");
         const questionLength = quizWrap.querySelector(".question__answer__count");
         const questionTimer = quizWrap.querySelector(".question__timer__sec");
@@ -1015,18 +541,16 @@
         const questionResult = quizWrap.querySelector(".question__result");
         const questionResultScore = quizWrap.querySelector(".question__result .score");
         const questionRestart = quizWrap.querySelector(".question__restart");
-        const questionEx = quizWrap.querySelector(".question__ex");
+        const questionEX = quizWrap.querySelector(".question__answer__ex");
+        const correctIcon = quizWrap.querySelectorAll(".question__answer__selects .choice");
 
         let quizCount = 0;
         let quizNum = 1;
         let counter;
         let counterLine;
-        let userScore = 0;
-        let iconYes = '<i class="fa fa-check-circle" aria-hidden="true"></i>';
-        let iconNo = '<i class="fa fa-times-circle" aria-hidden="true"></i>';
+        let scoreCount = 0;
 
-
-        //시작 버튼 클릭
+        // 시작 버튼 클릭
         questionStartBtn.onclick = () => {
             questionStart.classList.remove("active");
             showQuestion(0);
@@ -1035,27 +559,26 @@
             startTimerLine(0);
         }
 
-
-        //다시 시작하기 버튼 클릭 시
+        // 다시 시작버튼 클릭
         questionRestart.onclick = () => {
             questionResult.classList.remove("show");
-            let quizCount = 0;
-            let quizNum = 1;
-            let userScore = 0;
+            quizCount = 0;
+            quizNum = 1;
+            scoreCount = 0;
 
             showQuestion(0);
             questionCount(1);
             startTimer(15);
-            startTimerLine(0);       
+            startTimerLine(0);
         }
 
-        //문제 출력하기
-        function showQuestion(index) {
-            let questionsTag = `
-                <span class="num">${quizInfo[index].quizNum}</span>
-                <span class="ask">${quizInfo[index].quizQuestion}</span>
+        // 문제 출력하기
+        function showQuestion(index){
+            let questionTag = `
+                <span class="question__title__num">${quizInfo[index].quizNum}</span>
+                <span class="question__title__ask">${quizInfo[index].quziQuestion}</span>
             `;
-            let choiceTag = `
+            let questionChoice = `
                 <label for="select1">
                     <input class="select" type="radio" name="select" id="select1" value="1">
                     <span class="choice">${quizInfo[index].quizChoice[0]}</span>
@@ -1073,69 +596,71 @@
                     <span class="choice">${quizInfo[index].quizChoice[3]}</span>
                 </label>
             `;
-            questionTitle.innerHTML = questionsTag;
-            questionSelect.innerHTML = choiceTag;
+
+            questionTitle.innerHTML = questionTag;
+            questionSelect.innerHTML = questionChoice;
+            questionEX.innerHTML = quizInfo[index].quizEx;
+            questionEX.style.display = "none"; 
+
+            // <i class="fa fa-check-circle" aria-hidden="true"></i>
+            // <i class="fa fa-times-circle" aria-hidden="true"></i>
 
             let choice = questionSelect.querySelectorAll(".choice");
 
-            for (let i = 0; i < choice.length; i++) {
+            for(let i=0; i<choice.length; i++){
                 choice[i].setAttribute("onclick", "choiceSelected(this)")
             }
         }
 
-        //설명 출력하기
-        function showEx(index){
-            let exTag = `<span class="ex">${quizInfo[index].quizEx}</span>`;
-            questionEx.innerHTML = exTag;
-        }
-
-        //정답 확인하기
-        function choiceSelected(answer) {
-            //console.log(answer);
-            //사용자가 클릭한 정답 == quizAnswer
+        // 정답 확인하기
+        function choiceSelected(answer){
+            // console.log(answer);
+            
+            // 사용자가 클릭한 정답 -> quizAnswer랑 확인
             let userAnswer = answer.textContent.trim();
             let currentAnswer = quizInfo[quizCount].quizAnswer.trim();
             let allChoices = questionSelect.children.length;
+            let iconYes = `<i class="fa fa-check-circle" aria-hidden="true"></i>`;
+            let iconNo = `<i class="fa fa-times-circle" aria-hidden="true"></i>`;
 
-            if (userAnswer == currentAnswer) {
-                console.log("정답입니다.");
-                //클래스 추가 correct
+            if(userAnswer == currentAnswer){
+                // console.log("정답입니다.");
+                scoreCount++;
                 answer.parentNode.classList.add("correct");
                 answer.insertAdjacentHTML("beforeend", iconYes);
-                userScore++;
             } else {
-                console.log("틀렸습니다.") 
-                //클래스 추가 incorrect
+                // console.log("오답입니다.");
                 answer.parentNode.classList.add("incorrect");
-                answer.insertAdjacentHTML("beforeend", iconNo)
-                showEx(quizNum)
-                
+                answer.insertAdjacentHTML("beforeend", iconNo);
+                questionEX.style.display = "block"; 
 
-                //틀렸을 때 정답 알려주기
-                for (let i = 0; i < allChoices; i++) {
-                    if (questionSelect.children[i].querySelector(".choice").textContent == currentAnswer) {
+                // 틀렸을 때 정답 알려주기
+                for(let i=0; i<allChoices; i++){
+                    if(questionSelect.children[i].querySelector(".choice").textContent == currentAnswer){
                         questionSelect.children[i].classList.add("correct");
                         questionSelect.children[i].querySelector(".choice").insertAdjacentHTML("beforeend", iconYes);
-
-                        
                     }
                 }
             }
 
             // 모든 문제 클래스 추가 disabled
-            for (let i = 0; i < allChoices; i++) {
-                questionSelect.children[i].classList.add("disabled");
+            for(let j=0; j<allChoices; j++){
+                questionSelect.children[j].classList.add("disabled");
             }
 
-            // 시간 정지 * 버튼 표시
+            // 시간 멈춤
             clearInterval(counter);
+
+            // 타임라인 멈춤
             clearInterval(counterLine);
+
+            // 버튼 표시
             questionNext.classList.add("show");
         }
 
-        //다음 문제 클릭시
+        // 다음 문제 클릭시
         questionNext.onclick = () => {
-            if (quizCount < quizInfo.length - 1) {
+            if(quizCount < quizInfo.length -1){
                 quizCount++;
                 quizNum++;
                 showQuestion(quizCount);
@@ -1150,67 +675,75 @@
                 clearInterval(counter);
                 clearInterval(counterLine);
                 showResult();
-            }
-        }
+            } 
+        };
 
-        //문제 카운팅
-        function questionCount(index) {
+        // 문제 카운팅
+        function questionCount(index){
             let totalCountTag = `<span>${index}</span> / <span>${quizInfo.length}</span>`;
             questionLength.innerHTML = totalCountTag;
         }
 
-        //타이머
-        function startTimer(time) {
+        // 타이머
+        function startTimer(time){
             counter = setInterval(() => {
                 questionTimer.textContent = time;
                 time--;
-                if (time < 9) {
+
+                if(time < 9){
                     let addZero = questionTimer.textContent;
                     questionTimer.textContent = "0" + addZero;
                 }
-                if (time < 0) {
+                if(time < 0){
                     clearInterval(counter);
 
                     let allChoices = questionSelect.children.length;
                     let currentAnswer = quizInfo[quizCount].quizAnswer;
 
-                    //클릭X
-                    for (i = 0; i < allChoices; i++) {
+                    // 클릭X
+                    for(i=0; i<allChoices; i++){
                         questionSelect.children[i].classList.add("disabled");
                     }
 
-                    //정답 표시
-                    for (i = 0; i < allChoices; i++) {
-                        if (questionSelect.children[i].querySelector(".choice").textContent == currentAnswer) {
-                            questionSelect.children[i].classList.add("correct");
+                    // 정답 표시
+                    for(j=0; j<allChoices; j++){
+                        if(questionSelect.children[j].querySelector(".choice").textContent == currentAnswer){
+                            questionSelect.children[j].classList.add("correct");
                         }
                     }
 
-                    //버튼 표시
+                    // 버튼 표시
                     questionNext.classList.add("show");
                 }
-            }, 1000)
+            }, 1000);
         }
 
-        //타임 라인
-        function startTimerLine(time) {
+        // 타임라인
+        function startTimerLine(time){
             counterLine = setInterval(() => {
-                time += .062;
+                time += .0625;
                 questionTimerLine.style.width = time + "%";
-
-                if (time > 100) {
+            
+                if(time > 100){
                     clearInterval(counterLine);
                 }
             }, 10);
         }
 
-        //결과 보여주기
-        function showResult() {
+        // 결과 보여주기
+        function showResult(){
             questionResult.classList.add("show");
-            const scoreTag =`<div class="score">축하합니다. 당신은 <span>${quizInfo.length}</span> 문제 중에 <span>${userScore}</span> 개를 맞추었습니다!👍👍👍👍👍👍</div>`;
-            questionResultScore.innerHTML = scoreTag;
-        }
-    </script>
-</body>
 
+            const scoreTag = `당신은 <span>${quizInfo.length}</span> 문제 중에 <span>${scoreCount}</span> 개를 맞추었습니다.👍👍`;
+            questionResultScore.innerHTML = scoreTag;
+        };
+
+        // 햄버거 메뉴
+        document.querySelector(".ham").addEventListener("click", () => {
+            document.querySelector("nav").classList.toggle("show")
+        });
+    </script>
+    <!-- //script -->
+</body>
 </html>
+
