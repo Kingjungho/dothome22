@@ -305,7 +305,7 @@
                 <div class="front"></div>
                 <div class="back"></div>
             </div>
-            <div class="card" data-type="img8" data-matched="false">
+            <div class="card" data-type="img8" data-matched="false"> 
                 <div class="front"></div>
                 <div class="back"></div>
             </div>
@@ -326,24 +326,24 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>
-        const $cardWrap = $(".cardWrap"),
-            $card = $(".card"),
-            $btnSound = $(".btn-sound"),
-            $themeSong = $("#theme-song")[0],
-            $success = $(".success"),
-            $successMsg = $(".success .msg"),
-            $btnCountinue = $(".btn-continue"),
-            $turns = $(".turns span"),
-            $wins = $(".wins span"),
-            $attempts = $(".attempts span"),
+         const $cardWrap = $(".cardWrap");
+        const $card = $(".card");
+        const $btnSound = $(".btn-sound");
+        const $themeSong = $("#theme-song")[0];
+        const $success = $(".success");
+        const $successMsg = $(".success .msg");
+        const $btnContinue = $(".btn-continue");
+        const $turns = $(".turns span");
+        const $wins = $(".wins span");
+        const $attempts = $(".attempts span");
 
-            dataMatch = "data-matched",
-            dataType = "data-type",
-            selectedClass = "is-selected",
-            playSoundClass = "is-playing",
-            visibleClass = "is-visible",
-            playStop = "is-disabled",
-            timeoutLength = 900;
+        const dataType = "data-type";
+        const dataMatch = "data-matched";
+        const selectedClass = "is-selected";
+        const playStop = "is-disabled";
+        const playSoundClass = "is-playing";
+        const visibleClass = "is-visible";
+        const timeoutLength = 900;
 
         let sound = [
             "../../assets/audio/audio/match2.mp3",
@@ -378,64 +378,73 @@
             // }
         });
 
-        //카드를 클릭하면 is-selected 추가
+        // 카드를 클릭하면 is-selected를 추가
         $card.click(function(){
-            //dataMatch의 값이 false면 클릭한 카드에 is-selected 추가
+            // dataMatched == false이면 클릭한 카드에 is-selected 추가
             if($(this).attr(dataMatch) == "false"){
                 $(this).addClass(selectedClass);
-            }
-            let selectedCards = $("."+selectedClass);
-            if(selectedCards.length == 2){
-                //버그방지
-                $cardWrap.addClass(playStop);
-                card1 = selectedCards.eq(0).attr(dataType);
-                card2 = selectedCards.eq(1).attr(dataType);
-                if(card1 == card2){
-                    //만약 카드1, 카드2가 같다면 dataMatch -> true / 음악 재생(정답)
-                    selectedCards.attr(dataMatch, true).removeClass(selectedClass)
+            };
 
-                    //실패 음악 재생
+            let seletedCards = $("."+selectedClass);
+            // 만약에 카드1와 카드2가 같다면 dataMatched를 true로 
+            if(seletedCards.length == 2){
+                // 버그 방지
+                $cardWrap.addClass(playStop);
+
+                card1 = seletedCards.eq(0).attr(dataType);
+                card2 = seletedCards.eq(1).attr(dataType);
+
+                if(card1 == card2){
+                    // 만약에 카드1과 카드2가 같으면 dataMatched -> true / 음악재생(정답)
+                    seletedCards.attr(dataMatch, true).removeClass(selectedClass);
+                    $cardWrap.removeClass(playStop);
+
+                    // 성공 음악 재생
                     if($btnSound.hasClass(playSoundClass)){
                         soundMatch.play();
                     }
-                }else{
-                    //카드1, 2가 같지 않으면 그대로 ~ / 음악 재생(오답) /기회 -
+                } else {
+                    // 실패 음악 재생
+                    if($btnSound.hasClass(playSoundClass)){
+                        soundNoMatch.play();
+                    }
+
+                    // 만약에 카드1과 카드2가 같지않으면 dataMatched -> 그대로 / 음악재생(오답) / 기회를 - 로
                     setTimeout(function(){
                         turnsCount--;
                         $turns.html(turnsCount);
-                        selectedCards.removeClass(selectedClass);
+                        seletedCards.removeClass(selectedClass);
                         $cardWrap.removeClass(playStop);
                     }, timeoutLength);
 
-                    //기회가 없을 때 시도 + 1 기회 + 5
-                    if(turnsCount <=0){
-                        turnsCount = 5;
-                        attempsCount++;
-                        $attempts.html(attempsCount);
-                        $card.attr(dataMatch, false); //모든 카드를 초기화
+                    // 기회가 없을 때 시도+1, 기회+5
+                    if(turnsCount <= 0){
+                        turnsCount = 6;
+                        attemptsCount++;
+                        $attempts.html(attemptsCount);
+                        $card.attr(dataMatch, false); // 모든 카드 초기화
                     }
-                }   
+                }
             }
-             //카드를 완성 했을 때
-            //dataMatch의 ture 갯수 == 전체 카드 갯수 : 성공 음악 추가, 우승+1, 성공메세지
-            //$card.length
-            //$('['+dataMatch +'="true"]').length 
-            if( $('['+dataMatch +'="true"]').length  == $card.length ){
+             // 카드를 완성 했을 때
+            // dataMatched의 true 갯수 == 전체 카드 갯수 : 성공 음악 추가, 우승+1, 성공 메세지
+
+            // $('['+dataMatch+'="true"]').length;
+            if ($('['+dataMatch+'="true"]').length == $card.length) {
                 setTimeout(function(){
-                    //성공 메세지   
+                    // 성공 메세지
                     $success.addClass(visibleClass);
-                    winCount++;
-                    $wins.html(winCount);
+                    winsCount++;
+                    $wins.html(winsCount);
 
-                    //성공 음악 추가
-                    if ($(this).hasClass(playSoundClass)) {
+                    // 성공 음악 추가
+                    if($btnSound.hasClass(playSoundClass)){
                         soundSuccess.play();
-                    }
-
+                    };
                 }, timeoutLength);
-
-                //완성 메세지
-                switch(attempsCount){
+                
+               //완성 메세지
+               switch(attempsCount){
                     case 0 : 
                         msg = "레벨1... 똑똑하시네요?";
                         break;
@@ -454,53 +463,52 @@
                 $successMsg.text(msg);
             }
 
-            //게임 다시 시작할 때
-            $btnCountinue.on("click", function(){
+            // 게임 다시 시작할때
+            $btnContinue.on("click", function(){
                 $success.removeClass(visibleClass);
                 shuffleCards();
                 turnsCount = 5;
-                attempsCount = 0;
-                $attempts.html(attempsCount);
+                attemptsCount = 0;
+                $attempts.html(attemptsCount);
                 $turns.html(turnsCount);
+            })
+        });
+
+        // 카드 섞기
+        function shuffleCards(){
+            $card.attr(dataMatch, false);
+
+            // var num = [1,2,3,4,5,6,7,8,9];
+            // for(
+            //     var remove = num.splice(3,1)
+            //     var remove = num.splice(4,1)
+            //     var remove = num.splice(1,1)
+            //     var remove = num.splice(6,1)
+            //     var remove = num.splice(8,1)
+            //     var remove = num.splice(2,1)
+            //     var remove = num.splice(5,1)
+            //     var remove = num.splice(7,1)
+            //     var remove = num.splice(0,1)
+            // )
+
+            // 하나씩 선택해서 splice로 뽑아낸 뒤 append로 넣어 주면 된다.
+            let cards = $cardWrap.children();
+            for(let i=0; i<=cards.length; i++){
+                $cardWrap.append(cards.splice(Math.floor(Math.random() * cards.length), 1)[0])
+            }
+
+            $card.each(function(index){
+                setTimeout(() => {
+                    $(this).addClass(selectedClass)
+                }, 200 * index);
             });
 
-          
-        });
-          //카드 섞기
-          function shuffleCards(){
-                $card.attr(dataMatch, false);
-
-                var num = [1,2,3,4,5,6,7,8,9];
-                // for(
-                // var remove = num.splice(0,1)
-                // var remove = num.splice(1,1)
-                // var remove = num.splice(2,1)
-                // var remove = num.splice(3,1)
-                // var remove = num.splice(4,1)
-                // var remove = num.splice(5,1)
-                // var remove = num.splice(6,1)
-                // var remove = num.splice(7,1)
-                // var remove = num.splice(8,1)
-                // )  
-
-                //$cardWrap
-                let cards = $cardWrap.children();
-                for( let i=0; i<=cards.length; i++ ){
-                    $cardWrap.append(cards.splice(Math.floor(Math.random() * cards.length), 1)[0])
-                }
-
-                $card.each(function(index){
-                    setTimeout(() => {
-                        $(this).addClass(selectedClass)
-                    }, 100 * index);
-                });
-
-                setTimeout(() => {
-                    $card.removeClass(selectedClass);
-                }, 3800);
-            }
-            //카드 섞기 및 시작하기
-            shuffleCards()
+            setTimeout(() => {
+                $card.removeClass(selectedClass);
+            }, 4000)
+        };
+        // 카드 섞기 및 시작하기
+        shuffleCards()
     </script>
 </body>
 
