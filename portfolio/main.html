@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포트폴리오</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&family=Raleway:ital,wght@0,100;0,200;0,900;1,100&display=swap" rel="stylesheet">
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    #section {
+        background-color: #000;
+        width: 100vw; height: 100vh;
+        position: relative;
+        background-image: url(img/main\ back.png);
+    }
+    #header {
+        display: flex;
+        justify-content: space-between;
+        color: #fff;
+        padding: 25px;
+    }
+    .menu1 {
+        font-family: 'Montserrat', sans-serif;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    .menu1 .logo1 {
+        width: 5vw; height: 4.5vh;
+    }
+    .logoFont {
+        margin-top: 5px;
+        font-size: 0.9vw;
+    }
+    .pont {
+        font-family: 'Raleway', sans-serif;
+        font-weight: bold;
+        font-size: 1.7vw;
+        margin-top: 8px;
+        position: relative;   
+    }
+    .pont .black {
+        position: absolute;
+        top: 0.4vw; left: 0;
+        width: 7px; 
+        height: 28%;
+        display: inline-block;
+        background-color: black;
+    }
+    #aside {
+        font-family: 'Raleway', sans-serif;
+        color: #fff;
+        font-size: 8vw;
+        font-weight: bold;
+        line-height: 0.9;
+        display: flex;
+        justify-content: center;
+        margin: 300px 0 0 270px;
+        position: relative;
+    }
+    #aside::before {
+        content: '';
+        position: absolute;
+        top: 5%; left: 33%;
+        width: 2px;
+        height: 100%;
+        background-color: #fff;
+    }
+    #footer {
+        display: flex;
+        justify-content: space-between;
+        bottom: 0;
+        color: #fff;
+        padding: 25px;
+    }
+    .menu2 {
+        font-family: 'Montserrat', sans-serif;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    .menu2 .logo2 {
+        width: 5vw; height: 4.5vh;
+    }
+    .menu3 {
+        font-family: 'Montserrat';
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    .menu3 .logo3 {
+        width: 5vw; height: 4.5vh;
+    }
+</style>
+</head>
+<body>
+    <section id="section">
+        <header id="header">
+            <span class="pont"><span class="black"></span>PORT</span>
+            <span class="menu1">
+                <img class="logo1" src="img/logo1.svg">
+                <span class="logoFont">PROJECT</span>
+            </span>
+        </header>
+        <aside id="aside">
+            PORT<br>FOLIO
+        </aside>
+            <footer id="footer">
+                <span class="menu2">
+                    <img class="logo2" src="img/logo2.svg">
+                    <span class="logoFont">ABOUT</span>
+                </span>
+                </span>
+                <span class="menu3">
+                    <img class="logo3" src="img/logo3.svg">
+                    <span class="logoFont">CONTACT</span>
+                </span>
+            </footer>
+    </section>
+</body>
+</html>

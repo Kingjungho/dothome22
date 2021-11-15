@@ -5,15 +5,55 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        #dynamic {
+            display: inline-block;
+        }
+        .back.active {
+            display: none;
+        }
+    </style>
 </head>
 <body>
+    <div id="dynamic"></div>
+    <span class="back">|</span>
+
     <script>
-    var arr = [1, 2, 3];
+    const dynamic = document.querySelector("#dynamic");
+    const back = document.querySelector(".back");
+    
 
-for (var i of arr) {
-  document.write(i);
-}
+    const stringReset = () => {
+        const textString = ['HTML GGGGGG', 'HTML GGGGGG','CSS GGGGGG','REACT GGGGGG','JAVASCIRPT GGGGGG'];
+        const randomString = textString[Math.floor(Math.random() * textString.length)];
+        const stringOne = randomString.split('');
+
+        return stringOne;
+    }
+
+    const deleteString = () => {
+        dynamic.textContent = ""
+        stringDivision(stringReset())
+
+    }
+    
+    const stringDivision = (randomArr) => {
+        if(randomArr.length > 0) {
+            dynamic.textContent += randomArr.shift();
+            setTimeout(() => {
+                stringDivision(randomArr);
+            }, 80)    
+        } else {
+            setTimeout(deleteString, 3000);
+        }
+    }
+    stringDivision(stringReset())
+    
+    const blink = () => {
+        back.classList.toggle("active")
+    }
+    setInterval(blink, 300);
+    
     </script>
-
 </body>
 </html>
