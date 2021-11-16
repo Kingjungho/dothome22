@@ -3,7 +3,10 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+a {
+    text-decoration: none;
+    color: #fff;
+}
 #section {
     background-color: #000;
     width: 100vw;
@@ -32,7 +35,7 @@
 }
 #aside img {
     width: 4.5vw;
-    height: 4.5vh;
+    height: 4vh;
 }
 #aside div {
     font-size: 13px;
