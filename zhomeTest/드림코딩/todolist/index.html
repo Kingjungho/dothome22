@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+</head>
+
+<body>
+  <section id="section">
+    <header id="header">
+      <h2>My ToDoList!!</h2>
+    </header>
+    <ul class="list"></ul>
+    <footer id="footer">
+      <input type="text" class="input__write">
+      <button class="addBtn">
+        <i class="far fa-kiss-beam"></i>
+      </button>
+    </footer>
+  </section>
+  <script>
+    const addBtn = document.querySelector(".addBtn");
+    const input = document.querySelector(".input__write");
+    const list = document.querySelector(".list");
+
+
+
+    const addList = () => {
+      const text = input.value;
+      if (text === "") {
+        input.focus();
+        return;
+      }
+      const newItem = newList(text);
+      list.appendChild(newItem)
+      newItem.scrollIntoView({
+        block: 'center',
+        behavior: 'smooth'
+      })
+
+      input.value = "";
+      input.focus();
+    }
+    let id = 0; // UUI를 사용하는게 좋음
+    const newList = (text) => {
+      const itemRow = document.createElement("div");
+      itemRow.setAttribute("class", "items");
+      itemRow.setAttribute('data-id', id)
+      itemRow.innerHTML = `
+        <div class="item">
+          <span class="name">${text}</span>
+          <button class="delete">
+            <i class="far fa-trash-alt" data-id=${id}></i>
+          </button>
+        </div>
+        <div class="divider"></div>
+      `
+      id++
+
+      return itemRow;
+    }
+
+    addBtn.addEventListener("click", addList)
+
+    list.addEventListener("click", () => {
+      const id = event.target.dataset.id
+      if(id) {
+        const toBeDeleted = document.querySelector(`.items[data-id="${id}"]`)
+        toBeDeleted.remove();
+      }
+    })
+  </script>
+</body>
+
+</html>
