@@ -24,7 +24,7 @@ a {
 .main__port::before {
     content: '';
     position: absolute;
-    top: 5.7px;   
+    top: 5.2px;   
     width: 6.8px;
     height: 45%;
     background-color: black;
@@ -38,7 +38,7 @@ a {
     height: 4vh;
 }
 #aside div {
-    font-size: 13px;
+    font-size: 0.9vw;
     margin-top: 5px;
 }
 .menu1 {
