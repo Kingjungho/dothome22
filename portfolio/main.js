@@ -1,7 +1,8 @@
-const imgWrap = document.querySelector(".introduce");
+const section = document.querySelector("#section4");
 
-const imgOver = (e) => {
-    e.target.classList.add("active")
-}
-
-imgWrap.addEventListener("mouseover", imgOver)
+section.addEventListener('scroll', function() {
+    if (document.section.scrollTop > 0) {
+      let currScrollPos2 = document.section.scrollTop;
+      section.style.opacity = -currScrollPos2 / 400 + 2;
+    }
+  });

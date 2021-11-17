@@ -51,7 +51,7 @@
     const newList = (text) => {
       const itemRow = document.createElement("div");
       itemRow.setAttribute("class", "items");
-      itemRow.setAttribute('data-id', id)
+      itemRow.setAttribute('data-id', id);
       itemRow.innerHTML = `
         <div class="item">
           <span class="name">${text}</span>
@@ -70,7 +70,7 @@
 
     list.addEventListener("click", () => {
       const id = event.target.dataset.id
-      if(id) {
+      if(id){
         const toBeDeleted = document.querySelector(`.items[data-id="${id}"]`)
         toBeDeleted.remove();
       }
