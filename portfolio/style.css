@@ -11,9 +11,12 @@ a {
     text-decoration: none;
     color: #fff;
 }
+li {
+    list-style: none;
+}
 #section {
     background-color: #000;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     position: relative;
     background-image: url(img/main\ back.png);
@@ -56,11 +59,11 @@ a {
 }
 .menu3 {
     position: fixed;
-    bottom: 3%; left: 2%;
+    bottom: 3.5%; left: 2%;
 }
 .menu4 {
     position: fixed;
-    bottom: 3%; right: 2%;
+    bottom: 3.5%; right: 2%;
 }
 #footer {
     display: flex;
@@ -77,8 +80,8 @@ a {
     position: absolute;
     left: -40px; top: 15px;
     width: 3px;
-    height: 133%;
-    background-color: #fff;
+    height: 90%;
+    background-color: #EEEEEE;
 }
 #section2 {
     width: 100vw; height: 100vh;
@@ -92,12 +95,12 @@ a {
 }
 #section2 .banner img {
     margin-top: 200px;
-    width: 55vw;  height: 55vh;
+    width: 51vw;  height: 45vh;
     filter: brightness(80%)
 }
 #section2 .banner h2 {
     font-family: 'Raleway', sans-serif;
-    font-size: 6vw;
+    font-size: 5vw;
     color: #fff;
     position: absolute;
     top: 65%; left: 50%;
@@ -114,9 +117,8 @@ a {
 }
 #section3 p {
     font-family: "Elice Digital Baeum",sans-serif;
-    font-weight: bold;
-    color: #414141;;
-    font-size: 4.2vw;
+    color: #504f4f;;
+    font-size: 3.3vw;
     line-height: 2;
     text-align: center;
 }
@@ -130,13 +132,13 @@ a {
     z-index: -1;
 }
 #section4 {
-    width: 100vw; height: 100vh;
+    width: 100vw; height: 140vh;
     background-color: #fff;
 }
 #section4 .section4Wrap {
     margin-top: 350px;
     display: flex;
-    justify-content:space-around;
+    justify-content:space-evenly;
     align-items: center;
 }
 #section4 #aside {
@@ -144,7 +146,7 @@ a {
 }
 
 #section4 #aside h2 {
-    font-size: 3.8vw;
+    font-size: 4.1vw;
     margin-bottom: 15px;
     line-height: 1;
 }
@@ -173,7 +175,7 @@ a {
     opacity: 1;
 }
 #section4 .introduce .imgWrap img {
-    width: 17vw; height: 17vw;
+    width: 18vw; height: 18vw;
 }
 #section4 .introduce .imgWrap .descWrap {
     position: absolute;
@@ -183,12 +185,101 @@ a {
     opacity: 0;
 }
 #section4 .introduce .imgWrap .imgTitle {
-    font-size: 45px;
+    font-size: 2.8vw;
 }
 #section4 .introduce .imgWrap .imgDesc {
-    font-size: 20px;
+    font-size: 1vw;
 }
-
+#section5 {
+    width: 100vw; height: 160vh;
+    background-color: #000;
+    color: #fff;
+}
+#section5 .listWrap {
+    display: flex;
+    flex-direction: column;
+    max-width: 70vw;
+    margin: auto;
+}
+#section5 #article {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 200px 0 100px 0;
+}
+#section5 #article .article__left {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 3.4vw;
+    line-height: 1.1;
+    font-weight: bold;
+    margin-right: 15px;
+}
+#section5 #article .article__right {
+    font-size: 1.3vw;
+    font-weight: lighter;
+}
+#section5 .list {
+    cursor: pointer;
+}
+#section5 .list__num {
+    font-family: "Elice Digital Baeum",sans-serif;
+    font-size: 1.2vw;
+    color: rgba(255, 255, 255, 0.37);
+    margin-right: 5px;
+}
+#section5 .list__name {
+    font-family: 'Poppins', sans-serif;
+    font-size: 4.5vw;
+    margin-right: 40px;
+    font-weight: bold;
+}
+#section5 .list__desc {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    font-size: 0.8vw;
+    color: rgba(255, 255, 255, 0.479);
+}
+#section6 {
+    background-color: #EEEEEE;
+}
+#section6 .siteWrap {
+    padding-top: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#section6 .aside {
+    text-align: center;
+    margin-top: 20px;
+}
+#section6 .aside h3 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: normal;
+    font-size: 3.8vw;
+}
+#section6 .aside button {
+    font-family: "Elice Digital Baeum",sans-serif;
+    outline: none;
+    padding: 12px 45px;
+    margin-top: 6px;
+    cursor: pointer;
+}
+#section6 .site {
+    margin-left: 10%;
+}
+#section6 .site .siteTitle{
+    font-size: 4.3vw;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+#section6 .site .siteDesc {
+    font-family: "Elice Digital Baeum",sans-serif;
+    margin-bottom: 40px;
+}
+#section6 .site img {
+    width: 45vw; height: 50vh;
+}
 @media (max-width:1600px){
     #section {
         background-size: 100% 95.5%;
@@ -198,14 +289,53 @@ a {
         width: 60vw;  height: 40vh;
     }
 }
+@media (max-width:1480px){
+    #section4 {
+        height: 100vh;
+    }
+    #section6 .site img {
+        width: 50vw; height: 40vh;
+    }
+}
+@media (max-width:1200px){
+    #section {
+        width: 100vw;  height: 70vh;
+    }
+    #aside img {
+        width: 3.8vw;
+        height: 2.8vw;
+    }
+    #section .menu3 {
+        bottom: 35%;
+    }
+    #section .menu4 {
+        bottom: 35%;
+    }
+    #footer .line {
+        height: 90%
+    }
+
+}
 @media (max-width:1100px){
     #section2 .banner img {
         width: 65vw;  height: 35vh;
     }
+    #section4 {
+        height: 75vh;
+    }
+    #section6 .site img {
+        width: 50vw; height: 35vh;
+    }
 }
 @media (max-width:800px){
     #section2 .banner img {
-        width: 65vw;  height: 15vh;
+        width: 65vw;  height: 28vh;
+    }
+    #footer .line {
+        left: -30px;
+    }
+    #section2 .banner h2 {
+        top: 70%;
     }
 }
 
