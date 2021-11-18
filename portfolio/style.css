@@ -16,7 +16,6 @@ li {
 }
 #section {
     background-color: #000;
-    width: 100vw;
     height: 100vh;
     position: relative;
     background-image: url(img/main\ back.png);
@@ -83,8 +82,9 @@ li {
     height: 90%;
     background-color: #EEEEEE;
 }
+
 #section2 {
-    width: 100vw; height: 100vh;
+    height: 100vh;
     background: #000;
 }
 #section2 .banner {
@@ -133,7 +133,7 @@ li {
     z-index: -1;
 }
 #section4 {
-    width: 100vw; height: 140vh;
+    height: 140vh;
     background-color: #fff;
 }
 #section4 .section4Wrap {
@@ -192,7 +192,7 @@ li {
     font-size: 1vw;
 }
 #section5 {
-    width: 100vw; height: 160vh;
+    height: 160vh;
     background-color: #000;
     color: #fff;
 }
@@ -243,6 +243,7 @@ li {
 }
 #section6 {
     background-color: #EEEEEE;
+    height: 300vh;
 }
 #section6 .siteWrap {
     padding-top: 90px;
