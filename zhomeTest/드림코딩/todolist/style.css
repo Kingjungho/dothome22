@@ -25,18 +25,19 @@ li {
     background-color: rgb(236, 234, 234);
     overflow-y: scroll;
 }
-.list .items {}
-.list .item {
+.list .items {
     display: flex;
     justify-content: space-between;
     padding: 27px;
     font-size: 19px;
     font-weight: bold;
+    font-size: 30px;
 }
 .delete {
     outline: none;
     transition: transform 0.5s ease-in-out;
     border: 0;
+    font-size: 20px;
 }
 .delete:hover {
     color: red;

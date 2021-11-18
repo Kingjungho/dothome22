@@ -16,65 +16,114 @@
     <header id="header">
       <h2>My ToDoList!!</h2>
     </header>
-    <ul class="list"></ul>
+    <ul class="list">
+
+    </ul>
     <footer id="footer">
-      <input type="text" class="input__write">
-      <button class="addBtn">
-        <i class="far fa-kiss-beam"></i>
-      </button>
+      <form class="new-form">
+        <input type="text" class="input__write">
+        <button type="submit" class="addBtn">
+          <i class="far fa-kiss-beam"></i>
+        </button>
+      </form>
     </footer>
   </section>
   <script>
-    const addBtn = document.querySelector(".addBtn");
-    const input = document.querySelector(".input__write");
     const list = document.querySelector(".list");
+    const addBtn = document.querySelector(".addBtn");
+    const form = document.querySelector(".new-form")
+    const deleteBtn = document.querySelector(".delete");
+    const input = document.querySelector(".input__write");
 
 
-
-    const addList = () => {
+    const listPlus = () => {
       const text = input.value;
-      if (text === "") {
-        input.focus();
-        return;
+      if (text === '') {
+        input.focus()
+        return
       }
-      const newItem = newList(text);
+      const newItem = itemList(text);
       list.appendChild(newItem)
-      newItem.scrollIntoView({
-        block: 'center',
-        behavior: 'smooth'
-      })
-
       input.value = "";
       input.focus();
+      newItem.scrollIntoView({
+        block: "center"
+      })
     }
-    let id = 0; // UUI를 사용하는게 좋음
-    const newList = (text) => {
-      const itemRow = document.createElement("div");
-      itemRow.setAttribute("class", "items");
-      itemRow.setAttribute('data-id', id);
-      itemRow.innerHTML = `
-        <div class="item">
-          <span class="name">${text}</span>
-          <button class="delete">
-            <i class="far fa-trash-alt" data-id=${id}></i>
-          </button>
-        </div>
+    id = 0;
+    const itemList = (text) => {
+      const item = document.createElement("li")
+      item.setAttribute("class", "item");
+      item.setAttribute("data-id", id)
+      item.innerHTML = `
+          <div class="items">
+            <span class="name">${text}</span>
+            <button class="delete">
+              <i class="far fa-kiss-beam" data-id="${id}"></i>
+            </button>
+          </div>
         <div class="divider"></div>
-      `
-      id++
-
-      return itemRow;
+      `;
+      ++id;
+      return item;
     }
 
-    addBtn.addEventListener("click", addList)
-
-    list.addEventListener("click", () => {
-      const id = event.target.dataset.id
-      if(id){
-        const toBeDeleted = document.querySelector(`.items[data-id="${id}"]`)
-        toBeDeleted.remove();
+    const listDelete = e => {
+      const id = e.target.dataset.id
+      if (id) {
+        const deleteList = document.querySelector(`.item[data-id='${id}']`);
+        deleteList.remove();
       }
+    }
+
+    list.addEventListener("click", listDelete);
+
+    form.addEventListener("submit", e => {
+      e.preventDefault();
+      listPlus();
     })
+    
+    // addBtn.addEventListener("click", listPlus)
+    // input.addEventListener("keydown", e => {
+    //   if (e.key === 'Enter') {
+    //     listPlus()
+    //   }
+    // })
+    
+
+    class Counter { //class명 앞은 대문자로 시작합니다!
+        constructor(runEveryFiveTimes) {
+          this.counter = 0;
+          this.callBack = runEveryFiveTimes;
+        }
+
+        increase() { //function 작성 필요없습니다!
+          this.counter++;
+          if(this.counter % 5 === 0){
+            this.callBack(this.counter);
+          }
+        }
+      }
+      function printSomething(num) {
+        console.log(`yo! man~ ${num}`)
+      }
+      function alertNum(num){
+        alert(`개어렵네 띠봉 ${num}`)
+      }
+
+      const coolCounter = new Counter(printSomething);
+      
+      coolCounter.increase();
+      coolCounter.increase();
+      coolCounter.increase();
+      coolCounter.increase();
+      coolCounter.increase();
+      coolCounter.increase();
+      coolCounter.increase();
+      coolCounter.increase();
+      coolCounter.increase();
+      coolCounter.increase();
+  
   </script>
 </body>
 
