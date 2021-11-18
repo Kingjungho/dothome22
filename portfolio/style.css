@@ -49,19 +49,19 @@ li {
     font-size: 0.9vw;
     margin-top: 5px;
 }
-.menu1 {
+#section .menu1 {
     position: fixed;
     top: 4%; left: 2%;
 }
-.menu2 {
+#section .menu2 {
     position: fixed;
     top: 3%; right: 2%;
 }
-.menu3 {
+#section .menu3 {
     position: fixed;
     bottom: 3.5%; left: 2%;
 }
-.menu4 {
+#section .menu4 {
     position: fixed;
     bottom: 3.5%; right: 2%;
 }
@@ -334,6 +334,15 @@ li {
     }
 }
 @media (max-width:850px){
+    #section {
+        height: 60vh;
+    }
+    #section .menu3 {
+        bottom: 44%; left: 2%;
+    }
+    #section .menu4 {
+        bottom: 44%; right: 2%;
+    }
     #section2 .banner img {
         width: 65vw;  height: 28vh;
     }
