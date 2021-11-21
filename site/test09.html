@@ -67,7 +67,7 @@
             <span class="next">next</span>
         </p> 
         <div class="slider-inner">
-            <img class="slider" src="img/card10.jpg" alt="">
+            <img class="slider" src="img/card17.jpg" alt="">
             <img class="slider" src="img/card12.jpg" alt="">
             <img class="slider" src="img/card13.jpg" alt="">  
             <article id="article">
@@ -247,7 +247,7 @@
 
     currenIndex = 0;
     slideCount = slide.length;
-    imgWidth = 1760;
+    imgWidth = 1870;
 
     slides.style.width = imgWidth * slideCount + "px";
 
@@ -281,12 +281,11 @@
         let currentMenu;
 
         const newList = e => {
-            const target = e.target;
             if(currentMenu){
                 currentMenu.classList.remove("active");
             }
-            target.classList.add("active");
-            currentMenu = target;  
+            e.target.classList.add("active");
+            currentMenu = e.target;  
         }
 
         tabButton.addEventListener("mouseover", newList)
