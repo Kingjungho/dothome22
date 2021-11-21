@@ -36,20 +36,45 @@ li {
     margin-right: 0;
 }
 .sliderWrap {
+    position: relative;
     width: 100%;
     height: 700px;
     overflow: hidden;
 }
 .sliderWrap .slider-inner {
-    position: relative;
-    width: 100%;
+    position: absolute;
+    left: 0; top: 0;
+    width: 300%;
     overflow: hidden;
+    transition: left 0.5s ease-out;
 }
 .sliderWrap img {
     width: 100%;
     height: 700px;
     background-size: cover;
     background-position: center;
+    float: left;
+}
+.sliderWrap img:not(:last-child){
+    float: left;
+    margin-right: 100px;
+}
+.controller span {
+    position: absolute;
+    background-color: #000;
+    color: black;
+    text-align: center;
+    border-radius: 50%;
+    padding: 10px 20px;
+    top: 50%;
+    font-size: 3em;
+    cursor: pointer;
+}
+.prev{
+    left: 50px;
+  }
+.next {
+    right: 50px;
 }
 #article {
     position: absolute;
@@ -307,13 +332,16 @@ li {
 #footer .header .header__right {
 
 }
-#footer .header .header__right button {
+#footer .header .header__right select {
     background-color:transparent;
     outline: none;
     border: 1px solid #fff;
     padding: 10px 50px 10px 20px;
     position: relative;
     color: #fff;
+}
+#footer .header .header__right select:focus {
+    background-color: #000;
 }
 #footer .header .header__right span {
     position: absolute;

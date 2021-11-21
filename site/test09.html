@@ -66,6 +66,10 @@
             <img class="slider" src="img/card10.jpg" alt="">
             <img class="slider" src="img/card12.jpg" alt="">
             <img class="slider" src="img/card13.jpg" alt="">
+            <p class="controller">
+                <span class="prev">sdafsdanfll</span>
+                <span class="next">sdafsadfsadf;</span>
+            </p> 
             <article id="article">
                 <h2 class="article__title">STARTUP Germany<br>2019 참가업체 모집</h2>
                 <p class="article__desc">사업기간 2019-07-02 ~ 2019-08-09</p>
@@ -168,7 +172,7 @@
                     <div class="box_header">
                         <h3>온라인 세미나</h3>
                     </div>
-                    <div class="box_desc">
+                    <div class="box_desc1">
                         <p>무역협회에서 실시하는 국내 무역 관련 세미나.<br>설명회 등을 VOD 서비스로 제공</p>
                         <button>바로가기</button>
                     </div>
@@ -209,7 +213,11 @@
                         <span>신문고</span>
                     </li>
                     <li class="header__right">
-                        <button>국내외지부<span><i class="fas fa-sort-up"></i></span></button>
+                        <select>
+                            <option value=""><span>국내외지부</span><span></option>
+                            <option value=""><span>국내외지부</span><span></option>
+                            <option value=""><span>국내외지부</span><span></option>
+                        </select>
                     </li>
                 </ul>
             </header>
@@ -231,6 +239,14 @@
         </div>
     </footer>
     <script>
+    //슬라이더
+    const slides = document.querySelector(".slider-inner");
+    const slide = document.querySelector(".slider");
+
+
+
+
+    
         // 탭메뉴 1
         const tabButton = document.querySelector(".header__right li");
         let currentMenu;
@@ -241,12 +257,11 @@
                 currentMenu.classList.remove("active");
             }
             target.classList.add("active");
-            currentMenu = target
-            
+            currentMenu = target;  
         }
 
         tabButton.addEventListener("mouseover", newList)
-
+        
 
 
 
@@ -260,7 +275,7 @@
 
         tabBtn.forEach((element, index) => {
                 element.addEventListener("click", function () {
-                    tabBtn.forEach((el) => {
+                    tabBtn.forEach(el => {
                         el.classList.remove("active");
                     });
                     element.classList.add("active");
@@ -273,31 +288,7 @@
             })
 
         
-        // 슬라이더       
-        const sliderImg = document.querySelector(".sliderWrap");
-        const sliderInner = document.querySelector(".slider-inner");
-        const slider = document.querySelector(".slider");
-
-        let currentIndex = 0;
-        let sliderWidth = slider.offsetWidth;
-        let sliderCount = document.querySelectorAll(".slider").length;
-
-        let sliderClone = sliderInner.firstElementChild.cloneNode(true);
-        sliderInner.appendChild(sliderClone)
-
-        setInterval(() => {
-            currentIndex++;
-            sliderInner.style.transition = "all 0.3s";
-            sliderInner.style.transform = "translateX(" + -sliderWidth * currentIndex + "px)";
-
-            if (currentIndex == sliderCount) {
-                setTimeout(() => {
-                    sliderInner.style.transition = "0s";
-                    sliderInner.style.transform = "translateX(0)";
-                }, 300);
-                currentIndex = 0;
-            }
-        }, 2000);
+        
     </script>
 </body>
 
