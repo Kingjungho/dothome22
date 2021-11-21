@@ -41,7 +41,6 @@ li {
     width: 1870px;
     height: 700px;
     overflow: hidden;
-    margin: 0 auto;
 }
 .sliderWrap .slider-inner {
     position: absolute;
