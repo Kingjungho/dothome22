@@ -6,16 +6,3 @@
 body {
     background-color: #000;
 }
-.container {
-    background-image: url(img/background.png);
-    width: 50vw; height: 70vh;
-    background-position: center;
-    background-size: cover;
-    margin: 0 auto;
-    margin-top: 5%;
-    text-align: center;
-    border-radius: 30px;
-}
-.button {
-    
-}
