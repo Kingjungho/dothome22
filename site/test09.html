@@ -62,14 +62,14 @@
         </header>
     </div>
     <div class="sliderWrap">
+        <p class="controller">
+            <span class="prev">prev</span>
+            <span class="next">next</span>
+        </p> 
         <div class="slider-inner">
             <img class="slider" src="img/card10.jpg" alt="">
             <img class="slider" src="img/card12.jpg" alt="">
-            <img class="slider" src="img/card13.jpg" alt="">
-            <p class="controller">
-                <span class="prev">sdafsdanfll</span>
-                <span class="next">sdafsadfsadf;</span>
-            </p> 
+            <img class="slider" src="img/card13.jpg" alt="">  
             <article id="article">
                 <h2 class="article__title">STARTUP Germany<br>2019 참가업체 모집</h2>
                 <p class="article__desc">사업기간 2019-07-02 ~ 2019-08-09</p>
@@ -214,9 +214,9 @@
                     </li>
                     <li class="header__right">
                         <select>
-                            <option value=""><span>국내외지부</span><span></option>
-                            <option value=""><span>국내외지부</span><span></option>
-                            <option value=""><span>국내외지부</span><span></option>
+                            <option value=""><span>국내외지부</span></option>
+                            <option value=""><span>국내외지부</span></option>
+                            <option value=""><span>국내외지부</span></option>
                         </select>
                     </li>
                 </ul>
@@ -241,8 +241,37 @@
     <script>
     //슬라이더
     const slides = document.querySelector(".slider-inner");
-    const slide = document.querySelector(".slider");
+    const slide = document.querySelectorAll(".slider");
+    const prev = document.querySelector(".prev");
+    const next = document.querySelector(".next");
 
+    currenIndex = 0;
+    slideCount = slide.length;
+    imgWidth = 1760;
+
+    slides.style.width = imgWidth * slideCount + "px";
+
+    function slideMove(num){
+        slides.style.left = -num * 1760 + "px";
+        currenIndex = num;
+    }
+    
+    prev.addEventListener("click", () => {
+        if(currenIndex > 0){
+            slideMove(currenIndex - 1);
+        } else {
+            slideMove(slideCount -1)
+        }
+    })
+
+    next.addEventListener("click", () => {
+        if(currenIndex < slideCount - 1){
+            slideMove(currenIndex + 1);
+            console.log(currenIndex)
+        } else {
+            slideMove(0)
+        }
+    })
 
 
 
