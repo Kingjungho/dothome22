@@ -194,38 +194,65 @@
             <div class="siteWrap">
                 <aside class="aside">
                     <h3>SITE1</h3>
+                    <p class="siteDesc">웹 표준을 준수하여 만든 가장 기본적인 형태의 웹사이트입니다.</p>
                     <button>사이트 보기</button>
+                    <button>코드 보기</button>
                 </aside>
                 <div class="site">
                     <h2 class="siteTitle">WEBSTANDARD</h2>
-                    <p class="siteDesc">웹 표준을 준수하여 만든 가장 기본적인 형태의 웹사이트입니다.</p>
                     <img src="img/main back.png" alt="">
                 </div>
             </div>
-            <div class="siteWrap">
+            <div class="siteWrap2">
                 <aside class="aside">
                     <h3>SITE2</h3>
+                    <p class="siteDesc">HTML5 시멘틱 태그를 이용한 반응형 사이트입니다.<br>
+                        데스크탑, 타블렛, 스마트폰에서도 잘 보일 수 있도록 규격에 맞게<br> 설계하고 구현하였습니다.</p>
                     <button>사이트 보기</button>
+                    <button>코드 보기</button>
                 </aside>
                 <div class="site">
                     <h2 class="siteTitle">RESPONSIVE</h2>
-                    <p class="siteDesc">HTML5 시멘틱 태그를 이용한 반응형 사이트입니다.<br>
-                        데스크탑, 타블렛, 스마트폰에서도 잘 보일 수 있도록 규격에 맞게 설계하고 구현하였습니다.</p>
                     <img src="img/main back.png" alt="">
                 </div>
             </div>
-            <div class="siteWrap">
+            <div class="siteWrap3">
                 <aside class="aside">
                     <h3>SITE3</h3>
+                    <p class="siteDesc">메가박스를 벤치마킹하여 제작한 반응형 웹사이트 입니다.<br>
+                        SITE2와 마찬가지로 어떠한 기기에서도 스크린을 보는데 있어서 불편<br>함이 없도록 화면 규격에 맞게
+                        제작하였습니다.</p>
                     <button>사이트 보기</button>
+                    <button>코드 보기</button>
                 </aside>
                 <div class="site">
                     <h2 class="siteTitle">MEGA BOX</h2>
-                    <p class="siteDesc">메가박스를 벤치마킹하여 제작한 반응형 웹사이트 입니다.<br>
-                        SITE2와 마찬가지로 어떠한 기기에서도 스크린을 보는데 있어서 불편함이 없도록 화면 규격에 맞게<br>
-                        제작하였습니다.</p>
                     <img src="img/main back.png" alt="">
                 </div>
+            </div>
+        </section>
+        <section id="section7">
+            <div class="banner">
+                <h1><span>CREATIVE</span> SCRIPT<br>FRONTEND <span>AND</span><br><span>CREATIVE</span> INNOVATION</h1>
+            </div>
+        </section>
+        <section id="section8">
+            <p class="frameCss">
+                <iframe src="https://kingjungho.github.io/dothome22/refer-effect/ParallaxEffect/javascriptPE01.html"
+                    frameborder="0" width="100%" height="800px"></iframe>
+            </p>
+            <div class="frameDesc">
+                <span class="descBox title">Parallax Effect</span>
+                <span class="descBox order">1</span>
+                <span class="descBox">12345678</span>
+                <span class="descBox"></span>
+                <span class="descBox Write">새로운 변화가 끊임없이 일어나는 웹 환경에서 최신 트렌드에  뒤처지지  않기 위해 스터디 모임 사용하였습니다. </span>
+                <span class="descBox"></span>
+                <span class="descBox">code</span>
+                <span class="descBox Write">새로운 변화가 끊임없이 일어나는 웹 환경에서 최신 트렌드에  뒤처지지  않기 위해 스터디 모임 사용하였습니다. </span>
+                <span class="descBox"></span>
+                <span class="descBox">view</span>
+                <span class="descBox"></span>
             </div>
         </section>
     </div>
@@ -233,6 +260,11 @@
     <script src="main.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script>
+        const order = document.querySelector(".descBox.order");
+        const number = document.querySelector(".descBox:nth-child(3)");
+        console.log(number)
+    </script>
 </body>
 
 </html>
