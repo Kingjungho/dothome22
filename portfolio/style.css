@@ -9,7 +9,7 @@ html {
 }
 a {
     text-decoration: none;
-    color: #fff;
+    color: #000;
 }
 li {
     list-style: none;
@@ -39,6 +39,9 @@ li {
 #aside {
     font-family: 'Montserrat', sans-serif;
     text-align: center;
+}
+#aside a {
+    color: #fff;
 }
 #aside img {
     width: 4.5vw;
@@ -168,15 +171,15 @@ li {
 #section4 .introduce .imgWrap {
     position: relative;
 }
-#section4 .introduce .imgWrap:hover {
-    filter: brightness(80%);
+#section4 .introduce .imgWrap:hover img{
+    filter: brightness(40%);
 }
 #section4 .introduce .imgWrap:hover .descWrap {
     color: #fff;
     opacity: 1;
 }
 #section4 .introduce .imgWrap img {
-    width: 18vw; height: 18vw;
+    width: 17vw; height: 17vw;
 }
 #section4 .introduce .imgWrap .descWrap {
     position: absolute;
@@ -261,7 +264,7 @@ li {
     text-align: left;
 }
 #section6 .siteWrap3 {
-    background-color: #dedede94;;
+    background-color: #ecececb0;;
     padding: 90px 0;
     display: flex;
     justify-content: center;
@@ -301,6 +304,9 @@ li {
     font-family: "Elice Digital Baeum",sans-serif;
     margin: 30px 0;
 }
+#section6 .aside .siteDesc button{
+    color: #000;
+}
 #section6 .site img {
     width: 45vw; height: 50vh;
     min-width: 550px;
@@ -325,7 +331,7 @@ li {
     color: #4E4E4E;
 }
 #section8 {
-    height: 500vh;
+    height: 600vh;
     background-color: #000;
 }
 #section8 .frameCss {
@@ -343,6 +349,7 @@ li {
     text-align: center;
     margin: 0 auto;
     color: #fff;
+    margin-bottom: 180px;
 }
 #section8 .frameDesc .descBox {
     font-family: 'Raleway', sans-serif;
@@ -362,13 +369,40 @@ li {
     padding: 8% 5%;
 }
 #section8 .frameDesc .descBox.order {
-    font-size: 2vw;
     background-color: #f3f3f333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#section8 .frameDesc .descBox.order span{
+    font-size: 2.6vw;
+    cursor: pointer;
 }
 .descBox:nth-child(3) {
-    letter-spacing: 10px;
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
 } 
-
+#section8 .frameDesc .descBox button {
+    font-family: 'Raleway', sans-serif;
+    outline: none;
+    background-color: transparent;
+    color: #fff;
+    border: 0;
+    font-size: 1.6vw;
+    cursor: pointer;
+}
+#section8 .frameDesc .descBox.view {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#section8 .frameDesc .descBox.view span {
+    cursor: pointer;
+}
+#section8 .frameDesc .descBox.view a {
+    color: #fff;
+}
 @media (max-width:1600px){
     #section {
         background-size: 100% 95.5%;
