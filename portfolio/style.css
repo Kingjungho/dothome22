@@ -44,8 +44,8 @@ li {
     color: #fff;
 }
 #aside img {
-    width: 4.5vw;
-    height: 4vh;
+    width: 2.5vw;
+    height: 5vh;
 }
 #aside div {
     font-size: 0.9vw;
@@ -229,14 +229,19 @@ li {
 #section5 .list__num {
     font-family: "Elice Digital Baeum",sans-serif;
     font-size: 1.2vw;
-    color: rgba(255, 255, 255, 0.37);
     margin-right: 5px;
+    color: rgba(255, 255, 255, 0.37);
 }
 #section5 .list__name {
     font-family: 'Poppins', sans-serif;
     font-size: 4.8vw;
     margin-right: 40px;
     font-weight: bold;
+    -webkit-text-stroke: 2px white;
+    -webkit-text-fill-color: black;
+}
+#section5 .list__name.active {
+    -webkit-text-fill-color: rgb(241, 241, 241);
 }
 #section5 .list__desc {
     font-family: 'Raleway', sans-serif;
@@ -245,7 +250,7 @@ li {
     color: rgba(255, 255, 255, 0.479);
 }
 #section6 {
-    height: 246.5vh;
+    height: 624vh;
 }
 #section6 .siteWrap {
     background-color: #eeee;
@@ -265,7 +270,7 @@ li {
 }
 #section6 .siteWrap3 {
     background-color: #ecececb0;;
-    padding: 90px 0;
+    padding: 150px 0;
     display: flex;
     justify-content: center;
     align-items: flex-start;

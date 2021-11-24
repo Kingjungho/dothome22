@@ -1,3 +1,4 @@
+    //이펙트 스크립트
     const order = document.querySelectorAll(".descBox.order span");
     const number = document.querySelectorAll(".descBox.menu");
     const frame = document.querySelectorAll("#section8 .frameCss iframe");
@@ -73,4 +74,25 @@
 
     number.forEach(el => {
         el.addEventListener("click", menuView)
+    })
+
+    //MY SELF PROJECT 스크립트
+
+    const overView = document.querySelectorAll(".list");
+    const overViewDesc = document.querySelectorAll(".list__desc");
+    let currentMenu;
+
+    const overViewList = e => {
+        
+        if(currentMenu){
+            currentMenu.classList.remove("active")
+        }
+        if(e.target.classList.contains("list__name")){
+            e.target.classList.add("active");        
+            currentMenu = e.target;
+        }
+    }
+
+    overView.forEach(el => {
+        el.addEventListener("mouseover", overViewList)
     })
