@@ -302,7 +302,9 @@ li {
 #section5 .list__name.active {
     -webkit-text-fill-color: rgb(241, 241, 241);
 }
-
+#section5 .list__name.active .list__desc {
+    color: #fff;
+}
 #section5 .list__desc {
     font-family: 'Raleway', sans-serif;
     font-weight: 300;
@@ -311,7 +313,7 @@ li {
 }
 
 #section6 {
-    height: 624vh;
+    height: 650vh;
 }
 
 #section6 .siteWrap {
@@ -333,9 +335,8 @@ li {
 }
 
 #section6 .siteWrap3 {
-    background-color: #ecececb0;
-    ;
-    padding: 150px 0;
+    background-color: #ecececb0;;
+    padding: 158px 0;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -506,7 +507,7 @@ li {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 165vh;
+    height: 126vh;
 }
 
 #section9 .myAderess .adress {
@@ -525,6 +526,7 @@ li {
     color: #8c8c8c;;
     margin: 155px auto 0;
     font-weight: lighter;
+    cursor: pointer;
 }
 #section9 .circle {
     height: 100vh;
@@ -548,20 +550,29 @@ li {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    cursor: pointer;
+    margin-top: 400px;
 }
-#section9 .contactImail i {
-    font-size: 4vw;
-    color: hsla(0,0%,100%,.3);
-    margin-bottom: 30px;
-    text-align: center;
+#section9 .contactImail:hover img
+{
+    color: #fff;
+    filter: brightness(100%);
 }
+#section9 .contactImail:hover p
+{
+    color: #fff;
+    filter: brightness(100%);
+}
+
 #section9 .contactImail img {
     width: 4vw; height: 4vw;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
+    filter: brightness(50%);
 }
 #section9 .contactImail p {
     color: #484848;
     font-size: 1.5vw;
+    margin-bottom: 100px;
 }
 #section10 {
     width: 100%;
