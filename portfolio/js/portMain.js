@@ -181,3 +181,29 @@
         }
     });
     trigger.add('[data-trigger]');
+
+    //스크롤 이펙트
+    window.addEventListener("scroll", ()=>{
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop || window.scrollY;
+
+        const sectionOne = document.querySelector("#section1");
+        const sectionFive = document.querySelector("#section5");
+        const sectionSix = document.querySelector("#section6");
+        const sectionSeven = document.querySelector("#section7");
+
+        if( scrollTop >= sectionOne.offsetTop){
+            project.style.color = "#fff"
+        } else {
+            project.style.color = "#000"
+        }
+        if( scrollTop >= sectionSix.offsetTop){
+            project.style.color = "#000"
+        } else {
+            project.style.color = "#fff"
+        }
+        if( scrollTop >= sectionSeven.offsetTop){
+            project.style.color = "#fff"
+        } else {
+            project.style.color = "#000"
+        }
+    });
