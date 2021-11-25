@@ -23,7 +23,7 @@ li {
     background-color: #000;
     height: 100vh;
     position: relative;
-    background-image: url(img/main\ back.png);
+    background-image: url(../img/main\ back.png);
     background-size: 100% 100%;
     color: #fff;
 }
@@ -55,7 +55,7 @@ li {
 
 #aside img {
     width: 2.5vw;
-    height: 5vh;
+    height: 4vh;
 }
 
 #aside div {
@@ -212,10 +212,12 @@ li {
 
 #section4 .introduce .imgWrap {
     position: relative;
+    overflow: hidden;
 }
 
 #section4 .introduce .imgWrap:hover img {
     filter: brightness(40%);
+    transform: scale(1.05);
 }
 
 #section4 .introduce .imgWrap:hover .descWrap {
@@ -226,6 +228,7 @@ li {
 #section4 .introduce .imgWrap img {
     width: 17vw;
     height: 17vw;
+    transition: transform 0.6s cubic-bezier(0.28, 0.76, 1, 1);
 }
 
 #section4 .introduce .imgWrap .descWrap {
@@ -298,9 +301,12 @@ li {
     -webkit-text-stroke: 2px white;
     -webkit-text-fill-color: black;
 }
+#section5 .list__name:hover {
 
+}
 #section5 .list__name.active {
     -webkit-text-fill-color: rgb(241, 241, 241);
+    transition: all 0.8s ease-in;
 }
 
 #section5 .list__desc {
@@ -561,7 +567,6 @@ li {
     color: #fff;
     filter: brightness(100%);
 }
-
 #section9 .contactImail img {
     width: 4vw; height: 4vw;
     margin-bottom: 10px;
@@ -574,7 +579,7 @@ li {
 }
 #section10 {
     width: 100%;
-    height: 123vh;
+    height: 135vh;
     background-color: #1a1a1a;
     display: flex;
     justify-content: center;
@@ -598,29 +603,57 @@ li {
 #section10 .contactTable .tableWrap {}
 #section10 .contactTable .tableWrap li {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     font-size: 1.5vw;
     border-bottom: 1px solid hsla(0,0%,100%,.3);
     border-top: 1px solid hsla(0,0%,100%,.3);
-    padding: 40px 0;
+    padding: 20px 0;
 }
-#section10 .contactTable .tableWrap li p {}
-#section10 .contactTable .tableWrap li span {
-    display: inline-block;
+#section10 .contactTable .tableWrap li h4 {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    cursor: pointer;
+}
+#section10 .contactTable .tableWrap li .text {
+    font-size: 1.2vw;
+    opacity: 0;
+    height: 0;
+    padding: 0px 20px;
+    position: relative;
+    line-height: 24px;
+    font-size: 16px;
+    font-weight: 200;
+    transition: all 0.6s cubic-bezier(.42,.2,.08,1);
+    overflow: hidden;
+    letter-spacing: 0.5px;
+}
+#section10 .contactTable .tableWrap li .text.show {
+    opacity: 1;
+    height: auto;
+    padding: 25px 5px;
+    position: relative;
+    z-index: 0;
+    border-radius: 0px 0px 3px 3px;
+}
+#section10 .contactTable .tableWrap li .arrow {
     position: relative;
 }
-#section10 .contactTable .tableWrap li span::before,
-#section10 .contactTable .tableWrap li span::after {
+#section10 .contactTable .tableWrap li .arrow::before,
+#section10 .contactTable .tableWrap li .arrow::after {
     content: "";
     width: 27px;
     height: 1px;
     position: absolute;
-    top: 20px; left: -44px;
+    top: 20px; left: -30px;
     background: #fff;
     transition: transform .6s cubic-bezier(.77,0,.175,1);
 }
-#section10 .contactTable .tableWrap li span::before {
+#section10 .contactTable .tableWrap li .arrow::before {
     transform: rotate(-90deg);
+}
+#section10 .contactTable .tableWrap li .arrow.anime.arrow::before {
+    transform: rotate(0deg);
 }
 #section10 ul .outputList {
     display: flex;
@@ -645,20 +678,20 @@ li {
 }
 @-webkit-keyframes rotation {
     from {
-      transform: rotate(0deg);
+    transform: rotate(0deg);
     }
     to {
-      transform: rotate(360deg);
+    transform: rotate(360deg);
     }
-  }
-  @keyframes rotation {
+}
+@keyframes rotation {
     from {
-      transform: rotate(0deg);
+    transform: rotate(0deg);
     }
     to {
-      transform: rotate(360deg);
+    transform: rotate(360deg);
     }
-  }
+}
 
 @media (max-width:1600px) {
     #section {
@@ -780,3 +813,7 @@ li {
     opacity: 1;
     top: 0;
 }
+
+
+
+
