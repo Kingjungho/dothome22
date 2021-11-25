@@ -6,8 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>포트폴리오</title>
+    <!-- SCROLL TRIGGER -->
+    <script src="js/ScrollTrigger.min.js"></script>
     <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <!-- FONT -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -77,9 +79,9 @@
                 <aside id="aside">
                     <h2>ABOUT<br>ME</h2>
                     <p>새로운 변화에 발 맞춰 성장하는<br>
-                        프론트앤드 개발자 김정호가 되겠습니다.</p>
+                        프론트엔드 개발자 김정호가 되겠습니다.</p>
                 </aside>
-                <div class="introduce">
+                <div class="introduce" data-trigger>
                     <div class="imgWrap">
                         <img src="img/Rectangle 1453.png" alt="이미지">
                         <div class="descWrap">
@@ -421,7 +423,7 @@
                     5455 de Gaspé<br>
                     MTL, QC, H2T 3B3<br>
                     <div>514.907.5011</div>
-                    <p>CONTACT US</p>
+                    <p>CONTACT ME</p>
                 </div>
                 <div class="circle">
                     <svg xmlns="http://www.w3.org/2000/svg" class="dotted-circle" width="352" height="352"
@@ -467,9 +469,9 @@
                 </div>
                 <ul>
                     <li class="outputList">
-                        <a href="#">Instagram</a>
-                        <a href="#">Facebook</a>
-                        <a href="#">Twitter</a>
+                        <a href="#">Github</a>
+                        <a href="#">Figma</a>
+                        <a href="#">codePen</a>
                         <a href="#">Linkedin</a>
                     </li>
                 </ul>
@@ -480,7 +482,7 @@
             <span>© Tous droits réservé. 2021<span>Kr</span></span>    
         </div>
     </div>
-    <script src="portMain.js"></script>
+    <script src="js/portMain.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script>
@@ -493,6 +495,8 @@
         // }
 
         // menu.addEventListener("click", newList)
+        const trigger = new ScrollTrigger.default();
+        trigger.add('[data-trigger]');
     </script>
 </body>
 

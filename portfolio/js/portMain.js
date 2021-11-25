@@ -118,3 +118,20 @@
     about.addEventListener("click", aboutClickhandler)
     contact.addEventListener("click", contactClickhandler)
     contactMe.addEventListener("click", contactMeClickhandler)
+
+
+    // scroll Trigger
+    const trigger = new ScrollTrigger.default({
+        trigger: {
+            once: false,
+            offset: {
+                element: {
+                    x: 0,
+                    y: (trigger, rect, direction) => {
+                        return 0.5
+                    }
+                },
+            },
+        }
+    });
+    trigger.add('[data-trigger]');
