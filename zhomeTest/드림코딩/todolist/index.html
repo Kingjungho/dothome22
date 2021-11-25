@@ -17,12 +17,11 @@
       <h2>My ToDoList!!</h2>
     </header>
     <ul class="list">
-
     </ul>
     <footer id="footer">
       <form class="new-form">
         <input type="text" class="input__write">
-        <button type="submit" class="addBtn">
+        <button class="addBtn">
           <i class="far fa-kiss-beam"></i>
         </button>
       </form>
@@ -35,95 +34,50 @@
     const deleteBtn = document.querySelector(".delete");
     const input = document.querySelector(".input__write");
 
-
     const listPlus = () => {
       const text = input.value;
-      if (text === '') {
-        input.focus()
-        return
+      if(text === ""){
+        input.focus();
+        return;
       }
-      const newItem = itemList(text);
-      list.appendChild(newItem)
+    
+      const newItem = itemList(text)
+      list.appendChild(newItem);
       input.value = "";
       input.focus();
-      newItem.scrollIntoView({
-        block: "center"
-      })
+      newItem.scrollIntoView({behavior:"smooth",  block:"center"})
     }
-    id = 0;
-    const itemList = (text) => {
-      const item = document.createElement("li")
-      item.setAttribute("class", "item");
-      item.setAttribute("data-id", id)
-      item.innerHTML = `
-          <div class="items">
-            <span class="name">${text}</span>
+      id=0;
+      const itemList = (text) => {
+        const items = document.createElement("li");
+        items.setAttribute("class", "items");
+        items.setAttribute("data-id", id)
+        items.innerHTML = `
+          <span class="name">${text}</span>
             <button class="delete">
               <i class="far fa-kiss-beam" data-id="${id}"></i>
             </button>
           </div>
-        <div class="divider"></div>
-      `;
-      ++id;
-      return item;
-    }
-
-    const listDelete = e => {
-      const id = e.target.dataset.id
-      if (id) {
-        const deleteList = document.querySelector(`.item[data-id='${id}']`);
-        deleteList.remove();
+        <div class="divider"></div>`
+        id++;
+        return items;
       }
-    }
+    
 
-    list.addEventListener("click", listDelete);
-
+      const deleteList = e => {
+        const id = e.target.dataset.id
+        if(id){
+          const deletes = document.querySelector(`.items[data-id="${id}"]`);
+          deletes.remove();
+        }
+      }
+    
+    addBtn.addEventListener("click", listPlus)
+    list.addEventListener("click", deleteList)
     form.addEventListener("submit", e => {
       e.preventDefault();
       listPlus();
     })
-    
-    // addBtn.addEventListener("click", listPlus)
-    // input.addEventListener("keydown", e => {
-    //   if (e.key === 'Enter') {
-    //     listPlus()
-    //   }
-    // })
-    
-
-    class Counter { //class명 앞은 대문자로 시작합니다!
-        constructor(runEveryFiveTimes) {
-          this.counter = 0;
-          this.callBack = runEveryFiveTimes;
-        }
-
-        increase() { //function 작성 필요없습니다!
-          this.counter++;
-          if(this.counter % 5 === 0){
-            this.callBack(this.counter);
-          }
-        }
-      }
-      function printSomething(num) {
-        console.log(`yo! man~ ${num}`)
-      }
-      function alertNum(num){
-        alert(`개어렵네 띠봉 ${num}`)
-      }
-
-      const coolCounter = new Counter(printSomething);
-      
-      coolCounter.increase();
-      coolCounter.increase();
-      coolCounter.increase();
-      coolCounter.increase();
-      coolCounter.increase();
-      coolCounter.increase();
-      coolCounter.increase();
-      coolCounter.increase();
-      coolCounter.increase();
-      coolCounter.increase();
-  
   </script>
 </body>
 

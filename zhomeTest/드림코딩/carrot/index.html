@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>캐럿!</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 </head>
+
 <body>
     <section class="game">
         <header class="game__header">
@@ -31,47 +34,57 @@
         const field = document.querySelector(".game__field");
         const popup = document.querySelector(".pop-up__message");
 
+        let str1 = Math.round(Math.random() * 100);
+        let str2 = Math.round(Math.random() * 100);
 
-        let str1 = Math.round(Math.random()*100);
-        let str2 = Math.round(Math.random()*100);
-
-        let bug = document.createElement("img");
-        let carrot = document.createElement("img");
-        bug.setAttribute("class", "bug");
-        carrot.setAttribute("class", "carrot");
-        bug.src = "img/bug.png";
-        carrot.src = "img/carrot.png";
-        field.append(bug);
-        field.append(carrot);
-        let startTimer = 10;
-        let startScore = 9;
-        bug.style.display = "none"
-        carrot.style.display = "none"
-
-        const gameStart = () => {
-        const interval = setInterval(() => {
-                if(startTimer >= 0){
-                    timer.innerHTML = `0:${startTimer}`
-                    start.innerHTML = `<i class="fas fa-pause"></i>`
-                    startTimer--;
-                    bug.style.display = "block"
-                    carrot.style.display = "block"
-                    bug.style.left = str1 + "px"
-                    bug.style.top = str2 + "px"
-                    carrot.style.left = str1 + "px"
-                    carrot.style.top = str2 + "px"
-                } else {
-                    clearInterval(interval);
-                    startTimer = 10;
-                    timer.innerHTML = `0:${startTimer}`
-                    start.innerHTML = `<i class="fas fa-play"></i>`
-                    bug.style.display = "none"
-                    carrot.style.display = "none"
-                }
-            }, 1000)       
+        class FieldSomething {
+            constructor(bugAndCarrot) {
+                this.counter = 0;
+                this.callback = bugAndCarrot;
+            }
+            increase() {
+                this.counter++;
+                this.callback(this.counter)
+            }
         }
 
+        const bugSomething = (num) => {
+            if (num >= 10) {
+                const aLotOfBugs = document.createElement("img");
+                const aLotOfCarrots = document.createElement("img");
+                field.appendChild(aLotOfBugs);
+                field.appendChild(aLotOfCarrots);
+            }
+        }
+        startTime = 10;
+        startNumber = 9;
+
+        const gameStart = () => {
+            start.innerHTML = `<i class="fas fa-baby"></i>`
+
+            const interval = setInterval(() => {
+                if (startTime >= 0) {
+                    timer.innerHTML = `0:${startTime}`
+                    startTime--
+                }  
+            }, 1000);
+        }
+
+
         start.addEventListener("click", gameStart)
+        const bugs = new FieldSomething(bugSomething);
+
+        bugs.increase();
+        bugs.increase();
+        bugs.increase();
+        bugs.increase();
+        bugs.increase();
+        bugs.increase();
+        bugs.increase();
+        bugs.increase();
+        bugs.increase();
+        bugs.increase();
     </script>
 </body>
+
 </html>
