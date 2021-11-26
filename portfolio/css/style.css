@@ -316,10 +316,10 @@ body {
     font-weight: bold;
     -webkit-text-stroke: 2px white;
     -webkit-text-fill-color: black;
-    transition: transform 0.8s ease-in;
 }
 
 #section5 .list__name.active {
+    transition: -webkit-text-fill-color 0.8s ease-in;
     -webkit-text-fill-color: rgb(241, 241, 241);
 }
 

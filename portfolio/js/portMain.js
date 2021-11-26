@@ -29,6 +29,7 @@
 
     //이펙트 스크립트
     const order = document.querySelectorAll(".descBox.order span");
+    console.log(order)
     const number = document.querySelectorAll(".descBox.menu");
     const frame = document.querySelectorAll("#section8 .frameCss iframe");
 
@@ -43,37 +44,38 @@
                 })
             }
         }
-        for (let i = 1; i < 9; i++) {
-            if (e.target.parentNode.dataset.id === "1" && e.target.textContent === `${i}`) {
-                order.forEach(el => {
-                    el.innerHTML = `${i}`;
-                    frame.forEach(el => {
-                        el.src = `https://kingjungho.github.io/dothome22/refer-effect/sliderEffect/javascriptSE0${i}.html`
-                    })
-                })
-            }
-        }
-        for (let i = 1; i < 9; i++) {
-            if (e.target.parentNode.dataset.id === "2" && e.target.textContent === `${i}`) {
-                order.forEach(el => {
-                    el.innerHTML = `${i}`;
-                    frame.forEach(el => {
-                        el.src = `https://kingjungho.github.io/dothome22/refer-effect/mouseEffect/javascriptME0${i}.html`
-                    })
-                })
-            }
-        }
-        for (let i = 1; i < 9; i++) {
-            if (e.target.parentNode.dataset.id === "3" && e.target.textContent === `${i}`) {
-                order.forEach(el => {
-                    el.innerHTML = `${i}`;
-                    frame.forEach(el => {
-                        el.src = `https://kingjungho.github.io/dothome22/refer-effect/GameEffect/quiz/cardGame.html`
-                    })
-                })
-            }
-        }
     }
+    //     for (let i = 1; i < 9; i++) {
+    //         if (e.target.parentNode.dataset.id === "1" && e.target.textContent === `${i}`) {
+    //             order.forEach(el => {
+    //                 el.innerHTML = `${i}`;
+    //                 frame.forEach(el => {
+    //                     el.src = `https://kingjungho.github.io/dothome22/refer-effect/sliderEffect/javascriptSE0${i}.html`
+    //                 })
+    //             })
+    //         }
+    //     }
+    //     for (let i = 1; i < 9; i++) {
+    //         if (e.target.parentNode.dataset.id === "2" && e.target.textContent === `${i}`) {
+    //             order.forEach(el => {
+    //                 el.innerHTML = `${i}`;
+    //                 frame.forEach(el => {
+    //                     el.src = `https://kingjungho.github.io/dothome22/refer-effect/mouseEffect/javascriptME0${i}.html`
+    //                 })
+    //             })
+    //         }
+    //     }
+    //     for (let i = 1; i < 9; i++) {
+    //         if (e.target.parentNode.dataset.id === "3" && e.target.textContent === `${i}`) {
+    //             order.forEach(el => {
+    //                 el.innerHTML = `${i}`;
+    //                 frame.forEach(el => {
+    //                     el.src = `https://kingjungho.github.io/dothome22/refer-effect/GameEffect/quiz/cardGame.html`
+    //                 })
+    //             })
+    //         }
+    //     }
+    // }
 
     number.forEach(el => {
         el.addEventListener("click", menuView)
