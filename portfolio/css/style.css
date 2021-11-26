@@ -23,7 +23,6 @@ body {
     -webkit-overflow-scrolling: touch;
 }
 
-
 #section {
     background-color: #000;
     height: 100vh;
@@ -64,6 +63,17 @@ body {
 #aside img {
     width: 2.5vw;
     height: 4vh;
+    margin-bottom: 5px;
+}
+.supah-scroll {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    will-change: transform;
+    overflow: hidden;
 }
 #section .menu1 {
     position: fixed;
@@ -74,7 +84,7 @@ body {
 #section .menu2 {
     position: fixed;
     top: 3%;
-    right: 2%;
+    right: 1.5%;
 }
 
 #section .menu3 {
@@ -86,7 +96,7 @@ body {
 #section .menu4 {
     position: fixed;
     bottom: 3.5%;
-    right: 2%;
+    right: 1.5%;
 }
 
 #footer {
@@ -224,11 +234,6 @@ body {
     transform: scale(1.05);
 }
 
-#section4 .introduce .imgWrap:hover .descWrap {
-    color: #fff;
-    opacity: 1;
-}
-
 #section4 .introduce .imgWrap img {
     width: 17vw;
     height: 17vw;
@@ -251,6 +256,13 @@ body {
 #section4 .introduce .imgWrap .imgDesc {
     font-size: 1vw;
 }
+
+#section4 .introduce .imgWrap:hover .descWrap {
+    color: #fff;
+    opacity: 1;
+    transition: 1s ease;
+}
+
 
 #section5 {
     height: 160vh;
@@ -341,7 +353,15 @@ body {
 }
 
 #section6 .siteWrap3 {
-    background-color: #ecececb0;;
+    background-color: #ffffff;;
+    padding: 158px 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+}
+#section6 .siteWrap6 {
+    background-color: #e7e7e7;;
     padding: 158px 0;
     display: flex;
     justify-content: center;
