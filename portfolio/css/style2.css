@@ -157,17 +157,17 @@ body {
     transform: translate(-50%, -50%);
 }
 #section2 .banner {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
-
 #section2 .banner h2 {
     font-family: 'Raleway', sans-serif;
     font-size: 5vw;
     color: #fff;
     position: fixed;
-    top: 65%;
+    top: 0;
     left: 50%;
     transform: translate(-50%, -50%);
     transition: transform 0.7s ease-in-out;
