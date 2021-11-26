@@ -34,56 +34,18 @@
         const field = document.querySelector(".game__field");
         const popup = document.querySelector(".pop-up__message");
 
-        let str1 = Math.round(Math.random() * 100);
-        let str2 = Math.round(Math.random() * 100);
-
-        class FieldSomething {
-            constructor(bugAndCarrot) {
-                this.counter = 0;
-                this.callback = bugAndCarrot;
-            }
-            increase() {
-                this.counter++;
-                this.callback(this.counter)
-            }
+        const init = () => {
+            addItem('bug', 5, 'img/bug.png')
+            addItem('carrot', 5, 'img/carrot.png')
         }
 
-        const bugSomething = (num) => {
-            if (num >= 10) {
-                const aLotOfBugs = document.createElement("img");
-                const aLotOfCarrots = document.createElement("img");
-                field.appendChild(aLotOfBugs);
-                field.appendChild(aLotOfCarrots);
-            }
-        }
-        startTime = 10;
-        startNumber = 9;
-
-        const gameStart = () => {
-            start.innerHTML = `<i class="fas fa-baby"></i>`
-
-            const interval = setInterval(() => {
-                if (startTime >= 0) {
-                    timer.innerHTML = `0:${startTime}`
-                    startTime--
-                }  
-            }, 1000);
+        const addItem = (className, number, img) => {
+            const bug = document.createElement("img");
+            bug.src = img;
+            
         }
 
-
-        start.addEventListener("click", gameStart)
-        const bugs = new FieldSomething(bugSomething);
-
-        bugs.increase();
-        bugs.increase();
-        bugs.increase();
-        bugs.increase();
-        bugs.increase();
-        bugs.increase();
-        bugs.increase();
-        bugs.increase();
-        bugs.increase();
-        bugs.increase();
+        
     </script>
 </body>
 
