@@ -23,17 +23,17 @@
     })
 
 
-    
-    
-    
-    
+
+
+
+
     //이펙트 스크립트
     const order = document.querySelectorAll(".descBox.order span");
     const number = document.querySelectorAll(".descBox.menu");
     const frame = document.querySelectorAll("#section8 .frameCss iframe");
-    
+
     const menuView = e => {
-        for(let i = 1; i<9; i++){
+        for (let i = 1; i < 9; i++) {
             if (e.target.parentNode.dataset.id === "0" && e.target.textContent === `${i}`) {
                 order.forEach(el => {
                     el.innerHTML = `${i}`;
@@ -43,7 +43,7 @@
                 })
             }
         }
-        for(let i = 1; i<9; i++){
+        for (let i = 1; i < 9; i++) {
             if (e.target.parentNode.dataset.id === "1" && e.target.textContent === `${i}`) {
                 order.forEach(el => {
                     el.innerHTML = `${i}`;
@@ -53,7 +53,7 @@
                 })
             }
         }
-        for(let i = 1; i<9; i++){
+        for (let i = 1; i < 9; i++) {
             if (e.target.parentNode.dataset.id === "2" && e.target.textContent === `${i}`) {
                 order.forEach(el => {
                     el.innerHTML = `${i}`;
@@ -63,7 +63,7 @@
                 })
             }
         }
-        for(let i = 1; i<9; i++){
+        for (let i = 1; i < 9; i++) {
             if (e.target.parentNode.dataset.id === "3" && e.target.textContent === `${i}`) {
                 order.forEach(el => {
                     el.innerHTML = `${i}`;
@@ -136,27 +136,26 @@
         let target = el.currentTarget;
 
         if (targetText.contains('show')) {
-        targetText.remove('show');
-        targetAccIcon.classList.remove('anime');
-        target.classList.remove('accordionTitleActive');
-        } 
-        else {
+            targetText.remove('show');
+            targetAccIcon.classList.remove('anime');
+            target.classList.remove('accordionTitleActive');
+        } else {
             accordionBtn.forEach(function (el) {
-            el.classList.remove('accordionTitleActive');
-            
-            allTexts.forEach(function (el) {
-                el.classList.remove('show');
+                el.classList.remove('accordionTitleActive');
+
+                allTexts.forEach(function (el) {
+                    el.classList.remove('show');
+                })
+
+                accIcon.forEach(function (el) {
+                    el.classList.remove('anime');
+                })
             })
-            
-            accIcon.forEach(function (el) {
-                el.classList.remove('anime');
-            }) 
-        })  
-        
+
             targetText.add('show');
             target.classList.add('accordionTitleActive');
             targetAccIcon.classList.add('anime');
-        }  
+        }
     }
 
 
@@ -182,28 +181,43 @@
     });
     trigger.add('[data-trigger]');
 
+
+
     //스크롤 이펙트
-    window.addEventListener("scroll", ()=>{
+
+    const aside = document.querySelectorAll("#section #aside a div");
+    const asideImg = document.querySelectorAll("#section #aside img");
+    const sectionOne = document.querySelector("#section1");
+    const sectionFour = document.querySelector("#section4");
+    const sectionFive = document.querySelector("#section5");
+    const sectionSix = document.querySelector("#section6");
+    const sectionSeven = document.querySelector("#section7");
+
+    window.addEventListener("scroll", () => {
         let scrollTop = window.pageYOffset || document.documentElement.scrollTop || window.scrollY;
 
-        const sectionOne = document.querySelector("#section1");
-        const sectionFive = document.querySelector("#section5");
-        const sectionSix = document.querySelector("#section6");
-        const sectionSeven = document.querySelector("#section7");
+        if (scrollTop >= sectionFour.offsetTop && scrollTop <= sectionFive.offsetTop) {
+            aside.forEach(el => {
+                el.style.color = "#000"
+            })
+            asideImg.forEach(el => {
+                el.style.filter = "brightness(0%)"
+            })
+        } else if (scrollTop >= sectionSix.offsetTop && scrollTop <= sectionSeven.offsetTop) {
+            aside.forEach(el => {
+                el.style.color = "#000"
+            })
+            asideImg.forEach(el => {
+                el.style.filter = "brightness(0%)"
+            })
+        } else {
+            aside.forEach(el => {
+                el.style.color = "#fff"
+            })
+            asideImg.forEach(el => {
+                el.style.filter = "brightness(100%)"
+            })
+        }
 
-        if( scrollTop >= sectionOne.offsetTop){
-            project.style.color = "#fff"
-        } else {
-            project.style.color = "#000"
-        }
-        if( scrollTop >= sectionSix.offsetTop){
-            project.style.color = "#000"
-        } else {
-            project.style.color = "#fff"
-        }
-        if( scrollTop >= sectionSeven.offsetTop){
-            project.style.color = "#fff"
-        } else {
-            project.style.color = "#000"
-        }
+
     });

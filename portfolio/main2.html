@@ -33,7 +33,7 @@
         <section id="section">
             <aside id="aside">
                 <a href="#" class="menu1">
-                    <span class="main__port">PORT.</span>
+                    <div class="main__port">PORT.</div>
                 </a>
                 <a href="#" class="menu2">
                     <img src="img/logo1.svg" alt="">
@@ -487,13 +487,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>
     <script>
-        var s = skrollr.init();
-
-        window.addEventListener("scroll", () => {
-            let scrollTop = window.pageYOffset || document.documentElement.scrollTop || window.scrollY;
-
-            document.querySelector(".scroll").innerHTML = scrollTop;
-        })
+       
     </script>
 </body>
 
