@@ -56,20 +56,20 @@
                         </div>
                     </span>
                 </li>
-                
+
             </ul>
-            
+
         </header>
     </div>
     <div class="sliderWrap">
         <p class="controller">
             <span class="prev">prev</span>
             <span class="next">next</span>
-        </p> 
+        </p>
         <div class="slider-inner">
             <img class="slider" src="img/card17.jpg" alt="">
             <img class="slider" src="img/card12.jpg" alt="">
-            <img class="slider" src="img/card13.jpg" alt="">  
+            <img class="slider" src="img/card13.jpg" alt="">
             <article id="article">
                 <h2 class="article__title">STARTUP Germany<br>2019 참가업체 모집</h2>
                 <p class="article__desc">사업기간 2019-07-02 ~ 2019-08-09</p>
@@ -239,63 +239,63 @@
         </div>
     </footer>
     <script>
-    //슬라이더
-    const slides = document.querySelector(".slider-inner");
-    const slide = document.querySelectorAll(".slider");
-    const prev = document.querySelector(".prev");
-    const next = document.querySelector(".next");
+        //슬라이더
+        const slides = document.querySelector(".slider-inner");
+        const slide = document.querySelectorAll(".slider");
+        const prev = document.querySelector(".prev");
+        const next = document.querySelector(".next");
 
-    currenIndex = 0;
-    slideCount = slide.length;
-    imgWidth = 1870;
+        currentIndex = 0;
+        slideCount = slide.length;
+        imgWidth = 1870;
 
-    slides.style.width = imgWidth * slideCount + "px";
+        
+        slides.style.width = imgWidth * slideCount + "px";
 
-    function slideMove(num){
-        slides.style.left = -num * imgWidth + "px";
-        currenIndex = num;
-    }
-    
-    prev.addEventListener("click", () => {
-        if(currenIndex > 0){
-            slideMove(currenIndex - 1);
-        } else {
-            slideMove(slideCount -1)
+        const slideMove = num => {
+            slides.style.left = -num * imgWidth + "px";
+            currentIndex = num;
         }
-    })
-
-    next.addEventListener("click", () => {
-        if(currenIndex < slideCount - 1){
-            slideMove(currenIndex + 1);
-            console.log(currenIndex)
-        } else {
-            slideMove(0)
-        }
-    })
 
 
+        prev.addEventListener("click", () => {
+            if(currentIndex > 0){
+                slideMove(currentIndex -1)
+            } else {
+                slideMove(slideCount -1)
+            }
+        })
 
-    
+        next.addEventListener("click", () => {
+            if(currentIndex < slideCount -1){
+                slideMove(currentIndex + 1)
+            } else {
+                slideMove(0);
+            }
+        })
+
+
+
         // 탭메뉴 1
         const tabButton = document.querySelector(".header__right li");
         let currentMenu;
 
         const newList = e => {
-            if(currentMenu){
+            if (currentMenu) {
                 currentMenu.classList.remove("active");
             }
             e.target.classList.add("active");
-            currentMenu = e.target;  
+            currentMenu = e.target;
         }
 
         tabButton.addEventListener("mouseover", newList)
-        
 
 
 
 
 
-        // 탭메뉴
+
+        //탭메뉴
         const tabBtn = document.querySelectorAll('.box_header h3')
         const tabMenu = document.querySelectorAll(".box_desc");
         tabMenu[0].style.display = "block"
@@ -314,8 +314,7 @@
                 });
             })
 
-        
-        
+       
     </script>
 </body>
 

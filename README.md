@@ -1,6 +1,6 @@
 # dothome22
 
-스마트웹 21
+스마트웹 22
 
 ## 메인 <a href ="https://kingjungho.github.io/dothome22/">바로가기</a>
 
@@ -8,6 +8,6 @@
 
 ### 레이아웃 <a href ="https://kingjungho.github.io/dothome22/layout/index.html">바로가기</a>
 
-CSS 레퍼런스 <a href ="https://kingjungho.github.io/dothome22/refer-css/index.html">바로가기</a>
+### CSS 레퍼런스 <a href ="https://kingjungho.github.io/dothome22/refer-css/index.html">바로가기</a>
 
-HTML 레퍼런스 <a href ="https://kingjungho.github.io/dothome22/refer-html/index.html">바로가기</a>
+### 레퍼런스 <a href ="https://kingjungho.github.io/dothome22/refer-html/index.html">바로가기</a>
