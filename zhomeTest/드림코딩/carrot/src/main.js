@@ -1,16 +1,13 @@
 'use strict'
 
+import PopUp from './popup.js'
+
 
 //게임 시스템
 const gameBtn = document.querySelector(".game__button");
 const timerText = document.querySelector(".game__timer");
 const gameScore = document.querySelector(".game__score");
 const field = document.querySelector(".game__field");
-
-//필드
-const popUp = document.querySelector(".pop-up");
-const popUpRefresh = document.querySelector(".pop-up__refresh");
-const popUpMessage = document.querySelector(".pop-up__message");
 const fieldRect = field.getBoundingClientRect();
 
 // 사운드
@@ -29,6 +26,12 @@ let timer;
 let started = false;
 let score = 0;
 
+const finishGameBoard = new PopUp();
+finishGameBoard.setClickListener(() => {
+    gameStart();
+    gameBtn.style.visibility = 'visible'
+})
+
 gameBtn.addEventListener("click", () => {
     if(started){
         gameStop();
@@ -43,13 +46,13 @@ const gameStart = () => {
     showBtnChange();
     initGame();
     gameTimer();
+    finishGameBoard.hide();
     playSound(bgSound)
 }
 
 const gameStop = () => {
     started = false;
-    popUpMessage.innerHTML = 'REPLAY?'
-    popUp.classList.remove('pop-up-hide');
+    finishGameBoard.TextAndIcon('Replay?')
     clearInterval(timer);
     gameBtn.style.visibility = 'hidden'
     playSound(alertSound)
@@ -89,16 +92,11 @@ field.addEventListener("click", e => {
     }
 })
 
-popUpRefresh.addEventListener("click", () => {
-    gameStart();
-    popUp.classList.add('pop-up-hide');
-    gameBtn.style.visibility = 'visible'
-})
+
 
 const finishGame = (win) => {
-    popUp.classList.remove('pop-up-hide');
     clearInterval(timer);
-    popUpMessage.innerHTML = win ? 'You win' : 'You Lose'
+    finishGameBoard.TextAndIcon(win ? 'you Won!' : 'you Loser')
     gameBtn.style.visibility = 'hidden'
     pauseSound(bgSound)
 }
