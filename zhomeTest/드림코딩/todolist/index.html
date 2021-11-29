@@ -55,7 +55,7 @@
         items.innerHTML = `
           <span class="name">${text}</span>
             <button class="delete">
-              <i class="far fa-kiss-beam" data-id="${id}"></i>
+              <i class="far fa-kiss-beam" data-target-id="${id}"></i>
             </button>
           </div>
         <div class="divider"></div>`
@@ -65,7 +65,7 @@
     
 
       const deleteList = e => {
-        const id = e.target.dataset.id
+        const id = e.target.dataset.targetId
         if(id){
           const deletes = document.querySelector(`.items[data-id="${id}"]`);
           deletes.remove();

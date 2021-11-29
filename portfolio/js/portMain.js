@@ -32,7 +32,7 @@
     console.log(order)
     const number = document.querySelectorAll(".descBox.menu");
     const frame = document.querySelectorAll("#section8 .frameCss iframe");
-
+    
     const menuView = e => {
         for (let i = 1; i < 9; i++) {
             if (e.target.parentNode.dataset.id === "0" && e.target.textContent === `${i}`) {
