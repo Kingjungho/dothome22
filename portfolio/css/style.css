@@ -789,13 +789,16 @@ body {
         font-size: 1.4vw;
     }
     #section6 .aside .siteDesc {
-        font-size: 1.5vw;
+        font-size: 1.3vw;
     }
     #section8 .frameDesc {
         min-width: 770px;
     }
     #section8 .frameCss iframe {
         height: 550px;
+    }
+    #section10 .introduceWrap {
+
     }
 }
 
