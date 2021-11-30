@@ -17,7 +17,7 @@ window.addEventListener("scroll", () => {
             heightBefore = sectionAll[i - 1].offsetHeight / 11;
         }
 
-        if (scrollTop > (secDiv.offsetTop - 800) - heightBefore) {
+        if (scrollTop > (secDiv.offsetTop - 600) - heightBefore) {
             let color = secDiv.getAttribute("data-color");
             document.body.style.background = color;
         }
