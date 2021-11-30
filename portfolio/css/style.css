@@ -737,6 +737,9 @@ body {
         width: 50vw;
         height: 40vh;
     }
+    #section6 {
+        height: 563vh;
+    }
 }
 
 @media (max-width:1200px) {
@@ -750,13 +753,7 @@ body {
         height: 2.8vw;
     }
 
-    #section .menu3 {
-        bottom: 35%;
-    }
 
-    #section .menu4 {
-        bottom: 35%;
-    }
 
     #footer .line {
         height: 90%
@@ -764,6 +761,9 @@ body {
 
     #section3 {
         height: 70vh;
+    }
+    #section6 {
+        height: 540vh;
     }
 }
 
@@ -808,12 +808,10 @@ body {
     }
 
     #section .menu3 {
-        bottom: 44%;
         left: 2%;
     }
 
     #section .menu4 {
-        bottom: 44%;
         right: 2%;
     }
 
