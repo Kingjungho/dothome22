@@ -18,7 +18,7 @@ body {
     overscroll-behavior: none;
     -webkit-overflow-scrolling: touch;
     background: black;
-    transition: background  0.5s ease;
+    transition: background  0.7s ease;
 }
 
 #section {
@@ -261,7 +261,7 @@ body {
 
 
 #section5 {
-    height: 160vh;
+    height: 200vh;
     color: #fff;
 }
 

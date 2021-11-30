@@ -1,25 +1,16 @@
 'use strict'
 
 import PopUp from './popup.js'
-
+import Field from './field.js'
+import * as sound from './sound.js'
 
 //게임 시스템
 const gameBtn = document.querySelector(".game__button");
 const timerText = document.querySelector(".game__timer");
 const gameScore = document.querySelector(".game__score");
-const field = document.querySelector(".game__field");
-const fieldRect = field.getBoundingClientRect();
-
-// 사운드
-const bugSound = new Audio('./sound/bug_pull.mp3');
-const bgSound = new Audio('./sound/bg.mp3');
-const carrotSound = new Audio('./sound/carrot_pull.mp3');
-const alertSound = new Audio('./sound/alert.wav');
-const winSound = new Audio('./sound/game_win.mp3');
-
 
 const CARROT_COUNT = 10;
-const CARROT_SIZE = 80;
+const BUG_COUNT = 10;
 const REMAIN_TIME = 10;
 
 let timer;
@@ -27,6 +18,27 @@ let started = false;
 let score = 0;
 
 const finishGameBoard = new PopUp();
+const gameField = new Field(CARROT_COUNT, BUG_COUNT);
+
+gameField.setClickListener(onItemClick);
+
+function onItemClick(item){
+    if(!started){
+        return;
+    }
+    if(item === 'carrot'){
+        score++;
+        scoreBoardText(score);
+        if(CARROT_COUNT === score){
+            finishGame(true)
+            sound.playWinSound()
+        }
+    } else if (item === 'bug'){
+        finishGame(false)
+        sound.playBugSound()
+    }
+}
+
 finishGameBoard.setClickListener(() => {
     gameStart();
     gameBtn.style.visibility = 'visible'
@@ -40,13 +52,14 @@ gameBtn.addEventListener("click", () => {
     }
 })
 
+
 const gameStart = () => {
     started = true;
     showBtnChange();
     initGame();
     gameTimer();
     finishGameBoard.hide();
-    playSound(bgSound)
+    sound.playBgSound();
 }
 
 const gameStop = () => {
@@ -54,8 +67,8 @@ const gameStop = () => {
     finishGameBoard.TextAndIcon('Replay?')
     clearInterval(timer);
     gameBtn.style.visibility = 'hidden'
-    playSound(alertSound)
-    pauseSound(bgSound)
+    sound.playAlertSound();
+    sound.stopBgSound();
 }
 
 const gameTimer = () => {
@@ -65,39 +78,23 @@ const gameTimer = () => {
         if(remainingTime <= 0){
             clearInterval(timer);
             finishGame(CARROT_COUNT === score)
+            sound.playBugSound();
             return;
         }
         boardTextRemainingTime(--remainingTime);
     }, 1000)
 }
 
-field.addEventListener("click", e => {
-    if(!started){
-        return;
-    }
-    const target = e.target;
-    if(target.matches('.carrot')){
-        target.remove();
-        score++;
-        playSound(carrotSound)
-        scoreBoardText(score);
-        if(CARROT_COUNT === score){
-            finishGame(true)
-            playSound(winSound);
-        }
-    } else if (target.matches('.bug')){
-        finishGame(false)
-        playSound(bugSound)
-    }
-})
+
 
 
 
 const finishGame = (win) => {
+    started = false;
     clearInterval(timer);
     finishGameBoard.TextAndIcon(win ? 'you Won!' : 'you Loser')
     gameBtn.style.visibility = 'hidden'
-    pauseSound(bgSound)
+    sound.stopBgSound();
 }
 
 const scoreBoardText = (score) => {
@@ -110,30 +107,12 @@ const boardTextRemainingTime = (time) => {
     timerText.innerText = `${minutes} : ${seconds}`
 }
 const initGame = () => {
-    field.innerHTML = '';
     gameScore.innerHTML = CARROT_COUNT
     score = 0;
-    addItem('carrot', CARROT_COUNT, 'img/carrot.png')
-    addItem('bug', CARROT_COUNT, 'img/bug.png')
+    gameField.init()
 }
 
-const addItem = (className, count, imgName) => {
-    for (let i = 0; i < count; i++) {
-        const item = document.createElement("img");
-        item.setAttribute('class', className);
-        item.src = imgName;
-        item.style.position = 'absolute';
-        const x1 = 0;
-        const y1 = 0;
-        const x2 = fieldRect.width - CARROT_SIZE;
-        const y2 = fieldRect.height - CARROT_SIZE;
-        const x = randomNumber(x1, x2);
-        const y = randomNumber(y1, y2);
-        item.style.left = `${x}px`;
-        item.style.top = `${y}px`;
-        field.appendChild(item);
-    }
-}
+
 
 const showBtnChange = () => {
     const icon = document.querySelector(".fas");
@@ -143,14 +122,3 @@ const showBtnChange = () => {
 
 
 
-function randomNumber(min, max) {
-    return Math.random() * (max - min) + min;
-}
-
-const playSound = (sound) => {
-    sound.currentTime = 0;
-    sound.play();
-}
-const pauseSound = (sound) => {
-    sound.pause();
-}
