@@ -781,6 +781,16 @@ body {
         width: 50vw;
         height: 35vh;
     }
+    #section6 .aside {
+        max-width: 180px;
+    }
+    #section6 .aside button {
+        width: 140px;
+        font-size: 1.4vw;
+    }
+    #section6 .aside .siteDesc {
+        font-size: 1.5vw;
+    }
 }
 
 @media (max-width:850px) {
