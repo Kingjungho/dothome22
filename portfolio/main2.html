@@ -10,12 +10,16 @@
     <script src="js/ScrollTrigger.min.js"></script>
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/locomotive-scroll.css">
     <!-- FONT -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&family=Raleway:ital,wght@0,100;0,200;0,900;1,100&display=swap"
         rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css"> 
+
 
     <link href="//font.elice.io/EliceDigitalBaeum.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,6 +33,7 @@
 </head>
 
 <body>
+    <section style="position:fixed" id="bgc"></section>
     <div class="container">
         <section id="section">
             <aside id="aside">
@@ -60,7 +65,7 @@
                 <h2>CREATIVE<br>FRONTEND</h2>
             </div>
         </section>
-        <section id="section3">
+        <section id="section3" data-color="black">
             <p>
                 안녕하세요. 저는 28살 <span>김정호입니다.</span><br>
                 <span>포트폴리오</span> 페이지를 <span>통해서</span><br>
@@ -74,7 +79,7 @@
             <img src="img/main back.png" alt="">
             <img src="img/main back.png" alt="">
         </section>
-        <section id="section4">
+        <section id="section4" data-color="white">
             <div class="section4Wrap">
                 <aside id="aside" data-trigger>
                     <h2>ABOUT<br>ME</h2>
@@ -300,7 +305,7 @@
         </section>
         <section id="section8">
             <p class="frameCss">
-                <iframe src="https://kingjungho.github.io/dothome22/refer-effect/ParallaxEffect/javascriptPE01.html"
+                <iframe class="parallaxFrame" src="https://kingjungho.github.io/dothome22/refer-effect/ParallaxEffect/javascriptPE01.html"
                     frameborder="0" width="100%" height="800px"></iframe>
             </p>
             <div class="frameDesc">
@@ -433,10 +438,10 @@
                     </svg>
                 </div>
             </div>
-            <div class="contactImail">
-                <img src="img/logo3.svg" alt="">
+            <button class="contactImail" onclick="setClipboard('test')">
+                <img src="img/logo3.svg" alt="email">
                 <p class="email">dkdlwo@naver.com</p>
-            </div>
+            </button>
         </section>
         <section id="section10">
             <div class="container">
@@ -482,13 +487,89 @@
             <span>© Tous droits réservé. 2021<span>Kr</span></span>    
         </div>
     </div>
-    <script src="js/portMain.js"></script>
+    <script type="module" src="js/portMain.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>
+    <script type="module" src="locomotive-scroll.min.js"></script>
     <script>
-       
+       /*------------------------------
+        SupahScroll
+        ------------------------------*/
+        // class SupahScroll {
+        // constructor(options) {
+        //     this.opt = options || {}
+        //     this.el = this.opt.el ? this.opt.el : '.supah-scroll'
+        //     this.speed = this.opt.speed ? this.opt.speed : 0.3
+        //     this.init()
+        // }
+
+        // init() {
+        //     this.scrollY = 0
+        //     this.supahScroll = document.querySelectorAll(this.el)[0]
+        //     this.supahScroll.classList.add('supah-scroll')
+        //     this.events()
+        //     this.update()
+        //     this.animate()
+        // }
+        
+        // update() {
+        //     if (this.supahScroll === null) return
+        //     document.body.style.height = `${this.supahScroll.getBoundingClientRect().height}px`
+        // }
+        
+        // pause() {
+        //     document.body.style.overflow = 'hidden'
+        //     cancelAnimationFrame(this.raf)
+        // }
+        
+        // play() {
+        //     document.body.style.overflow = 'inherit'
+        //     this.raf = requestAnimationFrame(this.animate.bind(this))
+        // }
+        
+        // destroy() {
+        //     this.supahScroll.classList.remove('supah-scroll')
+        //     this.supahScroll.style.transform = 'none'
+        //     document.body.style.overflow = 'inherit'
+        //     window.removeEventListener('resize', this.update)
+        //     cancelAnimationFrame(this.raf)
+        //     delete this.supahScroll
+        // }
+
+        // animate() {
+        //     this.scrollY += (window.scrollY - this.scrollY) * this.speed
+        //     this.supahScroll.style.transform = `translate3d(0,${-this.scrollY}px,0)`
+        //     this.raf = requestAnimationFrame(this.animate.bind(this))
+        // }
+        
+        // scrollTo(y) {
+        //     window.scrollTo(0, y)
+        // }
+        
+        // staticScrollTo(y) {
+        //     cancelAnimationFrame(this.raf)
+        //     this.scrollY = y
+        //     window.scrollTo(0, y)
+        //     this.supahScroll.style.transform = `translate3d(0,${-y}px,0)`
+        //     this.play()
+        // }
+        
+        // events() {
+        //     window.addEventListener('load', this.update.bind(this))
+        //     window.addEventListener('resize', this.update.bind(this))
+        // }
+        // }
+
+
+        // /*------------------------------
+        // Initialize
+        // ------------------------------*/
+        // const supahscroll = new SupahScroll({
+        // el: 'div',
+        // speed: 0.1
+        // })
     </script>
-</body>
+    </body>
 
 </html>

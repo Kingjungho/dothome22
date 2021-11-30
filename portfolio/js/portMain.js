@@ -1,3 +1,41 @@
+//스크롤 백그라운드 이펙트
+let bgc = document.getElementById("bgc");
+
+document.onscroll = function() {
+
+		scrollTop = document.documentElement.scrollTop;
+        bgc.innerHTML = scrollTop;
+    
+    allDivs = document.querySelector('#section4');
+    console.log(allDivs)
+
+    for( i=0; i< allDivs.length; i++ )
+    {
+    		curDiv = allDivs[i];
+        
+        
+        // The code below makes the background color change when the 						scroll top passes the 2/3 of the previous div.
+        
+        heightBefore = 0;    
+        if (i > 0){
+        		heightBefore = allDivs[i-1].offsetHeight / 10;
+        }
+        
+        if (scrollTop > curDiv.offsetTop - heightBefore){
+        		color = curDiv.getAttribute("data-color");
+          	document.body.style.background = color;
+        }
+                
+    }
+};
+    
+    
+    
+    
+    
+    
+    
+    
     //MY SELF PROJECT 스크립트
 
     const overView = document.querySelectorAll(".list");
@@ -29,7 +67,6 @@
 
     //이펙트 스크립트
     const order = document.querySelectorAll(".descBox.order span");
-    console.log(order)
     const number = document.querySelectorAll(".descBox.menu");
     const frame = document.querySelectorAll("#section8 .frameCss iframe");
     
@@ -120,6 +157,27 @@
     about.addEventListener("click", aboutClickhandler)
     contact.addEventListener("click", contactClickhandler)
     contactMe.addEventListener("click", contactMeClickhandler)
+
+
+
+
+    //email 보내기
+    const emailBtn = document.querySelector('.contactImail');
+    
+
+
+
+
+    const setClipboard = (value) => {
+        let tempInput = document.createElement('input');
+        tempInput.style = "position : absolute; left: -1000px; top: -1000px";
+        tempInput.value = value;
+        document.body.appendChild(emailBtn);
+        tempInput.select();
+        document.execCommand("copy");
+        document.body.removeChild(emailBtn)
+    }
+
 
     // 아코디언 메뉴
     let accordionBtn = document.querySelectorAll('#section10 .contactTable .tableWrap li h4');

@@ -1,9 +1,5 @@
 @import url(//font.elice.io/EliceDigitalBaeum.css);
 
-html {
-    scroll-behavior: smooth;
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -21,11 +17,13 @@ li {
 body {
     overscroll-behavior: none;
     -webkit-overflow-scrolling: touch;
+    background: black;
+    transition: background  1.5s;
 }
 
 #section {
     background-color: #000;
-    height: 100vh;
+    height: 105vh;
     position: relative;
     background-image: url(../img/main\ back.png);
     background-size: 100% 100%;
@@ -573,11 +571,12 @@ body {
 }
 #section9 .contactImail {
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
+    margin: auto;
     cursor: pointer;
     margin-top: 400px;
+    background-color: transparent;
+    border: 0;
 }
 #section9 .contactImail:hover img
 {
@@ -593,6 +592,8 @@ body {
     width: 4vw; height: 4vw;
     margin-bottom: 10px;
     filter: brightness(50%);
+    margin: auto;
+    margin-bottom: 10px;
 }
 #section9 .contactImail p {
     color: #484848;
@@ -838,4 +839,13 @@ body {
 
 
 
-
+.supah-scroll {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    will-change: transform;
+    overflow: hidden;
+  }

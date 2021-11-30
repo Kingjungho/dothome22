@@ -40,7 +40,6 @@ gameBtn.addEventListener("click", () => {
     }
 })
 
-
 const gameStart = () => {
     started = true;
     showBtnChange();
@@ -73,10 +72,10 @@ const gameTimer = () => {
 }
 
 field.addEventListener("click", e => {
-    const target = e.target;
     if(!started){
         return;
     }
+    const target = e.target;
     if(target.matches('.carrot')){
         target.remove();
         score++;

@@ -249,7 +249,7 @@
         slideCount = slide.length;
         imgWidth = 1870;
 
-        
+
         slides.style.width = imgWidth * slideCount + "px";
 
         const slideMove = num => {
@@ -259,15 +259,15 @@
 
 
         prev.addEventListener("click", () => {
-            if(currentIndex > 0){
-                slideMove(currentIndex -1)
+            if (currentIndex > 0) {
+                slideMove(currentIndex - 1)
             } else {
-                slideMove(slideCount -1)
+                slideMove(slideCount - 1)
             }
         })
 
         next.addEventListener("click", () => {
-            if(currentIndex < slideCount -1){
+            if (currentIndex < slideCount - 1) {
                 slideMove(currentIndex + 1)
             } else {
                 slideMove(0);
@@ -298,23 +298,44 @@
         //탭메뉴
         const tabBtn = document.querySelectorAll('.box_header h3')
         const tabMenu = document.querySelectorAll(".box_desc");
-        tabMenu[0].style.display = "block"
 
-        tabBtn.forEach((element, index) => {
-                element.addEventListener("click", function () {
-                    tabBtn.forEach(el => {
-                        el.classList.remove("active");
-                    });
-                    element.classList.add("active");
+        // tabBtn.forEach((element, index) => {
+        //         element.addEventListener("click", function () {
+        //             tabBtn.forEach(el => {
+        //                 el.classList.remove("active");
+        //             });
+        //             element.classList.add("active");
 
-                    tabMenu.forEach(el => {
-                        el.style.display = "none";
-                    });
-                    tabMenu[index].style.display = "block";
-                });
+        //             tabMenu.forEach(el => {
+        //                 el.style.display = "none";
+        //             });
+        //             tabMenu[index].style.display = "block";
+        //         });
+        //     })
+
+        const clickHandler = e => {
+            let menuIndex = [...tabBtn].indexOf(e.target)
+            console.log(menuIndex)
+
+            // tabMenu.forEach(menu => {
+            //     [...tabMenu].indexOf(menu) === menuIndex 
+            //     ?menu.classList.add("active") :
+            //         menu.classList.remove("acitve")
+            // })
+            tabBtn.forEach(btn => {
+                [...tabBtn].indexOf(btn) === menuIndex ? btn.classList.add("active") : btn.classList.remove("active")
             })
+            tabMenu.forEach(menu => {
+                [...tabMenu].indexOf(menu) === menuIndex ? menu.classList.add("active") : menu.classList.remove("active")
+            })
+        }
 
-       
+        [...tabMenu][0].classList.add("active");
+        [...tabBtn][0].classList.add("active");
+
+        tabBtn.forEach(btn => {
+            btn.addEventListener("click", clickHandler);
+        })
     </script>
 </body>
 
