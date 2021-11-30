@@ -21,7 +21,6 @@ window.addEventListener("scroll", () => {
             let color = secDiv.getAttribute("data-color");
             document.body.style.background = color;
         }
-
     }
 });
 
@@ -251,30 +250,28 @@ const sectionSix = document.querySelector("#section6");
 const sectionSeven = document.querySelector("#section7");
 
 window.addEventListener("scroll", () => {
-    let scrollTop = window.pageYOffset || document.documentElement.scrollTop || window.scrollY;
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop || window.scrollY;
 
-    if (scrollTop >= sectionFour.offsetTop && scrollTop <= sectionFive.offsetTop) {
-        aside.forEach(el => {
-            el.style.color = "#000"
-        })
-        asideImg.forEach(el => {
-            el.style.filter = "brightness(0%)"
-        })
-    } else if (scrollTop >= sectionSix.offsetTop && scrollTop <= sectionSeven.offsetTop) {
-        aside.forEach(el => {
-            el.style.color = "#000"
-        })
-        asideImg.forEach(el => {
-            el.style.filter = "brightness(0%)"
-        })
-    } else {
-        aside.forEach(el => {
-            el.style.color = "#fff"
-        })
-        asideImg.forEach(el => {
-            el.style.filter = "brightness(100%)"
-        })
-    }
-
-
-});
+        if (scrollTop >= sectionFour.offsetTop && scrollTop <= sectionFive.offsetTop) {
+            aside.forEach(el => {
+                el.style.color = "#000"
+            })
+            asideImg.forEach(el => {
+                el.style.filter = "brightness(0%)"
+            })
+        } else if (scrollTop >= sectionSix.offsetTop && scrollTop <= sectionSeven.offsetTop) {
+            aside.forEach(el => {
+                el.style.color = "#000"
+            })
+            asideImg.forEach(el => {
+                el.style.filter = "brightness(0%)"
+            })
+        } else {
+            aside.forEach(el => {
+                el.style.color = "#fff"
+            })
+            asideImg.forEach(el => {
+                el.style.filter = "brightness(100%)"
+            })
+         }
+    });
