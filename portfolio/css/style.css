@@ -18,7 +18,7 @@ body {
     overscroll-behavior: none;
     -webkit-overflow-scrolling: touch;
     background: black;
-    transition: background  1.5s;
+    transition: background  1s ease;
 }
 
 #section {
@@ -155,7 +155,6 @@ body {
 }
 
 #section3 {
-    background-color: #000;
     position: relative;
     z-index: -2;
     height: 120vh;
@@ -184,7 +183,6 @@ body {
 
 #section4 {
     height: 190vh;
-    background-color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
