@@ -114,14 +114,11 @@ let bgc = document.getElementById("bgc");
 
 window.addEventListener("scroll", () => {
     let scrollTop = window.pageYOffset || document.documentElement.scrollTop || window.scrollY;
-    bgc.innerHTML = scrollTop;
 
     let sectionAll = document.getElementsByTagName("section");
 
     for (let i = 0; i < sectionAll.length; i++) {
         let secDiv = sectionAll[i];
-
-        // The code below makes the background color change when the 						scroll top passes the 2/3 of the previous div.
 
         let heightBefore = 0;
         if (i > 0) {
@@ -136,12 +133,20 @@ window.addEventListener("scroll", () => {
 });
 
 // contact us 스크립트
-const contactMe = document.querySelector("#section8 .myAderess .adress p");
+const MenuClickMove = document.querySelector("#header");
 const contactMeMove = document.querySelector("#section8 .contactImail");
-const project = document.querySelector("#header .svg");
-const projectMove = document.querySelector("#section4 #article");
-const aboutMove = document.querySelector("#section3 .introduce");
-const contactMove = document.querySelector("#section8 .myAderess");
+
+const MoveTarget = e => {
+    const target = e.target
+    if(target.matches('projectImg')){
+        contactMeMove.scrollIntoView({behavior:'smooth'});
+    }
+}
+
+MenuClickMove.addEventListener("click", MoveTarget)
+
+
+
 
 // 아코디언 메뉴
 let accordionBtn = document.querySelectorAll('#section9 .contactTable .tableWrap li h4');
@@ -190,13 +195,10 @@ const fixedLogo = document.querySelector("#header .logo a");
 const fixedProject = document.querySelector("#header .project");
 const fixedAbout = document.querySelector("#header .about");
 const fixedContact = document.querySelector("#header .contact");
-const sectionOne = document.querySelector("#section1");
-const sectionTwo = document.querySelector("#section2");
 const sectionThree = document.querySelector("#section3");
 const sectionFour = document.querySelector("#section4");
 const sectionFive = document.querySelector("#section5");
 const sectionSix = document.querySelector("#section6");
-const sectionSeven = document.querySelector("#section7");
 
 window.addEventListener("scroll", () => {
     let scrollTop = window.pageYOffset || document.documentElement.scrollTop || window.scrollY;

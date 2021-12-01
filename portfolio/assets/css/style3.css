@@ -52,7 +52,7 @@ body {
     margin: 0 auto;
 }
 #header .svg img {
-    width: 100%;
+    width: 110%;
 }
 #header a span {
     display: block;
@@ -167,6 +167,9 @@ body {
     position: relative;
     z-index: 200;
     color: rgb(102, 101, 101);
+    overflow: auto;
+    perspective: 1px;
+    transform-style: preserve-3d;
 }
 .sec2 .text1 p {
     font-family: "Elice Digital Baeum", sans-serif;
@@ -186,6 +189,7 @@ body {
     left: 0;
     width: 31vw; height: 31vh;
     z-index: -1000;
+    transform: translateZ(0.4px) scale(0.6);
 }
 .sec2 .text1 .introduceText2 {
     position: relative;
@@ -822,6 +826,7 @@ body {
     }
     #section7 .frameCss iframe {
         height: 550px;
+
     }
     #section9 .introduceWrap {
 

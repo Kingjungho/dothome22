@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style3.css">
+    <link rel="stylesheet" href="../refer-effect/assets/css/style.css">
+    <link rel="stylesheet" href="../refer-effect/assets/css/highlight.css">
     <!-- FONT -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,7 +34,7 @@
     <header id="header">
         <h1 class="logo" data-0="left: -80px" data-1000="left: -80px" data-1500="left: 0px"><a href="#">port</a></h1>
         <div class="project" data-0="right: -80px" data-1000="right: -80px" data-1500="right: 0px"><a href="#">
-                <div class="svg"><img src="assets/img/logo1.svg" alt=""></div>
+                <div class="svg"><img class="projectImg" src="assets/img/logo1.svg" alt=""></div>
                 <span>project</span>
             </a></div>
         <div class="about" data-0="left: -80px" data-1000="left: -80px" data-1500="left: 0px"><a href="#">
@@ -49,8 +51,8 @@
     <div id="contents">
         <section id="section1">
             <div class="sec1" data-0="width: 10%; height: 15vh;" data-1000="width: 100%; height: 100vh;"
-                data-2500="width: 100%; height: 100vh;" data-3500="width: 80%; height: 50vh;"
-                data-9000="width: 80%; height: 50vh; display:block" data-9001="width: 80%; height: 50vh; display:none">
+                data-2500="width: 100%; height: 100vh;" data-3500="width: 60%; height: 50vh;"
+                data-9000="width: 60%; height: 50vh; display:block" data-9001="width: 60%; height: 50vh; display:none">
                 <h1 data-0="transform: translate(-50%, -50%) scale(.11);"
                     data-1000="transform: translate(-50%, -50%) scale(1);"
                     data-3000="transform: translate(-50%, -50%) scale(1);"
@@ -273,7 +275,7 @@
                 </aside>
                 <div class="site">
                     <h2 class="siteTitle">APPLE SITE</h2>
-                    <img src="assets/img/apple-mockup.png" alt="">
+                    <img src="assets/img/apple-mockup.jpg" alt="">
                 </div>
             </div>
             <div class="siteWrap3">
@@ -449,6 +451,44 @@
                 <img src="assets/img/logo3.svg" alt="email">
                 <p class="email">dkdlwo@naver.com</p>
             </button>
+             <!-- modal -->
+    <div id="modal">
+        <div class="modal-bg">
+            <div class="modal-cont">
+                <div class="code-view">
+                    <div class="view-header">
+                        <div class="dot" aria-hidden="true">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="view-title">
+                        <ul>
+                            <li class="active"><a href="#">Html</a></li>
+                            <li><a href="#">CSS</a></li>
+                            <li><a href="#">Javascript</a></li>
+                        </ul>
+                    </div>
+                    <div class="view-cont">
+                        <div class="html">
+                            <pre><code class="language-html"></code></pre>
+                        </div>
+
+                        <div class="css">
+                            <pre><code class="language-css"></code></pre>
+                        </div>
+
+                        <div class="javascript">
+                            <pre><code class="language-javascript"></pre></code>
+                        </div>
+                    </div>
+                </div>
+                <button>닫기</button>
+            </div>
+        </div>
+    </div>
+    <!-- //modal -->
         </section>
         <section id="section9" data-color="#1a1a1a">
             <div class="container">
@@ -500,12 +540,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>
     <script src="assets/js/portMain2.js"></script>
     <script>
-        var s = skrollr.init();
+        let s = skrollr.init();
 
         window.addEventListener("scroll", () => {
             let scrollTop = window.pageYOffset || document.documentElement.scrollTop || window.scrollY;
 
-            document.querySelector(".scroll").innerHTML = scrollTop;
         })
     </script>
 </body>

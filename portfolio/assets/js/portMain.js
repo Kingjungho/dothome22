@@ -3,7 +3,6 @@ let bgc = document.getElementById("bgc");
 
 window.addEventListener("scroll", () => {
     let scrollTop = window.pageYOffset || document.documentElement.scrollTop || window.scrollY;
-    bgc.innerHTML = scrollTop;
 
     let sectionAll = document.getElementsByTagName("section");
 
