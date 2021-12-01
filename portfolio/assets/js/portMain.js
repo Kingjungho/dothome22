@@ -29,10 +29,7 @@ window.addEventListener("scroll", () => {
 
 
 
-
-
-
-//MY SELF PROJECT 스크립트
+//MY SELF PROJECT 메뉴 깜박임 효과
 
 const overView = document.querySelectorAll(".list");
 const overViewDesc = document.querySelectorAll(".list__desc");
@@ -245,6 +242,7 @@ const aside = document.querySelectorAll("#section #aside a div");
 const asideImg = document.querySelectorAll("#section #aside img");
 const sectionOne = document.querySelector("#section1");
 const sectionThree = document.querySelector("#section3");
+const sectionFour = document.querySelector("#section4");
 const sectionFive = document.querySelector("#section5");
 const sectionSix = document.querySelector("#section6");
 const sectionSeven = document.querySelector("#section7");
@@ -252,14 +250,14 @@ const sectionSeven = document.querySelector("#section7");
 window.addEventListener("scroll", () => {
         let scrollTop = window.pageYOffset || document.documentElement.scrollTop || window.scrollY;
 
-        if (scrollTop >= sectionThree.offsetTop && scrollTop <= sectionFive.offsetTop) {
+        if (scrollTop >= sectionThree.offsetTop && scrollTop <= sectionFour.offsetTop) {
             aside.forEach(el => {
                 el.style.color = "#000"
             })
             asideImg.forEach(el => {
                 el.style.filter = "brightness(0%)"
             })
-        } else if (scrollTop >= sectionSix.offsetTop && scrollTop <= sectionSeven.offsetTop) {
+        } else if (scrollTop >= sectionFive.offsetTop && scrollTop <= sectionSix.offsetTop) {
             aside.forEach(el => {
                 el.style.color = "#000"
             })
@@ -268,10 +266,10 @@ window.addEventListener("scroll", () => {
             })
         } else {
             aside.forEach(el => {
-                el.style.color = "#fff"
+                el.style.color = "#000"
             })
             asideImg.forEach(el => {
-                el.style.filter = "brightness(100%)"
+                el.style.filter = "brightness(0%)"
             })
          }
     });
