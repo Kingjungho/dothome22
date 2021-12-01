@@ -177,18 +177,36 @@ body {
 .sec2 .text1 p span {
     color: #fff;
 }
-.sec2 .text1 p .introduceText1 {
-    background-image: url(../img/RESPONSIVE.png);
-    background-size: cover;
-    background-position: center;
+.sec2 .text1 .introduceText1 {
+    position: relative;
 }
-.sec2 .text1 p .introduceText2:hover {
-    background-image: url(../img/apple-mockup.png);
+.sec2 .text1 .introduceText1 img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 31vw; height: 31vh;
+    z-index: -1000;
 }
-.sec2 .text1 p .introduceText3:hover {
-    background-image: url(../img/apple-mockup.png);
+.sec2 .text1 .introduceText2 {
+    position: relative;
 }
-
+.sec2 .text1 .introduceText2 img {
+    position: absolute;
+    top: 0;
+    left: -260px;
+    width: 31vw; height: 31vh;
+    z-index: -1000;
+}
+.sec2 .text1 .introduceText3 {
+    position: relative;
+}
+.sec2 .text1 .introduceText3 img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 31vw; height: 31vh;
+    z-index: -1000;
+}
 
 /* section3 */
 #section3 {
@@ -575,6 +593,22 @@ body {
     opacity: 0.3;
     -webkit-animation: rotation 38s linear infinite;
     animation: rotation 38s linear infinite;
+}
+@-webkit-keyframes rotation {
+    from {
+    transform: rotate(0deg);
+    }
+    to {
+    transform: rotate(360deg);
+    }
+}
+@keyframes rotation {
+    from {
+    transform: rotate(0deg);
+    }
+    to {
+    transform: rotate(360deg);
+    }
 }
 #section8 .contactImail {
     display: flex;
