@@ -100,7 +100,6 @@
             background-image: url(../assets/img/bg9.jpg);
             background-size: cover;
             background-position: center;
-
         }
 
         .cursor.style2 {
@@ -453,7 +452,7 @@ document.querySelectorAll(".mouseCont span").forEach((element) => {
             document.querySelector(".screenX").innerText = e.screenX + "px";
             document.querySelector(".screenY").innerText = e.screenY + "px";
         });
-        //마우스 움직익
+        //마우스 움직이기 
         window.addEventListener("mousemove", function (e) {
             // document.querySelector(".cursor").style.left = e.clientX - 25 + "px";
             // document.querySelector(".cursor").style.top = e.clientY - 25 + "px";
@@ -507,14 +506,14 @@ document.querySelectorAll(".mouseCont span").forEach((element) => {
         //     });
         // }
         //forEach
-        document.querySelectorAll(".mouseCont span").forEach((element, index) => {
-            element.addEventListener("mouseover", () => {
-                document.querySelector(".cursor").classList.add("style" + (index + 1));
-            });
-            element.addEventListener("mouseout", () => {
-                document.querySelector(".cursor").classList.remove("style" + (index + 1));
-            });
-        })
+        // document.querySelectorAll(".mouseCont span").forEach((element, index) => {
+        //     element.addEventListener("mouseover", () => {
+        //         document.querySelector(".cursor").classList.add("style" + (index + 1));
+        //     });
+        //     element.addEventListener("mouseout", () => {
+        //         document.querySelector(".cursor").classList.remove("style" + (index + 1));
+        //     });
+        // })
         //getAtrribute()
         document.querySelectorAll(".mouseCont span").forEach((element) => {
             let style = element.getAttribute("class");

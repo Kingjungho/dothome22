@@ -244,7 +244,7 @@ trigger.add('[data-trigger]');
 const aside = document.querySelectorAll("#section #aside a div");
 const asideImg = document.querySelectorAll("#section #aside img");
 const sectionOne = document.querySelector("#section1");
-const sectionFour = document.querySelector("#section4");
+const sectionThree = document.querySelector("#section3");
 const sectionFive = document.querySelector("#section5");
 const sectionSix = document.querySelector("#section6");
 const sectionSeven = document.querySelector("#section7");
@@ -252,7 +252,7 @@ const sectionSeven = document.querySelector("#section7");
 window.addEventListener("scroll", () => {
         let scrollTop = window.pageYOffset || document.documentElement.scrollTop || window.scrollY;
 
-        if (scrollTop >= sectionFour.offsetTop && scrollTop <= sectionFive.offsetTop) {
+        if (scrollTop >= sectionThree.offsetTop && scrollTop <= sectionFive.offsetTop) {
             aside.forEach(el => {
                 el.style.color = "#000"
             })
