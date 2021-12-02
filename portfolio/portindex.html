@@ -11,8 +11,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style3.css">
-    <link rel="stylesheet" href="../refer-effect/assets/css/style.css">
-    <link rel="stylesheet" href="../refer-effect/assets/css/highlight.css">
+    <link rel="stylesheet" href="../portfolio/assets/css/modalhighlight.css">
     <!-- FONT -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -48,7 +47,7 @@
     </header>
     <!-- //header  -->
 
-    <div id="contents">
+    <div id="portContents">
         <section id="section1">
             <div class="sec1" data-0="width: 10%; height: 15vh;" data-1000="width: 100%; height: 100vh;"
                 data-2500="width: 100%; height: 100vh;" data-3500="width: 60%; height: 50vh;"
@@ -73,7 +72,7 @@
                 <div class="text1">
                     <p>
                         안녕하세요. 저는 28살 <span class="introduceText1">
-                        <span><img src="assets/img/main back.png"></span>김정호입니다.</span><br>
+                            <span><img src="assets/img/main back.png"></span>김정호입니다.</span><br>
                         <span>포트폴리오</span> 페이지를 <span>통해서</span><br>
                         <span class="introduceText2">
                             <span><img src="assets/img/main back.png"></span>프론트앤드</span>가 되기 위해 <span>노력했던</span><br>
@@ -314,7 +313,8 @@
         </section>
         <section id="section7" data-color="black">
             <p class="frameCss">
-                <iframe class="parallaxFrame" src="https://kingjungho.github.io/dothome22/refer-effect/ParallaxEffect/javascriptPE01.html"
+                <iframe class="parallaxFrame"
+                    src="https://kingjungho.github.io/dothome22/refer-effect/ParallaxEffect/javascriptPE01.html"
                     frameborder="0" width="100%" height="800px"></iframe>
             </p>
             <div class="frameDesc">
@@ -449,52 +449,52 @@
             </div>
             <button class="contactImail" onclick="setClipboard('test')">
                 <img src="assets/img/logo3.svg" alt="email">
-                <p class="email">dkdlwo@naver.com</p>
+                <p class="email">Click!</p>
             </button>
-             <!-- modal -->
-    <div id="modal">
-        <div class="modal-bg">
-            <div class="modal-cont">
-                <div class="code-view">
-                    <div class="view-header">
-                        <div class="dot" aria-hidden="true">
-                            <span></span>
-                            <span></span>
-                            <span></span>
+            <!-- modal -->
+            <div id="modal">
+                <div class="modal-bg">
+                    <div class="modal-cont">
+                        <div class="code-view">
+                            <div class="view-header">
+                                <div class="dot" aria-hidden="true">
+                                    <div class="modalTitle">CONTACT ME</div>
+                                </div>
+                            </div>
+                            <div class="view-title">
+                            </div>
+                            <div class="view-cont">
+                                <div class="cont">
+                                    <div class="contImage">
+                                        <img src="./assets/img/mymymy.jpg" alt="이미지">
+                                    </div>
+                                    <div class="contIntroduce">
+                                        <div class="myIntroduce">
+                                            <div class="nameTitle">Name</div>
+                                            <div class="nameDesc">KIMJUNGHO</div>
+                                        </div>
+                                        <div class="myIntroduce">
+                                            <div class="nameTitle">Phone Num</div>
+                                            <div class="nameDesc">010-9755-0864</div>
+                                        </div>
+                                        <div class="myIntroduce">
+                                            <div class="nameTitle">Email</div>
+                                            <div class="nameDesc">dkdlwo@naver.com</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="view-title">
-                        <ul>
-                            <li class="active"><a href="#">Html</a></li>
-                            <li><a href="#">CSS</a></li>
-                            <li><a href="#">Javascript</a></li>
-                        </ul>
-                    </div>
-                    <div class="view-cont">
-                        <div class="html">
-                            <pre><code class="language-html"></code></pre>
-                        </div>
-
-                        <div class="css">
-                            <pre><code class="language-css"></code></pre>
-                        </div>
-
-                        <div class="javascript">
-                            <pre><code class="language-javascript"></pre></code>
-                        </div>
+                        <button>CLOSE</button>
                     </div>
                 </div>
-                <button>닫기</button>
-            </div>
-        </div>
-    </div>
-    <!-- //modal -->
+                <!-- //modal -->
         </section>
         <section id="section9" data-color="#1a1a1a">
             <div class="container">
                 <div class="introduceWrap">
-                    <h2>We're hiring</h2>
-                    <p class="introduce">Dpt. is an open and inclusive work environment, with flexible hours and
+                    <h2 data-trigger>We're hiring</h2>
+                    <p class="introduce" data-trigger>Dpt. is an open and inclusive work environment, with flexible hours and
                         sane workweeks.<br> We are
                         always on the lookout for new talent!
                     </p>
@@ -502,19 +502,27 @@
                         <ul class="tableWrap">
                             <li>
                                 <h4>Unity/Unreal developers<span class="arrow"></span></h4>
-                                <p class="text">Madrid is the capital of Spain and the largest municipality in both the Community of Madrid and Spain as a whole. The city has almost 3.2 million inhabitants and a metropolitan area population of approximately 6.5 million.</p>
+                                <p class="text">Madrid is the capital of Spain and the largest municipality in both the
+                                    Community of Madrid and Spain as a whole. The city has almost 3.2 million
+                                    inhabitants and a metropolitan area population of approximately 6.5 million.</p>
                             </li>
                             <li>
                                 <h4>Unity/Unreal developers<span class="arrow"></span></h4>
-                                <p class="text">Madrid is the capital of Spain and the largest municipality in both the Community of Madrid and Spain as a whole. The city has almost 3.2 million inhabitants and a metropolitan area population of approximately 6.5 million.</p>
+                                <p class="text">Madrid is the capital of Spain and the largest municipality in both the
+                                    Community of Madrid and Spain as a whole. The city has almost 3.2 million
+                                    inhabitants and a metropolitan area population of approximately 6.5 million.</p>
                             </li>
                             <li>
                                 <h4>Unity/Unreal developers<span class="arrow"></span></h4>
-                                <p class="text">Madrid is the capital of Spain and the largest municipality in both the Community of Madrid and Spain as a whole. The city has almost 3.2 million inhabitants and a metropolitan area population of approximately 6.5 million.</p>
+                                <p class="text">Madrid is the capital of Spain and the largest municipality in both the
+                                    Community of Madrid and Spain as a whole. The city has almost 3.2 million
+                                    inhabitants and a metropolitan area population of approximately 6.5 million.</p>
                             </li>
                             <li>
                                 <h4>Unity/Unreal developers<span class="arrow"></span></h4>
-                                <p class="text">Madrid is the capital of Spain and the largest municipality in both the Community of Madrid and Spain as a whole. The city has almost 3.2 million inhabitants and a metropolitan area population of approximately 6.5 million.</p>
+                                <p class="text">Madrid is the capital of Spain and the largest municipality in both the
+                                    Community of Madrid and Spain as a whole. The city has almost 3.2 million
+                                    inhabitants and a metropolitan area population of approximately 6.5 million.</p>
                             </li>
                         </ul>
                     </div>
@@ -530,8 +538,8 @@
             </div>
         </section>
         <div class="siteIntroduce">
-            <span>Website credits</span>  
-            <span>© Tous droits réservé. 2021<span>Kr</span></span>    
+            <span>Website credits</span>
+            <span>© Tous droits réservé. 2021<span>Kr</span></span>
         </div>
     </div>
     <!-- //contents -->

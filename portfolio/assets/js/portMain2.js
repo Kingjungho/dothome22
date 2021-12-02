@@ -1,13 +1,13 @@
 // 소개글 마우스오버 이미지 이펙트
-document.querySelectorAll(".text1 p span").forEach((element) => {
-    let style = element.getAttribute("class");
-    element.addEventListener("mouseover", e => {
-        e.target.classList.add(style);
-    });
-    element.addEventListener("mouseout", () => {
-        document.querySelector(".text1 p span").classList.remove(style);
-    });
-})
+// document.querySelectorAll(".text1 p span").forEach((element) => {
+//     let style = element.getAttribute("class");
+//     element.addEventListener("mouseover", e => {
+//         e.target.classList.add(style);
+//     });
+//     element.addEventListener("mouseout", () => {
+//         document.querySelector(".text1 p span").classList.remove(style);
+//     });
+// })
 
 //MY SELF PROJECT 메뉴 깜박임 효과
 
@@ -232,3 +232,29 @@ window.addEventListener("scroll", () => {
         fixedContact.style.color = "#fff"
     }
 });
+
+//modal
+
+function modal() {
+    document.querySelector("#section8 .contactImail").addEventListener("click", function(){
+        document.querySelector("#modal").classList.add("show"); 
+        document.querySelector("#modal").classList.remove("hide"); 
+    });
+        document.querySelector(".modal-cont button").addEventListener("click", function(){
+        document.querySelector("#modal").classList.add("hide"); 
+    });
+}
+modal();
+
+
+    //code view
+    document.addEventListener('DOMContentLoaded', (event) => {
+    document.querySelectorAll('pre code').forEach((el) => {
+            hljs.highlightElement(el);
+        });
+    });
+
+
+   //
+
+

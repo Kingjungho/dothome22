@@ -25,6 +25,7 @@ body {
 
 /* layout */
 #contents {}
+
 #section1 {
     height: 4000px;
     position: relative;
@@ -37,27 +38,34 @@ body {
     text-align: center;
     display: block;
 }
+
 #header .svg {
     width: 30px;
     margin: 0 auto;
 }
+
 #header .svg img {
     width: 100%;
 }
+
 #header a span {
     display: block;
     text-align: center;
 }
+
 #header .logo {
     position: fixed;
-    left: 0; top: 0;
+    left: 0;
+    top: 0;
     z-index: 10000;
-    width: 80px; height: 80px;
+    width: 80px;
+    height: 80px;
     font-family: 'Raleway';
     background: #000;
     font-size: 30px;
     padding-top: 18px
 }
+
 #header .project {
     position: fixed;
     right: 0;
@@ -69,6 +77,7 @@ body {
     background: #000;
     margin-left: -80px;
 }
+
 #header .about {
     position: fixed;
     left: 0;
@@ -80,6 +89,7 @@ body {
     background: #000;
     margin-top: -80px
 }
+
 #header .contact {
     position: fixed;
     right: 0;
@@ -92,9 +102,11 @@ body {
     margin-top: -80px;
     margin-left: -80px;
 }
+
 #header div {
     transition: all 0.3s;
 }
+
 #header div:hover {
     background: #000;
 }
@@ -105,9 +117,11 @@ body {
     width: 100%;
     height: 100vh;
     position: fixed;
-    left: 50%; top: 50%;
+    left: 50%;
+    top: 50%;
     transform: translate(-50%, -50%);
 }
+
 .sec1::after {
     content: '';
     position: absolute;
@@ -115,9 +129,10 @@ body {
     top: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.6);
+    background: rgba(0, 0, 0, 0.6);
     z-index: 1;
 }
+
 .sec1 h1 {
     font-family: 'Raleway';
     color: #fff;
@@ -126,10 +141,12 @@ body {
     text-transform: uppercase;
     font-size: 10vw;
     position: fixed;
-    left: 50%; top: 50%;
+    left: 50%;
+    top: 50%;
     transform: translate(-50%, -50%);
     font-weight: 900;
 }
+
 .scroll {
     position: fixed;
     right: 70px;
@@ -142,26 +159,31 @@ body {
     margin-left: -80px;
     color: red;
 }
+
 /* section2 */
 #section2 {
     height: 2000px;
     position: relative;
     z-index: 2000;
 }
+
 .sec2 {
     background: url(../img/main\ back.png) center center;
     width: 100%;
     height: 100vh;
     position: fixed;
-    left: 50%; top: 50%;
+    left: 50%;
+    top: 50%;
     transform: translate(-50%, -50%);
 }
+
 #section2 .banner {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
 #section2 .banner h2 {
     font-family: 'Raleway', sans-serif;
     font-size: 5vw;
@@ -213,6 +235,7 @@ body {
     align-items: center;
     justify-content: center;
 }
+
 #section4 .section4Wrap {
     display: flex;
     align-items: center;
@@ -373,7 +396,8 @@ body {
 }
 
 #section6 .siteWrap3 {
-    background-color: #ecececb0;;
+    background-color: #ecececb0;
+    ;
     padding: 158px 0;
     display: flex;
     justify-content: center;
@@ -555,17 +579,21 @@ body {
     text-align: center;
     font-size: 3vw;
 }
-#section9 .myAderess .adress > div {
+
+#section9 .myAderess .adress>div {
     margin-top: 50px;
     font-family: 'Raleway', sans-serif;
 }
+
 #section9 .myAderess .adress p {
     font-size: 1vw;
-    color: #8c8c8c;;
+    color: #8c8c8c;
+    ;
     margin: 155px auto 0;
     font-weight: lighter;
     cursor: pointer;
 }
+
 #section9 .circle {
     height: 100vh;
     display: flex;
@@ -575,6 +603,7 @@ body {
     justify-content: center;
     align-items: center;
 }
+
 #section9 .dotted-circle {
     position: absolute;
     top: 250px;
@@ -583,6 +612,7 @@ body {
     -webkit-animation: rotation 38s linear infinite;
     animation: rotation 38s linear infinite;
 }
+
 #section9 .contactImail {
     display: flex;
     justify-content: center;
@@ -591,26 +621,30 @@ body {
     cursor: pointer;
     margin-top: 400px;
 }
-#section9 .contactImail:hover img
-{
+
+#section9 .contactImail:hover img {
     color: #fff;
     filter: brightness(100%);
 }
-#section9 .contactImail:hover p
-{
+
+#section9 .contactImail:hover p {
     color: #fff;
     filter: brightness(100%);
 }
+
 #section9 .contactImail img {
-    width: 4vw; height: 4vw;
+    width: 4vw;
+    height: 4vw;
     margin-bottom: 10px;
     filter: brightness(50%);
 }
+
 #section9 .contactImail p {
     color: #484848;
     font-size: 1.5vw;
     margin-bottom: 100px;
 }
+
 #section10 {
     width: 100%;
     height: 135vh;
@@ -618,37 +652,45 @@ body {
     display: flex;
     justify-content: center;
 }
+
 #section10 .container {
     width: 60vw;
 }
+
 #section10 .introduceWrap {
     color: #fff;
 }
+
 #section10 .introduceWrap h2 {
     font-size: 5.5vw;
     margin-bottom: 40px;
 }
+
 #section10 .introduceWrap .introduce {
     font-size: 1.5vw;
     margin-bottom: 100px;
 }
-#section10 .contactTable {
-}
+
+#section10 .contactTable {}
+
 #section10 .contactTable .tableWrap {}
+
 #section10 .contactTable .tableWrap li {
     display: flex;
     flex-direction: column;
     font-size: 1.5vw;
-    border-bottom: 1px solid hsla(0,0%,100%,.3);
-    border-top: 1px solid hsla(0,0%,100%,.3);
+    border-bottom: 1px solid hsla(0, 0%, 100%, .3);
+    border-top: 1px solid hsla(0, 0%, 100%, .3);
     padding: 20px 0;
 }
+
 #section10 .contactTable .tableWrap li h4 {
     display: flex;
     justify-content: space-between;
     padding: 20px 0;
     cursor: pointer;
 }
+
 #section10 .contactTable .tableWrap li .text {
     font-size: 1.2vw;
     opacity: 0;
@@ -658,10 +700,11 @@ body {
     line-height: 24px;
     font-size: 16px;
     font-weight: 200;
-    transition: all 0.6s cubic-bezier(.42,.2,.08,1);
+    transition: all 0.6s cubic-bezier(.42, .2, .08, 1);
     overflow: hidden;
     letter-spacing: 0.5px;
 }
+
 #section10 .contactTable .tableWrap li .text.show {
     opacity: 1;
     height: auto;
@@ -670,25 +713,31 @@ body {
     z-index: 0;
     border-radius: 0px 0px 3px 3px;
 }
+
 #section10 .contactTable .tableWrap li .arrow {
     position: relative;
 }
+
 #section10 .contactTable .tableWrap li .arrow::before,
 #section10 .contactTable .tableWrap li .arrow::after {
     content: "";
     width: 27px;
     height: 1px;
     position: absolute;
-    top: 20px; left: -30px;
+    top: 20px;
+    left: -30px;
     background: #fff;
-    transition: transform .6s cubic-bezier(.77,0,.175,1);
+    transition: transform .6s cubic-bezier(.77, 0, .175, 1);
 }
+
 #section10 .contactTable .tableWrap li .arrow::before {
     transform: rotate(-90deg);
 }
+
 #section10 .contactTable .tableWrap li .arrow.anime.arrow::before {
     transform: rotate(0deg);
 }
+
 #section10 ul .outputList {
     display: flex;
     justify-content: space-between;
@@ -696,34 +745,41 @@ body {
     font-size: 1.3vw;
     font-weight: bold;
 }
+
 #section10 ul .outputList a {
-    color: hsla(0,0%,100%,.3);
+    color: hsla(0, 0%, 100%, .3);
 }
+
 .siteIntroduce {
     background-color: #1a1a1a;
-    color: hsla(0,0%,100%,.3);
+    color: hsla(0, 0%, 100%, .3);
     display: flex;
     justify-content: space-around;
     font-size: 0.7vw;
 }
+
 .siteIntroduce span span {
     color: #fff;
     margin-left: 20px;
 }
+
 @-webkit-keyframes rotation {
     from {
-    transform: rotate(0deg);
+        transform: rotate(0deg);
     }
+
     to {
-    transform: rotate(360deg);
+        transform: rotate(360deg);
     }
 }
+
 @keyframes rotation {
     from {
-    transform: rotate(0deg);
+        transform: rotate(0deg);
     }
+
     to {
-    transform: rotate(360deg);
+        transform: rotate(360deg);
     }
 }
 
@@ -837,12 +893,13 @@ body {
 
 /* scroll Trigger */
 
-[data-trigger]{
+[data-trigger] {
     opacity: 0;
     position: relative;
     top: 40px;
     transition: 1s ease-out;
 }
+
 [data-trigger].visible {
     opacity: 1;
     top: 0;
