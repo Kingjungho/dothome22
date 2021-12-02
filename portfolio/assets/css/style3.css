@@ -685,9 +685,8 @@ body {
     position: relative;
     display: flex;
     flex-direction: column;
-    margin: auto;
     cursor: pointer;
-    margin-top: 400px;
+    margin: 400px auto 80px auto;
     background-color: transparent;
     border: 0;
     padding: 60px;
@@ -1059,7 +1058,6 @@ body {
     font-size: 45px;
     text-align: center;
     margin-bottom: 30px;
-    font-weight: bold;
 }
 
 
@@ -1274,6 +1272,9 @@ body {
     #section5 {
         height: 540vh;
     }
+    #section5 .aside .siteDesc {
+        width: 296px;
+    }
     #section7 .frameDesc {
         height: 384px;
     }
@@ -1305,6 +1306,7 @@ body {
 
     #section5 .aside .siteDesc {
         font-size: 1.3vw;
+        width: auto;
     }
 
     #section7 .frameDesc {
@@ -1366,6 +1368,7 @@ body {
 
 /* loading */
 .waviy {
+    font-family: 'Raleway', sans-serif;
     position: relative;
     -webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0, 0, 0, .2));
     font-size: 60px;
