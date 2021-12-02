@@ -203,7 +203,7 @@ const sectionSix = document.querySelector("#section6");
 window.addEventListener("scroll", () => {
     let scrollTop = window.pageYOffset || document.documentElement.scrollTop || window.scrollY;
 
-    if (scrollTop >= sectionThree.offsetTop && scrollTop <= sectionFour.offsetTop) {
+    if (scrollTop >= sectionThree.offsetTop -280 && scrollTop <= sectionFour.offsetTop) {
         fixedLogo.style.color = "#000"
         fixedSvg.forEach(el => {
             el.style.filter = "brightness(0%)"

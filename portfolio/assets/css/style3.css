@@ -42,10 +42,6 @@ body {
     height: 8000px;
 }
 
-#section5 {}
-
-#section6 {}
-
 /* header */
 #header a {
     color: #fff;
@@ -59,7 +55,7 @@ body {
 }
 
 #header .svg img {
-    width: 110%;
+    width: 105%;
 }
 
 #header a span {
@@ -265,6 +261,7 @@ body {
 }
 
 #section3 #aside h2 {
+    font-family: 'Poppins', sans-serif;
     font-size: 4.1vw;
     margin-bottom: 15px;
     line-height: 1;
@@ -484,22 +481,90 @@ body {
 
 /* section 6 */
 #section6 {
-    font-family: 'Raleway', sans-serif;
+    position: relative;
+    font-family: 'Poppins', sans-serif;
     height: 147vh;
-    text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-#section6 h1 {
-    color: #fff;
-    font-size: 5.2vw;
+/* section 6 textEffect */
+#section6 .banner h1 {
+    font-size: 7.5vw;
+    line-height: 1;
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    color: #2d2d2d;
+    letter-spacing: -0.5rem;
+    text-align: center;
 }
 
-#section6 h1 span {
-    color: #4E4E4E;
+#section6 .banner h1:before {
+    content: attr(data-heading);
+    position: absolute;
+    overflow: hidden;
+    color: #fff;
+    z-index: 5;
+    left: -2.5%;
+    text-shadow: none;
+    -webkit-animation: flicker 3s linear infinite;
+    animation: flicker 3s linear infinite;
 }
+
+@-webkit-keyframes flicker {
+
+    0%,
+    19.999%,
+    22%,
+    62.999%,
+    64%,
+    64.999%,
+    70%,
+    100% {
+        opacity: 0.99;
+        text-shadow: -1px -1px 0 rgba(226, 226, 226, 0.4), 1px -1px 0 rgba(255, 255, 255, 0.4), -1px 1px 0 rgba(255, 255, 255, 0.4), 1px 1px 0 rgba(255, 255, 255, 0.4), 0 -2px 8px, 0 0 2px, 0 0 5px #ff7e00, 0 0 15px #afaeae, 0 0 2px #979593, 0 2px 3px #000;
+    }
+
+    20%,
+    21.999%,
+    63%,
+    63.999%,
+    65%,
+    69.999% {
+        opacity: 0.4;
+        text-shadow: none;
+    }
+}
+
+@keyframes flicker {
+
+    0%,
+    19.999%,
+    22%,
+    62.999%,
+    64%,
+    64.999%,
+    70%,
+    100% {
+        opacity: 0.99;
+        text-shadow: -1px -1px 0 rgba(207, 205, 205, 0.4), 1px -1px 0 rgba(255, 255, 255, 0.4), -1px 1px 0 rgba(255, 255, 255, 0.4), 1px 1px 0 rgba(255, 255, 255, 0.4), 0 -2px 8px, 0 0 2px, 0 0 5px #ff7e00, 0 0 15px #a1a0a0, 0 0 2px #ff7e00, 0 2px 3px #000;
+    }
+
+    20%,
+    21.999%,
+    63%,
+    63.999%,
+    65%,
+    69.999% {
+        opacity: 0.4;
+        text-shadow: none;
+    }
+}
+
 
 /* section 7 */
 #section7 {
@@ -754,9 +819,11 @@ body {
     padding: 10px 30px;
     font-size: 1vw;
 }
+
 #section9 .contactTable .tableWrap a:last-child {
     margin-right: 0;
 }
+
 #section9 .contactTable .tableWrap li {
     display: flex;
     flex-direction: column;
@@ -830,6 +897,7 @@ body {
 
 #section9 ul .outputList a {
     color: hsla(0, 0%, 100%, .3);
+    pointer-events: none;
 }
 
 .siteIntroduce {
@@ -1198,12 +1266,15 @@ body {
     #section2 {
         height: 180vh;
     }
+
     #section7 .frameDesc .descBox.Write {
         padding: 20% 5%;
     }
+
     #section9 .contactTable .tableWrap a {
         margin-right: 30px;
     }
+
     #section8 .contactImail {
         padding: 30px;
     }
@@ -1226,9 +1297,11 @@ body {
     .sec2 .text1 p {
         overflow-y: hidden;
     }
+
     #section7 .frameDesc .descBox {
         padding: 7%;
     }
+
     .code-view {
         height: 66vh;
     }
@@ -1272,12 +1345,15 @@ body {
     #section5 {
         height: 540vh;
     }
+
     #section5 .aside .siteDesc {
         width: 296px;
     }
+
     #section7 .frameDesc {
         height: 384px;
     }
+
     .code-view .view-cont .cont .contImage img {
         width: 350px;
         height: 350px;
@@ -1316,6 +1392,7 @@ body {
     #section7 .frameCss iframe {
         height: 550px;
     }
+
     #section7 .frameDesc .descBox.Write {
         font-size: 1.2vw;
     }
@@ -1324,10 +1401,12 @@ body {
         font-family: 'Raleway', sans-serif;
     }
 }
-@media (max-width:930px){
+
+@media (max-width:930px) {
     #section9 .contactTable .tableWrap a {
         margin-right: 3px;
     }
+
     .code-view {
         height: 58vh;
     }
@@ -1349,6 +1428,7 @@ body {
     #section2 {
         height: 55vh;
     }
+
     .code-view .view-cont .cont .contImage img {
         width: 320px;
         height: 320px;
@@ -1389,10 +1469,11 @@ body {
     text-transform: uppercase;
     animation: waviy 1s infinite;
     animation-delay: calc(.1s * var(--i));
-    margin-right: 50px;  
+    margin-right: 50px;
 }
 
 @keyframes waviy {
+
     0%,
     40%,
     100% {
