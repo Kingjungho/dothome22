@@ -255,6 +255,38 @@ modal();
     });
 
 
-   //
+   //한글자 씩 출력하기
+    const string = document.querySelectorAll(".frameDesc .descBox.Write span");
 
-
+    string.forEach(el => {
+        const randomString = () => {
+            const stringArr = "#HTML #CSS #JAVASCRIPT"
+            const splitStringArr = stringArr.split("")
+            
+            return splitStringArr;
+        }
+    
+        const resetTyping = () => {
+            el.textContent = '';
+            dynamic(randomString())
+        }
+        
+        const dynamic = randomArr => {
+            el.textContent += randomArr.shift();
+            if(randomArr.length > 0){
+                setTimeout(() => {
+                    dynamic(randomArr)
+                }, 100)
+            } else {
+                setTimeout(resetTyping, 3000);
+            }
+        }
+        dynamic(randomString())
+    
+        const blink = () => {
+            el.classList.toggle("active");
+        }
+    
+        setInterval(blink, 500)
+    })
+    

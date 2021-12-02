@@ -503,7 +503,7 @@ body {
 
 /* section 7 */
 #section7 {
-    height: 600vh;
+    height: 637vh;
     background-color: #000;
 }
 
@@ -515,7 +515,7 @@ body {
 
 #section7 .frameDesc {
     width: 68%;
-    height: 330px;
+    height: 450px;
     display: grid;
     grid-template-rows: repeat(4, 1fr);
     grid-template-columns: repeat(4, 1fr);
@@ -539,10 +539,30 @@ body {
 }
 
 #section7 .frameDesc .descBox.Write {
-    font-size: 0.8vw;
+    font-size: 1vw;
     border: 1px solid #474747;
     width: 100%;
-    padding: 8% 5%;
+    padding: 13% 5%;
+    text-transform: uppercase;
+}
+
+#section7 .frameDesc .descBox.Write span {
+    display: inline-block;
+    position: relative;
+}
+
+#section7 .frameDesc .descBox.Write span::after {
+    content: '';
+    background-color: #fff;
+    width: 2px;
+    height: 100%;
+    position: absolute;
+    right: -10px;
+    top: 0;
+}
+
+#section7 .frameDesc .descBox.Write span.active::after {
+    display: none;
 }
 
 #section7 .frameDesc .descBox.order {
@@ -609,8 +629,8 @@ body {
 }
 
 #section8 .myAderess .adress>div {
-    margin-top: 50px;
     font-family: 'Raleway', sans-serif;
+    margin-top: 50px;
 }
 
 #section8 .myAderess .adress p {
@@ -662,6 +682,7 @@ body {
 }
 
 #section8 .contactImail {
+    position: relative;
     display: flex;
     flex-direction: column;
     margin: auto;
@@ -669,6 +690,7 @@ body {
     margin-top: 400px;
     background-color: transparent;
     border: 0;
+    padding: 60px;
 }
 
 #section8 .contactImail:hover img {
@@ -676,7 +698,7 @@ body {
     filter: brightness(100%);
 }
 
-#section8 .contactImail:hover p {
+#section8 .contactImail:hover .email {
     color: #fff;
     filter: brightness(100%);
 }
@@ -690,10 +712,9 @@ body {
     margin-bottom: 10px;
 }
 
-#section8 .contactImail p {
+#section8 .contactImail .email {
     color: #484848;
     font-size: 1.5vw;
-    margin-bottom: 100px;
 }
 
 #section9 {
@@ -717,13 +738,21 @@ body {
 }
 
 #section9 .introduceWrap .introduce {
-    font-size: 1.5vw;
-    margin-bottom: 100px;
+    font-size: 2vw;
+    margin: 150px 0 30px 0;
+    font-weight: bold;
 }
 
 #section9 .contactTable {}
 
 #section9 .contactTable .tableWrap {}
+#section9 .contactTable .tableWrap a { 
+    color: #fff;
+    margin-right: 100px;
+    font-weight: bold;
+    border: 1px dashed #fff;
+    padding: 10px 30px;
+}
 
 #section9 .contactTable .tableWrap li {
     display: flex;
@@ -745,7 +774,7 @@ body {
     font-size: 1.2vw;
     opacity: 0;
     height: 0;
-    padding: 0px 20px;
+    padding: 0px 10px;
     position: relative;
     line-height: 24px;
     font-size: 16px;
@@ -811,136 +840,6 @@ body {
 .siteIntroduce span span {
     color: #fff;
     margin-left: 20px;
-}
-
-/* scroll Trigger */
-
-[data-trigger] {
-    opacity: 0;
-    position: relative;
-    top: 40px;
-    transition: 1s ease-out;
-}
-
-[data-trigger].visible {
-    opacity: 1;
-    top: 0;
-}
-
-
-@media (max-width:1600px) {
-    #section2 {
-        height: 180vh;
-    }
-}
-
-@media (max-width:1480px) {
-    #section3 {
-        height: 100vh;
-    }
-
-    #section5 .site img {
-        width: 50vw;
-        height: 40vh;
-    }
-
-    #section5 {
-        height: 563vh;
-    }
-
-    .sec2 .text1 p {
-        overflow-y: hidden;
-    }
-    .code-view .view-cont .cont {
-        max-width: 1000px;
-    }
-}
-
-@media (max-width:1200px) {
-    #section {
-        width: 100vw;
-        height: 70vh;
-    }
-
-    #aside img {
-        width: 3.8vw;
-        height: 2.8vw;
-    }
-
-    #footer .line {
-        height: 90%
-    }
-
-    #section2 {
-        height: 70vh;
-    }
-
-    #section5 {
-        height: 540vh;
-    }
-}
-
-@media (max-width:1100px) {
-    #section3 {
-        height: 75vh;
-    }
-
-    #section5 .site img {
-        width: 50vw;
-        height: 35vh;
-    }
-
-    #section5 .aside {
-        max-width: 180px;
-    }
-
-    #section5 .aside button {
-        width: 140px;
-        font-size: 1.4vw;
-    }
-
-    #section5 .aside .siteDesc {
-        font-size: 1.3vw;
-    }
-
-    #section7 .frameDesc {
-        min-width: 770px;
-    }
-
-    #section7 .frameCss iframe {
-        height: 550px;
-
-    }
-
-    #section9 .introduceWrap {}
-}
-
-@media (max-width:850px) {
-    #section {
-        height: 60vh;
-    }
-
-    #header .about {
-        left: 2%;
-    }
-
-    #header .contact {
-        right: 2%;
-    }
-
-    #section2 {
-        height: 55vh;
-    }
-}
-
-@media (max-width:800px) {
-    #footer .line {
-        left: -30px;
-    }
-
-    .sec1 h1 {
-        top: 70%;
-    }
 }
 
 /* Modal Code View */
@@ -1185,27 +1084,244 @@ body {
 
 .code-view .view-cont .cont {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
 }
+
 .code-view .view-cont .cont .contImage img {
-    width: 500px; height: 500px;
+    width: 500px;
+    height: 500px;
     border-radius: 10px;
 }
+
 .code-view .view-cont .cont .contIntroduce {
     color: #fff;
 
 }
+
 .code-view .view-cont .cont .contIntroduce .myIntroduce {
     display: flex;
     flex-direction: column;
     margin-bottom: 35px;
 }
+
 .code-view .view-cont .cont .contIntroduce .nameTitle {
-    font-size: 50px;
+    font-size: 3vw;
     margin-bottom: 10px;
 }
+
 .code-view .view-cont .cont .contIntroduce .nameDesc {
-    font-size: 20px;
+    font-size: 1vw;
     font-weight: 300;
+}
+
+/* scroll Trigger */
+
+[data-trigger] {
+    opacity: 0;
+    position: relative;
+    top: 40px;
+    transition: 1s ease-out;
+}
+
+[data-trigger].visible {
+    opacity: 1;
+    top: 0;
+}
+
+
+/* button Effect */
+.BorderTopBottom:before {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 3px;
+    top: -6px;
+    left: -7px;
+    background:#484848;
+    transition: all 0.5s ease;
+}
+
+.BorderTopBottom:after {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 3px;
+    bottom: -6px;
+    right: -7px;
+    background:#484848;
+    transition: all 0.5s ease;
+}
+
+.BorderLeftRight:before {
+    content: "";
+    position: absolute;
+    top: -4px;
+    left: -7px;
+    width: 3px;
+    height: 25px;
+    background: #484848;
+    transition: all 0.5s ease;
+}
+
+.BorderLeftRight:after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    right: -7px;
+    width: 3px;
+    height: 25px;
+    background: #484848;
+    transition: all 0.5s ease;
+}
+
+.contactImail:hover .BorderTopBottom:before,
+.contactImail:hover .BorderTopBottom:after {
+    width: 184px;
+    transition: all 0.5s ease;
+    background:#fff;
+}
+
+.contactImail:hover .BorderLeftRight:before,
+.contactImail:hover .BorderLeftRight:after {
+    height: 57px;
+    transition: all 0.5s ease;
+    background:#fff;
+}
+
+
+
+/* 반응형 */
+@media (max-width:1600px) {
+    #section2 {
+        height: 180vh;
+    }
+}
+
+@media (max-width:1480px) {
+    #section3 {
+        height: 100vh;
+    }
+
+    #section5 .site img {
+        width: 50vw;
+        height: 40vh;
+    }
+
+    #section5 {
+        height: 563vh;
+    }
+
+    .sec2 .text1 p {
+        overflow-y: hidden;
+    }
+
+    .code-view {
+        height: 66vh;
+    }
+
+    .code-view .view-cont .cont {
+        max-width: 650px;
+        margin: auto;
+        max-height: 350px;
+    }
+
+    .code-view .view-cont .cont .contImage img {
+        width: 450px !important;
+        height: 450px !important;
+        margin: 60px 40px 0 0;
+    }
+
+    .code-view .view-cont .cont .contIntroduce .nameTitle {}
+
+    .code-view .view-cont .cont .contIntroduce .nameDesc {}
+}
+
+@media (max-width:1200px) {
+    #section {
+        width: 100vw;
+        height: 70vh;
+    }
+
+    #aside img {
+        width: 3.8vw;
+        height: 2.8vw;
+    }
+
+    #footer .line {
+        height: 90%
+    }
+
+    #section2 {
+        height: 70vh;
+    }
+
+    #section5 {
+        height: 540vh;
+    }
+}
+
+@media (max-width:1100px) {
+    #section3 {
+        height: 75vh;
+    }
+
+    #section5 .site img {
+        width: 50vw;
+        height: 35vh;
+    }
+
+    #section5 .aside {
+        max-width: 180px;
+    }
+
+    #section5 .aside button {
+        width: 140px;
+        font-size: 1.4vw;
+    }
+
+    #section5 .aside .siteDesc {
+        font-size: 1.3vw;
+    }
+
+    #section7 .frameDesc {
+        min-width: 770px;
+    }
+
+    #section7 .frameCss iframe {
+        height: 550px;
+
+    }
+
+    #section9 .introduceWrap {
+        font-family: 'Raleway', sans-serif;
+    }
+}
+
+@media (max-width:850px) {
+    #section {
+        height: 60vh;
+    }
+
+    #header .about {
+        left: 2%;
+    }
+
+    #header .contact {
+        right: 2%;
+    }
+
+    #section2 {
+        height: 55vh;
+    }
+}
+
+@media (max-width:800px) {
+    #footer .line {
+        left: -30px;
+    }
+
+    .sec1 h1 {
+        top: 70%;
+    }
 }
