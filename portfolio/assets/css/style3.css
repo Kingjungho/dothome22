@@ -514,7 +514,8 @@ body {
     overflow: hidden;
     color: #fff;
     z-index: 5;
-    left: -2.5%;
+    left: 0.5%;
+    top: 50%;
     text-shadow: none;
     -webkit-animation: flicker 3s linear infinite;
     animation: flicker 3s linear infinite;
