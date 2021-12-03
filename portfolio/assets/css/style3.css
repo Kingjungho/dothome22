@@ -200,6 +200,9 @@ body {
     text-align: center;
     line-height: 2;
     font-size: 3.5vw;
+    transform-style: preserve-3d;
+    perspective: 1px;
+    overflow: hidden;
 }
 
 .sec2 .text1 p span {
@@ -212,12 +215,13 @@ body {
 
 .sec2 .text1 .introduceText1 img {
     position: absolute;
-    top: 0;
+    top: 300px;
     left: 0;
     width: 31vw;
     height: 31vh;
     z-index: -1000;
-    transform: translateZ(0.4px) scale(0.6);
+    transform: translateZ(5px) scale(1);
+    z-index: -2000;
 }
 
 .sec2 .text1 .introduceText2 {
@@ -226,11 +230,12 @@ body {
 
 .sec2 .text1 .introduceText2 img {
     position: absolute;
-    top: 0;
+    top: 500px;
     left: -260px;
     width: 31vw;
     height: 31vh;
-    z-index: -1000;
+    transform: translateZ(8px) scale(0.6);
+    z-index: 400;
 }
 
 .sec2 .text1 .introduceText3 {
@@ -239,10 +244,11 @@ body {
 
 .sec2 .text1 .introduceText3 img {
     position: absolute;
-    top: 0;
+    top: 100px;
     left: 0;
     width: 31vw;
     height: 31vh;
+    transform: translateZ(-1px) scale(1);
     z-index: -1000;
 }
 
@@ -511,7 +517,6 @@ body {
 #section6 .banner h1:before {
     content: attr(data-heading);
     position: absolute;
-    overflow: hidden;
     color: #fff;
     z-index: 5;
     left: 0.5%;
@@ -706,12 +711,14 @@ body {
 
 #section8 .myAderess .adress p {
     font-size: 1vw;
-    color: #8c8c8c;;
+    color: #8c8c8c;
+    ;
     margin: 155px auto 0;
     font-weight: lighter;
     cursor: pointer;
     border-radius: 50%;
 }
+
 #section8 .myAderess .adress img {
     margin-top: 10px;
     position: absolute;
@@ -719,6 +726,7 @@ body {
     height: 75vh;
     filter: brightness(60%);
 }
+
 #section8 .circle {
     height: 100vh;
     display: flex;
@@ -1291,6 +1299,10 @@ body {
     #section8 .contactImail {
         padding: 30px;
     }
+
+    #section6 .banner h1:before {
+        left: 3%;
+    }
 }
 
 @media (max-width:1480px) {
@@ -1398,6 +1410,10 @@ body {
         width: auto;
     }
 
+    #section6 .banner h1:before {
+        left: 4%;
+    }
+
     #section7 .frameDesc {
         min-width: 770px;
     }
@@ -1413,6 +1429,11 @@ body {
 }
 
 @media (max-width:930px) {
+
+    #section6 .banner h1:before {
+        left: 6%;
+    }
+
     #section9 .contactTable .tableWrap a {
         margin-right: 3px;
     }
@@ -1512,4 +1533,3 @@ body {
         transform: translate(var(--x), var(--move-y-s));
     }
 }
-
