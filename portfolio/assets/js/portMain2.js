@@ -83,7 +83,7 @@ const mouseView = e => {
     } 
 }
 const gameView = e => {
-    for (let i = 0; i < 9; i++) {
+    for (let i = 0; i < 8; i++) {
         if (e.target.parentNode.dataset.id === "3" && e.target.textContent === `${i}`) {
             gameOrder.forEach(el => {
                 el.innerHTML = `${i}`;
