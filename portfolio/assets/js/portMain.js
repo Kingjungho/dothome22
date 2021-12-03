@@ -64,7 +64,7 @@ const frame = document.querySelectorAll("#section8 .frameCss iframe");
 
 const menuView = e => {
     for (let i = 1; i < 9; i++) {
-        if (e.target.parentNode.dataset.id === "0" && e.target.textContent === `${i}`) {
+        if (e.target.parentNode.dataset.id === "0") {
             order.forEach(el => {
                 el.innerHTML = `${i}`;
                 frame.forEach(el => {
@@ -110,45 +110,7 @@ number.forEach(el => {
     el.addEventListener("click", menuView)
 })
 
-// contact us 스크립트
-const contactMe = document.querySelector("#section9 .myAderess .adress p");
-const contactMeMove = document.querySelector("#section9 .contactImail");
-const project = document.querySelector("#section .menu2");
-const projectMove = document.querySelector("#section5 #article");
-const about = document.querySelector("#section .menu3");
-const aboutMove = document.querySelector("#section4 .introduce");
-const contact = document.querySelector("#section .menu4");
-const contactMove = document.querySelector("#section9 .myAderess");
 
-const contactMeClickhandler = () => {
-    contactMeMove.scrollIntoView({
-        behavior: 'smooth',
-        block: 'center'
-    })
-}
-const projectClickhandler = e => {
-    e.preventDefault();
-    projectMove.scrollIntoView({
-        behavior: 'smooth'
-    })
-}
-const aboutClickhandler = e => {
-    e.preventDefault();
-    aboutMove.scrollIntoView({
-        behavior: 'smooth'
-    })
-}
-const contactClickhandler = e => {
-    e.preventDefault();
-    contactMove.scrollIntoView({
-        behavior: 'smooth'
-    })
-}
-
-project.addEventListener("click", projectClickhandler)
-about.addEventListener("click", aboutClickhandler)
-contact.addEventListener("click", contactClickhandler)
-contactMe.addEventListener("click", contactMeClickhandler)
 
 
 

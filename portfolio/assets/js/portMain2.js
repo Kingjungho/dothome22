@@ -33,57 +33,81 @@ overView.forEach(el => {
 })
 
 //이펙트 스크립트
-const order = document.querySelectorAll(".descBox.order span");
-const number = document.querySelectorAll(".descBox.menu");
-const frame = document.querySelectorAll("#section7 .frameCss iframe");
+const parallaxNumber = document.querySelectorAll(".descBox.menu.One");
+const parallaxOrder = document.querySelectorAll(".descBox.order.One span");
+const parallaxFrame = document.querySelectorAll("#section7 .frameCss .parallaxFrame");
+const sliderNumber = document.querySelectorAll(".descBox.menu.Two");
+const sliderOrder = document.querySelectorAll(".descBox.order.Two span");
+const sliderFrame = document.querySelectorAll("#section7 .frameCss .sliderFrame");
+const mouseNumber = document.querySelectorAll(".descBox.menu.Three");
+const mouseOrder = document.querySelectorAll(".descBox.order.Three span");
+const mouseFrame = document.querySelectorAll("#section7 .frameCss .mouseFrame");
+const gameNumber = document.querySelectorAll(".descBox.menu.Four");
+const gameOrder = document.querySelectorAll(".descBox.order.Four span");
+const gameFrame = document.querySelectorAll("#section7 .frameCss .gameFrame");
 
-const menuView = e => {
+const parallaxView = e => {
     for (let i = 1; i < 9; i++) {
         if (e.target.parentNode.dataset.id === "0" && e.target.textContent === `${i}`) {
-            order.forEach(el => {
+            parallaxOrder.forEach(el => {
                 el.innerHTML = `${i}`;
-                frame.forEach(el => {
+                parallaxFrame.forEach(el => {
                     el.src = `https://kingjungho.github.io/dothome22/refer-effect/ParallaxEffect/javascriptPE0${i}.html`
                 })
             })
         }
-    }
+    } 
 }
-//     for (let i = 1; i < 9; i++) {
-//         if (e.target.parentNode.dataset.id === "1" && e.target.textContent === `${i}`) {
-//             order.forEach(el => {
-//                 el.innerHTML = `${i}`;
-//                 frame.forEach(el => {
-//                     el.src = `https://kingjungho.github.io/dothome22/refer-effect/sliderEffect/javascriptSE0${i}.html`
-//                 })
-//             })
-//         }
-//     }
-//     for (let i = 1; i < 9; i++) {
-//         if (e.target.parentNode.dataset.id === "2" && e.target.textContent === `${i}`) {
-//             order.forEach(el => {
-//                 el.innerHTML = `${i}`;
-//                 frame.forEach(el => {
-//                     el.src = `https://kingjungho.github.io/dothome22/refer-effect/mouseEffect/javascriptME0${i}.html`
-//                 })
-//             })
-//         }
-//     }
-//     for (let i = 1; i < 9; i++) {
-//         if (e.target.parentNode.dataset.id === "3" && e.target.textContent === `${i}`) {
-//             order.forEach(el => {
-//                 el.innerHTML = `${i}`;
-//                 frame.forEach(el => {
-//                     el.src = `https://kingjungho.github.io/dothome22/refer-effect/GameEffect/quiz/cardGame.html`
-//                 })
-//             })
-//         }
-//     }
-// }
+const sliderView = e => {
+    for (let i = 1; i < 9; i++) {
+        if (e.target.parentNode.dataset.id === "1" && e.target.textContent === `${i}`) {
+            sliderOrder.forEach(el => {
+                el.innerHTML = `${i}`;
+                sliderFrame.forEach(el => {
+                    el.src = `https://kingjungho.github.io/dothome22/refer-effect/sliderEffect/javascriptSE0${i}.html`
+                })
+            })
+        }
+    } 
+}
+const mouseView = e => {
+    for (let i = 1; i < 9; i++) {
+        if (e.target.parentNode.dataset.id === "2" && e.target.textContent === `${i}`) {
+            mouseOrder.forEach(el => {
+                el.innerHTML = `${i}`;
+                mouseFrame.forEach(el => {
+                    el.src = `https://kingjungho.github.io/dothome22/refer-effect/mouseEffect/javascriptME0${i}.html`
+                })
+            })
+        }
+    } 
+}
+const gameView = e => {
+    for (let i = 0; i < 9; i++) {
+        if (e.target.parentNode.dataset.id === "3" && e.target.textContent === `${i}`) {
+            gameOrder.forEach(el => {
+                el.innerHTML = `${i}`;
+                gameFrame.forEach(el => {
+                    el.src = `https://kingjungho.github.io/dothome22/refer-effect/GameEffect/quiz/quiz0${i}.html`
+                })
+            })
+        }
+    } 
+}
 
-number.forEach(el => {
-    el.addEventListener("click", menuView)
+parallaxNumber.forEach(el => {
+    el.addEventListener("click", parallaxView)
 })
+sliderNumber.forEach(el => {
+    el.addEventListener("click", sliderView)
+})
+mouseNumber.forEach(el => {
+    el.addEventListener("click", mouseView)
+})
+gameNumber.forEach(el => {
+    el.addEventListener("click", gameView)
+})
+
 
 // scroll Trigger
 const trigger = new ScrollTrigger.default({
@@ -131,22 +155,6 @@ window.addEventListener("scroll", () => {
         }
     }
 });
-
-// contact us 스크립트
-const MenuClickMove = document.querySelector("#header");
-const contactMeMove = document.querySelector("#section8 .contactImail");
-
-const MoveTarget = e => {
-    const target = e.target
-    if(target.matches('projectImg')){
-        contactMeMove.scrollIntoView({behavior:'smooth'});
-    }
-}
-
-MenuClickMove.addEventListener("click", MoveTarget)
-
-
-
 
 // 아코디언 메뉴
 let accordionBtn = document.querySelectorAll('#section9 .contactTable .tableWrap li h4');
@@ -289,4 +297,49 @@ modal();
     
         setInterval(blink, 500)
     })
+
+
+// contact us 스크립트
+const project = document.querySelector("#header .project");
+const projectMove = document.querySelector("#section4");
+const aboutMove = document.querySelector("#section3 .sec3");
+const about = document.querySelector("#header .about");
+const contact = document.querySelector("#header .contact");
+const contactMe = document.querySelector("#section8 .myAderess .adress p");
+const contactMeMove = document.querySelector("#section8 .contactImail");
+
+const contactClickhandler = e => {
+    e.preventDefault();
+    contactMeMove.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center'
+    })
+}
+const contactMeClickhandler = e => {
+    e.preventDefault();
+    contactMeMove.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center'
+    })
+}
+const projectClickhandler = e => {
+    e.preventDefault();
+    projectMove.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center'
+    })
+}
+const aboutClickhandler = e => {
+    e.preventDefault();
+    aboutMove.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center'
+    })
+}
+
+
+project.addEventListener("click", projectClickhandler)
+about.addEventListener("click", aboutClickhandler)
+contact.addEventListener("click", contactClickhandler)
+contactMe.addEventListener("click", contactMeClickhandler)
     

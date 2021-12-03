@@ -30,15 +30,8 @@
 </head>
 
 <body>
-    <div class="waviy">
-        <span style="--i:1">아</span>
-        <span style="--i:2">직</span>
-        <span style="--i:3">미</span>
-        <span style="--i:4">완</span>
-        <span style="--i:5">성</span>
-        <span style="--i:6">입</span>
-        <span style="--i:7">니</span>
-        <span style="--i:8">다</span>
+    <div class="loadingContainer">
+        <div class="loading">Loading</div>
     </div>
     <section style="position:fixed" id="bgc"></section>
     <header id="header">
@@ -330,17 +323,17 @@
             </p>
             <div class="frameDesc">
                 <span class="descBox title">Parallax Effect</span>
-                <span class="descBox order">
+                <span class="descBox order One">
                     <span>1</span></span>
-                <div class="descBox menu" data-id="0">
-                    <button class="btn1">1</button>
-                    <button class="btn1">2</button>
-                    <button class="btn1">3</button>
-                    <button class="btn1">4</button>
-                    <button class="btn1">5</button>
-                    <button class="btn1">6</button>
-                    <button class="btn1">7</button>
-                    <button class="btn1">8</button>
+                <div class="descBox menu One" data-id="0">
+                    <button class="btn One">1</button>
+                    <button class="btn One">2</button>
+                    <button class="btn One">3</button>
+                    <button class="btn One">4</button>
+                    <button class="btn One">5</button>
+                    <button class="btn One">6</button>
+                    <button class="btn One">7</button>
+                    <button class="btn One">8</button>
                 </div>
                 <span class="descBox"></span>
                 <span class="descBox view"><a
@@ -356,14 +349,14 @@
                 <span class="descBox"></span>
             </div>
             <p class="frameCss">
-                <iframe src="https://kingjungho.github.io/dothome22/refer-effect/sliderEffect/javascriptSE01.html"
+                <iframe class="sliderFrame" src="https://kingjungho.github.io/dothome22/refer-effect/sliderEffect/javascriptSE01.html"
                     frameborder="0" width="100%" height="800px"></iframe>
             </p>
             <div class="frameDesc">
                 <span class="descBox title">Slider Effect</span>
-                <span class="descBox order">
+                <span class="descBox order Two">
                     <span>1</span></span>
-                <div class="descBox menu" data-id="1">
+                <div class="descBox menu Two" data-id="1">
                     <button>1</button>
                     <button>2</button>
                     <button>3</button>
@@ -387,14 +380,14 @@
                 <span class="descBox"></span>
             </div>
             <p class="frameCss">
-                <iframe src="https://kingjungho.github.io/dothome22/refer-effect/mouseEffect/javascriptME01.html"
+                <iframe class="mouseFrame" src="https://kingjungho.github.io/dothome22/refer-effect/mouseEffect/javascriptME01.html"
                     frameborder="0" width="100%" height="800px"></iframe>
             </p>
             <div class="frameDesc">
                 <span class="descBox title">Mouse Effect</span>
-                <span class="descBox order">
+                <span class="descBox order Three">
                     <span>1</span></span>
-                <div class="descBox menu" data-id="2">
+                <div class="descBox menu Three" data-id="2">
                     <button>1</button>
                     <button>2</button>
                     <button>3</button>
@@ -417,14 +410,14 @@
                 <span class="descBox"></span>
             </div>
             <p class="frameCss">
-                <iframe src="https://kingjungho.github.io/dothome22/refer-effect/GameEffect/quiz/cardGame.html"
+                <iframe class="gameFrame" src="https://kingjungho.github.io/dothome22/refer-effect/GameEffect/quiz/cardGame.html"
                     frameborder="0" width="100%" height="800px"></iframe>
             </p>
             <div class="frameDesc">
                 <span class="descBox title">Game Effect</span>
-                <span class="descBox order">
+                <span class="descBox order Four">
                     <span>1</span></span>
-                <div class="descBox menu" data-id="3">
+                <div class="descBox menu Four" data-id="3">
                     <button>1</button>
                     <button>2</button>
                     <button>3</button>
@@ -561,14 +554,59 @@
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="assets/js/portMain2.js"></script>
     <script>
         //loading
         $(window).on('load', function () {
-            $('.waviy').delay('1000').fadeOut();
+            $('.loadingContainer').delay('5000').fadeOut();
         })
+        $(window).ready(function () {
+
+            let loading = $('.loading').wrapInner('<div></div>'),
+                min = 20,
+                max = 70,
+                minMove = 10,
+                maxMove = 20;
+
+            startAnimation(loading);
+
+            loading.on('animationend webkitAnimationEnd oAnimationEnd', 'span:last-child', e => {
+                startAnimation(loading);
+            });
+
+            //Set CSS vars & generate spans if needed
+            function setCSSVars(elem, min, max, minMove, maxMove) {
+                let width = Math.ceil(elem.width()),
+                    text = elem.text();
+                for (let i = 1; i < width; i++) {
+                    let num = Math.floor(Math.random() * (max - min + 1)) + min,
+                        numMove = Math.floor(Math.random() * (maxMove - minMove + 1)) + minMove,
+                        dir = (i % 2 == 0) ? 1 : -1,
+                        spanCurrent = elem.find('span:eq(' + i + ')'),
+                        span = spanCurrent.length ? spanCurrent : $('<span />');
+                    span.css({
+                        '--x': i - 1 + 'px',
+                        '--move-y': num * dir + 170 + 'px',
+                        '--move-y-s': ((i % 2 == 0) ? num * dir - numMove : num * dir + numMove) + 'px',
+                        '--delay': i * 6 + 'ms'
+                    });
+                    if (!spanCurrent.length) {
+                        elem.append(span.text(text));
+                    }
+                }
+            }
+
+            //Start animation
+            function startAnimation(elem) {
+                elem.removeClass('start');
+                setCSSVars(elem, min, max, minMove, maxMove);
+                void elem[0].offsetWidth;
+                elem.addClass('start');
+            }
+
+        });
 
 
         //scroll data-value
