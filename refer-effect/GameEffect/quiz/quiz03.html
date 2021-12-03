@@ -225,52 +225,7 @@
             font-size: 22px;
             text-shadow: 1px 1px 1px #fff;
         }
-        .question__answer__ex {
-            padding: 20px;
-            line-height: 1.4;
-        }
-        .question__answer__selects {
-            padding: 10px 0;
-        }
-        .question__answer__selects label {
-            display: flex;
-            position: relative;
-            overflow: hidden;
-            margin-bottom: 5px;
-        }
-        .question__answer__selects label span {
-            font-size: 20px;
-            line-height: 1;
-            padding: 11px 35px 11px 50px;
-            border-radius: 50px;
-            position: relative;
-            color: #426d05;
-            min-height: 40px;
-        }
-        .question__answer__selects label span:hover {
-            background-color: #d6ecb6;
-        }
-        .question__answer__selects label span::before {
-            content: '';
-            width: 30px;
-            height: 30px;
-            background: #fff;
-            border-radius: 50%;
-            box-shadow: inset 0 0 0 3px #A5E151;
-            position: absolute; 
-            left: 7px; top: 6px;
-            transition: 0.25s ease;
-        }
-        .question__answer__selects label input {
-            position: absolute;
-            left: -9999px;
-        }
-        .question__answer__selects input:checked + span {
-            background-color: #d6ecb6;
-        }
-        .question__answer__selects input:checked + span::before {
-            box-shadow: inset 0 0 0 10px #A5E151;
-        }
+
     @media (max-width:1200px) {
         .ham {
             display: block;
@@ -696,8 +651,8 @@
         <nav>
             <ul>
                 <li><a href="quiz01.html">주관식 한 문제</a></li>
-                <li><a href="quiz02.html">주관식 여러 문제</a></li>
-                <li class="active"><a href="quiz03.html">객관식 한 문제</a></li>
+                <li class="active"><a href="quiz02.html">주관식 여러 문제</a></li>
+                <li><a href="quiz03.html">객관식 한 문제</a></li>
                 <li><a href="quiz04.html">객관식 여러 문제</a></li>
                 <li><a href="quiz05.html">객관식 여러 문제 : 이미지 슬라이드</a></li>
             </ul>
@@ -736,27 +691,76 @@
                         </div>
                     </div>
                 </div>
-                <div class="question__answer__selects">
-                    <label for="select1">
-                        <input class="select" type="radio" name="select" id="select1" value="1">
-                        <span class="choice"></span>
-                    </label>
-                    <label for="select2">
-                        <input class="select" type="radio" name="select" id="select2" value="2">
-                        <span class="choice"></span>
-                    </label>
-                    <label for="select3">
-                        <input class="select" type="radio" name="select" id="select3" value="3">
-                        <span class="choice"></span>
-                    </label>
-                    <label for="select4">
-                        <input class="select" type="radio" name="select" id="select4" value="4">
-                        <span class="choice"></span>
-                    </label>
+                <button class="question__answer__confirm">정답 확인하기</button>
+                <div class="question__answer__view"></div>
+            </div>
+        </div>
+    </div>
+    <div class="quizWrap">
+        <h2>넌센스 퀴즈</h2>
+        <div class="question__quiz">
+            <h3 class="question__title">
+                <span class="question__title__num"></span>
+                <span class="question__title__ask"></span>
+            </h3>
+            <div class="question__answer">
+                <div class="question__quiz__img"></div>
+                <div class="card">
+                    <div class="dog">
+                        <div class="head">
+                            <div class="ears"></div>
+                            <div class="face"></div>
+                            <div class="eyes">
+                                <div class="teardrop"></div>
+                            </div>
+                            <div class="nose"></div>
+                            <div class="mouth">
+                                <div class="tongue"></div>
+                            </div>
+                            <div class="chin"></div>
+                        </div>
+                        <div class="body">
+                            <div class="tail"></div>
+                            <div class="legs"></div>
+                        </div>
+                    </div>
                 </div>
                 <button class="question__answer__confirm">정답 확인하기</button>
                 <div class="question__answer__view"></div>
-                <div class="question__answer__ex"></div>
+            </div>
+        </div>
+    </div>
+    <div class="quizWrap">
+        <h2>넌센스 퀴즈</h2>
+        <div class="question__quiz">
+            <h3 class="question__title">
+                <span class="question__title__num"></span>
+                <span class="question__title__ask"></span>
+            </h3>
+            <div class="question__answer">
+                <div class="question__quiz__img"></div>
+                <div class="card">
+                    <div class="dog">
+                        <div class="head">
+                            <div class="ears"></div>
+                            <div class="face"></div>
+                            <div class="eyes">
+                                <div class="teardrop"></div>
+                            </div>
+                            <div class="nose"></div>
+                            <div class="mouth">
+                                <div class="tongue"></div>
+                            </div>
+                            <div class="chin"></div>
+                        </div>
+                        <div class="body">
+                            <div class="tail"></div>
+                            <div class="legs"></div>
+                        </div>
+                    </div>
+                </div>
+                <button class="question__answer__confirm">정답 확인하기</button>
+                <div class="question__answer__view"></div>
             </div>
         </div>
     </div>
@@ -766,77 +770,90 @@
         const quizWrap = document.querySelector(".quizWrap");
         const questionQuiz = document.querySelector(".question__quiz");
         const questionTitle = document.querySelector(".question__title");
-        const questionTitleNum = document.querySelector(".question__title__num");
-        const questionTitleAsk = document.querySelector(".question__title__ask");
+        const questionTitleNum = document.querySelectorAll(".question__title__num");
+        const questionTitleAsk = document.querySelectorAll(".question__title__ask");
         const questionAnswer = document.querySelector(".question__answer");
         const questionAnswerImg = document.querySelector(".question__answer__img");
-        const questionAnswerConfirm = document.querySelector(".question__answer__confirm");
-        const questionAnswerView = document.querySelector(".question__answer__view");
-        const questionAnswerSelects = document.querySelector(".question__answer__selects");
-        const questionAnswerSelect = questionAnswerSelects.querySelectorAll(".select");
-        const questionAnswerChoice = questionAnswerSelects.querySelectorAll(".choice");
-        const questionAnswerEx = document.querySelector(".question__answer__ex");
+        const questionAnswerConfirm = document.querySelectorAll(".question__answer__confirm");
+        const questionAnswerView = document.querySelectorAll(".question__answer__view");
 
+        //문제 정보
+        
 
-         //문제정보
-         const quizInfo = [
+        //문제정보
+        const quizInfo = [
             {
                 quizNum : 1,
-                quizAsk : "다음 중 디자인의 기본 요소들로 옳은 것은?",
-                quizChoice : ["선, 색체, 공간, 수량", "점, 선, 면, 질감", "시간, 수량, 구조, 공간", "면, 구조, 공간, 수량"],
-                quizAnswer : "2",
-                quizEx : "디자인의 기본 요소는 점, 섬, 면, 질감으로 이루어져 있습니다."
+                quizAsk : "채소 장사꾼이 제일 싫어하는 외국의 도시는?",
+                quizAnswer : "시드니"
+            },
+            {
+                quizNum : 2,
+                quizAsk : "가장 비싼 새는?",
+                quizAnswer : "백조"
+            },
+            {
+                quizNum : 3,
+                quizAsk : "소녀가 강으로 여행가면?",
+                quizAnswer : "걸리버 여행"
             }
-        ] 
+        ]
 
         //문제 출력
-        function updateQuiz(){
-            questionTitleNum.innerHTML = quizInfo[0].quizNum;
-            questionTitleAsk.innerHTML = quizInfo[0].quizAsk;
-            questionAnswerView.innerHTML = quizInfo[0].quizAnswer;
-            questionAnswerEx.innerHTML = quizInfo[0].quizEx;
-        //quizChoice 화면에 출력하기
-            for ( let i=0; i<4; i++){
-                questionAnswerChoice[i].innerHTML = quizInfo[0].quizChoice[i];
-            }
-            //정답,설명 감추기
-            questionAnswerView.style.display ="none";
-            questionAnswerEx.style.display ="none";
-        }
-        updateQuiz();
-        //정답 확인
-        function answerQuiz(){
-            for( let i=0; i<questionAnswerSelect.length; i++){
-                if ( questionAnswerSelect[i].checked == true ) {
-                    if ( questionAnswerSelect[i].value == quizInfo[0].quizAnswer ){
-                        //alert("정답입니다.");
-                        questionAnswerConfirm.style.display = "none";
-                        questionAnswerView.style.display ="block";
-                        questionAnswerView.innerHTML = "맞았습니다.";
-                    } else {
-                        //alert("틀렸습니다.");
-                        questionAnswerConfirm.style.display = "none";
-                        questionAnswerView.style.display ="block";
-                        questionAnswerView.innerHTML = "틀렸습니다. 정답은" + quizInfo[0].quizAnswer + "입니다.";
-                        questionAnswerEx.style.display ="block";
-                    }
-                } else {
-                    questionAnswerConfirm.innerHTML = "정답을 체크해주세요 !!";
-                    setTimeout(() => {
-                        questionAnswerConfirm.innerHTML = "정답 확인하기";
-                    }, 1000)
-                }
-            }
-        }
-        answerQuiz();
+        // questionTitleNum[0].innerHTML = quizInfo[0].quizNum;
+        // questionTitleNum[1].innerHTML = quizInfo[1].quizNum;
+        // questionTitleNum[2].innerHTML = quizInfo[2].quizNum;
 
-        questionAnswerConfirm.addEventListener("click", answerQuiz);
+        // questionTitleAsk[0].innerHTML = quizInfo[0].quizAsk;
+        // questionTitleAsk[1].innerHTML = quizInfo[1].quizAsk;
+        // questionTitleAsk[2].innerHTML = quizInfo[2].quizAsk;
 
-        
+        // questionAnswerView[0].innerHTML = quizInfo[0].quizAnswer;
+        // questionAnswerView[1].innerHTML = quizInfo[1].quizAnswer;
+        // questionAnswerView[2].innerHTML = quizInfo[2].quizAnswer;
+
+        // for(let i=0; i<quizInfo.length; i++){
+        //     questionTitleNum[i].innerHTML = quizInfo[i].quizNum;
+        //     questionTitleAsk[i].innerHTML = quizInfo[i].quizAsk;
+        //     questionAnswerView[i].innerHTML = quizInfo[i].quizAnswer;
+        // }
+
+
+        quizInfo.forEach((e, i) => {
+            questionTitleNum[i].innerHTML = e.quizNum;
+            questionTitleAsk[i].innerHTML = e.quizAsk;
+            questionAnswerView[i].innerHTML = e.quizAnswer;
+        });
+
+        // document.querySelectorAll(".quizWrap .question__quiz").forEach((e, i) => {
+        //    document.querySelector(".question__answer__view").style.display = "none"
+            questionAnswerView.forEach(el => {
+                el.style.display = "none"
+            });
+
+        // 정답 숨기기
+        // questionAnswerConfirm.forEach(el => {
+        //     el.addEventListener("click", function() {
+        //         this.style.display = "none";
+        //         this.nextElementSibling.style.display ="block"
+        //     })
+        // })
+
+        questionAnswerConfirm.forEach((confirm,idx) => {
+            confirm.addEventListener('click',() => {
+                confirm.style.display = 'none';
+                questionAnswerView[idx].style.display = 'block';
+                document.querySelectorAll('.card')[idx].classList.add('good');
+            });
+        });
+
+
         //메뉴
         document.querySelector(".ham").addEventListener("click", () => {
             document.querySelector("nav").classList.toggle("show");
         })
+
+        
 
     </script>
 </body>

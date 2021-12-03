@@ -83,9 +83,9 @@ const mouseView = e => {
     } 
 }
 const gameView = e => {
-    for (let i = 0; i < 8; i++) {
+    for (let i = 1; i < 9; i++) {
         if (e.target.parentNode.dataset.id === "3" && e.target.textContent === `${i}`) {
-            gameOrder.forEach(el => {
+            gameOrder.forEach(el=> {
                 el.innerHTML = `${i}`;
                 gameFrame.forEach(el => {
                     el.src = `https://kingjungho.github.io/dothome22/refer-effect/GameEffect/quiz/quiz0${i}.html`
