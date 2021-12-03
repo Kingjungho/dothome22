@@ -706,13 +706,19 @@ body {
 
 #section8 .myAderess .adress p {
     font-size: 1vw;
-    color: #8c8c8c;
-    ;
+    color: #8c8c8c;;
     margin: 155px auto 0;
     font-weight: lighter;
     cursor: pointer;
+    border-radius: 50%;
 }
-
+#section8 .myAderess .adress img {
+    margin-top: 10px;
+    position: absolute;
+    width: 20px;
+    height: 75vh;
+    filter: brightness(60%);
+}
 #section8 .circle {
     height: 100vh;
     display: flex;
