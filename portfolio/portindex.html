@@ -348,7 +348,8 @@
                 <span class="descBox"></span>
             </div>
             <p class="frameCss">
-                <iframe class="sliderFrame" src="https://kingjungho.github.io/dothome22/refer-effect/sliderEffect/javascriptSE01.html"
+                <iframe class="sliderFrame"
+                    src="https://kingjungho.github.io/dothome22/refer-effect/sliderEffect/javascriptSE01.html"
                     frameborder="0" width="100%" height="800px"></iframe>
             </p>
             <div class="frameDesc">
@@ -379,7 +380,8 @@
                 <span class="descBox"></span>
             </div>
             <p class="frameCss">
-                <iframe class="mouseFrame" src="https://kingjungho.github.io/dothome22/refer-effect/mouseEffect/javascriptME01.html"
+                <iframe class="mouseFrame"
+                    src="https://kingjungho.github.io/dothome22/refer-effect/mouseEffect/javascriptME01.html"
                     frameborder="0" width="100%" height="800px"></iframe>
             </p>
             <div class="frameDesc">
@@ -409,7 +411,8 @@
                 <span class="descBox"></span>
             </div>
             <p class="frameCss">
-                <iframe class="gameFrame" src="https://kingjungho.github.io/dothome22/refer-effect/GameEffect/quiz/cardGame.html"
+                <iframe class="gameFrame"
+                    src="https://kingjungho.github.io/dothome22/refer-effect/GameEffect/quiz/cardGame.html"
                     frameborder="0" width="100%" height="800px"></iframe>
             </p>
             <div class="frameDesc">
@@ -559,15 +562,15 @@
     <script>
         //loading
         $(window).on('load', function () {
-            $('.loadingContainer').delay('4000').fadeOut();
+            $('.loadingContainer').delay('5000').fadeOut();
         })
         $(window).ready(function () {
 
             let loading = $('.loading').wrapInner('<div></div>'),
-                min = 20,
-                max = 70,
-                minMove = 10,
-                maxMove = 20;
+                min = 80,
+                max = 140,
+                minMove = 50,
+                maxMove = 100;
 
             startAnimation(loading);
 
@@ -587,9 +590,9 @@
                         span = spanCurrent.length ? spanCurrent : $('<span />');
                     span.css({
                         '--x': i - 1 + 'px',
-                        '--move-y': num * dir + 170 + 'px',
+                        '--move-y': num * dir + 'px',
                         '--move-y-s': ((i % 2 == 0) ? num * dir - numMove : num * dir + numMove) + 'px',
-                        '--delay': i * 6 + 'ms'
+                        '--delay': i * 10 + 'ms'
                     });
                     if (!spanCurrent.length) {
                         elem.append(span.text(text));
