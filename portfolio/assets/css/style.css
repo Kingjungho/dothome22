@@ -768,8 +768,6 @@ body {
     top: 0;
 }
 
-
-
 .supah-scroll {
     position: fixed;
     z-index: 1;
@@ -779,4 +777,4 @@ body {
     height: auto;
     will-change: transform;
     overflow: hidden;
-  }
+}

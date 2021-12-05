@@ -10,7 +10,6 @@
 // })
 
 //MY SELF PROJECT 메뉴 깜박임 효과
-
 const overView = document.querySelectorAll(".list");
 const overViewDesc = document.querySelectorAll(".list__desc");
 let currentMenu;
@@ -33,80 +32,65 @@ overView.forEach(el => {
 })
 
 //이펙트 스크립트
-const parallaxNumber = document.querySelectorAll(".descBox.menu.One");
-const parallaxOrder = document.querySelectorAll(".descBox.order.One span");
+const parallaxNumber = document.querySelector(".descBox.menu.One");
+const parallaxOrder = document.querySelector(".descBox.order.One span");
 const parallaxFrame = document.querySelectorAll("#section7 .frameCss .parallaxFrame");
-const sliderNumber = document.querySelectorAll(".descBox.menu.Two");
-const sliderOrder = document.querySelectorAll(".descBox.order.Two span");
+const sliderNumber = document.querySelector(".descBox.menu.Two");
+const sliderOrder = document.querySelector(".descBox.order.Two span");
 const sliderFrame = document.querySelectorAll("#section7 .frameCss .sliderFrame");
-const mouseNumber = document.querySelectorAll(".descBox.menu.Three");
-const mouseOrder = document.querySelectorAll(".descBox.order.Three span");
+const mouseNumber = document.querySelector(".descBox.menu.Three");
+const mouseOrder = document.querySelector(".descBox.order.Three span");
 const mouseFrame = document.querySelectorAll("#section7 .frameCss .mouseFrame");
-const gameNumber = document.querySelectorAll(".descBox.menu.Four");
-const gameOrder = document.querySelectorAll(".descBox.order.Four span");
+const gameNumber = document.querySelector(".descBox.menu.Four");
+const gameOrder = document.querySelector(".descBox.order.Four span");
 const gameFrame = document.querySelectorAll("#section7 .frameCss .gameFrame");
 
 const parallaxView = e => {
-    for (let i = 1; i < 9; i++) {
+    for (let i = 1; i < parallaxNumber.children.length + 1; i++) {
         if (e.target.parentNode.dataset.id === "0" && e.target.textContent === `${i}`) {
-            parallaxOrder.forEach(el => {
-                el.innerHTML = `${i}`;
-                parallaxFrame.forEach(el => {
-                    el.src = `https://kingjungho.github.io/dothome22/refer-effect/ParallaxEffect/javascriptPE0${i}.html`
-                })
+            parallaxOrder.innerText = `${i}`;
+            parallaxFrame.forEach(el => {
+                el.src = `https://kingjungho.github.io/dothome22/refer-effect/ParallaxEffect/javascriptPE0${i}.html`
             })
         }
-    } 
+    }
 }
 const sliderView = e => {
-    for (let i = 1; i < 9; i++) {
+    for (let i = 1; i < sliderNumber.children.length + 1; i++) {
         if (e.target.parentNode.dataset.id === "1" && e.target.textContent === `${i}`) {
-            sliderOrder.forEach(el => {
-                el.innerHTML = `${i}`;
-                sliderFrame.forEach(el => {
-                    el.src = `https://kingjungho.github.io/dothome22/refer-effect/sliderEffect/javascriptSE0${i}.html`
-                })
+            sliderOrder.innerText = `${i}`;
+            sliderFrame.forEach(el => {
+                el.src = `https://kingjungho.github.io/dothome22/refer-effect/sliderEffect/javascriptSE0${i}.html`
             })
         }
-    } 
+    }
 }
 const mouseView = e => {
-    for (let i = 1; i < 9; i++) {
+    for (let i = 1; i < mouseNumber.children.length + 1; i++) {
         if (e.target.parentNode.dataset.id === "2" && e.target.textContent === `${i}`) {
-            mouseOrder.forEach(el => {
-                el.innerHTML = `${i}`;
-                mouseFrame.forEach(el => {
-                    el.src = `https://kingjungho.github.io/dothome22/refer-effect/mouseEffect/javascriptME0${i}.html`
-                })
+            mouseOrder.innerText = `${i}`;
+            mouseFrame.forEach(el => {
+                el.src = `https://kingjungho.github.io/dothome22/refer-effect/mouseEffect/javascriptME0${i}.html`
             })
         }
-    } 
+    }
 }
 const gameView = e => {
-    for (let i = 1; i < 9; i++) {
+    for (let i = 1; i < gameNumber.children.length + 1; i++) {
         if (e.target.parentNode.dataset.id === "3" && e.target.textContent === `${i}`) {
-            gameOrder.forEach(el=> {
-                el.innerHTML = `${i}`;
-                gameFrame.forEach(el => {
-                    el.src = `https://kingjungho.github.io/dothome22/refer-effect/GameEffect/quiz/quiz0${i}.html`
-                })
+            gameOrder.innerText = `${i}`;
+            gameFrame.forEach(el => {
+                el.src = `https://kingjungho.github.io/dothome22/refer-effect/GameEffect/quiz/quiz0${i}.html`
             })
         }
-    } 
+    }
 }
 
-parallaxNumber.forEach(el => {
-    el.addEventListener("click", parallaxView)
-})
-sliderNumber.forEach(el => {
-    el.addEventListener("click", sliderView)
-})
-mouseNumber.forEach(el => {
-    el.addEventListener("click", mouseView)
-})
-gameNumber.forEach(el => {
-    el.addEventListener("click", gameView)
-})
+parallaxNumber.addEventListener("click", parallaxView)
+sliderNumber.addEventListener("click", sliderView)
+mouseNumber.addEventListener("click", mouseView)
+gameNumber.addEventListener("click", gameView)
+
 
 
 // scroll Trigger
@@ -146,7 +130,7 @@ window.addEventListener("scroll", () => {
 
         let heightBefore = 0;
         if (i > 0) {
-            heightBefore = sectionAll[i - 1].offsetHeight / 11;
+            heightBefore = sectionAll[i - 1].offsetHeight / 12;
         }
 
         if (scrollTop > (secDiv.offsetTop - 600) - heightBefore) {
@@ -211,7 +195,7 @@ const sectionSix = document.querySelector("#section6");
 window.addEventListener("scroll", () => {
     let scrollTop = window.pageYOffset || document.documentElement.scrollTop || window.scrollY;
 
-    if (scrollTop >= sectionThree.offsetTop -280 && scrollTop <= sectionFour.offsetTop) {
+    if (scrollTop >= sectionThree.offsetTop - 280 && scrollTop <= sectionFour.offsetTop) {
         fixedLogo.style.color = "#000"
         fixedSvg.forEach(el => {
             el.style.filter = "brightness(0%)"
@@ -219,7 +203,7 @@ window.addEventListener("scroll", () => {
         fixedText.forEach(el => {
             el.style.color = "#000"
         })
-    } else if (scrollTop >= sectionFive.offsetTop -600 && scrollTop <= sectionSix.offsetTop) {
+    } else if (scrollTop >= sectionFive.offsetTop - 600 && scrollTop <= sectionSix.offsetTop) {
         fixedLogo.style.color = "#000"
         fixedSvg.forEach(el => {
             el.style.filter = "brightness(0%)"
@@ -244,59 +228,59 @@ window.addEventListener("scroll", () => {
 //modal
 
 function modal() {
-    document.querySelector("#section8 .contactImail").addEventListener("click", function(){
-        document.querySelector("#modal").classList.add("show"); 
-        document.querySelector("#modal").classList.remove("hide"); 
+    document.querySelector("#section8 .contactImail").addEventListener("click", function () {
+        document.querySelector("#modal").classList.add("show");
+        document.querySelector("#modal").classList.remove("hide");
     });
-        document.querySelector(".modal-cont button").addEventListener("click", function(){
-        document.querySelector("#modal").classList.add("hide"); 
+    document.querySelector(".modal-cont button").addEventListener("click", function () {
+        document.querySelector("#modal").classList.add("hide");
     });
 }
 modal();
 
 
-    //code view
-    document.addEventListener('DOMContentLoaded', (event) => {
+//code view
+document.addEventListener('DOMContentLoaded', (event) => {
     document.querySelectorAll('pre code').forEach((el) => {
-            hljs.highlightElement(el);
-        });
+        hljs.highlightElement(el);
     });
+});
 
 
-   //한글자 씩 출력하기
-    const string = document.querySelectorAll(".frameDesc .descBox.Write span");
+//한글자 씩 출력하기
+const string = document.querySelectorAll(".frameDesc .descBox.Write span");
 
-    string.forEach(el => {
-        const randomString = () => {
-            const stringArr = "#HTML #CSS #JAVASCRIPT"
-            const splitStringArr = stringArr.split("")
-            
-            return splitStringArr;
-        }
-    
-        const resetTyping = () => {
-            el.textContent = '';
-            dynamic(randomString())
-        }
-        
-        const dynamic = randomArr => {
-            el.textContent += randomArr.shift();
-            if(randomArr.length > 0){
-                setTimeout(() => {
-                    dynamic(randomArr)
-                }, 100)
-            } else {
-                setTimeout(resetTyping, 3000);
-            }
-        }
+string.forEach(el => {
+    const randomString = () => {
+        const stringArr = "#HTML #CSS #JAVASCRIPT"
+        const splitStringArr = stringArr.split("")
+
+        return splitStringArr;
+    }
+
+    const resetTyping = () => {
+        el.textContent = '';
         dynamic(randomString())
-    
-        const blink = () => {
-            el.classList.toggle("active");
+    }
+
+    const dynamic = randomArr => {
+        el.textContent += randomArr.shift();
+        if (randomArr.length > 0) {
+            setTimeout(() => {
+                dynamic(randomArr)
+            }, 100)
+        } else {
+            setTimeout(resetTyping, 3000);
         }
-    
-        setInterval(blink, 500)
-    })
+    }
+    dynamic(randomString())
+
+    const blink = () => {
+        el.classList.toggle("active");
+    }
+
+    setInterval(blink, 500)
+})
 
 
 // contact us 스크립트
@@ -342,4 +326,3 @@ project.addEventListener("click", projectClickhandler)
 about.addEventListener("click", aboutClickhandler)
 contact.addEventListener("click", contactClickhandler)
 contactMe.addEventListener("click", contactMeClickhandler)
-    
