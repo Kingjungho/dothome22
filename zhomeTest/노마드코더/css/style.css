@@ -4,3 +4,11 @@ html {
 .hidden {
     display: none;
 }
+#todo-list {
+    position: relative;
+    width: 135px;
+}
+#todo-list li {
+    display: flex;
+    justify-content: space-between;
+}

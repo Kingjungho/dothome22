@@ -1,14 +1,3 @@
-// 소개글 마우스오버 이미지 이펙트
-// document.querySelectorAll(".text1 p span").forEach((element) => {
-//     let style = element.getAttribute("class");
-//     element.addEventListener("mouseover", e => {
-//         e.target.classList.add(style);
-//     });
-//     element.addEventListener("mouseout", () => {
-//         document.querySelector(".text1 p span").classList.remove(style);
-//     });
-// })
-
 //MY SELF PROJECT 메뉴 깜박임 효과
 const overView = document.querySelectorAll(".list");
 const overViewDesc = document.querySelectorAll(".list__desc");
@@ -46,7 +35,7 @@ const gameOrder = document.querySelector(".descBox.order.Four span");
 const gameFrame = document.querySelectorAll("#section7 .frameCss .gameFrame");
 
 const parallaxView = e => {
-    for (let i = 1; i < parallaxNumber.children.length + 1; i++) {
+    for (let i = 1; i <= parallaxNumber.children.length; i++) {
         if (e.target.parentNode.dataset.id === "0" && e.target.textContent === `${i}`) {
             parallaxOrder.innerText = `${i}`;
             parallaxFrame.forEach(el => {
@@ -56,7 +45,7 @@ const parallaxView = e => {
     }
 }
 const sliderView = e => {
-    for (let i = 1; i < sliderNumber.children.length + 1; i++) {
+    for (let i = 1; i <= sliderNumber.children.length; i++) {
         if (e.target.parentNode.dataset.id === "1" && e.target.textContent === `${i}`) {
             sliderOrder.innerText = `${i}`;
             sliderFrame.forEach(el => {
@@ -66,7 +55,7 @@ const sliderView = e => {
     }
 }
 const mouseView = e => {
-    for (let i = 1; i < mouseNumber.children.length + 1; i++) {
+    for (let i = 1; i <= mouseNumber.children.length; i++) {
         if (e.target.parentNode.dataset.id === "2" && e.target.textContent === `${i}`) {
             mouseOrder.innerText = `${i}`;
             mouseFrame.forEach(el => {
@@ -76,7 +65,7 @@ const mouseView = e => {
     }
 }
 const gameView = e => {
-    for (let i = 1; i < gameNumber.children.length + 1; i++) {
+    for (let i = 1; i <= gameNumber.children.length; i++) {
         if (e.target.parentNode.dataset.id === "3" && e.target.textContent === `${i}`) {
             gameOrder.innerText = `${i}`;
             gameFrame.forEach(el => {
@@ -240,7 +229,7 @@ modal();
 
 
 //code view
-document.addEventListener('DOMContentLoaded', (event) => {
+document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('pre code').forEach((el) => {
         hljs.highlightElement(el);
     });
@@ -292,28 +281,28 @@ const contact = document.querySelector("#header .contact");
 const contactMe = document.querySelector("#section8 .myAderess .adress p");
 const contactMeMove = document.querySelector("#section8 .contactImail");
 
-const contactClickhandler = e => {
+const contactClickHandler = e => {
     e.preventDefault();
     contactMeMove.scrollIntoView({
         behavior: 'smooth',
         block: 'center'
     })
 }
-const contactMeClickhandler = e => {
+const contactMeClickHandler = e => {
     e.preventDefault();
     contactMeMove.scrollIntoView({
         behavior: 'smooth',
         block: 'center'
     })
 }
-const projectClickhandler = e => {
+const projectClickHandler = e => {
     e.preventDefault();
     projectMove.scrollIntoView({
         behavior: 'smooth',
         block: 'center'
     })
 }
-const aboutClickhandler = e => {
+const aboutClickHandler = e => {
     e.preventDefault();
     aboutMove.scrollIntoView({
         behavior: 'smooth',
@@ -322,7 +311,7 @@ const aboutClickhandler = e => {
 }
 
 
-project.addEventListener("click", projectClickhandler)
-about.addEventListener("click", aboutClickhandler)
-contact.addEventListener("click", contactClickhandler)
-contactMe.addEventListener("click", contactMeClickhandler)
+project.addEventListener("click", projectClickHandler)
+about.addEventListener("click", aboutClickHandler)
+contact.addEventListener("click", contactClickHandler)
+contactMe.addEventListener("click", contactMeClickHandler)

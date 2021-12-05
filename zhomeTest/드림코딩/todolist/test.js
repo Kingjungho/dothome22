@@ -13,7 +13,8 @@ const nowClick = () => {
     const hours = String(nowDate.getHours()).padStart(2, 0);
     const minutes = String(nowDate.getMinutes()).padStart(2, 0);
     const seconds = String(nowDate.getSeconds()).padStart(2, 0);
-    date.innerHTML = `등록시간 : ${hours} : ${minutes} : ${seconds} 👍`
+    const ap = hours > 12 ? " PM" : " AM";
+    date.innerHTML = `등록시간 :${ap} ${hours} : ${minutes} : ${seconds} 👍`
     return date.innerHTML;
 }
 nowClick();
@@ -27,8 +28,10 @@ const addList = () => {
         inputWrite.focus();
         return;
     }
+    localStorage.setItem("listname", text)
     const newItem = itemList(text);
     list.appendChild(newItem);
+    localStorage.getItem("listname")
     inputWrite.focus();
     inputWrite.value = '';
     newItem.scrollIntoView({behavior:"smooth", block: 'center'})
@@ -60,6 +63,7 @@ listAddBtn.addEventListener("click", addList)
 list.addEventListener("click", deleteMenu)
 form.addEventListener("submit", e => {
     e.preventDefault();
+    addList()
 })
 allDelte.addEventListener("click", () => {
     const listChild = list.children;
@@ -68,3 +72,16 @@ allDelte.addEventListener("click", () => {
         i--;
     }
 })
+
+const imgs = ["bg3.jpg", "bg6.jpg", "bg9.jpg"];
+const randomImg = imgs[Math.floor(Math.random() * imgs.length)]
+const img = document.createElement("img");
+img.src = `img/${randomImg}`;
+img.style.position = "absolute"
+img.style.left = "0"
+img.style.top = "0"
+img.style.width = "100%"
+img.style.zIndex = "-10000"
+img.style.filter = "brightness(60%)"
+document.body.appendChild(img);
+
