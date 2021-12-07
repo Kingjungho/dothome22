@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="kokhgpm, ;;ㅣㅣㅣㅣㅣㅣㅣ;ㅣㅣㅣㅣ/ㅣ;ㅣㅍㅊ퓿ㅍㅊㅌㅍㄹㅇㄷㄵㅌ">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .drum {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100vh;
+        background: linear-gradient(rgba(238, 234, 234, 0.3), rgba(255, 255, 255, 0.3)), url(/refer-effect/assets/img/bg2.jpg) center/cover no-repeat;
+        font-weight: bold;
+    }
+
+    .key {
+        margin-right: 20px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        border: 3px solid #000;
+        box-shadow: 0 0 5px #000;
+        padding: 20px;
+        width: 71px;
+        height: 50px;
+        transition: all 0.7s ease;
+    }
+
+    .drumBtn {
+        margin-bottom: 5px;
+    }
+
+    .sound {
+        color: yellow;
+    }
+
+    .active {
+        border: 3px solid yellowgreen;
+        transform: scale(1.1);
+    }
+</style>
+
+<body>
+    <div class="drum">
+        <div data-key="65" class="key">
+            <span class="drumBtn">A</span>
+            <span class="sound">CLAP</span>
+        </div>
+        <div data-key="83" class="key">
+            <span class="drumBtn">B</span>
+            <span class="sound">HIHAT</span>
+        </div>
+        <div data-key="68" class="key">
+            <span class="drumBtn">C</span>
+            <span class="sound">KICK</span>
+        </div>
+        <div data-key="70" class="key">
+            <span class="drumBtn">D</span>
+            <span class="sound">OPENHAT</span>
+        </div>
+        <div data-key="71" class="key">
+            <span class="drumBtn">E</span>
+            <span class="sound">BOOM</span>
+        </div>
+        <div data-key="72" class="key">
+            <span class="drumBtn">F</span>
+            <span class="sound">RIDE</span>
+        </div>
+        <div data-key="74" class="key">
+            <span class="drumBtn">G</span>
+            <span class="sound">SNARE</span>
+        </div>
+        <div data-key="75" class="key">
+            <span class="drumBtn">H</span>
+            <span class="sound">TOM</span>
+        </div>
+        <div data-key="76" class="key">
+            <span class="drumBtn">I</span>
+            <span class="sound">TINK</span>
+        </div>
+    </div>
+
+    <audio data-key="65" src="../game/sound/alert.wav"></audio>
+    <audio data-key="83" src="../game/sound/bg.mp3"></audio>
+    <audio data-key="68" src="../game/sound/bug_pull.mp3"></audio>
+    <audio data-key="70" src="../game/sound/carrot_pull.mp3"></audio>
+    <audio data-key="71" src="../game/sound/game_win.mp3"></audio>
+    <audio data-key="72" src="../game/sound/alert.wav"></audio>
+    <audio data-key="74" src="../game/sound/alert.wav"></audio>
+    <audio data-key="75" src="../game/sound/alert.wav"></audio>
+    <audio data-key="76" src="../game/sound/alert.wav"></audio>
+    <script>
+        let currentMenu;
+
+        const playSound = e => {
+        if (currentMenu) {
+            currentMenu.classList.remove("active")
+        }
+        const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`)
+        const key = document.querySelector(`div[data-key="${e.keyCode}"]`)
+        if (!audio) return;
+        var i = 1
+        if (i === 1) {
+            audio.play();
+            i = 0;
+        } else if (i === 0) {
+            audio.pause();
+            audio.currentTime = 0;
+            i = 1;
+        }
+        key.classList.add("active")
+        currentMenu = key;
+        }
+
+        window.addEventListener("keydown", playSound)
+    </script>
+</body>
+
+</html>
