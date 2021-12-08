@@ -1,124 +1,101 @@
 'use strict'
 
-import PopUp from './popup.js'
-import Field from './field.js'
-import * as sound from './sound.js'
-
-//게임 시스템
+// 게임 진행 기능
 const gameBtn = document.querySelector(".game__button");
-const timerText = document.querySelector(".game__timer");
+const gameTimer = document.querySelector(".game__timer");
 const gameScore = document.querySelector(".game__score");
+const field = document.querySelector(".game__field");
+const fieldRect = field.getBoundingClientRect();
+
+
+//팝업
+const popUp = document.querySelector(".pop-up");
+console.log(popUp)
 
 const CARROT_COUNT = 10;
-const BUG_COUNT = 10;
-const REMAIN_TIME = 10;
-
+const CARROT_SIZE = 80;
 let timer;
 let started = false;
-let score = 0;
+const DURATION_TIME = 65;
 
-const finishGameBoard = new PopUp();
-const gameField = new Field(CARROT_COUNT, BUG_COUNT);
 
-gameField.setClickListener(onItemClick);
-
-function onItemClick(item){
-    if(!started){
-        return;
-    }
-    if(item === 'carrot'){
-        score++;
-        scoreBoardText(score);
-        if(CARROT_COUNT === score){
-            finishGame(true)
-            sound.playWinSound()
-        }
-    } else if (item === 'bug'){
-        finishGame(false)
-        sound.playBugSound()
-    }
-}
-
-finishGameBoard.setClickListener(() => {
-    gameStart();
-    gameBtn.style.visibility = 'visible'
-})
-
-gameBtn.addEventListener("click", () => {
-    if(started){
-        gameStop();
+const startGameBtn = () => {
+    if (started) {
+        gameStop()
     } else {
         gameStart()
     }
-})
-
+}
 
 const gameStart = () => {
     started = true;
-    showBtnChange();
-    initGame();
-    gameTimer();
-    finishGameBoard.hide();
-    sound.playBgSound();
+    init();
+    gameTimerText();
+    Btn();
 }
 
 const gameStop = () => {
     started = false;
-    finishGameBoard.TextAndIcon('Replay?')
-    clearInterval(timer);
-    gameBtn.style.visibility = 'hidden'
-    sound.playAlertSound();
-    sound.stopBgSound();
+    stopGameBanner();
 }
 
-const gameTimer = () => {
-    let remainingTime = REMAIN_TIME;
-    boardTextRemainingTime(remainingTime);
+const stopGameBanner = () => {
+    popUp.classList.remove("pop-up-hide");
+    clearInterval(timer)
+}
+
+const init = () => {
+    field.innerHTML = '';
+    addItem("carrot", CARROT_COUNT, "img/carrot.png");
+    addItem("bug", CARROT_COUNT, "img/bug.png");
+    gameScore.innerHTML = CARROT_COUNT;
+}
+
+const addItem = (name, count, imgPath) => {
+    let x1 = 0;
+    let y1 = 0;
+    let x2 = fieldRect.width - CARROT_SIZE;
+    let y2 = fieldRect.height - CARROT_SIZE;
+    for (let i = 0; i < count; i++) {
+        const item = document.createElement("img");
+        item.setAttribute("class", name);
+        item.src = imgPath;
+        item.style.position = "absolute";
+        const x = randomLocation(x1, x2);
+        const y = randomLocation(y1, y2);
+        item.style.left = `${x}px`
+        item.style.top = `${y}px`
+        field.appendChild(item);
+    }
+}
+
+const randomLocation = (min, max) => {
+    return Math.random() * (max - min) + min;
+}
+
+const Btn = () => {
+    const icon = document.querySelector(".fas");
+    icon.classList.add("fa-stop");
+    icon.classList.remove("fa-play");
+}
+
+
+const timerRemain = time => {
+    const minutes = Math.floor(time / 60);
+    const seconds = String(time % 60).padStart(2, "0");
+    gameTimer.innerHTML = `${minutes} : ${seconds}`;
+}
+
+const gameTimerText = () => {
+    let remainTime = DURATION_TIME;
+    timerRemain(remainTime)
     timer = setInterval(() => {
-        if(remainingTime <= 0){
-            clearInterval(timer);
-            finishGame(CARROT_COUNT === score)
-            sound.playBugSound();
+        if (remainTime <= 0) {
+            clearInterval(timer)
             return;
         }
-        boardTextRemainingTime(--remainingTime);
+        timerRemain(--remainTime)
     }, 1000)
 }
 
-
-
-
-
-const finishGame = (win) => {
-    started = false;
-    clearInterval(timer);
-    finishGameBoard.TextAndIcon(win ? 'you Won!' : 'you Loser')
-    gameBtn.style.visibility = 'hidden'
-    sound.stopBgSound();
-}
-
-const scoreBoardText = (score) => {
-    gameScore.innerText = CARROT_COUNT - score;
-}
-
-const boardTextRemainingTime = (time) => {
-    const minutes = Math.floor(time / 60);
-    const seconds = String(time % 60).padStart('2', 0)
-    timerText.innerText = `${minutes} : ${seconds}`
-}
-const initGame = () => {
-    gameScore.innerHTML = CARROT_COUNT
-    score = 0;
-    gameField.init()
-}
-
-
-
-const showBtnChange = () => {
-    const icon = document.querySelector(".fas");
-    icon.classList.remove("fa-play");
-    icon.classList.add("fa-stop");
-}
-
-
-
+gameBtn.addEventListener("click", startGameBtn)
