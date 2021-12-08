@@ -1443,6 +1443,7 @@ body {
 
     #section7 .frameCss iframe {
         height: 550px;
+        overflow-y: hidden;
     }
 
     #section7 .frameDesc .descBox.Write {

@@ -10,13 +10,15 @@ const fieldRect = field.getBoundingClientRect();
 
 //팝업
 const popUp = document.querySelector(".pop-up");
-console.log(popUp)
+const popUpMessage = document.querySelector(".pop-up__message");
+const refreshBtn = document.querySelector(".pop-up__refresh");
 
 const CARROT_COUNT = 10;
 const CARROT_SIZE = 80;
 let timer;
 let started = false;
-const DURATION_TIME = 65;
+const DURATION_TIME = 15;
+let score = 0;
 
 
 const startGameBtn = () => {
@@ -27,29 +29,43 @@ const startGameBtn = () => {
     }
 }
 
+
 const gameStart = () => {
     started = true;
+    Btn();
     init();
     gameTimerText();
-    Btn();
+    gameBtn.style.visibility = "visible";
 }
 
 const gameStop = () => {
     started = false;
-    stopGameBanner();
+    finishGame();
+    boardText('Replay?')
+    timerStop();
 }
 
-const stopGameBanner = () => {
+const finishGame = win => {
     popUp.classList.remove("pop-up-hide");
-    clearInterval(timer)
+    boardText(win? 'you win' : 'you Lose')
+    timerStop();
+    gameBtn.style.visibility = "hidden";
+}
+
+
+const boardText = text => {
+    popUpMessage.innerText = text;
 }
 
 const init = () => {
+    score = 0;
     field.innerHTML = '';
+    gameScore.innerHTML = CARROT_COUNT;
     addItem("carrot", CARROT_COUNT, "img/carrot.png");
     addItem("bug", CARROT_COUNT, "img/bug.png");
-    gameScore.innerHTML = CARROT_COUNT;
 }
+
+
 
 const addItem = (name, count, imgPath) => {
     let x1 = 0;
@@ -69,6 +85,28 @@ const addItem = (name, count, imgPath) => {
     }
 }
 
+const itemClickHandler = e => {
+    if(!started){
+        return;
+    }
+    const target = e.target
+    if (target.matches('.carrot')) {
+        target.remove();
+        score++;
+        carrotCount(score);
+        if (score === CARROT_COUNT) {
+            finishGame(true)
+        }
+    } else if (target.matches('.bug')) {
+        started = false;
+        finishGame(false);
+    }
+}
+
+const carrotCount = (score) => {
+    gameScore.innerHTML = CARROT_COUNT - score
+}
+
 const randomLocation = (min, max) => {
     return Math.random() * (max - min) + min;
 }
@@ -79,6 +117,9 @@ const Btn = () => {
     icon.classList.remove("fa-play");
 }
 
+const timerStop = () => {
+    clearInterval(timer);
+}
 
 const timerRemain = time => {
     const minutes = Math.floor(time / 60);
@@ -92,10 +133,16 @@ const gameTimerText = () => {
     timer = setInterval(() => {
         if (remainTime <= 0) {
             clearInterval(timer)
+            finishGame(false);
             return;
         }
         timerRemain(--remainTime)
     }, 1000)
 }
 
-gameBtn.addEventListener("click", startGameBtn)
+gameBtn.addEventListener("click", startGameBtn);
+field.addEventListener("click", itemClickHandler)
+refreshBtn.addEventListener("click", () => {
+    gameStart();
+    popUp.classList.add("pop-up-hide");
+})
