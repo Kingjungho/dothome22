@@ -11,18 +11,11 @@
 
     </article>
     <input type="button" value="fetch" onclick="
-    // fetch('html').then(function(response){
-    //     response.text().then(function(text){
-    //         document.querySelector('article').innerHTML = text;
-    //     })
-    // })
+  
     //Asynchronous (비동기) Ajax의 A를 의미함
-    function callbackme(){
-        console.log('end');
-    }
     fetch('html').then(function(){
         console.log('response end')
-    });
+    })
     ">
     
 </body>
