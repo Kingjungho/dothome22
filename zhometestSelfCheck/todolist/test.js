@@ -20,8 +20,6 @@ const nowClick = () => {
 nowClick();
 setInterval(nowClick, 1000);
 
-
-
 const addList = () => {
     const text = inputWrite.value;
     if(text === ""){
@@ -44,13 +42,14 @@ const addList = () => {
         listItems.innerHTML = `
         <li class="item">
             <span class="itemName">${text}</span>
-<button class="deleteBtn"><i class="far fa-trash-alt" data-target-id="${id}"></i>${nowClick()}</button>
+            <button class="deleteBtn"><i class="far fa-trash-alt" data-target-id="${id}"></i>${nowClick()}</button>
         </li>
         <div class="divider"></div>
         `
         id++;
         return listItems;
     }
+    
 const deleteMenu = e => {
     const target = e.target.dataset.targetId
     if (target){
@@ -65,7 +64,8 @@ form.addEventListener("submit", e => {
     e.preventDefault();
     addList()
 })
-allDelte.addEventListener("click", () => {
+allDelte.addEventListener("click", e => {
+    e.preventDefault();
     const listChild = list.children;
     for(let i = 0; i < listChild.length; i++){
         list.removeChild(listChild[i]);

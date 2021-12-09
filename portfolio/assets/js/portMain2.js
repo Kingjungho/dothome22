@@ -119,7 +119,7 @@ window.addEventListener("scroll", () => {
 
         let heightBefore = 0;
         if (i > 0) {
-            heightBefore = sectionAll[i - 1].offsetHeight / 13;
+            heightBefore = sectionAll[i - 1].offsetHeight / 14;
         }
 
         if (scrollTop > (secDiv.offsetTop - 600) - heightBefore) {
