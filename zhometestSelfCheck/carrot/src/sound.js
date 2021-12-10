@@ -1,28 +1,33 @@
-const bugSound = new Audio('./sound/bug_pull.mp3');
 const bgSound = new Audio('./sound/bg.mp3');
-const carrotSound = new Audio('./sound/carrot_pull.mp3');
 const alertSound = new Audio('./sound/alert.wav');
+const carrotSound = new Audio('./sound/carrot_pull.mp3');
+const bugSound = new Audio('./sound/bug_pull.mp3');
 const winSound = new Audio('./sound/game_win.mp3');
 
 
-export function playBugSound(){
-    playSound(bugSound);
-}
-export function playCarrotSound(){
-    playSound(carrotSound);
-}
-export function playBgSound(){
+
+export const playBgSound = () => {
     playSound(bgSound);
 }
-export function playAlertSound(){
-    playSound(alertSound);
-}
-export function playWinSound(){
-    playSound(winSound);
-}
-export function stopBgSound(){
+export const pauseBgSound = () => {
     pauseSound(bgSound);
 }
+export const playAlertSound = () => {
+    playSound(alertSound);
+}
+
+export const playCarrotSound = () => {
+    playSound(carrotSound);
+}
+
+export const playBugSound = () => {
+    playSound(bugSound);
+}
+
+export const playWinSound = () => {
+    playSound(winSound);
+}
+
 
 
 const playSound = (sound) => {

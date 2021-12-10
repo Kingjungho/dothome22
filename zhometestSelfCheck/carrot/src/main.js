@@ -1,5 +1,7 @@
 'use strict'
 
+import * as sound from './sound.js'
+
 // 게임 진행 기능
 const gameBtn = document.querySelector(".game__button");
 const gameTimer = document.querySelector(".game__timer");
@@ -36,6 +38,7 @@ const gameStart = () => {
     init();
     gameTimerText();
     gameBtn.style.visibility = "visible";
+    sound.playBgSound();
 }
 
 const gameStop = () => {
@@ -43,9 +46,18 @@ const gameStop = () => {
     finishGame();
     boardText('Replay?')
     timerStop();
+    sound.playBugSound();
+    sound.pauseBgSound();
 }
 
 const finishGame = win => {
+    if(win) {
+        sound.playWinSound();
+        sound.pauseBgSound();
+    } else {
+        sound.playBugSound();
+        sound.pauseBgSound();
+    }
     popUp.classList.remove("pop-up-hide");
     boardText(win? 'you win' : 'you Lose')
     timerStop();
@@ -94,6 +106,7 @@ const itemClickHandler = e => {
         target.remove();
         score++;
         carrotCount(score);
+        sound.playCarrotSound();
         if (score === CARROT_COUNT) {
             finishGame(true)
         }
