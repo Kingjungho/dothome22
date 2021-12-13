@@ -24,6 +24,4 @@ export default class PopUp {
         this.popUpMessage.innerText = text;
         this.popUp.classList.remove('pop-up-hide');
     }
-
-
 }
