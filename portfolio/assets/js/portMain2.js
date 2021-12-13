@@ -21,8 +21,6 @@ overView.forEach(el => {
 })
 
 //이펙트 스크립트
-const menuBtn = document.querySelectorAll(".descBox.menu button");
-console.log(menuBtn)
 const parallaxNumber = document.querySelector(".descBox.menu.One");
 const parallaxOrder = document.querySelector(".descBox.order.One span");
 const parallaxFrame = document.querySelectorAll("#section7 .frameCss .parallaxFrame");
@@ -86,11 +84,13 @@ const menuActive = (item) => {
     if (item.tagName === "BUTTON") {
         if (currentMenuActive) {
             currentMenuActive.classList.remove("active")
+            parallaxNumber.children[0].classList.remove("active");
         }
         item.classList.add("active");
         currentMenuActive = item;
     }
 }
+parallaxNumber.children[0].classList.add("active");
 
 parallaxNumber.addEventListener("click", parallaxView)
 sliderNumber.addEventListener("click", sliderView)
@@ -136,7 +136,7 @@ window.addEventListener("scroll", () => {
 
         let heightBefore = 0;
         if (i > 0) {
-            heightBefore = sectionAll[i - 1].offsetHeight / 14;
+            heightBefore = sectionAll[i - 1].offsetHeight / 15;
         }
 
         if (scrollTop > (secDiv.offsetTop - 600) - heightBefore) {
