@@ -21,6 +21,8 @@ overView.forEach(el => {
 })
 
 //이펙트 스크립트
+const menuBtn = document.querySelectorAll(".descBox.menu button");
+console.log(menuBtn)
 const parallaxNumber = document.querySelector(".descBox.menu.One");
 const parallaxOrder = document.querySelector(".descBox.order.One span");
 const parallaxFrame = document.querySelectorAll("#section7 .frameCss .parallaxFrame");
@@ -34,8 +36,10 @@ const gameNumber = document.querySelector(".descBox.menu.Four");
 const gameOrder = document.querySelector(".descBox.order.Four span");
 const gameFrame = document.querySelectorAll("#section7 .frameCss .gameFrame");
 
+
 const parallaxView = e => {
     for (let i = 1; i <= parallaxNumber.children.length; i++) {
+        menuActive(e.target)
         if (e.target.parentNode.dataset.id === "0" && e.target.textContent === `${i}`) {
             parallaxOrder.innerText = `${i}`;
             parallaxFrame.forEach(el => {
@@ -46,6 +50,7 @@ const parallaxView = e => {
 }
 const sliderView = e => {
     for (let i = 1; i <= sliderNumber.children.length; i++) {
+        menuActive(e.target)
         if (e.target.parentNode.dataset.id === "1" && e.target.textContent === `${i}`) {
             sliderOrder.innerText = `${i}`;
             sliderFrame.forEach(el => {
@@ -56,6 +61,7 @@ const sliderView = e => {
 }
 const mouseView = e => {
     for (let i = 1; i <= mouseNumber.children.length; i++) {
+        menuActive(e.target)
         if (e.target.parentNode.dataset.id === "2" && e.target.textContent === `${i}`) {
             mouseOrder.innerText = `${i}`;
             mouseFrame.forEach(el => {
@@ -67,11 +73,22 @@ const mouseView = e => {
 const gameView = e => {
     for (let i = 1; i <= gameNumber.children.length; i++) {
         if (e.target.parentNode.dataset.id === "3" && e.target.textContent === `${i}`) {
+            menuActive(e.target)
             gameOrder.innerText = `${i}`;
             gameFrame.forEach(el => {
                 el.src = `https://kingjungho.github.io/dothome22/refer-effect/GameEffect/quiz/quiz0${i}.html`
             })
         }
+    }
+}
+let currentMenuActive;
+const menuActive = (item) => {
+    if (item.tagName === "BUTTON") {
+        if (currentMenuActive) {
+            currentMenuActive.classList.remove("active")
+        }
+        item.classList.add("active");
+        currentMenuActive = item;
     }
 }
 
@@ -129,44 +146,7 @@ window.addEventListener("scroll", () => {
     }
 });
 
-// 아코디언 메뉴
-let accordionBtn = document.querySelectorAll('#section9 .contactTable .tableWrap li h4');
-let allTexts = document.querySelectorAll('.text');
-let accIcon = document.querySelectorAll('#section9 .contactTable .tableWrap li .arrow');
 
-
-accordionBtn.forEach(function (el) {
-    el.addEventListener('click', toggleAccordion)
-});
-
-
-function toggleAccordion(el) {
-    let targetText = el.currentTarget.nextElementSibling.classList;
-    let targetAccIcon = el.currentTarget.children[0];
-    let target = el.currentTarget;
-
-    if (targetText.contains('show')) {
-        targetText.remove('show');
-        targetAccIcon.classList.remove('anime');
-        target.classList.remove('accordionTitleActive');
-    } else {
-        accordionBtn.forEach(function (el) {
-            el.classList.remove('accordionTitleActive');
-
-            allTexts.forEach(function (el) {
-                el.classList.remove('show');
-            })
-
-            accIcon.forEach(function (el) {
-                el.classList.remove('anime');
-            })
-        })
-
-        targetText.add('show');
-        target.classList.add('accordionTitleActive');
-        targetAccIcon.classList.add('anime');
-    }
-}
 
 //스크롤 이펙트
 
@@ -310,8 +290,46 @@ const aboutClickHandler = e => {
     })
 }
 
-
 project.addEventListener("click", projectClickHandler)
 about.addEventListener("click", aboutClickHandler)
 contact.addEventListener("click", contactClickHandler)
 contactMe.addEventListener("click", contactMeClickHandler)
+
+// 아코디언 메뉴
+let accordionBtn = document.querySelectorAll('#section9 .contactTable .tableWrap li h4');
+let allTexts = document.querySelectorAll('.text');
+let accIcon = document.querySelectorAll('#section9 .contactTable .tableWrap li .arrow');
+
+
+accordionBtn.forEach(function (el) {
+    el.addEventListener('click', toggleAccordion)
+});
+
+
+function toggleAccordion(el) {
+    let targetText = el.currentTarget.nextElementSibling.classList;
+    let targetAccIcon = el.currentTarget.children[0];
+    let target = el.currentTarget;
+
+    if (targetText.contains('show')) {
+        targetText.remove('show');
+        targetAccIcon.classList.remove('anime');
+        target.classList.remove('accordionTitleActive');
+    } else {
+        accordionBtn.forEach(function (el) {
+            el.classList.remove('accordionTitleActive');
+
+            allTexts.forEach(function (el) {
+                el.classList.remove('show');
+            })
+
+            accIcon.forEach(function (el) {
+                el.classList.remove('anime');
+            })
+        })
+
+        targetText.add('show');
+        target.classList.add('accordionTitleActive');
+        targetAccIcon.classList.add('anime');
+    }
+}
