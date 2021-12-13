@@ -215,8 +215,8 @@ body {
     width: 25vw;
     height: 30vh;
     background: #fff;
-    -webkit-animation: parallax 8s ease infinite;
-    animation: parallax 8s ease infinite;
+    -webkit-animation: parallax 6.5s ease infinite;
+    animation: parallax 6.5s ease infinite;
     z-index: -1000;
 }
 
@@ -230,8 +230,8 @@ body {
     width: 25vw;
     height: 35vh;
     background: #fff;
-    -webkit-animation: parallax 8s ease infinite;
-    animation: parallax 8s ease infinite;
+    -webkit-animation: parallax 6.5s ease infinite;
+    animation: parallax 6.5s ease infinite;
     z-index: -1000;
 }
 
@@ -244,8 +244,8 @@ body {
     width: 25vw;
     height: 30vh;
     background: #fff;
-    -webkit-animation: parallax 8s ease infinite;
-    animation: parallax 8s ease infinite;
+    -webkit-animation: parallax 6.5s ease infinite;
+    animation: parallax 6.5s ease infinite;
     z-index: -1000;
 }
 
