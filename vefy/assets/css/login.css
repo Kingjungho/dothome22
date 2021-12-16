@@ -1,0 +1,143 @@
+body {
+    font-family: 'Gideon Roman';
+}
+.loginWrap {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 200px;
+}
+.login {
+    margin-bottom: 40px;
+}
+.loginLeft {}
+
+.loginID label {}
+
+
+.btn_submit {
+    background-color: #b1c5b3;
+    text-align: center;
+    padding: 17px;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: bold;
+    width: 433.33px;
+    border: 0;
+    cursor: pointer;
+}
+
+.loginSearch {
+    text-align: center;
+    margin: 30px 0 65px 0;
+}
+
+.loginSearch .idSearch::after {
+    content: '|';
+    padding: 0 5px;
+    vertical-align: 1px;
+    padding-right: 1px;
+}
+
+.vefyLogo {
+    background-image: url(../img/logo_green.png);
+    background-size: cover;
+    width: 140px;
+    height: 42px;
+    margin: 0 auto;
+}
+.input_write3 {
+    border: 1px solid #cccccc;
+    width: 435px;
+    height: 60px;
+    margin-top: 20px;
+    text-align: left;
+    padding-left: 15px;
+}
+.loginLine {
+    border-right: 1px solid #c4c4c4;
+    margin-left: 50px;
+}
+
+.loginRight {
+    text-align: center;
+    margin-left: 50px;
+}
+
+.loginRight .loginDesc {
+    color: #010200;
+    font-size: 20px;
+    padding-bottom: 14px;
+}
+
+.loginRight .loginDesc2 {
+    color: #366221;
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
+#joinBtn {
+    color: #fff;
+    background-color: #b1c5b3;
+    text-align: center;
+    padding: 15px;
+    border-radius: 10px;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+#joinBtn a {
+    color: #fff;
+}
+
+.loginRight .loginImage {}
+
+.loginRight .loginImage img {
+    width: 436px;
+    height: 216px;
+}
+.joinBtn a {
+    color: #fff;     
+}
+
+/* member-form */
+/* .content-article.loginSave {
+    margin-top: 200px;
+} */
+#contents {
+    margin-top: 100px;
+}
+.member-form {
+    width: 600px;
+    margin: 0 auto;
+    border: 1px solid #dfdfdf;
+    background: #fff;
+    padding: 60px 40px;
+    box-sizing: border-box;
+}
+.member-form h3 {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+.member-form h4 {
+    font-size: 16px;
+    text-decoration: underline;
+    margin-bottom: 14px;
+}
+.member-form .join-info {
+    margin-bottom: 20px;
+}
+.member-form .join-privacy {
+    background: #f0f0f0;
+    padding: 20px;
+    margin-bottom: 50px;
+}
+.member-form button {
+    font-size: 18px;
+}
+.member-form .info {
+    padding-top: 20px;
+    color: #666;
+}
+.member-form .info a {
+    text-decoration: underline;
+    color: #666;
+}

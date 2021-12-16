@@ -1,26 +1,16 @@
-header {
-    background: #4d942c;
-    height: 100px;
-    margin-bottom: 100px;
-}
-footer {
-    background: #4d942c;
-    height: 140px;
-    margin-top: 100px;
-}
 .search {
     display: inline-block;
     display: flex;
     justify-content: center;
+    margin-top: 200px;
 }
 .glasses img{
     width: 33px; 
     height: 33px;
-    margin-right: 13px;
+    margin: 5px 15px 0 0;
 }
 .store_search {
     padding: 9px 170px 9px 8px;
-    
 }
 .search_click {
     display: inline-block;
@@ -37,11 +27,14 @@ footer {
     justify-content: space-between;
     margin-top: 90px;
     font-size: 21px;
+    cursor: pointer;
 }
 .header_left {
-    border: 1px solid #000;
     position: relative;
     margin-left: 40px;
+}
+.header_right > span.active {
+    color: rgb(17, 230, 34);
 }
 .ham {
     position: absolute;
@@ -99,38 +92,77 @@ footer {
 }
 .store_title {
     font-size: 32px;
+    margin: 100px 0 120px 0;
     text-align: center;
-    margin: 80px 0;
     font-weight: bold;
 }
 .store_wrap {
     display: flex;
     justify-content: center;
+    margin-bottom: 200px;
+    display: none;
 }
 
 .desc_wrap {
-    text-align: center;
-    margin-top: 15px;
-    border: 1px solid #000;
+    margin-top: 5px;
     border-radius: 5px;
 }
+
 .store_wrap .store_img {
     margin-right: 15px;
+    width: 100%;
+    overflow: hidden;
+}
+.store_img img:hover {
+    transform: scale(1.04);
+    transition: all 0.3s;
 }
 .store_wrap .store_img img {
-    height: 330px;
+    height: 240px;
 }
 .store_wrap .store_img:last-child {
     margin-right: 0;
 }
 .store_img .img_title {
-    font-size: 23px;
+    font-size: 20px;
     font-weight: bold;
+    margin-bottom: 5px;
+    display: inline-block;
 }
 .store_img .img_desc {
-    font-size: 18px;
+    font-size: 15px;
+    font-weight: bold;
 }
 .store_img .img_price {
-    font-size: 20px;
-    margin-top: 18px;
+    font-size: 17px;
+    margin-top: 5px;
+}
+.store_img .img_price2 {
+    color: rgba(0, 0, 0, 0.459);
+    text-decoration: line-through;
+    margin-left: 6px;
+    vertical-align: -1px;
+}
+.store_img .img_price3 {
+    color: rgb(238, 16, 16);
+    font-weight: bold;
+    vertical-align: -1px;
+    margin-left: 10px;
+}
+.review_wrap {
+    margin-top: 12px;
+}
+.review_wrap .review {
+    margin-right: 3px;
+}
+.review_wrap .review_red {
+    color: rgb(238, 16, 16);
+    margin-left: 5px;
+}
+.review_black {
+    color: rgba(0, 0, 0, 0.459);
+}
+.review_wrap .grade {
+    display: inline-block;
+    margin-right: 5px;
 }

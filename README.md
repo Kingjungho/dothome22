@@ -1,6 +1,5 @@
 # dothome22
 
-스마트웹 22
 
 ## 메인 <a href ="https://kingjungho.github.io/dothome22/">바로가기</a>
 

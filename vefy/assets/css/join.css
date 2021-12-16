@@ -1,33 +1,25 @@
-header {
-    background: #4d942c;
-    height: 100px;
+#contents {
+    margin-bottom: 200px;
 }
-footer {
-    background: #4d942c;
-    height: 140px;
-}
-
 
 .join_title {
     font-size: 50px;
+    font-weight: bold;
     text-align: center;
-    margin: 170px 0 132px 0;
+    margin: 100px 0 132px 0;
 }
 .join_wrap {
     display: flex;
     justify-content: space-evenly;
     
 }
-.join_left > input {
+.vefy_input {
     font-size: 15px;
     color: #000;
     border: 1px solid #cccccc;
-    margin-bottom: 20px;
+    margin-bottom: 27px;
     padding: 17px 355px 16px 20px;
     display: block;
-}
-.join_left > input:nth-child(16) {
-    margin-bottom: 0;
 }
 .join_left > input:last-child {
     border: none;
@@ -61,21 +53,21 @@ footer {
     right: 15px;
     top: 11px;
     color: #fff;
-    background: #4d942c;
+    background: #b1c5b3;
     padding: 5px 35px;
     border-radius: 5px;
 }
 .join_line {
     content: '';
     margin: 0 60px;
-    width: 1px;
-    height: 600px;
+    width: 7px;
+    height: 616px;
     transform: rotate(180deg);
     background-color: #c4c4c4;
 }
 .right_title {
     color: #fff;
-    background-color: #4d942c;
+    background-color: #b1c5b3;
     padding: 17px 1px 20px;
     white-space: nowrap;
     font-weight: normal;
@@ -86,7 +78,6 @@ footer {
 }
 .right_agree {
     padding: 30px 40px 45px 20px;
-    
 }
 .agree_desc {
     margin: 27px 0 27px 0;
@@ -96,17 +87,17 @@ footer {
     padding-bottom: 27px;
 }
 .join_click {
+    width: 100%;
     color: #fff;
-    background-color: #366221;
-    padding: 16px 0;
+    background-color: #efefef;
+    padding: 16px 230px;
     border-radius: 10px;
-    text-align: center;
     font-size: 20px;
     margin-top: 20px;
-    margin-bottom: 200px;
-}
-.join_click a {
-    color: #fff;
+    cursor: pointer;
+    white-space: nowrap;
+    pointer-events: none;   
+    /* visibility: hidden;     */
 }
 #checkAll {
     transform: scale(1.7);
@@ -118,4 +109,62 @@ footer {
 }
 fieldset {
     border: none;
+}
+.find_id_view {
+    margin: 0 20px;
+    font-size: 50px;
+    color: red;
+}
+
+/* member-form */
+#contents {
+    margin-top: 100px;
+}
+.member-form {
+    width: 600px;
+    margin: 0 auto;
+    border: 1px solid #dfdfdf;
+    background: #fff;
+    padding: 60px 40px;
+    box-sizing: border-box;
+}
+.member-form h3 {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+.member-form h4 {
+    font-size: 16px;
+    text-decoration: underline;
+    margin-bottom: 14px;
+}
+.member-form .join-info {
+    margin-bottom: 20px;
+}
+.member-form .join-privacy {
+    background: #f0f0f0;
+    padding: 20px;
+    margin-bottom: 50px;
+}
+.member-form button {
+    font-size: 18px;
+}
+.member-form .info {
+    padding-top: 20px;
+    color: #666;
+}
+.member-form .info a {
+    text-decoration: underline;
+    color: #666;
+}
+.vefyLogo2 {
+    background-image: url(../img/logo_green.png);
+    background-size: cover;
+    margin: 52px auto;
+    width: 140px;
+    height: 42px;
+}
+.scrollWrap {
+    overflow-y: scroll;
+    height: 346px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.055);
 }

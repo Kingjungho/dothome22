@@ -1,0 +1,239 @@
+.search {
+    display: inline-block;
+    display: flex;
+    justify-content: center;
+    margin-top: 200px;
+}
+.glasses img{
+    width: 33px; 
+    height: 33px;
+    margin: 5px 15px 0 0;
+}
+.store_search {
+    padding: 9px 170px 9px 8px;
+}
+.search_click {
+    display: inline-block;
+    margin-left: 16px;
+    padding: 10px 30px;
+    background-color: #83d15e;
+    border-radius: 10px;
+    border: 1px solid #000;
+}
+.header_wrap {
+    border: 1px solid #000;
+    padding: 13px 0;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 90px;
+    font-size: 21px;
+}
+.header_left {
+    position: relative;
+    margin-left: 40px;
+}
+.header_right > span.active {
+    color: rgb(17, 230, 34);
+}
+.ham {
+    position: absolute;
+    left: -30px;
+    top: 1px;
+    cursor: pointer;
+    width: 33px;
+    height: 30px;
+    border: 1px solid #000;
+}
+.ham span {
+    width: 20px;
+    height: 3px;
+    background: rgb(0, 0, 0);
+    display: block;
+    position: absolute;
+    left: 5px;
+    top: 13px;
+}
+
+.ham span::before {
+    content: '';
+    width: 20px;
+    height: 3px;
+    background: rgb(0, 0, 0);
+    position: absolute;
+    left: 0;
+    top: 7px;
+}
+
+.ham span::after {
+    content: '';
+    width: 20px;
+    height: 3px;
+    background: rgb(0, 0, 0);
+    position: absolute;
+    left: 0;
+    bottom: 7px;
+}
+.header_left .category {
+    position: relative;
+    margin-left: 5px;
+}
+.ham_tab {
+    border: 1px solid #000;
+    display: flex;
+}
+.ham_tab > div {
+    font-size: 22px;
+    padding: 30px 0 30px 15px;
+}
+.ham_tab .tab_left {
+    margin-right: 50px;
+}
+.ham_tab .tab_left .active {
+    border-bottom: 1px solid #000;
+}
+.ham_tab .tab_right {}
+.header_right {
+    margin-right: 30px;
+}
+
+.header_right span {
+}
+.header_right span:before {
+    content: '|';
+    width: 1px;
+    vertical-align: 2px;
+    margin: 0 28px;
+}
+.store_main {
+    display: flex;
+    margin-top: 50px;
+}
+.main_left img {
+    width: 550px;
+    height: 592px;
+}
+.main_right {
+    margin-left: 70px;
+}
+.title_main {
+    font-size: 30px;
+    margin-bottom: 3px;
+    font-weight: bold;
+}
+.title_desc {
+    font-size: 14px;
+    padding-bottom: 30px;
+}
+.Goods_price {
+    font-size: 17px;
+    padding-bottom: 27px;
+    text-decoration: line-through;
+    display: inline-block;
+    margin-right: 6px;
+}
+.price_sale {
+    color: rgb(238, 16, 16);
+    font-weight: bold;
+    margin-right: 5px;
+}
+.price_real {
+    font-size: 30px;
+}
+.price_real span {
+    font-size: 19px;
+    margin-left: 3px;
+}
+.Goods_delivery {
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgb(192, 191, 191);
+}
+.Goods_deliveryPrice {
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgb(192, 191, 191);
+}
+.Goods_origin {
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgb(192, 191, 191);
+}
+.Goods_shelflife {
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgb(192, 191, 191);
+}
+.Goods_check {
+    margin-top: 30px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid rgb(192, 191, 191);
+}
+
+.right_bottom {
+    margin-top: 33px;
+    line-height: 4;
+}
+.right_bottom .left {
+    color: rgb(122, 121, 121);
+    display: inline-block;
+    width: 150px;
+}
+.Goods_check .right {
+    display: inline-block;
+}
+.inner {
+    display: inline-block;
+    border: 1px solid #ddd;
+    width: 73%;
+    position: relative;
+    height: 62px;
+}
+.inner a {
+    padding-left: 8px;
+}
+.inner .right {
+    display: inline-block;
+    width: 100%;
+    position: relative;
+}
+.inner .right::after {
+    position: absolute;
+    top: 0; right: 15px;
+    content: '▼';
+    width: 10px;
+    height: 10px;
+}
+.shopping {
+    margin: 50px 0 200px 0;
+    display: flex;
+    text-align: center;
+    z-index: 5;
+}
+.shopping a {
+    color: #fff;
+    position: relative;
+}
+.shopping .shopping_left {
+    padding: 15px 100px;
+    background-color: #4D942C;
+    margin-right: 5px;
+}
+.shopping .shopping_right {
+    padding: 15px 100px;
+    background-color: #4D942C;
+}
+.checkbox {
+    position: absolute;
+    left: 0; top: 61px;
+    width: 100%;
+    font-size: 15px;
+    border: 1px solid #ddd;
+    z-index: 15;
+    background-color: #fff;
+}
+.checkbox .checkbox1 {
+    border-bottom: 1px solid #ddd;
+}
+.checkbox {
+    display: none;
+}
+.checkbox.active {
+    display: block;
+}
+
