@@ -6,137 +6,51 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     <style>
         * {
-            margin: 0;
             padding: 0;
-            box-sizing: border-box;
+            margin: 0;
         }
 
-        .dynamicWrap {
-            width: 100%;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: blue;
+        button {
+            width: 80px;
+            height: 40px;
         }
 
-        #dynamic {
-            color: #fff;
-            text-align: center;
-        }
-
-        #dynamic i {
-            font-size: 5vw;
-            margin-bottom: 30px;
-            display: block;
-        }
-
-        #dynamic .string {
-            margin-bottom: 5px;
-            position: relative;
-            display: inline-block;
-        }
-
-        #dynamic .string::after {
-            content: '';
-            width: 2px;
-            height: 100%;
-            background-color: #fff;
-            position: absolute;
-            right: -15px;
-            top: 0;
-        }
-
-        #dynamic .string.active::after {
-            display: none;
-        }
-
-        #dynamic .noMean {
-            font-weight: bold;
-        }
-
-        /* loading */
-
-        @keyframes waviy {
-
-            0%,
-            40%,
-            100% {
-                transform: translateY(0)
-            }
-
-            20% {
-                transform: translateY(-20px)
-            }
+        .box {
+            margin-top: 100px;
+            background-color: yellow;
+            width: 150px;
+            height: 150px;
         }
     </style>
 </head>
 
 <body>
-    <div class="waviy">
-        <span style="--i:1">Z</span>
-        <span style="--i:2">I</span>
-        <span style="--i:3">Y</span>
-        <span style="--i:4">O</span>
-        <span style="--i:5">V</span>
-        <span style="--i:6">U</span>
-        <span style="--i:7">D</span>
-        <span style="--i:8">D</span>
-        <span style="--i:9">I</span>
-        <span style="--i:10">N</span>
-    </div>
-    <div class="dynamicWrap">
-        <div id="dynamic">
-            <i class="fas fa-baby"></i>
-            <div class="string"></div>
-            <div class="noMean">나는 할 수 있다</div>
-        </div>
-    </div>
-   
-    </script>
+    <button>Click to start</button>
     <script>
-        const string = document.querySelector(".string");
-
-
-        const stringRandomArr = () => {
-            const stringArr = ["Hello HTML", "Hello CSS", "Hello JAVASCRIPT", "Hello Python", "Hello Ruby",
-                "Hello React", "Hello Vue"
-            ];
-            const stringRandom = stringArr[Math.floor(Math.random() * stringArr.length)];
-            const stringSplit = stringRandom.split("");
-
-            return stringSplit;
+        function add(a, b) {
+            const sum = a + b;
+            return sum;
+        }
+        function calculate(a, b){
+            console.log('calculate');
+            const result = add(a, b);
+            return result;
+        }
+        function main() {
+            const result = calculate(3, 4);
+            const element = document.createElement('span');
+            element.innerText = result;
+            document.body.appendChild(element);
+            console.log(result);
+            return;
         }
 
-        const resetTyping = () => {
-            string.textContent = '';
-            dynamic(stringRandomArr())
-        }
-
-        const dynamic = (randomArr) => {
-            if (randomArr.length > 0) {
-                string.textContent += randomArr.shift();
-                setTimeout(() => {
-                    dynamic(randomArr);
-                }, 100)
-            } else {
-                setTimeout(resetTyping, 3000)
-            }
-        }
-
-        dynamic(stringRandomArr())
-
-
-
-
-        const blink = () => {
-            string.classList.toggle("active");
-        }
-        setInterval(blink, 500);
+        const button = document.querySelector('button');
+        button.addEventListener("click", () => {
+            main();
+        })
     </script>
 </body>
 
