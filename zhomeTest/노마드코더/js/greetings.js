@@ -8,7 +8,7 @@ const onLoginForm = e => {
     e.preventDefault();
     const text = loginInput.value;
     loginForm.classList.add(USERNAME_HIDDEN);
-    localStorage.setItem(INPUT_NAME, text);
+    localStorage.setItem(INPUT_NAME, text); 
     paintGreeting(text);
 }
 
@@ -25,4 +25,6 @@ if(!savedUserName){
 } else {
     paintGreeting(savedUserName);
 }
+
+
 
