@@ -7,6 +7,7 @@ const list = document.querySelector("#section .list");
 const form = document.querySelector("#footer form");
 const allDelte = document.querySelector("#footer .allDelte");
 
+
 // 시간
 const nowClick = () => {
     const nowDate = new Date();
@@ -14,7 +15,7 @@ const nowClick = () => {
     const minutes = String(nowDate.getMinutes()).padStart(2, 0);
     const seconds = String(nowDate.getSeconds()).padStart(2, 0);
     const ap = hours > 12 ? " PM" : " AM";
-    date.innerHTML = `등록시간 :${ap} ${hours} : ${minutes} : ${seconds} 👍`
+    date.innerHTML = `${ap} ${hours} : ${minutes} : ${seconds} `
     return date.innerHTML;
 }
 nowClick();
@@ -26,7 +27,6 @@ const addList = () => {
         inputWrite.focus();
         return;
     }
-    localStorage.setItem("listname", text)
     const newItem = itemList(text);
     list.appendChild(newItem);
     localStorage.getItem("listname")
@@ -73,7 +73,7 @@ allDelte.addEventListener("click", e => {
     }
 })
 
-const imgs = ["bg3.jpg", "bg6.jpg", "bg9.jpg"];
+const imgs = ["todolistOne.jpg", "todolistTwo.jpg", "todolistThree.jpg"];
 const randomImg = imgs[Math.floor(Math.random() * imgs.length)]
 const img = document.createElement("img");
 img.src = `img/${randomImg}`;
@@ -81,7 +81,7 @@ img.style.position = "absolute"
 img.style.left = "0"
 img.style.top = "0"
 img.style.width = "100%"
+img.style.height = "100%"
 img.style.zIndex = "-10000"
 img.style.filter = "brightness(60%)"
 document.body.appendChild(img);
-
