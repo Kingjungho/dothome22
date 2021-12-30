@@ -13,7 +13,7 @@ export default class Field {
         this.field.addEventListener("click", this.onClick);
     }
 
-
+    
     setClickListener(onItemClick) {
         this.onItemClick = onItemClick;
     }

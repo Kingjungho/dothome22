@@ -4,7 +4,9 @@ const inputSubmit = document.querySelector(".loginSubmit");
 
 const paintGreeting = (text) => {
     const name = document.createElement("h2");
-    name.innerText = `hello ${text}`;
+    name.setAttribute("class", "name")
+    name.innerText = `반가워요 ${text}`;
+    loginForm.classList.add("hidden");
     document.body.prepend(name)
 }
 
@@ -18,8 +20,8 @@ const loginOk = e => {
 const getYourName = localStorage.getItem("yourName");
 
 if(!getYourName){
-    inputSubmit.addEventListener("submit", loginOk)
+    loginForm.addEventListener("submit", loginOk)
+    loginForm.classList.remove("hidden");
 } else {
     paintGreeting(getYourName);
-    loginForm.classList.add("hidden");
 }

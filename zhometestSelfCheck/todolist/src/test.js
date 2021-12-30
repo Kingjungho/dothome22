@@ -7,7 +7,8 @@ const list = document.querySelector("#section .list");
 const form = document.querySelector("#footer form");
 const allDelte = document.querySelector("#footer .allDelte");
 
-
+const listTodos = [];
+const TODOS_KEY = "todo"
 // 시간
 const nowClick = () => {
     const nowDate = new Date();
@@ -29,11 +30,16 @@ const addList = () => {
     }
     const newItem = itemList(text);
     list.appendChild(newItem);
-    localStorage.getItem("listname")
+    saveTodo();
     inputWrite.focus();
     inputWrite.value = '';
     newItem.scrollIntoView({behavior:"smooth", block: 'center'})
 }
+
+function saveTodo(){
+    localStorage.setItem(TODOS_KEY, JSON.stringify(listTodos));
+}
+
     id = 0;
     function itemList(text) {
         const listItems = document.createElement("ul")
@@ -47,7 +53,15 @@ const addList = () => {
         <div class="divider"></div>
         `
         id++;
+        listTodos.push(text)
         return listItems;
+    }
+
+    const savedTodos = localStorage.getItem(TODOS_KEY)
+
+    if(savedTodos){
+        const parseTodos = JSON.parse(savedTodos);
+        parseTodos.forEach(itemList);
     }
     
 const deleteMenu = e => {
@@ -73,15 +87,3 @@ allDelte.addEventListener("click", e => {
     }
 })
 
-const imgs = ["todolistOne.jpg", "todolistTwo.jpg", "todolistThree.jpg"];
-const randomImg = imgs[Math.floor(Math.random() * imgs.length)]
-const img = document.createElement("img");
-img.src = `img/${randomImg}`;
-img.style.position = "absolute"
-img.style.left = "0"
-img.style.top = "0"
-img.style.width = "100%"
-img.style.height = "100%"
-img.style.zIndex = "-10000"
-img.style.filter = "brightness(60%)"
-document.body.appendChild(img);

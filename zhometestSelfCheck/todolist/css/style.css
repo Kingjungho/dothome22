@@ -6,6 +6,15 @@
 body {
     position: relative;
 }
+#loginForm {
+    text-align: center;
+    padding: 50px 0;
+}
+.name {
+    color: #fff;
+    text-align: center;
+    font-size: 50px;
+}
 .date {
     text-align: center;
     font-weight: bold;
@@ -31,7 +40,7 @@ ul {
 /* header */
 .todoList #header {
     background: rgb(153, 150, 215);
-    background: linear-gradient(90deg, rgba(153, 150, 215, 1) 0%, rgba(96, 96, 164, 1) 13%, rgba(59, 77, 159, 1) 48%, rgba(21, 108, 148, 1) 73%, rgba(71, 132, 150, 1) 96%, rgba(53, 116, 129, 1) 100%);
+    background: linear-gradient(90deg, rgb(201, 199, 236) 0%, rgb(167, 167, 218) 13%, rgb(85, 101, 173) 48%, rgba(21, 108, 148, 1) 73%, rgba(71, 132, 150, 1) 96%, rgba(53, 116, 129, 1) 100%);
     border-radius: 20px 20px 0 0;
     opacity: 0.8;
 }
@@ -50,7 +59,7 @@ ul {
     background-color: rgb(234, 237, 238);
     height: 55vh;
     padding: 30px;
-    overflow-y: scroll;
+    overflow-y: hidden;
     opacity: 0.8;
 }
 
@@ -99,8 +108,8 @@ ul {
 /* footer */
 #footer {
     text-align: center;
-    background: rgb(153, 150, 215);
-    background: linear-gradient(90deg, rgba(153, 150, 215, 1) 0%, rgba(96, 96, 164, 1) 13%, rgba(59, 77, 159, 1) 48%, rgba(21, 108, 148, 1) 73%, rgba(71, 132, 150, 1) 96%, rgba(53, 116, 129, 1) 100%);
+    background: rgb(223, 222, 228);
+    background: linear-gradient(90deg, rgb(201, 199, 236) 0%, rgb(167, 167, 218) 13%, rgb(85, 101, 173) 48%, rgba(21, 108, 148, 1) 73%, rgba(71, 132, 150, 1) 96%, rgba(53, 116, 129, 1) 100%);
     border-radius: 0 0 20px 20px;
     opacity: 0.8;
 }
@@ -111,7 +120,10 @@ ul {
     font-size: 17px;
     outline: none;
 }
-
+#footer input:focus::-webkit-input-placeholder {
+    opacity: 0;
+    transition: all 0.4s ease;
+}
 #footer .addBtn {
     font-size: 50px;
     background: transparent;

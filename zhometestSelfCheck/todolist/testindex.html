@@ -11,10 +11,12 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="src/test.js" defer></script>
     <script src="src/greeting.js" defer></script>
+    <script src="src/todo.js" defer></script>
+    <script src="src/image.js" defer></script>
 </head>
 
 <body>
-    <form id="loginForm">
+    <form id="loginForm" class="hidden">
         <input class="loginInput" type="text" placeholder="Write your name 😁" maxlength="10" required>
         <input class="loginSubmit" type="submit" value="Log in">
     </form>
@@ -30,7 +32,7 @@
             </section>
             <footer id="footer">
                 <form action="">
-                    <input type="text" placeholder="목록을 입력하세요">
+                    <input type="text" placeholder="입력 해주세요~">
                     <button class="addBtn">
                         <i class="far fa-kiss-beam"></i>
                     </button>
