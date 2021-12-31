@@ -1,30 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <div id="root"></div>
     <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
     <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
-    <script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
         const root = document.querySelector("#root");
-        const h3 = React.createElement("h3", {
-            onMouseEnter: () => console.log("mouse enter")
-        }, 
-        "Hello I'm span"
-        );
-        const btn = React.createElement(
-            "button", 
-        {
-            onClick: () => console.log('im clicked')
-        }, "Click Me"
-        );
-        const container = React.createElement("div", null, [h3, btn])
-        ReactDOM.render(container, root) //사용자에게 보여준다 render()
+
+        function App() {
+            let [counter, setCounter] = React.useState(0);
+            const onClick = () => {
+                setCounter(counter + 1);
+            }
+            return (
+            <div>
+                <h3>Total clicks: {counter}</h3>
+                <button onClick = {onClick}>Click Me</button>
+            </div>
+            )
+        }               
+        ReactDOM.render(<App />, root) //사용자에게 보여준다 render()
     </script>
 </body>
+
 </html>
