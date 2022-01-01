@@ -2,82 +2,50 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
 </head>
 
 <body>
-    <div id="root"></div>
-    <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
-    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <script type="text/babel">
-        const root = document.querySelector("#root");
-        function HoursMinutes(){
-            const [amount, setAmount] = React.useState();
-            const [inverted, setinverted] = React.useState(false)
-            const onChange = (event) => {
-                setAmount(event.target.value)
-            }
-            const reset = () => {
-                setAmount(0)
-            }
-            const onInverted = () => {
-                reset();
-                setinverted(current => !current)
-            }
-            return (
-                <div>
-                    <label htmlFor="minutes">Minutes</label>
-                    <input 
-                    value={inverted ? amount * 60 : amount} 
-                    id="minutes" 
-                    placeholder="Minutes" 
-                    type="number" 
-                    onChange={onChange}
-                    disabled = {inverted}
-                    />
-                    <h4>You want to convert {amount}</h4>
-                    <label htmlFor="hours">Hours</label>
-                    <input 
-                    value={inverted ? amount : Math.floor(amount / 60)}
-                    id="hours" 
-                    placeholder="Hours" 
-                    type="number" 
-                    onChange={onChange}
-                    disabled = {!inverted}
-                    />
-                    <div>
-                        <button onClick={reset}>Reset</button>
-                        <button onClick={onInverted}>{inverted ? "Turn back" : "Invert"}</button>
-                    </div>
-                </div>
-            )
-        }
-        function KmMiles(){
-            return(
-                <h3>Km And Miles</h3>
-            )
-        }
+	<div id="root"></div>
+	<script src="https://unpkg.com/prop-types@15.7.2/prop-types.js"></script>
+	<script src="https://unpkg.com/react@17.0.2/umd/react.development.js"></script>
+	<script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+	<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+	<script type="text/babel">
+		const root = document.querySelector("#root");
+        function Btn({text, big, onClick}) {
+					console.log(text)
+					return <button 
+					onClick ={onClick}
+					style={{
+						backgroundColor: "red",
+						padding: "10px 20px",
+						border: "0",
+						borderRadius: "30px",
+						marginRight: "15px",
+						fontSize: big ? "35px" : "15px"
+					}}>
+					{text}
+					</button>
+				}
+				Btn.propTypes = {
+					text: PropTypes.string.isRequired,
+					big: PropTypes.bool.isRequired
+				}
         function App() {
-            const [index, setIndex] = React.useState("0");
-            const onSelect = (event) => {
-                setIndex(event.target.value)
-            }
-            return(
-                <div>
-                <h3>Select Option!!</h3>
-                <select value={index} onChange = {onSelect}>
-                    <option value="0">HoursMinutes</option>
-                    <option value="1">KmMiles</option>
-                </select>
-                <hr />
-                {index === "0" ? <HoursMinutes /> : null}
-                {index === "1" ? <KmMiles /> : null}
-                </div>
-            )
+					const [value, setValue] = React.useState("Hello~")
+					const changeValue = () => {
+						setValue("Bye~")
+					}
+					return (
+						<div>
+							<Btn text={value} big={true} onClick={changeValue}/>
+							<Btn text="Continue" big={false}/>
+						</div>
+					)
         }
         
         ReactDOM.render(<App />, root)
