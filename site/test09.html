@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>zz</title>
+    <title>사이트 제작</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
         integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
@@ -109,7 +109,7 @@
                 </div>
                 <div class="box">
                     <div class="aside">모집마감 -4일</div>
-                    <h4>대전 수출활력 촉진단 행사 개최<br>(2/14)</h4>
+                    <h4>대전 활력 촉진단 행사 개최<br>(2/14)</h4>
                     <div class="desc">
                         <span class="color">사업기간</span><span class="date">2019-05-28 ~ 2019-06-01</span>
                         <span class="color">모집기간</span><span class="date">2019-01-17 ~ 2019-02-12</span>
@@ -278,17 +278,31 @@
 
         // 탭메뉴 1
         const tabButton = document.querySelector(".header__right li");
+        const topTabMenu = document.querySelectorAll(".tabNewList");
         let currentMenu;
 
         const newList = e => {
             if (currentMenu) {
                 currentMenu.classList.remove("active");
+                topTabMenu.forEach(el => {
+                    el.classList.add("hidden")
+                })
             }
             e.target.classList.add("active");
+            topTabMenu.forEach(el => {
+                el.classList.remove("hidden")
+            })
             currentMenu = e.target;
         }
 
-        tabButton.addEventListener("mouseover", newList)
+        const tabMenuRemove = e => {
+            e.target.classList.add("hidden")
+        }
+
+        tabButton.addEventListener("click", newList)
+        topTabMenu.forEach(el => {
+                el.addEventListener("mouseleave", tabMenuRemove)
+        });
 
 
 
@@ -323,10 +337,12 @@
             //         menu.classList.remove("acitve")
             // })
             tabBtn.forEach(btn => {
-                [...tabBtn].indexOf(btn) === menuIndex ? btn.classList.add("active") : btn.classList.remove("active")
+                [...tabBtn].indexOf(btn) === menuIndex ? btn.classList.add("active") : btn.classList.remove(
+                    "active")
             })
             tabMenu.forEach(menu => {
-                [...tabMenu].indexOf(menu) === menuIndex ? menu.classList.add("active") : menu.classList.remove("active")
+                [...tabMenu].indexOf(menu) === menuIndex ? menu.classList.add("active") : menu.classList
+                    .remove("active")
             })
         }
 

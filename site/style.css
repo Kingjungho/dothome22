@@ -29,9 +29,13 @@ li {
 #header .header__right li span {
     position: relative;
     margin-right: 30px;
+    cursor: pointer;
 }
 #header .header__right li span.active .tabNewList {
     display: block;
+}
+.hidden {
+    display: none !important;
 }
 #header .header__right li span:last-child {
     margin-right: 0;
@@ -166,9 +170,10 @@ li {
     margin-right: 1%;
 }
 #section2 .box.semina {
-    background-image: url(img/쿡킷\ 배너.png);
+    background-image: url(img/KITAG.jpg);
     background-size: cover;
     color: #fff;
+    
 }
 #section2 .box.semina button {
     outline: none;
@@ -177,6 +182,7 @@ li {
     font-size: 15px;
     color: #fff;
     background: transparent;
+    margin-top: 30px;
 }
 #section2 .box .box_header {
     display: inline-block;
