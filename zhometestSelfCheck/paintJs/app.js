@@ -1,14 +1,19 @@
 const canvas = document.querySelector("#jsCanvas");
 const ctx = canvas.getContext("2d");
 const color = document.querySelector(".controls__colors");
+const fill = document.querySelector("#jsMode");
+const saveImage = document.querySelector("#jsSave");
 
-canvas.width = 500;
-canvas.height = 500;
+let CANVAS_SIZE = 500;
+
+canvas.width = CANVAS_SIZE;
+canvas.height = CANVAS_SIZE;
 
 
-ctx.strokeStyle = "#2c2c2c"
 ctx.lineWidth = 2.5;
 
+
+let filling = false;
 let painting = false;
 
 function stopPainting(){
@@ -42,9 +47,19 @@ const colorChange = e => {
   const target = e.target.dataset.id
   console.log(target)
   if(target){
-    const backGround = e.target.style.setProperty(`background-color`, target)
-    ctx.strokeStyle =`${backGround}`
+    ctx.strokeStyle = `${target}`
+  }
+}
+
+const fillCanvas = () => {
+  if(filling){
+    filling = false;
+    fill.innerText = "Reset"
+  } else {
+    filling = true;
+    fill.innerText = "FILL"
   }
 }
 
 color.addEventListener("click", colorChange)
+fill.addEventListener("click", fillCanvas)
