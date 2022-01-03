@@ -1,5 +1,6 @@
 const canvas = document.querySelector("#jsCanvas");
 const ctx = canvas.getContext("2d");
+const color = document.querySelector(".controls__colors");
 
 canvas.width = 500;
 canvas.height = 500;
@@ -22,11 +23,9 @@ function onMouseMove(event){
   const x = event.offsetX;
   const y = event.offsetY;
   if(!painting){
-    console.log("a", x, y)
     ctx.beginPath()
     ctx.moveTo(x, y)
   } else {
-    console.log("b", x, y)
     ctx.lineTo(x, y);
     ctx.stroke();
   }
@@ -38,3 +37,14 @@ if(canvas){
   canvas.addEventListener("mouseup", stopPainting)
   canvas.addEventListener("mouseleave", stopPainting)
 }
+
+const colorChange = e => {
+  const target = e.target.dataset.id
+  console.log(target)
+  if(target){
+    const backGround = e.target.style.setProperty(`background-color`, target)
+    ctx.strokeStyle =`${backGround}`
+  }
+}
+
+color.addEventListener("click", colorChange)
