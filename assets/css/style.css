@@ -657,10 +657,10 @@ overlay-text-thumb {
   background: rgba(175, 230, 48, 0.637);
 }
 .image-wrap.red .hover-wrap .overlay-img-donut {
-  background: rgba(250, 87, 75, 0.247);
+  background: rgba(86, 150, 56, 0.247);
 }
 .image-wrap.blue .hover-wrap .overlay-img-donut {
-  background: rgb(198, 219, 202);
+  background: rgba(198, 219, 202, 0.514);
 }
 .image-wrap .hover-wrap .overlay-img-donut.black {
   background: #000;
