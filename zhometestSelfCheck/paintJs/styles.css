@@ -20,8 +20,13 @@ body {
   align-items: center;
 }
 
+.controls__range > label {
+  font-size: 15px;
+  font-weight: bold;
+
+}
 .controls .controls__btns {
-  margin-bottom: 30px;
+  margin: 30px;
 }
 
 .controls__btns button {
@@ -39,7 +44,9 @@ body {
   font-weight: 800;
   font-size: 12px;
 }
-
+#jsBringIt {
+  margin-left: 30px;
+}
 .controls__btns button:active {
   transform: scale(0.98);
 }

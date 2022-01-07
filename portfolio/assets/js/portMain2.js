@@ -223,7 +223,6 @@ string.forEach(el => {
     const randomString = () => {
         const stringArr = "#HTML #CSS #JAVASCRIPT"
         const splitStringArr = stringArr.split("")
-
         return splitStringArr;
     }
 
