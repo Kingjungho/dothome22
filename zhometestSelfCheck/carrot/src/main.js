@@ -9,8 +9,8 @@ const gameBtn = document.querySelector(".game__button");
 const gameTimer = document.querySelector(".game__timer");
 const gameScore = document.querySelector(".game__score");
 
-const CARROT_COUNT = 10;
-const BUG_COUNT = 10;
+const PIKACHU_COUNT = 10;
+const ZUBAT_COUNT = 10;
 
 let timer;
 let started = false;
@@ -18,7 +18,7 @@ const DURATION_TIME = 15;
 let score = 0;
 
 const gamePopUpBoard = new PopUp();
-const gameField = new Field(CARROT_COUNT, BUG_COUNT);
+const gameField = new Field(PIKACHU_COUNT, ZUBAT_COUNT);
 
 gamePopUpBoard.setClickListener(() => {
     gameStart();
@@ -30,13 +30,13 @@ const onItemClick = item => {
     if(!started){
         return;
     }
-    if (item === 'carrot') {
+    if (item === 'pikachu') {
         score++;
         carrotCount(score);
-        if (score === CARROT_COUNT) {
+        if (score === PIKACHU_COUNT) {
             finishGame(true)
         }
-    } else if (item === 'bug') {
+    } else if (item === 'zubat') {
         finishGame(false);
     }
 }
@@ -69,6 +69,7 @@ const gameStop = () => {
 }
 
 const finishGame = win => {
+    started = false;
     if(win) {
         sound.playWinSound();
         sound.pauseBgSound();
@@ -83,15 +84,12 @@ const finishGame = win => {
 
 const init = () => {
     score = 0;
-    gameScore.innerHTML = CARROT_COUNT;
+    gameScore.innerHTML = PIKACHU_COUNT;
     gameField.init();
 }
 
-
-
-
 const carrotCount = (score) => {
-    gameScore.innerHTML = CARROT_COUNT - score
+    gameScore.innerHTML = PIKACHU_COUNT - score
 }
 
 const Btn = () => {
