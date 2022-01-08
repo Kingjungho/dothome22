@@ -317,14 +317,14 @@ body {
 }
 
 #section3 .introduce .imgWrap:hover img {
-    filter: brightness(40%);
+    filter: brightness(80%);
     transform: scale(1.05);
 }
 
 #section3 .introduce .imgWrap img {
     width: 17vw;
     height: 17vw;
-    transition: transform 0.6s cubic-bezier(0.28, 0.76, 1, 1), filter 0.9s ease-in-out;
+    transition: transform 0.4s cubic-bezier(0.28, 0.76, 1, 1), filter 0.9s ease-in-out;
 }
 
 #section3 .introduce .imgWrap .descWrap {

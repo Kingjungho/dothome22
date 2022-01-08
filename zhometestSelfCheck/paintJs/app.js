@@ -90,7 +90,7 @@ const changeBlur = e => {
 }
 
 const savingImage = () => {
-  const answer = confirm("저장?🙄");
+  const answer = confirm("저장해요?🙄");
   if(answer === true){
     const link = document.createElement("a");
     link.href = canvas.toDataURL("image/png")

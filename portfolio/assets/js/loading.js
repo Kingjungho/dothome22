@@ -1,6 +1,6 @@
     //loading
     $(window).on('load', function () {
-        $('.loadingContainer').delay('3200').fadeOut();
+        $('.loadingContainer').delay('2800').fadeOut();
     })
     $(window).ready(function () {
 
