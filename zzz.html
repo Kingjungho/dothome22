@@ -5,70 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <style>
-      * {
-        padding: 0;
-        margin: 0;
-      }
-
-      button {
-        width: 80px;
-        height: 40px;
-      }
-
-      .box {
-        margin-top: 100px;
-        background-color: yellow;
-        width: 150px;
-        height: 150px;
-      }
-    </style>
+    <style></style>
   </head>
-
   <body>
-    <button>Click to start</button>
     <script>
-      // function add(a, b) {
-      //     const sum = a + b;
-      //     return sum;
-      // }
-      // function calculate(a, b){
-      //     console.log('calculate');
-      //     const result = add(a, b);
-      //     return result;
-      // }
-      // function main() {
-      //     const result = calculate(3, 4);
-      //     const element = document.createElement('span');
-      //     element.innerText = result;
-      //     document.body.appendChild(element);
-      //     console.log(result);
-      //     return;
-      // }
+      class Student {
+        constructor(name, age, enrolled, score) {
+          this.name = name
+          this.age = age
+          this.enrolled = enrolled
+          this.score = score
+        }
+      }
+      const students = [
+        new Student('A', 29, true, 45),
+        new Student('B', 28, false, 80),
+        new Student('C', 30, true, 90),
+        new Student('D', 40, false, 66),
+        new Student('E', 18, true, 88),
+      ]
 
-      // const button = document.querySelector('button');
-      // // button.addEventListener("click", () => {
-      // //     main();
-      // // })
-
-      // setTimeout(() => {
-      //   button.style.backgroundColor = 'green'
-
-      //   console.log('setTimeout!')
-      // }, 0)
-
-      // for (var i = 0; i < 10000; i++) {
-      //   //console.log(i);
-      // }
-
-      // console.log('after for!')
-
-      const inputArray = [1, 40, "라매", "개발자", 51.5, "a", 88];
-
-// write your codes
-
-const solution = inputArray.filter((el) => isNaN(el) == false);
-console.log(solution);
+      const result = students.map(student => student.score).sort();
+      console.log(result)
     </script>
   </body>
 </html>
