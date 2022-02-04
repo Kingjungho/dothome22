@@ -8,6 +8,7 @@
     <style></style>
   </head>
   <body>
+    <script src="lodash.js"></script>
     <script>
       class Student {
         constructor(name, age, enrolled, score) {
@@ -33,17 +34,69 @@
       } else {
         console.log('0')
       }
-      input = [5, '1 1', '2 3', '3 4', '9 8', '5 2'];
+      input = [5, '1 1', '2 3', '3 4', '9 8', '5 2']
 
-      const testCaseArray = [];
-      for (let i=1; i <= input[0]; i++){
-        const tempValue = input[i].split(' ').map((item) => +item)
-        testCaseArray.push({A: tempValue})
+      const testCaseArray = []
+      for (let i = 1; i <= input[0]; i++) {
+        const tempValue = input[i].split(' ').map(item => +item)
+        console.log(tempValue)
+        testCaseArray.push({ A: tempValue[0], B: tempValue[1] })
       }
-      
-      
-      
+      solution(input[0], testCaseArray)
 
+      function solution(T, testCaseArray) {
+        for (let i = 0; i < T; i++) {
+          const { A, B } = testCaseArray[i]
+          console.log(A + B)
+        }
+      }
+
+      let arr = [
+        { id: 1, name: 'Leanne Graham' },
+        { id: 2, name: 'Ervin Howell' },
+        { id: 3, name: 'Clementine Bauch' },
+      ]
+
+      let userInput = ''
+      let pickme = arr.filter(item => item.name.includes(userInput))
+      console.log(pickme)
+
+      let list = [
+        '01. 들어가며',
+        '02. JS의 역사',
+        '03. 자료형',
+        '04. 함수',
+        '05. 배열',
+      ]
+
+      for (let i = 0; i < list.length; i++) {
+        const listSlice = list[i].slice(4)
+        console.log(listSlice)
+      }
+
+      let alpabet = ['a', 'c', 'C', 'e', 'd', 'b', , 'G', 'A', 'U']
+
+      const alpabetLineUp = alpabet.sort((a, b) => {
+        if (a.toLowerCase() < b.toLowerCase()) return -1
+        if (b.toLowerCase() < a.toLowerCase()) return 1
+        return 0
+      })
+      console.log(alpabetLineUp)
+
+      //스프레드 연산자 rest 사용
+      const hello = (...args) => {
+        console.log(...args);
+        return args.filter(el => el === 1)
+      }
+
+      console.log(hello(1, 2, 3))
+
+
+      //구조 분해 할당
+      const numbers = [1, 2, 3];
+      [num1, num2] = numbers;
+
+      console.log(num1, num2);
     </script>
   </body>
 </html>
