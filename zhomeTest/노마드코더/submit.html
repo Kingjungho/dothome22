@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const superEventHandler = () => {
+        const title = document.createElement('h2')
+        const body = document.querySelector('body')
+        title.setAttribute('class', 'title')
+        title.innerText = 'Hello!'
+        body.append(title)
+        const titleChange = document.querySelector('.title')
+        const colors = ['red', 'blue', 'purple', 'salmon']
+
+        titleChange.addEventListener('mouseover', () => {
+          titleChange.innerHTML = 'You mouse is here'
+          titleChange.style.color = colors[0]
+        })
+        titleChange.addEventListener('mouseleave', () => {
+          titleChange.innerHTML = 'You mouse is gone'
+          titleChange.style.color = colors[1]
+        })
+        window.addEventListener('resize', () => {
+          titleChange.innerHTML = 'You just resized'
+          titleChange.style.color = colors[2]
+        })
+        window.addEventListener('mousedown', () => {
+          titleChange.innerHTML = "That was a right click!"
+          titleChange.style.color = colors[3]
+        })
+      }
+
+      superEventHandler()
+    </script>
+  </body>
+</html>
