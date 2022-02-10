@@ -29,12 +29,14 @@
           titleChange.innerHTML = 'You just resized'
           titleChange.style.color = colors[2]
         })
-        window.addEventListener('mousedown', () => {
+        window.addEventListener('mousedown', e => {
+          if(e.button === 0){
+            return null;
+          }
           titleChange.innerHTML = "That was a right click!"
           titleChange.style.color = colors[3]
         })
       }
-
       superEventHandler()
     </script>
   </body>
