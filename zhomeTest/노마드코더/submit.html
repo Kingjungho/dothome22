@@ -8,36 +8,67 @@
   </head>
   <body>
     <script>
-      const superEventHandler = () => {
-        const title = document.createElement('h2')
-        const body = document.querySelector('body')
-        title.setAttribute('class', 'title')
-        title.innerText = 'Hello!'
-        body.append(title)
-        const titleChange = document.querySelector('.title')
-        const colors = ['red', 'blue', 'purple', 'salmon']
+      //1일차
+      // const superEventHandler = () => {
+      //   const title = document.createElement('h2')
+      //   const body = document.querySelector('body')
+      //   title.setAttribute('class', 'title')
+      //   title.innerText = 'Hello!'
+      //   body.append(title)
+      //   const titleChange = document.querySelector('.title')
+      //   const colors = ['red', 'blue', 'purple', 'salmon', 'black']
 
-        titleChange.addEventListener('mouseover', () => {
-          titleChange.innerHTML = 'You mouse is here'
-          titleChange.style.color = colors[0]
-        })
-        titleChange.addEventListener('mouseleave', () => {
-          titleChange.innerHTML = 'You mouse is gone'
-          titleChange.style.color = colors[1]
-        })
-        window.addEventListener('resize', () => {
-          titleChange.innerHTML = 'You just resized'
-          titleChange.style.color = colors[2]
-        })
-        window.addEventListener('mousedown', e => {
-          if(e.button === 0){
-            return null;
+      //   titleChange.addEventListener('mouseover', () => {
+      //     titleChange.innerHTML = 'You mouse is here'
+      //     titleChange.style.color = colors[0]
+      //   })
+      //   titleChange.addEventListener('mouseleave', e => {
+      //     titleChange.innerHTML = 'You mouse is gone'
+      //     titleChange.style.color = colors[1]
+
+      //     setTimeout(() => {
+      //       titleChange.style.color = colors[4]
+      //       titleChange.innerHTML = 'Hello!'
+      //     }, 2000)
+      //   })
+      //   window.addEventListener('resize', () => {
+      //     titleChange.innerHTML = 'You just resized'
+      //     titleChange.style.color = colors[2]
+      //   })
+      //   window.addEventListener('mousedown', e => {
+      //     if (e.button === 0) {
+      //       return null
+      //     }
+      //     titleChange.innerHTML = 'That was a right click!'
+      //     titleChange.style.color = colors[3]
+
+      //     setTimeout(() => {
+      //       titleChange.style.color = colors[4]
+      //       titleChange.innerHTML = 'Hello!'
+      //     }, 2000)
+      //   })
+      // }
+
+      // superEventHandler()
+
+      //2일차
+      const hello = document.createElement('h2')
+      const body = document.querySelector('body')
+      hello.innerText = 'Hello'
+      body.append(hello)
+
+      const windowResizeHandler = () => {
+        window.addEventListener('resize', e => {
+          if (e.target.innerWidth > 1500) {
+            body.style.background = 'red'
+          } else if (e.target.innerWidth > 1000) {
+            body.style.background = 'blue'
+          } else if (e.target.innerWidth > 500) {
+            body.style.background = 'green'
           }
-          titleChange.innerHTML = "That was a right click!"
-          titleChange.style.color = colors[3]
         })
       }
-      superEventHandler()
+      windowResizeHandler()
     </script>
   </body>
 </html>
