@@ -54,6 +54,5 @@ if(savedToDos){
     const parseToDos = JSON.parse(savedToDos);
     console.log(parseToDos)
     toDos = parseToDos;
-    console.log(toDos)
     parseToDos.forEach(paintToDo);
 }

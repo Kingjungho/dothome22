@@ -20,11 +20,25 @@ const nowClick = () => {
 nowClick()
 setInterval(nowClick, 1000)
 
-let listTodos = []
+let todos = []
 const TODOS_KEY = 'todos'
 
 function saveTodo() {
-  localStorage.setItem(TODOS_KEY, JSON.stringify(listTodos))
+  localStorage.setItem(TODOS_KEY, JSON.stringify(todos))
+}
+
+const deleteMenu = e => {
+  const target = e.target.dataset.targetId
+  let elem = e.target
+  if (target) {
+    const deleteList = document.querySelector(`.listItems[data-id='${target}']`)
+    deleteList.remove();
+  }
+  while(!elem.classList.contains("listItems")){
+    elem = elem.parentNode
+  }
+  todos = todos.filter(list => list.id !== +elem.dataset.id)
+  saveTodo();
 }
 
 const addListHandler = () => {
@@ -38,12 +52,24 @@ const addListHandler = () => {
     id: Date.now(),
   }
   const newItem = itemList(todoText)
-  listTodos.push(todoText)
-  list.appendChild(newItem)
+  list.append(newItem)
+  todos.push(todoText)
   saveTodo()
+
   inputWrite.focus()
   inputWrite.value = ''
   newItem.scrollIntoView({ behavior: 'smooth', block: 'center' })
+}
+
+const savedTodos = localStorage.getItem(TODOS_KEY)
+
+if (savedTodos) {
+  const parseTodos = JSON.parse(savedTodos)
+  todos = parseTodos
+  console.log(parseTodos)
+  parseTodos.forEach(el => {
+    list.append(itemList(el))
+  })
 }
 
 function itemList(text) {
@@ -62,22 +88,7 @@ function itemList(text) {
   return listItems
 }
 
-const savedTodos = localStorage.getItem(TODOS_KEY)
 
-if (savedTodos) {
-  const parseTodos = JSON.parse(savedTodos)
-  listTodos = parseTodos
-  console.log(listTodos)
-  parseTodos.forEach(itemList)
-}
-
-const deleteMenu = e => {
-  const target = e.target.dataset.targetId
-  if (target) {
-    const deleteList = document.querySelector(`.listItems[data-id='${target}']`)
-    deleteList.remove()
-  }
-}
 
 listAddBtn.addEventListener('click', addListHandler)
 list.addEventListener('click', deleteMenu)
