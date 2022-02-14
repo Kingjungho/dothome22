@@ -6,8 +6,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
+  <style>
+    label {
+      display: block;
+    }
+    input {
+      margin-bottom: 20px;
+    }
+  </style>
   <body>
+    <h2>Random Number Game</h2>
+    <form>
+      <label for="generateNumber">Generate a number between 0 and</label>
+      <input type="number" id="generateNumber" />
+      <label for="choseNumber">Guess the number</label>
+      <input type="number" id="choseNumber" />
+      <button class="play">Play!</button>
+    </form>
     <script>
+      const form = document.querySelector('form')
+      const generateNumber = document.querySelector('#generateNumber')
+      const choseNumber = document.querySelector('#choseNumber')
+      const playBtn = document.querySelector('.play')
+
+      const RandomNumberGame = e => {
+        e.preventDefault()
+        const generateNum = generateNumber.value
+        const randomNumber = Math.ceil(Math.random() * generateNum)
+        const choseNum = choseNumber.value
+        console.log(typeof choseNum, typeof randomNumber)
+        printRandomNumber(randomNumber, choseNum)
+      }
+
+      const printRandomNumber = (randomNumber, choseNum) => {
+        if (+choseNum !== randomNumber) {
+          randomGame.innerHTML = `You chose:${choseNum}, the machine chose:${randomNumber}`
+          result.innerHTML = 'You lost!'
+        } else if (+choseNum === randomNumber) {
+          randomGame.innerHTML = `You chose:${choseNum}, the machine chose:${randomNumber}`
+          result.innerHTML = 'You Win!'
+        }
+      }
+
+      const randomGame = document.createElement('p')
+      form.append(randomGame)
+      const result = document.createElement('p')
+      form.append(result)
+      form.addEventListener('submit', RandomNumberGame)
+      playBtn.addEventListener('click', printRandomNumber)
+
       //1일차
       // const superEventHandler = () => {
       //   const title = document.createElement('h2')
@@ -51,24 +98,26 @@
 
       // superEventHandler()
 
-      //2일차
-      const hello = document.createElement('h2')
-      const body = document.querySelector('body')
-      hello.innerText = 'Hello'
-      body.append(hello)
+      // //2일차
+      // const hello = document.createElement('h2')
+      // const body = document.querySelector('body')
+      // hello.innerText = 'Hello'
+      // body.append(hello)
 
-      const windowResizeHandler = () => {
-        window.addEventListener('resize', e => {
-          if (e.target.innerWidth > 1500) {
-            body.style.background = 'red'
-          } else if (e.target.innerWidth > 1000) {
-            body.style.background = 'blue'
-          } else if (e.target.innerWidth > 500) {
-            body.style.background = 'green'
-          }
-        })
-      }
-      windowResizeHandler()
+      // const windowResizeHandler = () => {
+      //   window.addEventListener('resize', e => {
+      //     if (e.target.innerWidth > 1500) {
+      //       body.style.background = 'red'
+      //     } else if (e.target.innerWidth > 1000) {
+      //       body.style.background = 'blue'
+      //     } else if (e.target.innerWidth > 500) {
+      //       body.style.background = 'green'
+      //     }
+      //   })
+      // }
+      // windowResizeHandler()
+
+      //3일차~
     </script>
   </body>
 </html>

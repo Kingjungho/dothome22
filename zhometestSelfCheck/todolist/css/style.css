@@ -139,8 +139,9 @@ ul {
     transform: scale(1.1);
 }
 .allDelte {
+    display: flex;
+    margin: auto;
     color: #fff;
-    margin-left: 50px;
     font-size: 20px;
     background-color: transparent;
     outline: none;

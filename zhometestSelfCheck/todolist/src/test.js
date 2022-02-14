@@ -5,7 +5,7 @@ const item = document.querySelector('.item .itemName')
 const deleteBtn = document.querySelector('.item .deleteBtn')
 const list = document.querySelector('#section .list')
 const form = document.querySelector('#footer form')
-const allDelte = document.querySelector('#footer .allDelte')
+const allDelete = document.querySelector('#footer .allDelte')
 
 // 시간
 const nowClick = () => {
@@ -50,6 +50,7 @@ const addListHandler = () => {
   const todoText = {
     text: text,
     id: Date.now(),
+    date: nowClick(),
   }
   const newItem = itemList(todoText)
   list.append(newItem)
@@ -81,7 +82,7 @@ function itemList(text) {
             <span class="itemName">${text.text}</span>
             <button class="deleteBtn"><i class="far fa-trash-alt" data-target-id="${
               text.id
-            }"></i>${nowClick()}</button>
+            }"></i>${text.date}</button>
         </li>
         <div class="divider"></div>
         `
@@ -96,11 +97,14 @@ form.addEventListener('submit', e => {
   e.preventDefault()
   addListHandler()
 })
-allDelte.addEventListener('click', e => {
+
+allDelete.addEventListener('click', e => {
   e.preventDefault()
   const listChild = list.children
   for (let i = 0; i < listChild.length; i++) {
     list.removeChild(listChild[i])
     i--
   }
+  localStorage.getItem(TODOS_KEY)
+  localStorage.removeItem(TODOS_KEY);
 })
