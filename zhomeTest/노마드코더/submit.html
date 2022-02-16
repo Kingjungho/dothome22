@@ -6,55 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <style>
-    label {
-      display: block;
-    }
-    input {
-      margin-bottom: 20px;
-    }
-  </style>
+
   <body>
-    <h2>Random Number Game</h2>
-    <form>
-      <label for="generateNumber">Generate a number between 0 and</label>
-      <input type="number" id="generateNumber" />
-      <label for="choseNumber">Guess the number</label>
-      <input type="number" id="choseNumber" />
-      <button class="play">Play!</button>
-    </form>
+    <h2>Time Until Christmas Eve</h2>
+    <p class="christmas"></p>
+
     <script>
-      const form = document.querySelector('form')
-      const generateNumber = document.querySelector('#generateNumber')
-      const choseNumber = document.querySelector('#choseNumber')
-      const playBtn = document.querySelector('.play')
-
-      const RandomNumberGame = e => {
-        e.preventDefault()
-        const generateNum = generateNumber.value
-        const randomNumber = Math.ceil(Math.random() * generateNum)
-        const choseNum = choseNumber.value
-        console.log(typeof choseNum, typeof randomNumber)
-        printRandomNumber(randomNumber, choseNum)
-      }
-
-      const printRandomNumber = (randomNumber, choseNum) => {
-        if (+choseNum !== randomNumber) {
-          randomGame.innerHTML = `You chose:${choseNum}, the machine chose:${randomNumber}`
-          result.innerHTML = 'You lost!'
-        } else if (+choseNum === randomNumber) {
-          randomGame.innerHTML = `You chose:${choseNum}, the machine chose:${randomNumber}`
-          result.innerHTML = 'You Win!'
-        }
-      }
-
-      const randomGame = document.createElement('p')
-      form.append(randomGame)
-      const result = document.createElement('p')
-      form.append(result)
-      form.addEventListener('submit', RandomNumberGame)
-      playBtn.addEventListener('click', printRandomNumber)
-
       //1일차
       // const superEventHandler = () => {
       //   const title = document.createElement('h2')
@@ -118,6 +75,62 @@
       // windowResizeHandler()
 
       //3일차~
+      // <h2>Random Number Game</h2>
+      // <form>
+      //   <label for="generateNumber">Generate a number between 0 and</label>
+      //   <input type="number" id="generateNumber" />
+      //   <label for="choseNumber">Guess the number</label>
+      //   <input type="number" id="choseNumber" />
+      //   <button class="play">Play!</button>
+      // </form>
+      //   const form = document.querySelector('form')
+      //   const generateNumber = document.querySelector('#generateNumber')
+      //   const choseNumber = document.querySelector('#choseNumber')
+      //   const playBtn = document.querySelector('.play')
+
+      //   const RandomNumberGame = e => {
+      //     e.preventDefault()
+      //     const generateNum = generateNumber.value
+      //     const randomNumber = Math.ceil(Math.random() * generateNum)
+      //     const choseNum = choseNumber.value
+      //     console.log(typeof choseNum, typeof randomNumber)
+      //     printRandomNumber(randomNumber, choseNum)
+      //   }
+
+      //   const printRandomNumber = (randomNumber, choseNum) => {
+      //     if (+choseNum !== randomNumber) {
+      //       randomGame.innerHTML = `You chose:${choseNum}, the machine chose:${randomNumber}`
+      //       result.innerHTML = 'You lost!'
+      //     } else if (+choseNum === randomNumber) {
+      //       randomGame.innerHTML = `You chose:${choseNum}, the machine chose:${randomNumber}`
+      //       result.innerHTML = 'You Win!'
+      //     }
+      //   }
+
+      //   const randomGame = document.createElement('p')
+      //   form.append(randomGame)
+      //   const result = document.createElement('p')
+      //   form.append(result)
+      //   form.addEventListener('submit', RandomNumberGame)
+      //   playBtn.addEventListener('click', printRandomNumber)
+      
+      //4일차~
+      const dDay = document.querySelector('.christmas')
+
+      const remainingTime = () => {
+        const christmasDday = new Date('november 30, 2022 0:00:00').getTime()
+        const today = new Date().getTime()
+        const gap = christmasDday - today
+        const day = Math.ceil(gap / (1000 * 60 * 60 * 24))
+        const hours = Math.floor(
+          (gap % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        )
+        const minutes = Math.floor((gap % (1000 * 60 * 60)) / (1000 * 60))
+        const seconds = Math.floor((gap % (1000 * 60)) / 1000)
+        dDay.innerText = `${day}d ${hours}h ${minutes}m ${seconds}s`
+      }
+      remainingTime()
+      setInterval(remainingTime, 1000)
     </script>
   </body>
 </html>
